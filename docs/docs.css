@@ -112,19 +112,27 @@
 
 .docs-pack__select {
   width: auto;
-  min-width: 7.5rem;
+  min-width: 0;
   min-height: 2.75rem;
-  padding: 0 2.25rem 0 var(--ag-space-3);
-  border: 1px solid var(--ag-color-border-strong);
-  border-radius: 999px;
-  background-color: var(--ag-color-paper);
-  background-position: right var(--ag-space-3) center;
+  padding: 0 1.75rem 0 var(--ag-space-2);
+  border: 0;
+  border-radius: var(--ag-size-radius);
+  background-color: transparent;
+  background-position: right var(--ag-space-1) center;
+  background-size: 0.9rem;
   font-size: var(--ag-font-size-xs);
   font-weight: var(--ag-font-weight-bold);
+  cursor: pointer;
 }
 
 .docs-pack__select:hover {
-  border-color: var(--ag-color-ink);
+  text-decoration: underline;
+}
+
+.docs-pack__select:focus-visible {
+  outline: 2px solid var(--ag-color-ink);
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 .ag-js .docs-pack__apply {
