@@ -22,19 +22,54 @@
           "banner-secure": "Tovuti salama za .go.ke hutumia HTTPS",
           "$note": "Machine-assisted draft. Native review wanted."
         }
+      },
+      "currency": {
+        "code": "KES",
+        "symbol": "KSh",
+        "name": "shillings",
+        "hint": "In Kenyan shillings"
+      },
+      "id": {
+        "name": "National ID number",
+        "short": "ID number",
+        "document": "National ID card",
+        "hint": "8 digits, on the front of your ID card",
+        "length": 8,
+        "authority": "the National Registration Bureau"
+      },
+      "regions": {
+        "label": "County",
+        "choose": "Choose a county",
+        "items": ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Kiambu", "Uasin Gishu"]
+      },
+      "examples": {
+        "timezone": "East Africa Time",
+        "refPrefix": "KE"
       }
     }
   },
   "official": {
     "$type": "color",
-    "black": { "$value": "#000000" },
-    "red": { "$value": "#bb0000" },
-    "green": { "$value": "#006600" },
-    "white": { "$value": "#ffffff" }
+    "black": {
+      "$value": "#000000"
+    },
+    "red": {
+      "$value": "#bb0000"
+    },
+    "green": {
+      "$value": "#006600"
+    },
+    "white": {
+      "$value": "#ffffff"
+    }
   },
   "color": {
     "$type": "color",
-    "primary": { "$value": "{official.green}" },
-    "accent": { "$value": "{official.red}" }
+    "primary": {
+      "$value": "{official.green}"
+    },
+    "accent": {
+      "$value": "{official.red}"
+    }
   }
 }

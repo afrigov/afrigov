@@ -31,10 +31,11 @@ The most useful contribution, and it needs no CSS.
 
 1. Copy `tokens/packs/ke.tokens.json` to `tokens/packs/<code>.tokens.json`, using the two-letter [ISO 3166-1 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) in lower case.
 2. Fill in `$extensions.afrigov`: `code`, `country`, `government` (the formal name used on official sites), `domain` (the official second-level domain, like `.gov.ng` or `.go.ke`), `flag` (stripe colours in order), `flagDirection` (`row` for vertical stripes, `column` for horizontal), and `strings` for each official language.
-3. Put the exact national colours under `official`. Use the values from the constitution, the national standards body, or the government's own brand guidelines, and cite the source in `$description`.
-4. Set `color.primary` to the official colour that should carry buttons and links. If it is too light for text, the build derives a deeper one automatically and records that in the generated CSS. You do not need to pick a "web safe" version yourself.
-5. Run `pnpm test`. The contrast tests run for your pack. Then `pnpm build` and open `docs/index.html?pack=<code>` to see it.
-6. Add a row to the packs table in `docs/index.html` and the switcher in the hero, and a line in `CHANGELOG.md`.
+3. Fill in `currency` (code, symbol, name, hint), `id` (what the national ID is called, its document, a hint, its length, the issuing authority), `regions` (what the first-level division is called and a handful of examples) and `examples` (timezone name, reference prefix). The docs examples read these, and the 0.2 phone, ID and region inputs will too.
+4. Put the exact national colours under `official`. Use the values from the constitution, the national standards body, or the government's own brand guidelines, and cite the source in `$description`.
+5. Set `color.primary` to the official colour that should carry buttons and links. If it is too light for text, the build derives a deeper one automatically and records that in the generated CSS. You do not need to pick a "web safe" version yourself.
+6. Run `pnpm test`. The contrast tests run for your pack. Then `pnpm build` and open `docs/index.html?pack=<code>` to see it.
+7. Add a row to the packs table in `docs/index.html` and the switcher in the hero, and a line in `CHANGELOG.md`.
 
 For banner strings, only add a translation you can vouch for or that a native speaker has reviewed. A missing language is better than a wrong one. Mark machine-assisted drafts with `"$note": "Machine-assisted draft. Native review wanted."` as the Swahili strings do.
 

@@ -92,6 +92,16 @@ describe("country packs", () => {
     for (const v of pack.meta.flag) expect(v).toMatch(HEX);
   });
 
+  it.each(packs)("pack %s carries currency, national ID and region data for the docs examples", (code) => {
+    const { meta } = loadPack(code, core);
+    expect(meta.currency?.symbol, "currency.symbol").toBeTruthy();
+    expect(meta.currency?.code, "currency.code").toMatch(/^[A-Z]{3}$/);
+    expect(meta.id?.name, "id.name").toBeTruthy();
+    expect(meta.id?.hint, "id.hint").toBeTruthy();
+    expect(meta.regions?.label, "regions.label").toBeTruthy();
+    expect(meta.regions?.items?.length, "regions.items").toBeGreaterThan(0);
+  });
+
   it.each(packs)("pack %s derives every primary-related override as valid hex", (code) => {
     const pack = loadPack(code, core);
     for (const key of [

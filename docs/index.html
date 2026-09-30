@@ -38,6 +38,7 @@
           afrigov is an open-source project. It is not a government website and is not affiliated with any government.
         </p>
         <form class="docs-pack" method="get" action="./" aria-label="Country pack">
+          <span class="ag-flag docs-pack__flag" aria-hidden="true"><span></span><span></span><span></span></span>
           <label class="docs-pack__label" for="pack-select">Country</label>
           <select class="ag-select docs-pack__select" id="pack-select" name="pack">
             <option value="core">Neutral</option>
@@ -404,8 +405,10 @@ init();</code></pre>
                 </div>
 
                 <div class="ag-field">
-                  <label class="ag-label" for="demo-nin">National Identification Number</label>
-                  <span class="ag-hint" id="demo-nin-hint">11 digits, on your NIN slip</span>
+                  <label class="ag-label" for="demo-nin" data-docs-string="id-name">National ID number</label>
+                  <span class="ag-hint" id="demo-nin-hint" data-docs-string="id-hint"
+                    >As printed on your national ID</span
+                  >
                   <input
                     class="ag-input ag-input--width-20"
                     id="demo-nin"
@@ -420,7 +423,12 @@ init();</code></pre>
                 <div class="ag-field">
                   <label class="ag-label" for="demo-amount">Amount</label>
                   <div class="ag-input-group">
-                    <span class="ag-input-group__affix" aria-hidden="true">₦</span>
+                    <span
+                      class="ag-input-group__affix"
+                      aria-hidden="true"
+                      data-docs-string="currency-symbol"
+                      hidden
+                    ></span>
                     <input
                       class="ag-input ag-input--width-10"
                       id="demo-amount"
@@ -430,21 +438,25 @@ init();</code></pre>
                       aria-describedby="demo-amount-hint"
                     />
                   </div>
-                  <span class="ag-hint ag-mt-0" id="demo-amount-hint" style="margin-top: var(--ag-space-2)"
-                    >In naira</span
+                  <span
+                    class="ag-hint ag-mt-0"
+                    id="demo-amount-hint"
+                    style="margin-top: var(--ag-space-2)"
+                    data-docs-string="currency-hint"
+                    >In local currency</span
                   >
                 </div>
 
                 <div class="ag-field">
-                  <label class="ag-label" for="demo-state">State</label>
-                  <select class="ag-select" id="demo-state" name="state">
-                    <option value="">Choose a state</option>
-                    <option>Abia</option>
-                    <option>Adamawa</option>
-                    <option>Akwa Ibom</option>
-                    <option>Anambra</option>
-                    <option>Lagos</option>
-                    <option>Kano</option>
+                  <label class="ag-label" for="demo-state" data-docs-string="region-label">Region</label>
+                  <select class="ag-select" id="demo-state" name="state" data-docs-regions>
+                    <option value="" data-docs-string="region-choose">Choose a region</option>
+                    <option>Central</option>
+                    <option>Coastal</option>
+                    <option>Eastern</option>
+                    <option>Northern</option>
+                    <option>Southern</option>
+                    <option>Western</option>
                   </select>
                 </div>
 
@@ -472,7 +484,7 @@ init();</code></pre>
                   <div class="ag-choices" aria-describedby="demo-docs-hint">
                     <label class="ag-checkbox">
                       <input type="checkbox" name="docs" value="nin" checked />
-                      <span class="ag-checkbox__label">NIN slip</span>
+                      <span class="ag-checkbox__label" data-docs-string="id-document">National ID card</span>
                     </label>
                     <label class="ag-checkbox">
                       <input type="checkbox" name="docs" value="passport" />
@@ -538,7 +550,9 @@ init();</code></pre>
                 <h2 class="ag-error-summary__title" id="demo-es-title">There is a problem</h2>
                 <ul class="ag-error-summary__list">
                   <li><a href="#demo-email">Enter an email address in the correct format, like name@example.com</a></li>
-                  <li><a href="#demo-nin">Enter your National Identification Number</a></li>
+                  <li>
+                    <a href="#demo-nin">Enter your <span data-docs-string="id-name">National ID number</span></a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -634,19 +648,25 @@ init();</code></pre>
             <div class="docs-example__preview">
               <div class="ag-alert" role="status">
                 <h4 class="ag-alert__title">Applications close on 31 October</h4>
-                <p>Submit before 11:59pm West Africa Time.</p>
+                <p>Submit before 11:59pm <span data-docs-string="timezone">local time</span>.</p>
               </div>
               <div class="ag-alert ag-alert--success" role="status">
                 <h4 class="ag-alert__title">Payment received</h4>
-                <p>Your receipt number is <strong>NG-2026-004512</strong>.</p>
+                <p>Your receipt number is <strong data-docs-string="ref">REF-2026-004512</strong>.</p>
               </div>
               <div class="ag-alert ag-alert--warning" role="status">
                 <h4 class="ag-alert__title">Your session ends in 5 minutes</h4>
                 <p>Save your progress to avoid losing it.</p>
               </div>
               <div class="ag-alert ag-alert--error ag-mb-0" role="alert">
-                <h4 class="ag-alert__title">We could not verify your NIN</h4>
-                <p>Check the number and try again, or <a href="#c-alert">contact NIMC</a>.</p>
+                <h4 class="ag-alert__title">
+                  We could not verify your <span data-docs-string="id-short">ID number</span>
+                </h4>
+                <p>
+                  Check the number and try again, or
+                  <a href="#c-alert">contact <span data-docs-string="id-authority">the registration office</span></a
+                  >.
+                </p>
               </div>
             </div>
             <details class="docs-example__code">
@@ -722,19 +742,19 @@ init();</code></pre>
                     <tr>
                       <th scope="row">Standard, 32 pages</th>
                       <td>5 years</td>
-                      <td class="ag-table__numeric">₦35,000</td>
+                      <td class="ag-table__numeric" data-docs-money="35000">35,000</td>
                       <td><span class="ag-badge ag-badge--success">Available</span></td>
                     </tr>
                     <tr>
                       <th scope="row">Standard, 64 pages</th>
                       <td>10 years</td>
-                      <td class="ag-table__numeric">₦70,000</td>
+                      <td class="ag-table__numeric" data-docs-money="70000">70,000</td>
                       <td><span class="ag-badge ag-badge--success">Available</span></td>
                     </tr>
                     <tr>
                       <th scope="row">Official</th>
                       <td>5 years</td>
-                      <td class="ag-table__numeric">₦0</td>
+                      <td class="ag-table__numeric" data-docs-money="0">0</td>
                       <td><span class="ag-badge ag-badge--warning">By request</span></td>
                     </tr>
                   </tbody>
@@ -1040,7 +1060,8 @@ init();</code></pre>
     <script src="dist/afrigov.iife.js"></script>
     <script src="dist/packs.js"></script>
     <script>
-      // Country select in the header submits on change. Fill strings from the active pack.
+      // The country select submits on change. Every example on the page then reads
+      // its strings, currency, national ID and regions from the selected pack.
       (function () {
         var pack = document.documentElement.getAttribute("data-docs-pack") || "core";
         var select = document.getElementById("pack-select");
@@ -1051,14 +1072,51 @@ init();</code></pre>
           });
         }
         var meta = window.AFRIGOV_PACKS && window.AFRIGOV_PACKS[pack];
-        if (!meta) return; // neutral: the static text already says "the Government"
+        if (!meta) return; // neutral: the static text is already country-neutral
+
         var file = document.querySelector("[data-docs-packfile]");
         if (file) file.textContent = pack;
+
         var s = (meta.strings && meta.strings.en) || {};
+        var id = meta.id || {};
+        var cur = meta.currency || {};
+        var reg = meta.regions || {};
+        var ex = meta.examples || {};
+        var d = {
+          banner: s.banner,
+          "banner-how": s["banner-how"],
+          "banner-domain": s["banner-domain"],
+          "banner-secure": s["banner-secure"],
+          government: meta.government,
+          "id-name": id.name,
+          "id-short": id.short,
+          "id-document": id.document,
+          "id-hint": id.hint,
+          "id-authority": id.authority,
+          "currency-symbol": cur.symbol,
+          "currency-hint": cur.hint,
+          "region-label": reg.label,
+          "region-choose": reg.choose,
+          timezone: ex.timezone,
+          ref: ex.refPrefix ? ex.refPrefix + "-2026-004512" : null,
+        };
         document.querySelectorAll("[data-docs-string]").forEach(function (el) {
-          var key = el.getAttribute("data-docs-string");
-          var v = key === "government" ? meta.government : s[key];
-          if (v) el.textContent = v;
+          var v = d[el.getAttribute("data-docs-string")];
+          if (v) {
+            el.textContent = v;
+            el.hidden = false;
+          }
+        });
+        document.querySelectorAll("[data-docs-regions]").forEach(function (sel) {
+          if (!reg.items) return;
+          while (sel.options.length > 1) sel.remove(1);
+          reg.items.forEach(function (name) {
+            sel.add(new Option(name));
+          });
+        });
+        document.querySelectorAll("[data-docs-money]").forEach(function (td) {
+          var n = Number(td.getAttribute("data-docs-money")).toLocaleString("en");
+          td.textContent = (cur.symbol || "") + n;
         });
       })();
     </script>

@@ -15,21 +15,61 @@
           "banner-domain": "Official websites use .gov.ng",
           "banner-secure": "Secure .gov.ng websites use HTTPS"
         },
-        "ha": { "banner": null, "$todo": "Hausa translation wanted. Open a PR." },
-        "yo": { "banner": null, "$todo": "Yoruba translation wanted. Open a PR." },
-        "ig": { "banner": null, "$todo": "Igbo translation wanted. Open a PR." }
+        "ha": {
+          "banner": null,
+          "$todo": "Hausa translation wanted. Open a PR."
+        },
+        "yo": {
+          "banner": null,
+          "$todo": "Yoruba translation wanted. Open a PR."
+        },
+        "ig": {
+          "banner": null,
+          "$todo": "Igbo translation wanted. Open a PR."
+        }
+      },
+      "currency": {
+        "code": "NGN",
+        "symbol": "₦",
+        "name": "naira",
+        "hint": "In naira"
+      },
+      "id": {
+        "name": "National Identification Number",
+        "short": "NIN",
+        "document": "NIN slip",
+        "hint": "11 digits, on your NIN slip",
+        "length": 11,
+        "authority": "NIMC"
+      },
+      "regions": {
+        "label": "State",
+        "choose": "Choose a state",
+        "items": ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Lagos", "Kano"]
+      },
+      "examples": {
+        "timezone": "West Africa Time",
+        "refPrefix": "NG"
       }
     }
   },
   "official": {
     "$type": "color",
     "$description": "Exact national colours. Used for the flag stripe and decoration only. Text and control colours are derived from these by the build if they fail WCAG AA.",
-    "green": { "$value": "#008751" },
-    "white": { "$value": "#ffffff" }
+    "green": {
+      "$value": "#008751"
+    },
+    "white": {
+      "$value": "#ffffff"
+    }
   },
   "color": {
     "$type": "color",
-    "primary": { "$value": "{official.green}" },
-    "accent": { "$value": "{official.green}" }
+    "primary": {
+      "$value": "{official.green}"
+    },
+    "accent": {
+      "$value": "{official.green}"
+    }
   }
 }
