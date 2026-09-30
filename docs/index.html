@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>afrigov — accessible design system for African government websites</title>
+    <title>afrigov — open-source components for accessible African public-service websites</title>
     <meta
       name="description"
-      content="afrigov is an open-source, accessibility-first design system for African government websites. Country-neutral core, per-country packs, plain CSS, 5 KB, no build step."
+      content="Open-source components for building accessible African public-service websites. Country-neutral core, per-country packs, plain CSS, 5 KB, no build step."
     />
     <link rel="stylesheet" href="dist/core.min.css" />
     <link rel="stylesheet" id="pack-css" />
@@ -55,7 +55,9 @@
           <span class="docs-mark" aria-hidden="true">ag</span>
           <span>
             <span class="ag-header__org">afrigov</span>
-            <span class="ag-header__sub">Design system for African government services</span>
+            <span class="ag-header__sub"
+              >Open-source components for building accessible African public-service websites.</span
+            >
           </span>
         </a>
         <button class="ag-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-ag-toggle>
@@ -77,7 +79,7 @@
       <div class="docs-hero">
         <div class="ag-container">
           <p class="docs-hero__eyebrow">Open source · MIT · v0.1.0</p>
-          <h1>Accessible by default. Built for African government services.</h1>
+          <h1 class="ag-heading-xl">Accessible by default. Built for African government services.</h1>
           <p class="ag-lead">
             One country-neutral core. A colour pack per country. Plain CSS that passes WCAG 2.1 AA on every commit and
             loads on a 2G connection.
@@ -89,7 +91,7 @@
           <div class="docs-hero__install">
             <p class="docs-hero__install-label">The whole install</p>
             <!-- prettier-ignore -->
-            <pre class="docs-code docs-hero__code"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
+            <pre class="docs-code docs-hero__code" tabindex="0"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/<span data-docs-packfile>ng</span>.min.css"&gt;</code></pre>
             <p class="docs-fine docs-hero__install-note">
               Core first, then a country pack. No build step, no framework, nothing to configure.
@@ -155,14 +157,15 @@
           <p>Add the core and one country pack. The pack must come after the core.</p>
           <pre
             class="docs-code"
+            tabindex="0"
           ><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/ng.min.css"&gt;
 
 &lt;!-- Optional: collapsible navigation and error-summary focus. 1.5 KB. --&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/afrigov.iife.js" defer&gt;&lt;/script&gt;</code></pre>
           <h3>From npm</h3>
-          <pre class="docs-code"><code>npm install afrigov</code></pre>
-          <pre class="docs-code"><code>import "afrigov/core.css";
+          <pre class="docs-code" tabindex="0"><code>npm install afrigov</code></pre>
+          <pre class="docs-code" tabindex="0"><code>import "afrigov/core.css";
 import "afrigov/ng.css";
 import { init } from "afrigov";
 
@@ -236,18 +239,26 @@ init();</code></pre>
               <div class="ag-banner">
                 <div class="ag-container ag-banner__inner">
                   <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
-                  <p class="ag-banner__text" data-docs-string="banner">
-                    An official website of the Federal Republic of Nigeria
-                  </p>
+                  <p class="ag-banner__text" data-docs-string="banner">An official website of the Government</p>
+                  <details class="ag-banner__details">
+                    <summary data-docs-string="banner-how">How you know this is official</summary>
+                    <p data-docs-string="banner-domain">Official websites use a government domain</p>
+                    <p data-docs-string="banner-secure">Secure government websites use HTTPS</p>
+                  </details>
                 </div>
               </div>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;section class="ag-banner" aria-label="Official website notice"&gt;
+              <pre tabindex="0"><code>&lt;section class="ag-banner" aria-label="Official website notice"&gt;
   &lt;div class="ag-container ag-banner__inner"&gt;
     &lt;span class="ag-flag" aria-hidden="true"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
     &lt;p class="ag-banner__text"&gt;An official website of the Federal Republic of Nigeria&lt;/p&gt;
+    &lt;details class="ag-banner__details"&gt;
+      &lt;summary&gt;How you know this is official&lt;/summary&gt;
+      &lt;p&gt;Official websites use .gov.ng&lt;/p&gt;
+      &lt;p&gt;Secure .gov.ng websites use HTTPS&lt;/p&gt;
+    &lt;/details&gt;
   &lt;/div&gt;
 &lt;/section&gt;</code></pre>
             </details>
@@ -282,7 +293,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;header class="ag-header"&gt;
+              <pre tabindex="0"><code>&lt;header class="ag-header"&gt;
   &lt;div class="ag-container ag-header__inner"&gt;
     &lt;a class="ag-header__brand" href="/"&gt;
       &lt;img class="ag-header__logo" src="crest.svg" alt=""&gt;
@@ -320,7 +331,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;button class="ag-button" type="submit"&gt;Continue&lt;/button&gt;
+              <pre tabindex="0"><code>&lt;button class="ag-button" type="submit"&gt;Continue&lt;/button&gt;
 &lt;button class="ag-button ag-button--secondary" type="button"&gt;Save and come back later&lt;/button&gt;
 &lt;a class="ag-button ag-button--start" href="/apply"&gt;Start now&lt;/a&gt;
 &lt;button class="ag-button ag-button--warning" type="button"&gt;Delete application&lt;/button&gt;</code></pre>
@@ -341,7 +352,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;nav aria-label="Breadcrumb"&gt;
+              <pre tabindex="0"><code>&lt;nav aria-label="Breadcrumb"&gt;
   &lt;ol class="ag-breadcrumb"&gt;
     &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/services"&gt;Services&lt;/a&gt;&lt;/li&gt;
@@ -484,7 +495,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;div class="ag-field"&gt;
+              <pre tabindex="0"><code>&lt;div class="ag-field"&gt;
   &lt;label class="ag-label" for="name"&gt;Full name&lt;/label&gt;
   &lt;span class="ag-hint" id="name-hint"&gt;As written on your national ID&lt;/span&gt;
   &lt;input class="ag-input" id="name" name="name" type="text" autocomplete="name" aria-describedby="name-hint"&gt;
@@ -533,7 +544,9 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;div class="ag-error-summary" role="alert" tabindex="-1" aria-labelledby="es-title"&gt;
+              <pre
+                tabindex="0"
+              ><code>&lt;div class="ag-error-summary" role="alert" tabindex="-1" aria-labelledby="es-title"&gt;
   &lt;h2 class="ag-error-summary__title" id="es-title"&gt;There is a problem&lt;/h2&gt;
   &lt;ul class="ag-error-summary__list"&gt;
     &lt;li&gt;&lt;a href="#email"&gt;Enter an email address in the correct format&lt;/a&gt;&lt;/li&gt;
@@ -591,7 +604,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;fieldset class="ag-field" aria-describedby="dob-hint"&gt;
+              <pre tabindex="0"><code>&lt;fieldset class="ag-field" aria-describedby="dob-hint"&gt;
   &lt;legend class="ag-legend"&gt;Date of birth&lt;/legend&gt;
   &lt;span class="ag-hint" id="dob-hint"&gt;For example, 27 3 1990&lt;/span&gt;
   &lt;div class="ag-date-input"&gt;
@@ -638,7 +651,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;div class="ag-alert ag-alert--success" role="status"&gt;
+              <pre tabindex="0"><code>&lt;div class="ag-alert ag-alert--success" role="status"&gt;
   &lt;h2 class="ag-alert__title"&gt;Payment received&lt;/h2&gt;
   &lt;p&gt;Your receipt number is &lt;strong&gt;NG-2026-004512&lt;/strong&gt;.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
@@ -677,7 +690,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;div class="ag-accordion"&gt;
+              <pre tabindex="0"><code>&lt;div class="ag-accordion"&gt;
   &lt;details class="ag-accordion__item"&gt;
     &lt;summary class="ag-accordion__summary"&gt;Who can apply?&lt;/summary&gt;
     &lt;div class="ag-accordion__body"&gt;&lt;p&gt;Any citizen.&lt;/p&gt;&lt;/div&gt;
@@ -730,7 +743,9 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;div class="ag-table-wrap" role="region" aria-label="Passport fees" tabindex="0"&gt;
+              <pre
+                tabindex="0"
+              ><code>&lt;div class="ag-table-wrap" role="region" aria-label="Passport fees" tabindex="0"&gt;
   &lt;table class="ag-table ag-table--striped"&gt;
     &lt;caption&gt;Passport fees&lt;/caption&gt;
     &lt;thead&gt;
@@ -758,7 +773,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;span class="ag-badge ag-badge--success"&gt;Approved&lt;/span&gt;</code></pre>
+              <pre tabindex="0"><code>&lt;span class="ag-badge ag-badge--success"&gt;Approved&lt;/span&gt;</code></pre>
             </details>
           </div>
 
@@ -779,7 +794,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;nav aria-label="Pagination"&gt;
+              <pre tabindex="0"><code>&lt;nav aria-label="Pagination"&gt;
   &lt;ul class="ag-pagination"&gt;
     &lt;li&gt;&lt;a class="ag-pagination__link" href="?page=1" rel="prev"&gt;Previous&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class="ag-pagination__link" href="?page=1"&gt;1&lt;/a&gt;&lt;/li&gt;
@@ -829,7 +844,7 @@ init();</code></pre>
             </div>
             <details class="docs-example__code">
               <summary>Show HTML</summary>
-              <pre><code>&lt;div class="ag-panel"&gt;
+              <pre tabindex="0"><code>&lt;div class="ag-panel"&gt;
   &lt;h1 class="ag-panel__title"&gt;Application complete&lt;/h1&gt;
   &lt;p class="ag-panel__body"&gt;Your reference number &lt;span class="ag-panel__ref"&gt;HDX-4K2-9PQ&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -957,7 +972,7 @@ init();</code></pre>
           <div class="ag-prose">
             <h3>Override a token</h3>
             <p>Set the custom property after the pack. Nothing else changes.</p>
-            <pre class="docs-code"><code>:root {
+            <pre class="docs-code" tabindex="0"><code>:root {
   --ag-size-container: 60rem;
   --ag-font-family-sans: "Public Sans", system-ui, sans-serif;
 }</code></pre>

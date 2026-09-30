@@ -1,6 +1,6 @@
 # afrigov
 
-**An accessibility-first design system for African government websites.**
+**Open-source components for building accessible African public-service websites.**
 One country-neutral core. A token pack per country. Plain CSS, 5 KB gzipped, no build step.
 
 [![npm](https://img.shields.io/npm/v/afrigov?color=1f4e79)](https://www.npmjs.com/package/afrigov)
@@ -74,7 +74,7 @@ init();
 
 ## Design rules
 
-- **Body text is 16px minimum, 18px on wide screens.** Line height is 1.55 so diacritics never collide.
+- **Body text is 16px, line height 1.55**, so diacritics never collide. `data-ag-density="large"` raises it to 18px for public-facing pages; `data-ag-density="compact"` tightens spacing and targets for dashboards.
 - **System fonts only.** Zero font requests. Noto Sans is named early in the stack because it covers the Latin Extended ranges that Yoruba, Hausa, Igbo, Wolof and Fula need.
 - **Links are always underlined.** Colour alone is not a signal.
 - **Focus is a double ring**, yellow inside and ink outside, so it is visible on any background.

@@ -1,7 +1,7 @@
 {
   "name": "afrigov",
   "version": "0.1.0",
-  "description": "An open-source, accessibility-first design system for African government websites. Country-neutral core, per-country token packs, plain CSS, no build step required.",
+  "description": "Open-source components for building accessible African public-service websites. Country-neutral core, per-country token packs, plain CSS, no build step required.",
   "keywords": [
     "design-system",
     "government",

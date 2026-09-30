@@ -15,7 +15,7 @@
 
 /* Hero: neutral paper, ink heading, a live preview card on the right. */
 .docs-hero {
-  padding-block: var(--ag-space-7);
+  padding-block: var(--ag-space-6);
   background: var(--ag-color-paper-alt);
   border-bottom: 1px solid var(--ag-color-border);
 }
@@ -113,7 +113,7 @@
 }
 
 .docs-section {
-  padding-block: var(--ag-space-7);
+  padding-block: var(--ag-space-6);
   border-bottom: 1px solid var(--ag-color-border);
 }
 
@@ -142,7 +142,7 @@
 }
 
 .docs-example__preview {
-  padding: var(--ag-space-5);
+  padding: var(--ag-space-4);
 }
 
 .docs-example__preview > :last-child {

@@ -15,7 +15,7 @@
 - [ ] Settings → Pages → Source: GitHub Actions. Wait for the Docs workflow. Check https://omoyolab.github.io/afrigov.
 - [ ] Settings → General → Features: enable Discussions.
 - [ ] Add topics: `design-system`, `accessibility`, `wcag`, `government`, `govtech`, `africa`, `nigeria`, `kenya`, `css`, `design-tokens`.
-- [ ] Description: "Accessibility-first design system for African government websites. Country-neutral core, per-country packs, plain CSS, 5 KB."
+- [ ] Description: "Open-source components for building accessible African public-service websites. Country-neutral core, per-country packs, plain CSS, 5 KB."
 - [ ] Three `good first issue` tickets: Ghana pack, Hausa banner translation, Yoruba banner translation.
 
 ## npm (owner)
