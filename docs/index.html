@@ -37,6 +37,15 @@
         <p class="ag-banner__text">
           afrigov is an open-source project. It is not a government website and is not affiliated with any government.
         </p>
+        <form class="docs-pack" method="get" action="./" aria-label="Country pack">
+          <label class="docs-pack__label" for="pack-select">Country</label>
+          <select class="ag-select docs-pack__select" id="pack-select" name="pack">
+            <option value="core">Neutral</option>
+            <option value="ng">Nigeria</option>
+            <option value="ke">Kenya</option>
+          </select>
+          <button class="ag-button ag-button--secondary docs-pack__apply" type="submit">Apply</button>
+        </form>
       </div>
     </div>
 
@@ -59,7 +68,6 @@
             <li><a class="ag-nav__link" href="#components">Components</a></li>
             <li><a class="ag-nav__link" href="#language">Language</a></li>
             <li><a class="ag-nav__link" href="#tokens">Tokens</a></li>
-            <li><a class="ag-nav__link" href="https://github.com/omoyolab/afrigov">GitHub</a></li>
           </ul>
         </nav>
       </div>
@@ -67,80 +75,44 @@
 
     <main class="ag-main" id="main" tabindex="-1">
       <div class="docs-hero">
-        <div class="ag-container docs-hero__grid">
-          <div>
-            <p class="docs-hero__eyebrow">Open source · MIT · v0.1.0</p>
-            <h1>Accessible by default. Built for African government services.</h1>
-            <p class="ag-lead">
-              One country-neutral core. A token pack per country. Plain CSS from a single link tag, 5 KB gzipped, WCAG
-              2.1 AA checked on every commit.
-            </p>
-            <div class="ag-button-group">
-              <a class="ag-button" href="#get-started">Get started</a>
-              <a class="ag-button ag-button--secondary" href="https://github.com/omoyolab/afrigov">View on GitHub</a>
-            </div>
-            <dl class="docs-stats">
-              <div>
-                <dt>CSS, gzipped</dt>
-                <dd>5 KB</dd>
-              </div>
-              <div>
-                <dt>Components</dt>
-                <dd>22</dd>
-              </div>
-              <div>
-                <dt>Country packs</dt>
-                <dd>2</dd>
-              </div>
-              <div>
-                <dt>Contrast</dt>
-                <dd>AA in CI</dd>
-              </div>
-            </dl>
+        <div class="ag-container">
+          <p class="docs-hero__eyebrow">Open source · MIT · v0.1.0</p>
+          <h1>Accessible by default. Built for African government services.</h1>
+          <p class="ag-lead">
+            One country-neutral core. A colour pack per country. Plain CSS that passes WCAG 2.1 AA on every commit and
+            loads on a 2G connection.
+          </p>
+          <div class="ag-button-group">
+            <a class="ag-button ag-button--start" href="#get-started">Get started</a>
+            <a class="ag-button ag-button--secondary" href="https://github.com/omoyolab/afrigov">View on GitHub</a>
           </div>
-
-          <section class="docs-preview" aria-labelledby="switcher-label">
-            <div class="docs-switcher" role="group" aria-labelledby="switcher-label">
-              <span class="docs-switcher__label" id="switcher-label">Preview a pack:</span>
-              <a class="docs-switcher__link" href="?pack=core" data-docs-switch="core">Neutral</a>
-              <a class="docs-switcher__link" href="?pack=ng" data-docs-switch="ng">
-                <span
-                  class="ag-flag"
-                  aria-hidden="true"
-                  style="--ag-flag-direction: row; --ag-flag-1: #008751; --ag-flag-2: #fff; --ag-flag-3: #008751"
-                  ><span></span><span></span><span></span
-                ></span>
-                Nigeria
-              </a>
-              <a class="docs-switcher__link" href="?pack=ke" data-docs-switch="ke">
-                <span
-                  class="ag-flag"
-                  aria-hidden="true"
-                  style="--ag-flag-direction: column; --ag-flag-1: #000; --ag-flag-2: #bb0000; --ag-flag-3: #006600"
-                  ><span></span><span></span><span></span
-                ></span>
-                Kenya
-              </a>
+          <div class="docs-hero__install">
+            <p class="docs-hero__install-label">The whole install</p>
+            <!-- prettier-ignore -->
+            <pre class="docs-code docs-hero__code"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/<span data-docs-packfile>ng</span>.min.css"&gt;</code></pre>
+            <p class="docs-fine docs-hero__install-note">
+              Core first, then a country pack. No build step, no framework, nothing to configure.
+            </p>
+          </div>
+          <dl class="docs-stats">
+            <div>
+              <dt>CSS, gzipped</dt>
+              <dd>5 KB</dd>
             </div>
-            <div class="docs-preview__card">
-              <div class="ag-banner">
-                <div class="ag-banner__inner docs-preview__banner">
-                  <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
-                  <p class="ag-banner__text" data-docs-string="banner">An official website of the Government</p>
-                </div>
-              </div>
-              <div class="docs-preview__body">
-                <p class="ag-caption ag-mb-0" data-docs-string="government">The Government</p>
-                <h2 class="docs-preview__title">Renew a passport</h2>
-                <p>Takes about 10 minutes. You will need your national ID and a payment card or mobile money.</p>
-                <a class="ag-button ag-button--start" href="#components">Start now</a>
-                <p class="ag-cluster ag-mb-0">
-                  <span class="ag-badge ag-badge--success">Online</span>
-                  <span class="ag-badge ag-badge--neutral">6 weeks</span>
-                </p>
-              </div>
+            <div>
+              <dt>Components</dt>
+              <dd>22</dd>
             </div>
-          </section>
+            <div>
+              <dt>Country packs</dt>
+              <dd>2</dd>
+            </div>
+            <div>
+              <dt>Contrast</dt>
+              <dd>AA in CI</dd>
+            </div>
+          </dl>
         </div>
       </div>
 
@@ -1053,14 +1025,20 @@ init();</code></pre>
     <script src="dist/afrigov.iife.js"></script>
     <script src="dist/packs.js"></script>
     <script>
-      // Fill banner strings from the active pack and mark the active switcher link.
+      // Country select in the header submits on change. Fill strings from the active pack.
       (function () {
         var pack = document.documentElement.getAttribute("data-docs-pack") || "core";
-        document.querySelectorAll("[data-docs-switch]").forEach(function (a) {
-          if (a.getAttribute("data-docs-switch") === pack) a.setAttribute("aria-current", "true");
-        });
+        var select = document.getElementById("pack-select");
+        if (select) {
+          select.value = pack;
+          select.addEventListener("change", function () {
+            select.form.submit();
+          });
+        }
         var meta = window.AFRIGOV_PACKS && window.AFRIGOV_PACKS[pack];
         if (!meta) return; // neutral: the static text already says "the Government"
+        var file = document.querySelector("[data-docs-packfile]");
+        if (file) file.textContent = pack;
         var s = (meta.strings && meta.strings.en) || {};
         document.querySelectorAll("[data-docs-string]").forEach(function (el) {
           var key = el.getAttribute("data-docs-string");

@@ -88,6 +88,7 @@
   min-height: var(--ag-size-target);
   padding: var(--ag-space-2) var(--ag-space-3);
   color: var(--ag-color-ink);
+  font-size: var(--ag-font-size-sm);
   font-weight: var(--ag-font-weight-bold);
   text-decoration: none;
   border-left: 4px solid transparent;
