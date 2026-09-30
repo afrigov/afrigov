@@ -8,7 +8,8 @@ import { ROOT, listPacks } from "../scripts/tokens.mjs";
 
 const page = pathToFileURL(join(ROOT, "docs", "index.html")).href;
 
-for (const pack of listPacks()) {
+// "core" is the neutral default with no pack loaded.
+for (const pack of ["core", ...listPacks()]) {
   test(`docs site has no axe violations with the ${pack} pack`, async ({ page: p }) => {
     await p.goto(`${page}?pack=${pack}`);
     await p.waitForSelector(".ag-js");

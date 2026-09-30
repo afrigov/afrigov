@@ -1,38 +1,94 @@
 /* Documentation site styles. Everything on the page that is not a component. */
 
-.docs-hero {
-  padding-block: var(--ag-space-7);
+.docs-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--ag-size-radius);
   background: var(--ag-color-primary);
   color: var(--ag-color-on-primary);
+  font-weight: var(--ag-font-weight-bold);
+  letter-spacing: -0.02em;
+}
+
+/* Hero: neutral paper, ink heading, a live preview card on the right. */
+.docs-hero {
+  padding-block: var(--ag-space-7);
+  background: var(--ag-color-paper-alt);
+  border-bottom: 1px solid var(--ag-color-border);
+}
+
+.docs-hero__grid {
+  display: grid;
+  gap: var(--ag-space-6);
+  align-items: start;
+}
+
+@media (min-width: 64em) {
+  .docs-hero__grid {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--ag-space-8);
+  }
+}
+
+.docs-hero__eyebrow {
+  margin-bottom: var(--ag-space-3);
+  color: var(--ag-color-ink-muted);
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .docs-hero h1 {
-  max-width: 22ch;
+  max-width: 20ch;
   margin-bottom: var(--ag-space-4);
 }
 
 .docs-hero .ag-lead {
   max-width: var(--ag-size-measure);
-  color: inherit;
 }
 
-.docs-hero .ag-button--secondary {
-  background: var(--ag-color-paper);
+.docs-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ag-space-4);
+  margin: var(--ag-space-6) 0 0;
+  padding-top: var(--ag-space-5);
+  border-top: 1px solid var(--ag-color-border);
 }
 
-.docs-hero .ag-button--secondary:hover {
-  background: var(--ag-color-primary-tint);
+@media (min-width: 40em) {
+  .docs-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.docs-stats dt {
+  color: var(--ag-color-ink-muted);
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-normal);
+}
+
+.docs-stats dd {
+  margin: 0;
+  font-size: var(--ag-font-size-xl);
+  font-weight: var(--ag-font-weight-bold);
+  line-height: var(--ag-font-leading-tight);
 }
 
 .docs-switcher {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--ag-space-3);
-  margin-top: var(--ag-space-5);
+  gap: var(--ag-space-2);
+  margin-bottom: var(--ag-space-3);
 }
 
 .docs-switcher__label {
+  flex-basis: 100%;
   font-weight: var(--ag-font-weight-bold);
 }
 
@@ -42,29 +98,56 @@
   gap: var(--ag-space-2);
   min-height: var(--ag-size-target);
   padding: var(--ag-space-2) var(--ag-space-4);
-  border: 2px solid var(--ag-color-on-primary);
+  border: 2px solid var(--ag-color-primary);
   border-radius: var(--ag-size-radius);
-  color: var(--ag-color-on-primary);
+  background: var(--ag-color-paper);
+  color: var(--ag-color-primary);
   font-weight: var(--ag-font-weight-bold);
   text-decoration: none;
 }
 
 .docs-switcher__link:visited {
-  color: var(--ag-color-on-primary);
+  color: var(--ag-color-primary);
 }
 
 .docs-switcher__link:hover {
+  background: var(--ag-color-primary-tint);
+  color: var(--ag-color-primary-hover);
   text-decoration: underline;
+}
+
+.docs-switcher__link[aria-current="true"],
+.docs-switcher__link[aria-current="true"]:visited {
+  background: var(--ag-color-primary);
   color: var(--ag-color-on-primary);
 }
 
-.docs-switcher__link[aria-current="true"] {
+.docs-preview__card {
+  border: 1px solid var(--ag-color-border);
   background: var(--ag-color-paper);
-  color: var(--ag-color-primary);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
 }
 
-.docs-switcher__link[aria-current="true"]:visited {
-  color: var(--ag-color-primary);
+.docs-preview__card .ag-banner {
+  border-bottom: 1px solid var(--ag-color-border);
+}
+
+.docs-preview__banner {
+  padding-inline: var(--ag-space-4);
+}
+
+.docs-preview__body {
+  padding: var(--ag-space-5);
+  border-top: 4px solid var(--ag-color-primary);
+}
+
+.docs-preview__title {
+  margin: var(--ag-space-1) 0 var(--ag-space-3);
+  font-size: var(--ag-font-size-2xl);
+}
+
+.docs-preview__body .ag-button--start {
+  margin-bottom: var(--ag-space-4);
 }
 
 .docs-section {
@@ -180,7 +263,7 @@
   }
 }
 
-.docs-lang li {
+.docs-lang > div {
   display: contents;
 }
 
@@ -193,6 +276,11 @@
 
 .docs-lang dd {
   margin: 0 0 var(--ag-space-3);
+  max-width: var(--ag-size-measure);
+}
+
+.docs-lang dd[dir="rtl"] {
+  justify-self: start;
 }
 
 .docs-pack-table td:first-child {
