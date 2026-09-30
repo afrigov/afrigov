@@ -1,0 +1,25 @@
+/* Date input. Three plain numeric fields instead of a date picker. Works on
+   every phone, with every screen reader, and with dates people already know. */
+.ag-date-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ag-space-4);
+}
+
+.ag-date-input__item {
+  display: block;
+}
+
+.ag-date-input__label {
+  display: block;
+  margin-bottom: var(--ag-space-1);
+}
+
+.ag-date-input__item .ag-input {
+  max-width: 5ch;
+  text-align: left;
+}
+
+.ag-date-input__item--year .ag-input {
+  max-width: 7.5ch;
+}

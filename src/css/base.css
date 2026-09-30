@@ -1,0 +1,225 @@
+/* Element defaults. Plain semantic HTML should look right with no classes at all. */
+
+html {
+  font-size: 100%;
+  scroll-padding-top: var(--ag-space-5);
+}
+
+body {
+  font-family: var(--ag-font-family-sans);
+  font-size: var(--ag-font-size-sm);
+  line-height: var(--ag-font-leading-base);
+  color: var(--ag-color-ink);
+  background: var(--ag-color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 48em = breakpoint.md */
+@media (min-width: 48em) {
+  body {
+    font-size: var(--ag-font-size-md);
+  }
+}
+
+/* Focus ring: a yellow inner ring and an ink outer ring, so it is visible on any background. */
+:focus-visible {
+  outline: var(--ag-size-focus-ring) solid var(--ag-color-focus);
+  outline-offset: 0;
+  box-shadow: 0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
+}
+
+/* Anything focused programmatically (error summary, main) gets the ring too. */
+[tabindex="-1"]:focus {
+  outline: var(--ag-size-focus-ring) solid var(--ag-color-focus);
+  box-shadow: 0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 var(--ag-space-4);
+  line-height: var(--ag-font-leading-tight);
+  font-weight: var(--ag-font-weight-bold);
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: var(--ag-font-size-3xl);
+  margin-bottom: var(--ag-space-6);
+}
+
+h2 {
+  font-size: var(--ag-font-size-2xl);
+  margin-top: var(--ag-space-6);
+}
+
+h3 {
+  font-size: var(--ag-font-size-xl);
+  margin-top: var(--ag-space-5);
+}
+
+h4 {
+  font-size: var(--ag-font-size-lg);
+}
+
+h5,
+h6 {
+  font-size: var(--ag-font-size-md);
+}
+
+@media (min-width: 48em) {
+  h1 {
+    font-size: var(--ag-font-size-4xl);
+  }
+
+  h2 {
+    font-size: var(--ag-font-size-3xl);
+  }
+
+  h3 {
+    font-size: var(--ag-font-size-2xl);
+  }
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+figure,
+table {
+  margin: 0 0 var(--ag-space-4);
+}
+
+ul,
+ol {
+  padding-left: var(--ag-space-5);
+}
+
+li {
+  margin-bottom: var(--ag-space-1);
+}
+
+dt {
+  font-weight: var(--ag-font-weight-bold);
+}
+
+dd {
+  margin: 0 0 var(--ag-space-3);
+}
+
+/* Links are always underlined. Colour alone is not enough for low-vision readers. */
+a {
+  color: var(--ag-color-link);
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625em);
+  text-underline-offset: 0.15em;
+}
+
+a:visited {
+  color: var(--ag-color-link-visited);
+}
+
+a:hover {
+  color: var(--ag-color-link-hover);
+  text-decoration-thickness: max(3px, 0.1875em);
+}
+
+a:active,
+a:focus-visible {
+  color: var(--ag-color-ink);
+  background: var(--ag-color-focus);
+  text-decoration: none;
+}
+
+strong,
+b {
+  font-weight: var(--ag-font-weight-bold);
+}
+
+small {
+  font-size: var(--ag-font-size-xs);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--ag-color-border);
+  margin: var(--ag-space-6) 0;
+}
+
+blockquote {
+  padding-left: var(--ag-space-4);
+  border-left: 4px solid var(--ag-color-border);
+  color: var(--ag-color-ink-muted);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--ag-font-family-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  padding: var(--ag-space-4);
+  overflow-x: auto;
+  background: var(--ag-color-paper-alt);
+}
+
+/* Layout helpers every page needs. */
+.ag-container {
+  width: min(100% - (var(--ag-space-4) * 2), var(--ag-size-container));
+  margin-inline: auto;
+}
+
+@media (min-width: 48em) {
+  .ag-container {
+    width: min(100% - (var(--ag-space-6) * 2), var(--ag-size-container));
+  }
+}
+
+.ag-main {
+  display: block;
+  padding-block: var(--ag-space-6) var(--ag-space-8);
+}
+
+.ag-main:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Running text never exceeds a comfortable line length. */
+.ag-prose {
+  max-width: var(--ag-size-measure);
+}
+
+.ag-prose img {
+  display: block;
+}
+
+.ag-lead {
+  font-size: var(--ag-font-size-lg);
+  color: var(--ag-color-ink-muted);
+}
+
+@media (min-width: 48em) {
+  .ag-lead {
+    font-size: var(--ag-font-size-xl);
+  }
+}
+
+.ag-caption {
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+@media print {
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+  }
+}

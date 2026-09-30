@@ -1,0 +1,228 @@
+/* Forms. Labels always visible, hints and errors linked by aria-describedby,
+   controls 48px tall with 2px borders, error state marks the whole field. */
+.ag-field {
+  margin-bottom: var(--ag-space-5);
+}
+
+.ag-field--error {
+  padding-left: var(--ag-space-4);
+  border-left: 5px solid var(--ag-color-error);
+}
+
+.ag-label,
+.ag-legend {
+  display: block;
+  margin-bottom: var(--ag-space-2);
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-legend {
+  max-width: 100%;
+}
+
+.ag-label--lg,
+.ag-legend--lg {
+  font-size: var(--ag-font-size-xl);
+  margin-bottom: var(--ag-space-3);
+}
+
+.ag-label--xl,
+.ag-legend--xl {
+  font-size: var(--ag-font-size-2xl);
+  margin-bottom: var(--ag-space-4);
+}
+
+.ag-hint {
+  display: block;
+  margin-bottom: var(--ag-space-2);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-error-message {
+  display: block;
+  margin-bottom: var(--ag-space-2);
+  color: var(--ag-color-error);
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-input,
+.ag-textarea,
+.ag-select {
+  display: block;
+  width: 100%;
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-3);
+  border: var(--ag-size-control-border) solid var(--ag-color-border-strong);
+  border-radius: 0;
+  background: var(--ag-color-paper);
+  color: var(--ag-color-ink);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ag-input:focus-visible,
+.ag-textarea:focus-visible,
+.ag-select:focus-visible {
+  border-color: var(--ag-color-ink);
+}
+
+.ag-input:disabled,
+.ag-textarea:disabled,
+.ag-select:disabled {
+  background: var(--ag-color-paper-alt);
+  color: var(--ag-color-ink-muted);
+  cursor: not-allowed;
+}
+
+.ag-input[aria-invalid="true"],
+.ag-textarea[aria-invalid="true"],
+.ag-select[aria-invalid="true"],
+.ag-input--error {
+  border-color: var(--ag-color-error);
+}
+
+.ag-textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+/* Width by character count, for fields with a known length (ID numbers, postcodes, years). */
+.ag-input--width-4 {
+  max-width: 7ch;
+}
+
+.ag-input--width-10 {
+  max-width: 14ch;
+}
+
+.ag-input--width-20 {
+  max-width: 24ch;
+}
+
+.ag-input--width-30 {
+  max-width: 34ch;
+}
+
+.ag-select {
+  padding-right: var(--ag-space-7);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%231b1b1b' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--ag-space-3) center;
+  background-size: 1rem;
+}
+
+/* Prefix and suffix, for currency and units. */
+.ag-input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.ag-input-group .ag-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ag-input-group__affix {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--ag-space-3);
+  border: var(--ag-size-control-border) solid var(--ag-color-border-strong);
+  background: var(--ag-color-paper-alt);
+  font-weight: var(--ag-font-weight-bold);
+  white-space: nowrap;
+}
+
+.ag-input-group__affix:first-child {
+  border-right: 0;
+}
+
+.ag-input-group__affix:last-child {
+  border-left: 0;
+}
+
+/* Checkboxes and radios. The native input is restyled, never hidden, so it
+   stays keyboard focusable and visible in forced-colours mode. */
+.ag-checkbox,
+.ag-radio {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ag-space-3);
+  min-height: var(--ag-size-target);
+  padding-block: var(--ag-space-2);
+  cursor: pointer;
+}
+
+.ag-checkbox input,
+.ag-radio input {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0.125rem 0 0;
+  border: var(--ag-size-control-border) solid var(--ag-color-ink);
+  background: var(--ag-color-paper);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ag-checkbox input {
+  border-radius: var(--ag-size-radius);
+}
+
+.ag-radio input {
+  border-radius: 50%;
+}
+
+.ag-checkbox input:checked {
+  background-color: var(--ag-color-primary);
+  border-color: var(--ag-color-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2.5' d='M3 8.5l3.5 3.5L13 5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.1rem;
+}
+
+.ag-radio input:checked {
+  border-color: var(--ag-color-primary);
+  background: var(--ag-color-primary);
+  box-shadow: inset 0 0 0 0.3rem var(--ag-color-paper);
+}
+
+.ag-radio input:checked:focus-visible {
+  box-shadow:
+    inset 0 0 0 0.3rem var(--ag-color-paper),
+    0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
+}
+
+.ag-checkbox input:disabled,
+.ag-radio input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ag-checkbox__label,
+.ag-radio__label {
+  padding-top: 0.2rem;
+}
+
+.ag-checkbox__hint,
+.ag-radio__hint {
+  display: block;
+  color: var(--ag-color-ink-muted);
+  font-weight: var(--ag-font-weight-normal);
+}
+
+.ag-choices {
+  margin-bottom: var(--ag-space-3);
+}
+
+.ag-choices--inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--ag-space-5);
+}
+
+.ag-choices__divider {
+  padding-block: var(--ag-space-2);
+  color: var(--ag-color-ink-muted);
+}

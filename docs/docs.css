@@ -1,0 +1,205 @@
+/* Documentation site styles. Everything on the page that is not a component. */
+
+.docs-hero {
+  padding-block: var(--ag-space-7);
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+}
+
+.docs-hero h1 {
+  max-width: 22ch;
+  margin-bottom: var(--ag-space-4);
+}
+
+.docs-hero .ag-lead {
+  max-width: var(--ag-size-measure);
+  color: inherit;
+}
+
+.docs-hero .ag-button--secondary {
+  background: var(--ag-color-paper);
+}
+
+.docs-hero .ag-button--secondary:hover {
+  background: var(--ag-color-primary-tint);
+}
+
+.docs-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ag-space-3);
+  margin-top: var(--ag-space-5);
+}
+
+.docs-switcher__label {
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.docs-switcher__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ag-space-2);
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-4);
+  border: 2px solid var(--ag-color-on-primary);
+  border-radius: var(--ag-size-radius);
+  color: var(--ag-color-on-primary);
+  font-weight: var(--ag-font-weight-bold);
+  text-decoration: none;
+}
+
+.docs-switcher__link:visited {
+  color: var(--ag-color-on-primary);
+}
+
+.docs-switcher__link:hover {
+  text-decoration: underline;
+  color: var(--ag-color-on-primary);
+}
+
+.docs-switcher__link[aria-current="true"] {
+  background: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+}
+
+.docs-switcher__link[aria-current="true"]:visited {
+  color: var(--ag-color-primary);
+}
+
+.docs-section {
+  padding-block: var(--ag-space-7);
+  border-bottom: 1px solid var(--ag-color-border);
+}
+
+.docs-section > .ag-container > h2:first-child {
+  margin-top: 0;
+}
+
+.docs-card {
+  padding: var(--ag-space-5);
+  border: 1px solid var(--ag-color-border);
+  border-top: 4px solid var(--ag-color-primary);
+}
+
+.docs-card h3 {
+  margin-top: 0;
+  font-size: var(--ag-font-size-lg);
+}
+
+.docs-card p:last-child {
+  margin-bottom: 0;
+}
+
+.docs-example {
+  margin-bottom: var(--ag-space-6);
+  border: 1px solid var(--ag-color-border);
+}
+
+.docs-example__preview {
+  padding: var(--ag-space-5);
+}
+
+.docs-example__preview > :last-child {
+  margin-bottom: 0;
+}
+
+.docs-example__preview--flush {
+  padding: 0;
+}
+
+.docs-example__code {
+  border-top: 1px solid var(--ag-color-border);
+}
+
+.docs-example__code summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  padding-inline: var(--ag-space-4);
+  background: var(--ag-color-paper-alt);
+  font-weight: var(--ag-font-weight-bold);
+  cursor: pointer;
+}
+
+.docs-example__code pre {
+  margin: 0;
+  padding: var(--ag-space-4);
+  background: var(--ag-color-paper-dark);
+  color: var(--ag-color-ink-inverse);
+  font-size: var(--ag-font-size-xs);
+  line-height: 1.6;
+}
+
+.docs-code {
+  padding: var(--ag-space-4);
+  background: var(--ag-color-paper-dark);
+  color: var(--ag-color-ink-inverse);
+  font-size: var(--ag-font-size-xs);
+  line-height: 1.6;
+}
+
+.docs-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: var(--ag-space-3);
+  margin: 0 0 var(--ag-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.docs-swatches li {
+  margin: 0;
+  border: 1px solid var(--ag-color-border);
+  font-size: var(--ag-font-size-xs);
+}
+
+.docs-swatch {
+  height: 3.5rem;
+  background: var(--_docs-swatch);
+}
+
+.docs-swatches code {
+  display: block;
+  padding: var(--ag-space-2);
+}
+
+.docs-lang {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ag-space-1) var(--ag-space-4);
+  margin: 0 0 var(--ag-space-5);
+  padding: 0;
+  list-style: none;
+  font-size: var(--ag-font-size-lg);
+}
+
+@media (min-width: 48em) {
+  .docs-lang {
+    grid-template-columns: 8rem 1fr;
+  }
+}
+
+.docs-lang li {
+  display: contents;
+}
+
+.docs-lang dt {
+  color: var(--ag-color-ink-muted);
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-bold);
+  align-self: center;
+}
+
+.docs-lang dd {
+  margin: 0 0 var(--ag-space-3);
+}
+
+.docs-pack-table td:first-child {
+  white-space: nowrap;
+}
+
+.docs-fine {
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}

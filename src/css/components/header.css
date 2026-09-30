@@ -1,0 +1,173 @@
+/* Site header. Works with no JavaScript: the navigation is always visible and
+   the menu button is hidden. With afrigov.js the nav collapses on small screens. */
+.ag-header {
+  background: var(--ag-color-paper);
+  border-bottom: 4px solid var(--ag-color-primary);
+}
+
+.ag-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ag-space-3) var(--ag-space-5);
+  padding-block: var(--ag-space-3);
+}
+
+.ag-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ag-space-3);
+  min-height: var(--ag-size-target);
+  color: var(--ag-color-ink);
+  text-decoration: none;
+}
+
+.ag-header__brand:hover {
+  text-decoration: underline;
+}
+
+.ag-header__brand:visited {
+  color: var(--ag-color-ink);
+}
+
+.ag-header__logo {
+  height: 2.5rem;
+  width: auto;
+}
+
+.ag-header__org {
+  display: block;
+  font-size: var(--ag-font-size-lg);
+  font-weight: var(--ag-font-weight-bold);
+  line-height: var(--ag-font-leading-tight);
+}
+
+.ag-header__sub {
+  display: block;
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-header__toggle {
+  display: none;
+  align-items: center;
+  gap: var(--ag-space-2);
+  min-height: var(--ag-size-target);
+  margin-left: auto;
+  padding: var(--ag-space-2) var(--ag-space-3);
+  border: var(--ag-size-control-border) solid var(--ag-color-ink);
+  border-radius: var(--ag-size-radius);
+  background: transparent;
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-header__toggle[aria-expanded="true"] {
+  background: var(--ag-color-ink);
+  color: var(--ag-color-ink-inverse);
+}
+
+.ag-header__nav {
+  flex-basis: 100%;
+}
+
+.ag-nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ag-nav > li {
+  margin: 0;
+}
+
+.ag-nav__link {
+  display: flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-3);
+  color: var(--ag-color-ink);
+  font-weight: var(--ag-font-weight-bold);
+  text-decoration: none;
+  border-left: 4px solid transparent;
+}
+
+.ag-nav__link:visited {
+  color: var(--ag-color-ink);
+}
+
+.ag-nav__link:hover {
+  text-decoration: underline;
+}
+
+.ag-nav__link[aria-current="page"],
+.ag-nav__link[aria-current="true"] {
+  border-left-color: var(--ag-color-primary);
+  background: var(--ag-color-primary-tint);
+}
+
+/* Enhanced: collapse the nav on small screens once JS has run. */
+.ag-js .ag-header__toggle {
+  display: inline-flex;
+}
+
+/* 64em = breakpoint.lg */
+@media (min-width: 64em) {
+  .ag-header__nav {
+    flex-basis: auto;
+    margin-left: auto;
+  }
+
+  .ag-header__nav[hidden] {
+    display: block !important;
+  }
+
+  .ag-js .ag-header__toggle {
+    display: none;
+  }
+
+  .ag-nav {
+    flex-direction: row;
+    gap: var(--ag-space-1);
+  }
+
+  .ag-nav__link {
+    border-left: 0;
+    border-bottom: 4px solid transparent;
+  }
+
+  .ag-nav__link[aria-current="page"],
+  .ag-nav__link[aria-current="true"] {
+    border-bottom-color: var(--ag-color-primary);
+    background: transparent;
+  }
+}
+
+/* Variant: primary-coloured header. */
+.ag-header--primary {
+  background: var(--ag-color-primary);
+  border-bottom-color: var(--ag-color-primary-hover);
+  color: var(--ag-color-on-primary);
+}
+
+.ag-header--primary .ag-header__brand,
+.ag-header--primary .ag-header__brand:visited,
+.ag-header--primary .ag-header__sub,
+.ag-header--primary .ag-nav__link,
+.ag-header--primary .ag-nav__link:visited,
+.ag-header--primary .ag-header__toggle {
+  color: var(--ag-color-on-primary);
+  border-color: var(--ag-color-on-primary);
+}
+
+.ag-header--primary .ag-header__toggle[aria-expanded="true"] {
+  background: var(--ag-color-on-primary);
+  color: var(--ag-color-primary);
+}
+
+.ag-header--primary .ag-nav__link[aria-current="page"],
+.ag-header--primary .ag-nav__link[aria-current="true"] {
+  border-color: var(--ag-color-on-primary);
+  background: var(--ag-color-primary-hover);
+}

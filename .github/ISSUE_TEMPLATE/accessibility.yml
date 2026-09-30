@@ -1,0 +1,40 @@
+name: Accessibility problem
+description: A component does not work with assistive technology, keyboard, zoom, or high contrast
+labels: ["accessibility", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Accessibility bugs are the highest priority in this project. Thank you for reporting one.
+  - type: input
+    id: version
+    attributes:
+      label: afrigov version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      placeholder: "Date input"
+    validations:
+      required: true
+  - type: input
+    id: at
+    attributes:
+      label: Assistive technology and browser
+      placeholder: "TalkBack with Chrome on Android 13 / NVDA 2025.1 with Firefox / keyboard only / 400% zoom"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you tried, what was announced or shown, and what you expected.
+    validations:
+      required: true
+  - type: input
+    id: wcag
+    attributes:
+      label: WCAG success criterion, if you know it
+      placeholder: "2.4.7 Focus Visible"

@@ -1,0 +1,57 @@
+/* Accordion built on <details>. Keyboard and screen-reader support come from
+   the browser, so it needs no JavaScript. */
+.ag-accordion {
+  margin-bottom: var(--ag-space-5);
+  border-top: 1px solid var(--ag-color-border);
+}
+
+.ag-accordion__item {
+  border-bottom: 1px solid var(--ag-color-border);
+}
+
+.ag-accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ag-space-4);
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-3) var(--ag-space-2);
+  color: var(--ag-color-link);
+  font-weight: var(--ag-font-weight-bold);
+  list-style: none;
+  cursor: pointer;
+}
+
+.ag-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.ag-accordion__summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.6em;
+  height: 0.6em;
+  margin-right: 0.3em;
+  border-right: 3px solid currentcolor;
+  border-bottom: 3px solid currentcolor;
+  transform: rotate(45deg);
+  transition: transform 150ms;
+}
+
+.ag-accordion__item[open] > .ag-accordion__summary::after {
+  transform: rotate(225deg);
+  margin-top: 0.3em;
+}
+
+.ag-accordion__summary:hover {
+  text-decoration: underline;
+}
+
+.ag-accordion__body {
+  padding: 0 var(--ag-space-2) var(--ag-space-4);
+  max-width: var(--ag-size-measure);
+}
+
+.ag-accordion__body > :last-child {
+  margin-bottom: 0;
+}

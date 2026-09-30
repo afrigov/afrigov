@@ -1,0 +1,77 @@
+/* A deliberately small set. Layout primitives and a11y helpers only. */
+
+.ag-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.ag-stack > * {
+  margin-block: 0;
+}
+
+.ag-stack > * + * {
+  margin-block-start: var(--ag-space-4);
+}
+
+.ag-stack--sm > * + * {
+  margin-block-start: var(--ag-space-2);
+}
+
+.ag-stack--lg > * + * {
+  margin-block-start: var(--ag-space-6);
+}
+
+.ag-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ag-space-3);
+  align-items: center;
+}
+
+.ag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--ag-space-5);
+}
+
+.ag-text-center {
+  text-align: center;
+}
+
+.ag-text-muted {
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-text-sm {
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.ag-mt-0 {
+  margin-top: 0 !important;
+}
+
+.ag-mb-6 {
+  margin-bottom: var(--ag-space-6) !important;
+}
+
+.ag-mt-6 {
+  margin-top: var(--ag-space-6) !important;
+}
+
+@media print {
+  .ag-print-hidden {
+    display: none !important;
+  }
+}

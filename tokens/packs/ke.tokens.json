@@ -1,0 +1,40 @@
+{
+  "$description": "Kenya pack. Overrides core colour tokens with the national colours and carries official-website banner strings.",
+  "$extensions": {
+    "afrigov": {
+      "code": "ke",
+      "country": "Kenya",
+      "government": "Republic of Kenya",
+      "domain": ".go.ke",
+      "flag": ["{official.black}", "{official.red}", "{official.green}"],
+      "flagDirection": "column",
+      "strings": {
+        "en": {
+          "banner": "An official website of the Government of Kenya",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .go.ke",
+          "banner-secure": "Secure .go.ke websites use HTTPS"
+        },
+        "sw": {
+          "banner": "Tovuti rasmi ya Serikali ya Kenya",
+          "banner-how": "Jinsi ya kujua kuwa hii ni rasmi",
+          "banner-domain": "Tovuti rasmi hutumia .go.ke",
+          "banner-secure": "Tovuti salama za .go.ke hutumia HTTPS",
+          "$note": "Machine-assisted draft. Native review wanted."
+        }
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "black": { "$value": "#000000" },
+    "red": { "$value": "#bb0000" },
+    "green": { "$value": "#006600" },
+    "white": { "$value": "#ffffff" }
+  },
+  "color": {
+    "$type": "color",
+    "primary": { "$value": "{official.green}" },
+    "accent": { "$value": "{official.red}" }
+  }
+}

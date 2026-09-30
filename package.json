@@ -1,0 +1,96 @@
+{
+  "name": "afrigov",
+  "version": "0.1.0",
+  "description": "An open-source, accessibility-first design system for African government websites. Country-neutral core, per-country token packs, plain CSS, no build step required.",
+  "keywords": [
+    "design-system",
+    "government",
+    "accessibility",
+    "wcag",
+    "a11y",
+    "css",
+    "design-tokens",
+    "africa",
+    "nigeria",
+    "kenya",
+    "ghana",
+    "govtech",
+    "civic-tech"
+  ],
+  "license": "MIT",
+  "author": "Abimbola Omoyola",
+  "homepage": "https://omoyolab.github.io/afrigov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omoyolab/afrigov.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omoyolab/afrigov/issues"
+  },
+  "type": "module",
+  "main": "./dist/afrigov.js",
+  "style": "./dist/core.css",
+  "exports": {
+    ".": {
+      "import": "./dist/afrigov.js",
+      "style": "./dist/core.css"
+    },
+    "./afrigov.js": "./dist/afrigov.js",
+    "./afrigov.iife.js": "./dist/afrigov.iife.js",
+    "./*.css": "./dist/*.css",
+    "./tokens/*": "./tokens/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "tokens",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": [
+    "*.css",
+    "./dist/afrigov.iife.js"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.30.2",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "build:css": "node scripts/build-css.mjs",
+    "build:js": "node scripts/build-js.mjs",
+    "build": "pnpm build:tokens && pnpm build:css && pnpm build:js && node scripts/sync-docs.mjs",
+    "dev": "node scripts/dev.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:a11y": "playwright test",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"src/css/**/*.css\" \"docs/*.css\"",
+    "lint": "pnpm lint:js && pnpm lint:css",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm lint && pnpm format:check && pnpm build && pnpm test",
+    "prepublishOnly": "pnpm check"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.0",
+    "esbuild": "^0.27.0",
+    "eslint": "^10.11.0",
+    "prettier": "^3.9.9",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard": "^39.0.0",
+    "vitest": "^5.0.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

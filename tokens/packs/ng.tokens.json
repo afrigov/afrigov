@@ -1,0 +1,35 @@
+{
+  "$description": "Nigeria pack. Overrides core colour tokens with the national colours and carries official-website banner strings.",
+  "$extensions": {
+    "afrigov": {
+      "code": "ng",
+      "country": "Nigeria",
+      "government": "Federal Republic of Nigeria",
+      "domain": ".gov.ng",
+      "flag": ["{official.green}", "{official.white}", "{official.green}"],
+      "flagDirection": "row",
+      "strings": {
+        "en": {
+          "banner": "An official website of the Federal Republic of Nigeria",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .gov.ng",
+          "banner-secure": "Secure .gov.ng websites use HTTPS"
+        },
+        "ha": { "banner": null, "$todo": "Hausa translation wanted. Open a PR." },
+        "yo": { "banner": null, "$todo": "Yoruba translation wanted. Open a PR." },
+        "ig": { "banner": null, "$todo": "Igbo translation wanted. Open a PR." }
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "$description": "Exact national colours. Used for the flag stripe and decoration only. Text and control colours are derived from these by the build if they fail WCAG AA.",
+    "green": { "$value": "#008751" },
+    "white": { "$value": "#ffffff" }
+  },
+  "color": {
+    "$type": "color",
+    "primary": { "$value": "{official.green}" },
+    "accent": { "$value": "{official.green}" }
+  }
+}

@@ -1,0 +1,35 @@
+name: Country pack request or translation
+description: Ask for a new country pack, or offer colours and banner strings for one
+labels: ["country-pack", "help wanted"]
+body:
+  - type: input
+    id: country
+    attributes:
+      label: Country and ISO code
+      placeholder: "Ghana, gh"
+    validations:
+      required: true
+  - type: textarea
+    id: colours
+    attributes:
+      label: Official colours and their source
+      description: Hex values and where they come from (constitution, standards body, government brand guide). Leave blank if you are only requesting.
+      placeholder: |
+        red #ce1126, gold #fcd116, green #006b3f
+        Source: ...
+  - type: input
+    id: domain
+    attributes:
+      label: Official website domain
+      placeholder: ".gov.gh"
+  - type: textarea
+    id: strings
+    attributes:
+      label: Banner strings
+      description: "'An official website of the Government of X' in each official language. Say whether you are a native speaker."
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Would you like to open the pull request yourself?
+      options:
+        - label: Yes, point me at the instructions

@@ -1,0 +1,47 @@
+name: Bug report
+description: Something renders or behaves wrongly
+labels: ["bug", "triage"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: afrigov version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Banner / flag
+        - Header / navigation
+        - Footer
+        - Button
+        - Breadcrumb / pagination
+        - Form fields
+        - Error summary
+        - Date input
+        - Alert
+        - Accordion
+        - Table
+        - Badge
+        - Panel / summary list / inset
+        - Tokens / country pack
+        - afrigov.js
+        - Docs site
+        - Other
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what you saw. A link to a reduced case on CodePen or similar helps a lot.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Browser and device
+      placeholder: "Chrome 130 on Android 13, Tecno Spark 10"
+    validations:
+      required: true

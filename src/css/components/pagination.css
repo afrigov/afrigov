@@ -1,0 +1,49 @@
+/* Pagination. <nav aria-label="Pagination"> with a list of links. */
+.ag-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ag-space-1);
+  margin: 0 0 var(--ag-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.ag-pagination li {
+  margin: 0;
+}
+
+.ag-pagination__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--ag-size-target);
+  min-height: var(--ag-size-target);
+  padding-inline: var(--ag-space-3);
+  border-radius: var(--ag-size-radius);
+  color: var(--ag-color-ink);
+  font-weight: var(--ag-font-weight-bold);
+  text-decoration: none;
+}
+
+.ag-pagination__link:visited {
+  color: var(--ag-color-ink);
+}
+
+.ag-pagination__link:hover {
+  background: var(--ag-color-paper-alt);
+  text-decoration: underline;
+}
+
+.ag-pagination__link[aria-current="page"] {
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+}
+
+.ag-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  padding-inline: var(--ag-space-2);
+  color: var(--ag-color-ink-muted);
+}

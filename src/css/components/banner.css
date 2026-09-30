@@ -1,0 +1,104 @@
+/* Official website banner. Sits above the header on every page. */
+.ag-banner {
+  background: var(--ag-color-paper-alt);
+  border-bottom: 1px solid var(--ag-color-border);
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ag-space-2) var(--ag-space-3);
+  min-height: var(--ag-size-target);
+  padding-block: var(--ag-space-1);
+}
+
+.ag-banner__text {
+  margin: 0;
+}
+
+.ag-banner__details {
+  flex-basis: 100%;
+}
+
+.ag-banner__details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ag-space-2);
+  min-height: var(--ag-size-target);
+  cursor: pointer;
+  color: var(--ag-color-link);
+  text-decoration: underline;
+  list-style: none;
+}
+
+.ag-banner__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.ag-banner__details summary::after {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: translateY(-25%) rotate(45deg);
+}
+
+.ag-banner__details[open] summary::after {
+  transform: translateY(25%) rotate(225deg);
+}
+
+.ag-banner__details[open] summary {
+  margin-bottom: var(--ag-space-3);
+}
+
+.ag-banner__details p {
+  max-width: var(--ag-size-measure);
+  margin-bottom: var(--ag-space-2);
+}
+
+/* Flag. Stripe colours and direction come from the country pack. */
+.ag-flag {
+  display: inline-flex;
+  flex-direction: var(--ag-flag-direction, row);
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1rem;
+  border: 1px solid var(--ag-color-border);
+  vertical-align: middle;
+}
+
+.ag-flag > * {
+  flex: 1 1 0;
+}
+
+.ag-flag > :nth-child(1) {
+  background: var(--ag-flag-1, var(--ag-color-primary));
+}
+
+.ag-flag > :nth-child(2) {
+  background: var(--ag-flag-2, var(--ag-color-paper));
+}
+
+.ag-flag > :nth-child(3) {
+  background: var(--ag-flag-3, var(--ag-color-primary));
+}
+
+.ag-flag > :nth-child(4) {
+  background: var(--ag-flag-4, transparent);
+}
+
+.ag-flag > :nth-child(5) {
+  background: var(--ag-flag-5, transparent);
+}
+
+.ag-flag > :nth-child(6) {
+  background: var(--ag-flag-6, transparent);
+}
+
+.ag-flag--lg {
+  width: 3rem;
+  height: 2rem;
+}

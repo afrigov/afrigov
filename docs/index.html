@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en" data-ag-pack="ng">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>afrigov — accessible design system for African government websites</title>
+    <meta
+      name="description"
+      content="afrigov is an open-source, accessibility-first design system for African government websites. Country-neutral core, per-country packs, plain CSS, 5 KB, no build step."
+    />
+    <link rel="stylesheet" href="dist/core.min.css" />
+    <link rel="stylesheet" href="dist/ng.min.css" id="pack-css" />
+    <link rel="stylesheet" href="docs.css" />
+    <script>
+      // Pack switcher. Reads ?pack=xx, swaps the pack stylesheet before first paint.
+      (function () {
+        var packs = ["ng", "ke"];
+        var pack = new URL(location.href).searchParams.get("pack");
+        if (packs.indexOf(pack) === -1) pack = "ng";
+        document.documentElement.setAttribute("data-ag-pack", pack);
+        document.getElementById("pack-css").href = "dist/" + pack + ".min.css";
+        document.documentElement.setAttribute("data-docs-pack", pack);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="ag-skip-link" href="#main">Skip to main content</a>
+
+    <section class="ag-banner" aria-label="Official website notice">
+      <div class="ag-container ag-banner__inner">
+        <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+        <p class="ag-banner__text" data-docs-string="banner">An official website of the Federal Republic of Nigeria</p>
+        <details class="ag-banner__details">
+          <summary data-docs-string="banner-how">How you know this is official</summary>
+          <p data-docs-string="banner-domain">Official websites use .gov.ng</p>
+          <p data-docs-string="banner-secure">Secure .gov.ng websites use HTTPS</p>
+        </details>
+      </div>
+    </section>
+
+    <header class="ag-header">
+      <div class="ag-container ag-header__inner">
+        <a class="ag-header__brand" href="./">
+          <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>
+            <span class="ag-header__org">afrigov</span>
+            <span class="ag-header__sub">Design system for African government services</span>
+          </span>
+        </a>
+        <button class="ag-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-ag-toggle>
+          Menu
+        </button>
+        <nav class="ag-header__nav" id="site-nav" aria-label="Main">
+          <ul class="ag-nav">
+            <li><a class="ag-nav__link" href="#get-started">Get started</a></li>
+            <li><a class="ag-nav__link" href="#packs">Country packs</a></li>
+            <li><a class="ag-nav__link" href="#components">Components</a></li>
+            <li><a class="ag-nav__link" href="#language">Language</a></li>
+            <li><a class="ag-nav__link" href="#tokens">Tokens</a></li>
+            <li><a class="ag-nav__link" href="https://github.com/omoyolab/afrigov">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="ag-main" id="main" tabindex="-1">
+      <div class="docs-hero">
+        <div class="ag-container">
+          <h1>Accessible by default. Built for African government services.</h1>
+          <p class="ag-lead">
+            One country-neutral core. A token pack per country. Plain CSS that works from a single link tag, weighs 5
+            KB, and passes WCAG 2.1 AA in CI.
+          </p>
+          <div class="ag-button-group">
+            <a class="ag-button ag-button--secondary" href="#get-started">Get started</a>
+            <a class="ag-button ag-button--secondary" href="https://github.com/omoyolab/afrigov">View on GitHub</a>
+          </div>
+          <div class="docs-switcher" role="group" aria-labelledby="switcher-label">
+            <span class="docs-switcher__label" id="switcher-label">Preview a country pack:</span>
+            <a class="docs-switcher__link" href="?pack=ng" data-docs-switch="ng">
+              <span
+                class="ag-flag"
+                aria-hidden="true"
+                style="--ag-flag-direction: row; --ag-flag-1: #008751; --ag-flag-2: #fff; --ag-flag-3: #008751"
+                ><span></span><span></span><span></span
+              ></span>
+              Nigeria
+            </a>
+            <a class="docs-switcher__link" href="?pack=ke" data-docs-switch="ke">
+              <span
+                class="ag-flag"
+                aria-hidden="true"
+                style="--ag-flag-direction: column; --ag-flag-1: #000; --ag-flag-2: #bb0000; --ag-flag-3: #006600"
+                ><span></span><span></span><span></span
+              ></span>
+              Kenya
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <section class="docs-section" aria-labelledby="why-heading">
+        <div class="ag-container">
+          <h2 id="why-heading">Why afrigov</h2>
+          <div class="ag-grid">
+            <div class="docs-card">
+              <h3>No build step</h3>
+              <p>
+                Two link tags and you are done. Plain CSS with custom properties. No Sass, no bundler, no framework.
+              </p>
+            </div>
+            <div class="docs-card">
+              <h3>Country packs</h3>
+              <p>
+                The core has no flag colours. A pack adds them, derives text-safe variants, and carries the official
+                banner strings in the country's languages.
+              </p>
+            </div>
+            <div class="docs-card">
+              <h3>Works on a 2G connection</h3>
+              <p>System fonts only, 5 KB of CSS, and every component works with JavaScript turned off.</p>
+            </div>
+            <div class="docs-card">
+              <h3>AA is enforced, not promised</h3>
+              <p>
+                The build fails if any colour pair misses 4.5:1. axe-core runs on this page, with every pack, on every
+                pull request.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="docs-section" id="get-started" aria-labelledby="gs-heading">
+        <div class="ag-container ag-prose">
+          <h2 id="gs-heading">Get started</h2>
+          <h3>From a CDN</h3>
+          <p>Add the core and one country pack. The pack must come after the core.</p>
+          <pre
+            class="docs-code"
+          ><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/ng.min.css"&gt;
+
+&lt;!-- Optional: collapsible navigation and error-summary focus. 1.5 KB. --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/afrigov.iife.js" defer&gt;&lt;/script&gt;</code></pre>
+          <h3>From npm</h3>
+          <pre class="docs-code"><code>npm install afrigov</code></pre>
+          <pre class="docs-code"><code>import "afrigov/core.css";
+import "afrigov/ng.css";
+import { init } from "afrigov";
+
+init();</code></pre>
+          <h3>Then write HTML</h3>
+          <p>
+            Every component is a class on a plain element. Copy the markup from the examples below. The class prefix is
+            <code>ag-</code>.
+          </p>
+        </div>
+      </section>
+
+      <section class="docs-section" id="packs" aria-labelledby="packs-heading">
+        <div class="ag-container">
+          <h2 id="packs-heading">Country packs</h2>
+          <p class="ag-prose">
+            A pack is one JSON file. It declares the official national colours and which of them is the primary. The
+            build derives everything else: a primary that passes AA as text, a hover state, tints, and link colours. The
+            flag stripe always uses the exact official colour.
+          </p>
+          <div class="ag-table-wrap" role="region" aria-label="Country packs" tabindex="0">
+            <table class="ag-table docs-pack-table">
+              <caption>
+                Packs in this release
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Pack</th>
+                  <th scope="col">Official primary</th>
+                  <th scope="col">Usable primary</th>
+                  <th scope="col">Banner languages</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><code>ng.css</code> Nigeria</th>
+                  <td><code>#008751</code></td>
+                  <td><code>#007d4b</code> derived (4.13:1 on grey was not enough)</td>
+                  <td>English. Hausa, Yoruba, Igbo wanted.</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>ke.css</code> Kenya</th>
+                  <td><code>#006600</code></td>
+                  <td><code>#006600</code> unchanged (7.2:1)</td>
+                  <td>English, Swahili (draft, native review wanted).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ag-prose">
+            Want your country? Copy <code>tokens/packs/ke.tokens.json</code>, change the colours and strings, open a
+            pull request. The contrast tests run for you. See
+            <a href="https://github.com/omoyolab/afrigov/blob/main/CONTRIBUTING.md#adding-a-country-pack"
+              >adding a country pack</a
+            >.
+          </p>
+        </div>
+      </section>
+
+      <section class="docs-section" id="components" aria-labelledby="components-heading">
+        <div class="ag-container">
+          <h2 id="components-heading">Components</h2>
+
+          <h3 id="c-banner">Official website banner</h3>
+          <p class="ag-prose">
+            Goes above the header on every page. The text comes from the pack's strings. The expandable part explains
+            how to recognise an official site.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview docs-example__preview--flush">
+              <div class="ag-banner">
+                <div class="ag-container ag-banner__inner">
+                  <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+                  <p class="ag-banner__text" data-docs-string="banner">
+                    An official website of the Federal Republic of Nigeria
+                  </p>
+                </div>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;section class="ag-banner" aria-label="Official website notice"&gt;
+  &lt;div class="ag-container ag-banner__inner"&gt;
+    &lt;span class="ag-flag" aria-hidden="true"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;p class="ag-banner__text"&gt;An official website of the Federal Republic of Nigeria&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-header">Header and navigation</h3>
+          <p class="ag-prose">
+            Without JavaScript the navigation is always visible. With <code>afrigov.js</code> it collapses behind a Menu
+            button below 1024px. Mark the current page with <code>aria-current="page"</code>.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview docs-example__preview--flush">
+              <div class="ag-header">
+                <div class="ag-container ag-header__inner">
+                  <a class="ag-header__brand" href="#c-header">
+                    <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span>
+                      <span class="ag-header__org">Ministry of Health</span>
+                      <span class="ag-header__sub" data-docs-string="government">Federal Republic of Nigeria</span>
+                    </span>
+                  </a>
+                  <nav class="ag-header__nav" aria-label="Example">
+                    <ul class="ag-nav">
+                      <li><a class="ag-nav__link" href="#c-header" aria-current="page">Services</a></li>
+                      <li><a class="ag-nav__link" href="#c-header">Hospitals</a></li>
+                      <li><a class="ag-nav__link" href="#c-header">News</a></li>
+                      <li><a class="ag-nav__link" href="#c-header">Contact</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;header class="ag-header"&gt;
+  &lt;div class="ag-container ag-header__inner"&gt;
+    &lt;a class="ag-header__brand" href="/"&gt;
+      &lt;img class="ag-header__logo" src="crest.svg" alt=""&gt;
+      &lt;span&gt;
+        &lt;span class="ag-header__org"&gt;Ministry of Health&lt;/span&gt;
+        &lt;span class="ag-header__sub"&gt;Federal Republic of Nigeria&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;button class="ag-header__toggle" type="button" aria-expanded="false" aria-controls="nav" data-ag-toggle&gt;Menu&lt;/button&gt;
+    &lt;nav class="ag-header__nav" id="nav" aria-label="Main"&gt;
+      &lt;ul class="ag-nav"&gt;
+        &lt;li&gt;&lt;a class="ag-nav__link" href="/services" aria-current="page"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="ag-nav__link" href="/news"&gt;News&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-button">Buttons</h3>
+          <p class="ag-prose">
+            One primary action per page. Use <code>&lt;a&gt;</code> for navigation and <code>&lt;button&gt;</code> for
+            actions. The start button begins a service. The warning button is for destructive actions only.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <div class="ag-button-group ag-mb-0">
+                <button class="ag-button" type="button">Continue</button>
+                <button class="ag-button ag-button--secondary" type="button">Save and come back later</button>
+                <a class="ag-button ag-button--start" href="#c-button">Start now</a>
+                <button class="ag-button ag-button--warning" type="button">Delete application</button>
+                <button class="ag-button" type="button" disabled>Disabled</button>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;button class="ag-button" type="submit"&gt;Continue&lt;/button&gt;
+&lt;button class="ag-button ag-button--secondary" type="button"&gt;Save and come back later&lt;/button&gt;
+&lt;a class="ag-button ag-button--start" href="/apply"&gt;Start now&lt;/a&gt;
+&lt;button class="ag-button ag-button--warning" type="button"&gt;Delete application&lt;/button&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-breadcrumb">Breadcrumb</h3>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <nav aria-label="Breadcrumb">
+                <ol class="ag-breadcrumb ag-mb-0">
+                  <li><a href="#c-breadcrumb">Home</a></li>
+                  <li><a href="#c-breadcrumb">Services</a></li>
+                  <li><a href="#c-breadcrumb">Passports</a></li>
+                  <li><span aria-current="page">Renew a passport</span></li>
+                </ol>
+              </nav>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ol class="ag-breadcrumb"&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span aria-current="page"&gt;Renew a passport&lt;/span&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-form">Form fields</h3>
+          <p class="ag-prose">
+            Labels are always visible. Hints and errors are tied to the control with <code>aria-describedby</code>. The
+            error state marks the whole field, not just the border. Error messages start with a visually hidden "Error:"
+            so screen readers announce it.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <form action="#c-form" method="get" novalidate>
+                <div class="ag-field">
+                  <label class="ag-label" for="demo-name">Full name</label>
+                  <span class="ag-hint" id="demo-name-hint">As written on your national ID</span>
+                  <input
+                    class="ag-input"
+                    id="demo-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    aria-describedby="demo-name-hint"
+                  />
+                </div>
+
+                <div class="ag-field ag-field--error">
+                  <label class="ag-label" for="demo-email">Email address</label>
+                  <span class="ag-hint" id="demo-email-hint">We will only use this to send your reference number</span>
+                  <span class="ag-error-message" id="demo-email-error">
+                    <span class="ag-visually-hidden">Error:</span> Enter an email address in the correct format, like
+                    name@example.com
+                  </span>
+                  <input
+                    class="ag-input"
+                    id="demo-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    aria-invalid="true"
+                    aria-describedby="demo-email-hint demo-email-error"
+                    value="amina@"
+                  />
+                </div>
+
+                <div class="ag-field">
+                  <label class="ag-label" for="demo-nin">National Identification Number</label>
+                  <span class="ag-hint" id="demo-nin-hint">11 digits, on your NIN slip</span>
+                  <input
+                    class="ag-input ag-input--width-20"
+                    id="demo-nin"
+                    name="nin"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    aria-describedby="demo-nin-hint"
+                  />
+                </div>
+
+                <div class="ag-field">
+                  <label class="ag-label" for="demo-amount">Amount</label>
+                  <div class="ag-input-group">
+                    <span class="ag-input-group__affix" aria-hidden="true">₦</span>
+                    <input
+                      class="ag-input ag-input--width-10"
+                      id="demo-amount"
+                      name="amount"
+                      type="text"
+                      inputmode="decimal"
+                      aria-describedby="demo-amount-hint"
+                    />
+                  </div>
+                  <span class="ag-hint ag-mt-0" id="demo-amount-hint" style="margin-top: var(--ag-space-2)"
+                    >In naira</span
+                  >
+                </div>
+
+                <div class="ag-field">
+                  <label class="ag-label" for="demo-state">State</label>
+                  <select class="ag-select" id="demo-state" name="state">
+                    <option value="">Choose a state</option>
+                    <option>Abia</option>
+                    <option>Adamawa</option>
+                    <option>Akwa Ibom</option>
+                    <option>Anambra</option>
+                    <option>Lagos</option>
+                    <option>Kano</option>
+                  </select>
+                </div>
+
+                <fieldset class="ag-field">
+                  <legend class="ag-legend">How should we contact you?</legend>
+                  <div class="ag-choices">
+                    <label class="ag-radio">
+                      <input type="radio" name="contact" value="sms" checked />
+                      <span class="ag-radio__label">SMS <span class="ag-radio__hint">Works on any phone</span></span>
+                    </label>
+                    <label class="ag-radio">
+                      <input type="radio" name="contact" value="email" />
+                      <span class="ag-radio__label">Email</span>
+                    </label>
+                    <label class="ag-radio">
+                      <input type="radio" name="contact" value="post" />
+                      <span class="ag-radio__label">Post</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="ag-field">
+                  <legend class="ag-legend">Which documents do you have?</legend>
+                  <span class="ag-hint" id="demo-docs-hint">Select all that apply</span>
+                  <div class="ag-choices" aria-describedby="demo-docs-hint">
+                    <label class="ag-checkbox">
+                      <input type="checkbox" name="docs" value="nin" checked />
+                      <span class="ag-checkbox__label">NIN slip</span>
+                    </label>
+                    <label class="ag-checkbox">
+                      <input type="checkbox" name="docs" value="passport" />
+                      <span class="ag-checkbox__label">International passport</span>
+                    </label>
+                    <label class="ag-checkbox">
+                      <input type="checkbox" name="docs" value="birth" />
+                      <span class="ag-checkbox__label">Birth certificate</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="ag-field">
+                  <label class="ag-label" for="demo-notes">Anything else we should know?</label>
+                  <textarea class="ag-textarea" id="demo-notes" name="notes" rows="4"></textarea>
+                </div>
+
+                <button class="ag-button" type="submit">Continue</button>
+              </form>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;div class="ag-field"&gt;
+  &lt;label class="ag-label" for="name"&gt;Full name&lt;/label&gt;
+  &lt;span class="ag-hint" id="name-hint"&gt;As written on your national ID&lt;/span&gt;
+  &lt;input class="ag-input" id="name" name="name" type="text" autocomplete="name" aria-describedby="name-hint"&gt;
+&lt;/div&gt;
+
+&lt;div class="ag-field ag-field--error"&gt;
+  &lt;label class="ag-label" for="email"&gt;Email address&lt;/label&gt;
+  &lt;span class="ag-error-message" id="email-error"&gt;
+    &lt;span class="ag-visually-hidden"&gt;Error:&lt;/span&gt; Enter an email address in the correct format
+  &lt;/span&gt;
+  &lt;input class="ag-input" id="email" name="email" type="email" aria-invalid="true" aria-describedby="email-error"&gt;
+&lt;/div&gt;
+
+&lt;fieldset class="ag-field"&gt;
+  &lt;legend class="ag-legend"&gt;How should we contact you?&lt;/legend&gt;
+  &lt;div class="ag-choices"&gt;
+    &lt;label class="ag-radio"&gt;
+      &lt;input type="radio" name="contact" value="sms"&gt;
+      &lt;span class="ag-radio__label"&gt;SMS&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-error-summary">Error summary</h3>
+          <p class="ag-prose">
+            When a form is submitted with errors, put this at the top of the page and reload. <code>afrigov.js</code>
+            moves focus to it. Each item links to the field it describes.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <div
+                class="ag-error-summary ag-mb-0"
+                role="alert"
+                tabindex="-1"
+                data-ag-no-autofocus
+                aria-labelledby="demo-es-title"
+              >
+                <h2 class="ag-error-summary__title" id="demo-es-title">There is a problem</h2>
+                <ul class="ag-error-summary__list">
+                  <li><a href="#demo-email">Enter an email address in the correct format, like name@example.com</a></li>
+                  <li><a href="#demo-nin">Enter your National Identification Number</a></li>
+                </ul>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;div class="ag-error-summary" role="alert" tabindex="-1" aria-labelledby="es-title"&gt;
+  &lt;h2 class="ag-error-summary__title" id="es-title"&gt;There is a problem&lt;/h2&gt;
+  &lt;ul class="ag-error-summary__list"&gt;
+    &lt;li&gt;&lt;a href="#email"&gt;Enter an email address in the correct format&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-date">Date input</h3>
+          <p class="ag-prose">
+            Three fields, no picker. Date pickers fail on low-end phones and with screen readers, and people already
+            know their date of birth.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <fieldset class="ag-field ag-mb-0" aria-describedby="demo-dob-hint">
+                <legend class="ag-legend">Date of birth</legend>
+                <span class="ag-hint" id="demo-dob-hint">For example, 27 3 1990</span>
+                <div class="ag-date-input">
+                  <div class="ag-date-input__item">
+                    <label class="ag-date-input__label" for="demo-dob-day">Day</label>
+                    <input
+                      class="ag-input"
+                      id="demo-dob-day"
+                      name="dob-day"
+                      type="text"
+                      inputmode="numeric"
+                      autocomplete="bday-day"
+                    />
+                  </div>
+                  <div class="ag-date-input__item">
+                    <label class="ag-date-input__label" for="demo-dob-month">Month</label>
+                    <input
+                      class="ag-input"
+                      id="demo-dob-month"
+                      name="dob-month"
+                      type="text"
+                      inputmode="numeric"
+                      autocomplete="bday-month"
+                    />
+                  </div>
+                  <div class="ag-date-input__item ag-date-input__item--year">
+                    <label class="ag-date-input__label" for="demo-dob-year">Year</label>
+                    <input
+                      class="ag-input"
+                      id="demo-dob-year"
+                      name="dob-year"
+                      type="text"
+                      inputmode="numeric"
+                      autocomplete="bday-year"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;fieldset class="ag-field" aria-describedby="dob-hint"&gt;
+  &lt;legend class="ag-legend"&gt;Date of birth&lt;/legend&gt;
+  &lt;span class="ag-hint" id="dob-hint"&gt;For example, 27 3 1990&lt;/span&gt;
+  &lt;div class="ag-date-input"&gt;
+    &lt;div class="ag-date-input__item"&gt;
+      &lt;label class="ag-date-input__label" for="dob-day"&gt;Day&lt;/label&gt;
+      &lt;input class="ag-input" id="dob-day" name="dob-day" type="text" inputmode="numeric"&gt;
+    &lt;/div&gt;
+    &lt;div class="ag-date-input__item"&gt;
+      &lt;label class="ag-date-input__label" for="dob-month"&gt;Month&lt;/label&gt;
+      &lt;input class="ag-input" id="dob-month" name="dob-month" type="text" inputmode="numeric"&gt;
+    &lt;/div&gt;
+    &lt;div class="ag-date-input__item ag-date-input__item--year"&gt;
+      &lt;label class="ag-date-input__label" for="dob-year"&gt;Year&lt;/label&gt;
+      &lt;input class="ag-input" id="dob-year" name="dob-year" type="text" inputmode="numeric"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-alert">Alerts</h3>
+          <p class="ag-prose">
+            Every alert has a title, so the meaning never depends on colour. Use <code>role="alert"</code> only for
+            errors the person must act on now.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <div class="ag-alert" role="status">
+                <h4 class="ag-alert__title">Applications close on 31 October</h4>
+                <p>Submit before 11:59pm West Africa Time.</p>
+              </div>
+              <div class="ag-alert ag-alert--success" role="status">
+                <h4 class="ag-alert__title">Payment received</h4>
+                <p>Your receipt number is <strong>NG-2026-004512</strong>.</p>
+              </div>
+              <div class="ag-alert ag-alert--warning" role="status">
+                <h4 class="ag-alert__title">Your session ends in 5 minutes</h4>
+                <p>Save your progress to avoid losing it.</p>
+              </div>
+              <div class="ag-alert ag-alert--error ag-mb-0" role="alert">
+                <h4 class="ag-alert__title">We could not verify your NIN</h4>
+                <p>Check the number and try again, or <a href="#c-alert">contact NIMC</a>.</p>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;div class="ag-alert ag-alert--success" role="status"&gt;
+  &lt;h2 class="ag-alert__title"&gt;Payment received&lt;/h2&gt;
+  &lt;p&gt;Your receipt number is &lt;strong&gt;NG-2026-004512&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-accordion">Accordion</h3>
+          <p class="ag-prose">
+            Built on <code>&lt;details&gt;</code>. Keyboard and screen reader support come from the browser. No script.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <div class="ag-accordion ag-mb-0">
+                <details class="ag-accordion__item">
+                  <summary class="ag-accordion__summary">Who can apply for a passport?</summary>
+                  <div class="ag-accordion__body">
+                    <p>Any citizen. Children under 16 must apply with a parent or guardian present.</p>
+                  </div>
+                </details>
+                <details class="ag-accordion__item">
+                  <summary class="ag-accordion__summary">How long does it take?</summary>
+                  <div class="ag-accordion__body">
+                    <p>Standard processing takes 6 weeks. Express processing takes 2 weeks and costs more.</p>
+                  </div>
+                </details>
+                <details class="ag-accordion__item">
+                  <summary class="ag-accordion__summary">What does it cost?</summary>
+                  <div class="ag-accordion__body">
+                    <p>
+                      Fees depend on the passport validity and number of pages. You pay online after your application is
+                      accepted.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;div class="ag-accordion"&gt;
+  &lt;details class="ag-accordion__item"&gt;
+    &lt;summary class="ag-accordion__summary"&gt;Who can apply?&lt;/summary&gt;
+    &lt;div class="ag-accordion__body"&gt;&lt;p&gt;Any citizen.&lt;/p&gt;&lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-table">Table</h3>
+          <p class="ag-prose">
+            Always a caption and header scopes. On small screens the wrapper scrolls sideways and is keyboard focusable.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <div class="ag-table-wrap ag-mb-0" role="region" aria-label="Passport fees" tabindex="0">
+                <table class="ag-table ag-table--striped">
+                  <caption>
+                    Passport fees
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Type</th>
+                      <th scope="col">Validity</th>
+                      <th scope="col" class="ag-table__numeric">Fee</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Standard, 32 pages</th>
+                      <td>5 years</td>
+                      <td class="ag-table__numeric">₦35,000</td>
+                      <td><span class="ag-badge ag-badge--success">Available</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Standard, 64 pages</th>
+                      <td>10 years</td>
+                      <td class="ag-table__numeric">₦70,000</td>
+                      <td><span class="ag-badge ag-badge--success">Available</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Official</th>
+                      <td>5 years</td>
+                      <td class="ag-table__numeric">₦0</td>
+                      <td><span class="ag-badge ag-badge--warning">By request</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;div class="ag-table-wrap" role="region" aria-label="Passport fees" tabindex="0"&gt;
+  &lt;table class="ag-table ag-table--striped"&gt;
+    &lt;caption&gt;Passport fees&lt;/caption&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Type&lt;/th&gt;&lt;th scope="col" class="ag-table__numeric"&gt;Fee&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;th scope="row"&gt;Standard&lt;/th&gt;&lt;td class="ag-table__numeric"&gt;₦35,000&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-badge">Badges</h3>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <div class="ag-cluster">
+                <span class="ag-badge">New</span>
+                <span class="ag-badge ag-badge--neutral">Draft</span>
+                <span class="ag-badge ag-badge--info">In review</span>
+                <span class="ag-badge ag-badge--success">Approved</span>
+                <span class="ag-badge ag-badge--warning">Action needed</span>
+                <span class="ag-badge ag-badge--error">Rejected</span>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;span class="ag-badge ag-badge--success"&gt;Approved&lt;/span&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-pagination">Pagination</h3>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <nav aria-label="Pagination">
+                <ul class="ag-pagination ag-mb-0">
+                  <li><a class="ag-pagination__link" href="#c-pagination" rel="prev">Previous</a></li>
+                  <li><a class="ag-pagination__link" href="#c-pagination">1</a></li>
+                  <li><a class="ag-pagination__link" href="#c-pagination" aria-current="page">2</a></li>
+                  <li><a class="ag-pagination__link" href="#c-pagination">3</a></li>
+                  <li><span class="ag-pagination__ellipsis" aria-hidden="true">…</span></li>
+                  <li><a class="ag-pagination__link" href="#c-pagination">12</a></li>
+                  <li><a class="ag-pagination__link" href="#c-pagination" rel="next">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;nav aria-label="Pagination"&gt;
+  &lt;ul class="ag-pagination"&gt;
+    &lt;li&gt;&lt;a class="ag-pagination__link" href="?page=1" rel="prev"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="ag-pagination__link" href="?page=1"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="ag-pagination__link" href="?page=2" aria-current="page"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="ag-pagination__link" href="?page=3" rel="next"&gt;Next&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </details>
+          </div>
+
+          <h3 id="c-panel">Confirmation panel, summary list, inset text</h3>
+          <p class="ag-prose">
+            The last page of a service, the check-your-answers page before it, and a callout inside content.
+          </p>
+          <div class="docs-example">
+            <div class="docs-example__preview">
+              <div class="ag-panel">
+                <h4 class="ag-panel__title">Application complete</h4>
+                <p class="ag-panel__body">Your reference number <span class="ag-panel__ref">HDX-4K2-9PQ</span></p>
+              </div>
+              <dl class="ag-summary">
+                <div class="ag-summary__row">
+                  <dt class="ag-summary__key">Name</dt>
+                  <dd class="ag-summary__value">Amina Bello</dd>
+                  <dd class="ag-summary__action">
+                    <a href="#c-panel">Change<span class="ag-visually-hidden"> name</span></a>
+                  </dd>
+                </div>
+                <div class="ag-summary__row">
+                  <dt class="ag-summary__key">Date of birth</dt>
+                  <dd class="ag-summary__value">27 March 1990</dd>
+                  <dd class="ag-summary__action">
+                    <a href="#c-panel">Change<span class="ag-visually-hidden"> date of birth</span></a>
+                  </dd>
+                </div>
+                <div class="ag-summary__row">
+                  <dt class="ag-summary__key">Contact</dt>
+                  <dd class="ag-summary__value">SMS to 0803 000 0000</dd>
+                  <dd class="ag-summary__action">
+                    <a href="#c-panel">Change<span class="ag-visually-hidden"> contact</span></a>
+                  </dd>
+                </div>
+              </dl>
+              <div class="ag-inset ag-mb-0">
+                <p>You can apply on behalf of someone else if you have their written consent and a copy of their ID.</p>
+              </div>
+            </div>
+            <details class="docs-example__code">
+              <summary>Show HTML</summary>
+              <pre><code>&lt;div class="ag-panel"&gt;
+  &lt;h1 class="ag-panel__title"&gt;Application complete&lt;/h1&gt;
+  &lt;p class="ag-panel__body"&gt;Your reference number &lt;span class="ag-panel__ref"&gt;HDX-4K2-9PQ&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;dl class="ag-summary"&gt;
+  &lt;div class="ag-summary__row"&gt;
+    &lt;dt class="ag-summary__key"&gt;Name&lt;/dt&gt;
+    &lt;dd class="ag-summary__value"&gt;Amina Bello&lt;/dd&gt;
+    &lt;dd class="ag-summary__action"&gt;&lt;a href="/name"&gt;Change&lt;span class="ag-visually-hidden"&gt; name&lt;/span&gt;&lt;/a&gt;&lt;/dd&gt;
+  &lt;/div&gt;
+&lt;/dl&gt;
+
+&lt;div class="ag-inset"&gt;&lt;p&gt;You can apply on behalf of someone else.&lt;/p&gt;&lt;/div&gt;</code></pre>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="docs-section" id="language" aria-labelledby="lang-heading">
+        <div class="ag-container">
+          <h2 id="lang-heading">Language and type</h2>
+          <p class="ag-prose">
+            afrigov uses system fonts only, so pages load with zero font requests. The stack names Noto Sans before
+            Arial because it covers the Latin Extended ranges that many African languages need. The lines below are the
+            test: every diacritic should render in the same weight and size as the letters around it.
+          </p>
+          <dl class="docs-lang">
+            <div>
+              <dt>Yoruba</dt>
+              <dd lang="yo">Ẹ̀tọ́ ọmọ orílẹ̀-èdè ni láti gba ìwé ìrìnnà. Ẹ kú iṣẹ́.</dd>
+            </div>
+            <div>
+              <dt>Hausa</dt>
+              <dd lang="ha">Ƙasar Najeriya ta ɗauki ɓangaren ƴan ƙasa da muhimmanci.</dd>
+            </div>
+            <div>
+              <dt>Igbo</dt>
+              <dd lang="ig">Ọ bụ ikike gị ịnweta akwụkwọ ikike ije. Ndeewo.</dd>
+            </div>
+            <div>
+              <dt>Swahili</dt>
+              <dd lang="sw">Huduma za serikali ni haki ya kila raia.</dd>
+            </div>
+            <div>
+              <dt>French</dt>
+              <dd lang="fr">Les services publics sont accessibles à tous les citoyens.</dd>
+            </div>
+            <div>
+              <dt>Portuguese</dt>
+              <dd lang="pt">Os serviços públicos são acessíveis a todos os cidadãos.</dd>
+            </div>
+            <div>
+              <dt>Arabic</dt>
+              <dd lang="ar" dir="rtl">الخدمات الحكومية حق لكل مواطن.</dd>
+            </div>
+          </dl>
+          <p class="ag-prose">
+            Set <code>lang</code> on the <code>html</code> element and on any passage in another language, so screen
+            readers switch voice and hyphenation is correct. Use <code>dir="rtl"</code> for Arabic content.
+          </p>
+        </div>
+      </section>
+
+      <section class="docs-section" id="tokens" aria-labelledby="tokens-heading">
+        <div class="ag-container">
+          <h2 id="tokens-heading">Tokens</h2>
+          <p class="ag-prose">
+            Every value is a CSS custom property prefixed <code>--ag-</code>. The source of truth is
+            <code>tokens/core.tokens.json</code> in the W3C Design Tokens format. Swatches below show the active pack.
+          </p>
+          <ul class="docs-swatches">
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-primary)"></div>
+              <code>--ag-color-primary</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-primary-hover)"></div>
+              <code>--ag-color-primary-hover</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-primary-tint)"></div>
+              <code>--ag-color-primary-tint</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-accent)"></div>
+              <code>--ag-color-accent</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-ink)"></div>
+              <code>--ag-color-ink</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-ink-muted)"></div>
+              <code>--ag-color-ink-muted</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-paper-alt)"></div>
+              <code>--ag-color-paper-alt</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-border-strong)"></div>
+              <code>--ag-color-border-strong</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-focus)"></div>
+              <code>--ag-color-focus</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-success)"></div>
+              <code>--ag-color-success</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-warning)"></div>
+              <code>--ag-color-warning</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-error)"></div>
+              <code>--ag-color-error</code>
+            </li>
+            <li>
+              <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-info)"></div>
+              <code>--ag-color-info</code>
+            </li>
+          </ul>
+          <div class="ag-prose">
+            <h3>Override a token</h3>
+            <p>Set the custom property after the pack. Nothing else changes.</p>
+            <pre class="docs-code"><code>:root {
+  --ag-size-container: 60rem;
+  --ag-font-family-sans: "Public Sans", system-ui, sans-serif;
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="docs-section" aria-labelledby="contrib-heading">
+        <div class="ag-container ag-prose">
+          <h2 id="contrib-heading">Contribute</h2>
+          <p>
+            The most useful contributions right now are country packs and banner translations. Both are one JSON file
+            and need no CSS knowledge. Bugs in accessibility are treated as the highest priority.
+          </p>
+          <div class="ag-button-group">
+            <a class="ag-button" href="https://github.com/omoyolab/afrigov/blob/main/CONTRIBUTING.md"
+              >Read the contributing guide</a
+            >
+            <a class="ag-button ag-button--secondary" href="https://github.com/omoyolab/afrigov/issues/new/choose"
+              >Open an issue</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ag-footer">
+      <div class="ag-container">
+        <div class="ag-footer__columns">
+          <div>
+            <h2 class="ag-footer__heading">afrigov</h2>
+            <ul class="ag-footer__list">
+              <li><a href="#get-started">Get started</a></li>
+              <li><a href="#components">Components</a></li>
+              <li><a href="#tokens">Tokens</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="ag-footer__heading">Project</h2>
+            <ul class="ag-footer__list">
+              <li><a href="https://github.com/omoyolab/afrigov">GitHub</a></li>
+              <li><a href="https://www.npmjs.com/package/afrigov">npm</a></li>
+              <li><a href="https://github.com/omoyolab/afrigov/blob/main/CHANGELOG.md">Changelog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="ag-footer__heading">Standards</h2>
+            <ul class="ag-footer__list">
+              <li><a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a></li>
+              <li><a href="https://tr.designtokens.org/format/">Design Tokens format</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ag-footer__bar">
+          <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+          <p>MIT licensed. Built in the open. Not affiliated with any government.</p>
+          <ul class="ag-footer__legal">
+            <li><a href="https://github.com/omoyolab/afrigov/blob/main/LICENSE">Licence</a></li>
+            <li><a href="https://github.com/omoyolab/afrigov/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="dist/afrigov.iife.js"></script>
+    <script src="dist/packs.js"></script>
+    <script>
+      // Fill banner strings from the active pack and mark the active switcher link.
+      (function () {
+        var pack = document.documentElement.getAttribute("data-docs-pack") || "ng";
+        var packs = ["ng", "ke"];
+        document.querySelectorAll("[data-docs-switch]").forEach(function (a) {
+          if (a.getAttribute("data-docs-switch") === pack) a.setAttribute("aria-current", "true");
+        });
+        var meta = window.AFRIGOV_PACKS && window.AFRIGOV_PACKS[pack];
+        if (!meta || packs.indexOf(pack) === -1) return;
+        var s = (meta.strings && meta.strings.en) || {};
+        document.querySelectorAll("[data-docs-string]").forEach(function (el) {
+          var key = el.getAttribute("data-docs-string");
+          var v = key === "government" ? meta.government : s[key];
+          if (v) el.textContent = v;
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+/* Breadcrumb. An ordered list inside <nav aria-label="Breadcrumb">. */
+.ag-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 var(--ag-space-5);
+  padding: 0;
+  list-style: none;
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  min-height: var(--ag-size-target);
+}
+
+.ag-breadcrumb li + li::before {
+  content: "";
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin-inline: var(--ag-space-2);
+  border-top: 2px solid var(--ag-color-ink-muted);
+  border-right: 2px solid var(--ag-color-ink-muted);
+  transform: rotate(45deg);
+}
+
+.ag-breadcrumb a {
+  color: var(--ag-color-ink);
+}
+
+.ag-breadcrumb [aria-current] {
+  color: var(--ag-color-ink-muted);
+}

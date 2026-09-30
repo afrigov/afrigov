@@ -1,0 +1,19 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-class-pattern": [
+      "^(ag|docs)-[a-z0-9]+(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      { "message": "Class names are ag-block__element--modifier" }
+    ],
+    "custom-property-pattern": "^_?(ag|docs)-[a-z0-9-]+$",
+    "property-no-deprecated": [true, { "ignoreProperties": ["clip"] }],
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": null,
+    "value-keyword-case": ["lower", { "ignoreProperties": ["font-family"] }],
+    "media-feature-range-notation": "prefix",
+    "comment-empty-line-before": null,
+    "custom-property-empty-line-before": null,
+    "declaration-empty-line-before": null
+  }
+}

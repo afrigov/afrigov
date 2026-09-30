@@ -1,0 +1,98 @@
+/* Buttons. 48px minimum height, always a visible border for forced-colours mode. */
+.ag-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ag-space-2);
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-5);
+  border: var(--ag-size-control-border) solid var(--ag-color-primary);
+  border-radius: var(--ag-size-radius);
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+  font-weight: var(--ag-font-weight-bold);
+  line-height: var(--ag-font-leading-tight);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ag-button:visited {
+  color: var(--ag-color-on-primary);
+}
+
+.ag-button:hover {
+  background: var(--ag-color-primary-hover);
+  border-color: var(--ag-color-primary-hover);
+  color: var(--ag-color-on-primary);
+}
+
+.ag-button:active {
+  transform: translateY(1px);
+}
+
+.ag-button:focus-visible {
+  background: var(--ag-color-focus);
+  border-color: var(--ag-color-ink);
+  color: var(--ag-color-ink);
+}
+
+.ag-button:disabled,
+.ag-button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ag-button--secondary {
+  background: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+}
+
+.ag-button--secondary:visited {
+  color: var(--ag-color-primary);
+}
+
+.ag-button--secondary:hover {
+  background: var(--ag-color-primary-tint);
+  color: var(--ag-color-primary-hover);
+}
+
+.ag-button--warning {
+  background: var(--ag-color-error);
+  border-color: var(--ag-color-error);
+}
+
+.ag-button--warning:hover {
+  background: var(--ag-color-ink);
+  border-color: var(--ag-color-ink);
+}
+
+.ag-button--start {
+  font-size: var(--ag-font-size-lg);
+  padding-inline: var(--ag-space-5) var(--ag-space-4);
+}
+
+.ag-button--start::after {
+  content: "";
+  width: 0.55em;
+  height: 0.55em;
+  border-top: 3px solid currentcolor;
+  border-right: 3px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+.ag-button--block {
+  display: flex;
+  width: 100%;
+}
+
+.ag-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ag-space-3);
+  margin-bottom: var(--ag-space-5);
+}

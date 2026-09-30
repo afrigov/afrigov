@@ -1,0 +1,36 @@
+/* Error summary. Placed at the top of the form, focused on page load, each item
+   links to the field it describes. */
+.ag-error-summary {
+  margin-bottom: var(--ag-space-6);
+  padding: var(--ag-space-4);
+  border: 5px solid var(--ag-color-error);
+}
+
+.ag-error-summary:focus {
+  outline: var(--ag-size-focus-ring) solid var(--ag-color-focus);
+  box-shadow: 0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
+}
+
+.ag-error-summary__title {
+  margin: 0 0 var(--ag-space-3);
+  font-size: var(--ag-font-size-xl);
+}
+
+.ag-error-summary__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ag-error-summary__list li {
+  margin-bottom: var(--ag-space-2);
+}
+
+.ag-error-summary__list a {
+  color: var(--ag-color-error);
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-error-summary__list a:visited {
+  color: var(--ag-color-error);
+}

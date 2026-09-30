@@ -1,0 +1,44 @@
+/* Alert. Colour plus a title, never colour alone. Use role="alert" for errors
+   the user must act on, role="status" for everything else. */
+.ag-alert {
+  --_ag-alert-color: var(--ag-color-info);
+  --_ag-alert-tint: var(--ag-color-info-tint);
+
+  margin-bottom: var(--ag-space-5);
+  padding: var(--ag-space-4);
+  border: 3px solid var(--_ag-alert-color);
+  border-left-width: 8px;
+  background: var(--_ag-alert-tint);
+}
+
+.ag-alert--success {
+  --_ag-alert-color: var(--ag-color-success);
+  --_ag-alert-tint: var(--ag-color-success-tint);
+}
+
+.ag-alert--warning {
+  --_ag-alert-color: var(--ag-color-warning);
+  --_ag-alert-tint: var(--ag-color-warning-tint);
+}
+
+.ag-alert--error {
+  --_ag-alert-color: var(--ag-color-error);
+  --_ag-alert-tint: var(--ag-color-error-tint);
+}
+
+.ag-alert__title {
+  margin: 0 0 var(--ag-space-2);
+  font-size: var(--ag-font-size-lg);
+  color: var(--_ag-alert-color);
+}
+
+.ag-alert > :last-child {
+  margin-bottom: 0;
+}
+
+/* Links inside a tinted box use ink, because a pack's primary is only
+   guaranteed to pass on paper and paper-alt, not on every tint. */
+.ag-alert a,
+.ag-alert a:visited {
+  color: var(--ag-color-ink);
+}

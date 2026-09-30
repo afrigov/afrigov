@@ -1,0 +1,8 @@
+dist/
+build/
+docs/dist/
+node_modules/
+pnpm-lock.yaml
+CHANGELOG.md
+test-results/
+playwright-report/

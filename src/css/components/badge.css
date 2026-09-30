@@ -1,0 +1,40 @@
+/* Badge. A status label. Solid background with white or ink text; every variant passes AA. */
+.ag-badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: var(--ag-size-radius);
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-bold);
+  letter-spacing: 0.02em;
+  line-height: var(--ag-font-leading-base);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ag-badge--neutral {
+  background: var(--ag-color-paper-alt);
+  color: var(--ag-color-ink);
+  border: 1px solid var(--ag-color-border-strong);
+}
+
+.ag-badge--success {
+  background: var(--ag-color-success);
+  color: #fff;
+}
+
+.ag-badge--warning {
+  background: var(--ag-color-warning);
+  color: #fff;
+}
+
+.ag-badge--error {
+  background: var(--ag-color-error);
+  color: #fff;
+}
+
+.ag-badge--info {
+  background: var(--ag-color-info);
+  color: #fff;
+}
