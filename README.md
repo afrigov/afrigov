@@ -67,6 +67,12 @@ init();
 
 **Components:** official-website banner, header and navigation, footer, skip link, button, breadcrumb, pagination, text input, textarea, select, radio, checkbox, input group, phone number, national ID, region selector, character count, error summary, date input, alert, badge, details, accordion, table, currency display, confirmation panel, summary list, service card, inset text, language switcher.
 
+## Around afrigov
+
+- **[Use cases](https://omoyolab.github.io/afrigov-usecases/)**: real government websites rebuilt on afrigov, with the real site's accessibility score beside the rebuild. The first is Nigeria's digital economy ministry, 29 pages, every one 100, A.
+- **[afrigovPress](https://github.com/omoyolab/afrigovpress)**: afrigov as a WordPress theme. Country, organisation and contact details are site settings; news, articles and the page head are handled by the theme.
+- **[afrigov-audit](https://github.com/omoyolab/afrigov-audit)**: an accessibility check for any web page from the command line, with a badge of the grade and score.
+
 ## How accessibility is enforced
 
 - **Contrast is a build step.** Every foreground and background pair in [`scripts/tokens.mjs`](scripts/tokens.mjs) must meet its ratio, for the core and for every pack. If a pack's official colour is too light for text, the build derives a deeper one and says so in the generated CSS. The flag stripe always keeps the exact official colour.

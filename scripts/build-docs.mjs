@@ -19,6 +19,7 @@ export const SECTIONS = [
   { id: "components", title: "Components", href: "components/index.html" },
   { id: "patterns", title: "Patterns", href: "patterns/index.html" },
   { id: "packs", title: "Country packs", href: "packs/index.html" },
+  { id: "use-cases", title: "Use cases", href: "use-cases.html" },
   { id: "scoreboard", title: "Accessibility check", href: "scoreboard.html" },
   { id: "community", title: "Community", href: "community/index.html" },
 ];

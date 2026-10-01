@@ -1,0 +1,79 @@
+<!-- { "title": "Use cases", "section": "use-cases", "description": "Real government websites rebuilt on afrigov with their accessibility scores, the WordPress theme, and the audit tool." } -->
+<h1>Use cases</h1>
+<p class="ag-lead">
+  What afrigov looks like on a real government website, and the two tools that make it easy to adopt: a WordPress theme
+  and an accessibility check.
+</p>
+
+<h2>Rebuilds of real websites</h2>
+<p>
+  A use case takes a live government website and rebuilds it page for page on afrigov, installed from the CDN the way an
+  agency would. Every gap the rebuild finds goes back into afrigov as a component or a fix. Each rebuild is unofficial
+  and says so on every page.
+</p>
+
+<ul class="ag-cards ag-cards--wide">
+  <li class="ag-card">
+    <h3 class="ag-card__title">
+      <a class="ag-card__link" href="https://omoyolab.github.io/afrigov-usecases/fmcide/"
+        >Federal Ministry of Communications, Innovation and Digital Economy</a
+      >
+    </h3>
+    <p class="ag-card__text">
+      Nigeria · fmcide.gov.ng · 29 pages, including a multi-step application journey. Seventeen findings, which became
+      ten components and patterns in afrigov 0.5 to 0.8.
+    </p>
+    <p class="ag-card__meta">
+      <img
+        src="https://omoyolab.github.io/afrigov-usecases/badges/fmcide-rebuild.svg"
+        alt="Rebuild accessibility score, updated weekly"
+        height="20"
+      />
+      <img
+        src="https://omoyolab.github.io/afrigov-usecases/badges/fmcide-real.svg"
+        alt="Real site accessibility score, updated weekly"
+        height="20"
+      />
+    </p>
+  </li>
+</ul>
+<p>
+  <a href="https://omoyolab.github.io/afrigov-usecases/"
+    >All use cases, with the scores of the real sites beside the rebuilds</a
+  >. The badges are written by the audit every week, not by hand.
+</p>
+
+<h2>WordPress theme</h2>
+<p>
+  Most government websites on the continent already run WordPress.
+  <a href="https://github.com/omoyolab/afrigovpress">afrigovPress</a> is afrigov as a WordPress theme, so adopting it is
+  a matter of installing and activating a theme, not rebuilding a site.
+</p>
+<ul>
+  <li>The country pack, the organisation's name and crest, the address and social accounts are site settings.</li>
+  <li>The official banner, header and footer are fixed templates that an editor cannot break.</li>
+  <li>News is a dated list with thumbnails; articles have a lead image.</li>
+  <li>Every page gets its title, description and structured data from what the editor already wrote.</li>
+  <li>
+    Works with the block editor and the classic editor. Posts, pages, menus and media carry over from the old theme.
+  </li>
+</ul>
+<p>It carries a pinned afrigov version and updates like any other theme.</p>
+
+<h2>Accessibility check</h2>
+<p>
+  <a href="https://github.com/omoyolab/afrigov-audit">afrigov-audit</a> checks any web page from the command line, at
+  phone and desktop widths, and says which afrigov component fixes each problem. It is what scores the rebuilds above.
+</p>
+<pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.ng/
+npx afrigov-audit https://example.gov.ng/ --badge badges/home.svg</code></pre>
+<p>
+  With <code>--badge</code> it writes the grade and score as a badge, so a README or a status page shows the last audit
+  instead of a number someone typed.
+</p>
+
+<h2>Add yours</h2>
+<p>
+  Built something on afrigov, or want a site rebuilt as the next use case?
+  <a href="https://github.com/omoyolab/afrigov/discussions">Tell us in Discussions</a>.
+</p>

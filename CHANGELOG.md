@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- Docs: a Use cases page, with the first rebuild and its live scores, the WordPress theme afrigovPress, and afrigov-audit.
+
 ### Changed
 
 - The planning folder is `project/` instead of `internal/`. It holds the component registry, the roadmap and the decision records, and it has always been public. Operational notes that are not for the public repository moved out of it.
