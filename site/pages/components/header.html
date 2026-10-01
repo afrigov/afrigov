@@ -48,6 +48,25 @@
   &lt;/div&gt;
 &lt;/header&gt;</code></pre>
 
+<h2>Crest or logo</h2>
+<p>
+  Most ministries put the national coat of arms or their own crest in the header. Use the
+  <code>ag-header__logo</code> slot with an image, in place of the flag or next to it. The organisation name is written
+  beside it, so the image is decorative and gets <code>alt=""</code>.
+</p>
+<pre class="docs-code" tabindex="0"><code>&lt;a class="ag-header__brand" href="/"&gt;
+  &lt;img class="ag-header__logo" src="/images/coat-of-arms.svg" alt=""&gt;
+  &lt;span&gt;
+    &lt;span class="ag-header__org"&gt;Ministry of Health&lt;/span&gt;
+    &lt;span class="ag-header__sub"&gt;<span data-docs-string="government">The Government</span>&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/a&gt;</code></pre>
+<p>
+  afrigov ships flags in the country packs but not coats of arms. Flags are free to reproduce; in most countries the
+  coat of arms may only be used by government bodies or with permission, so each ministry supplies its own file. Keep it
+  under 10 KB as an SVG, and 40px tall is enough.
+</p>
+
 <h2>Variant: primary-coloured header</h2>
 <docs-example flush>
   <div class="ag-header ag-header--primary">
