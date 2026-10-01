@@ -18,7 +18,21 @@
   margin: 0;
 }
 
-.ag-banner__details {
+/* On phones the notice wraps beside the flag instead of pushing it onto its own line,
+   and the disclosure goes under both. 40em = breakpoint.sm */
+@media (max-width: 40em) {
+  .ag-banner__text {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .ag-banner__details {
+    flex-basis: 100%;
+  }
+}
+
+/* Closed, the summary sits on the same line as the notice. Open, the details take the full width. */
+.ag-banner__details[open] {
   flex-basis: 100%;
 }
 

@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-10-02
+
+### Changed
+
+- Official banner: "How you know this is official" sits on the same line as the notice when closed, and takes the full width only when open. The banner is one line tall again.
+- Header: `ag-header__logo--lg` for a crest beside a three-line organisation name.
+
 ## [0.5.0] - 2026-10-02
 
 Six components that the fmcide.gov.ng rebuild showed were missing. Each closes an issue filed from `afrigov-usecase-fmcide/FINDINGS.md`.

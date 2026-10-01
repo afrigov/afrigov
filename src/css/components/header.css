@@ -38,6 +38,11 @@
   width: auto;
 }
 
+/* For a crest beside a name that runs to three lines. */
+.ag-header__logo--lg {
+  height: 3.5rem;
+}
+
 .ag-header__org {
   display: block;
   font-size: var(--ag-font-size-lg);
