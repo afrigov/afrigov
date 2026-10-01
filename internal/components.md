@@ -24,6 +24,8 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Pagination              | `.ag-pagination`            | 0.1     | shipped |                                                                      |
 | Language switcher       | `.ag-lang`                  | 0.2     | shipped | Links with hreflang and lang, current marked, endonyms               |
 | Back link               | `.ag-back-link`             | 0.5     | shipped | Real link to the previous step; chevron mirrors in RTL               |
+| Social links            | `.ag-social`                | 0.6     | shipped | Network name is the text, icon decorative; footer only               |
+| Footer address          | `.ag-footer__address`       | 0.6     | shipped | `address` element, italic reset in core                              |
 | Hero                    | `.ag-hero` + image, primary | 0.5     | shipped | Image beside the text, never behind it; one action                   |
 | Cookie / consent banner | `.ag-consent`               | none    | cut     | Government sites should not need tracking cookies. Revisit if asked. |
 
@@ -79,6 +81,7 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Download link      | `.ag-download`                           | 0.5     | shipped | Format and size inside the link text                                                          |
 | Empty state        | `.ag-empty`                              | 0.5     | shipped | Heading plus what to do; not an alert                                                         |
 | Image and figure   | `.ag-figure`, `.ag-image`, `.ag-gallery` | 0.5     | shipped | Caption or alt, never both; 150 KB budget; no text over photos                                |
+| Statement          | `.ag-statement`                          | 0.6     | shipped | Head of organisation's message with portrait; name and role after the text                    |
 | Modal dialog       | none                                     | none    | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need. |
 | Toast              | none                                     | none    | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                 |
 | Carousel           | none                                     | none    | cut     | Never.                                                                                        |

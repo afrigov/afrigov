@@ -6,6 +6,20 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-02
+
+Three more gaps from the fmcide.gov.ng rebuild.
+
+### Added
+
+- Statement (`.ag-statement`): a message from the head of an organisation, portrait beside the text, name and role after it, link to the full message. The hero docs now say the portrait belongs here, not in the hero.
+- Social links (`.ag-social`): the network's name as the link text, a decorative inline SVG icon, footer only.
+- Footer address (`.ag-footer__address`), and `address` is no longer italic anywhere.
+
+### Changed
+
+- Hero docs use a neutral example instead of a ministry's text.
+
 ## [0.5.1] - 2026-10-02
 
 ### Changed

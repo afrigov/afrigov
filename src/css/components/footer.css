@@ -47,6 +47,11 @@
   padding-block: var(--ag-space-2);
 }
 
+.ag-footer__address {
+  margin: 0 0 var(--ag-space-3);
+  font-style: normal;
+}
+
 .ag-footer__bar {
   display: flex;
   flex-wrap: wrap;

@@ -45,6 +45,8 @@ describe("dist/core.css", () => {
       ".ag-download",
       ".ag-empty",
       ".ag-hero",
+      ".ag-statement",
+      ".ag-social",
       ".ag-alert",
       ".ag-accordion",
       ".ag-table",

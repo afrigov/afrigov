@@ -38,6 +38,8 @@ const COMPONENTS = [
   "download",
   "empty",
   "hero",
+  "statement",
+  "social",
   "alert",
   "accordion",
   "table",

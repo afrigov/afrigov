@@ -61,3 +61,8 @@ legend {
     scroll-behavior: auto !important;
   }
 }
+
+/* An address is not a quotation. */
+address {
+  font-style: normal;
+}

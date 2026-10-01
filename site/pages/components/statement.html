@@ -1,0 +1,61 @@
+<!-- { "title": "Statement", "section": "components", "description": "A message from the head of an organisation: portrait, a short text, their name and role, and a link to the full message.", "order": 179 } -->
+<h1>Statement</h1>
+<p class="ag-lead">
+  A message from the head of an organisation: their portrait beside a short text, their name and role, and a link to the
+  full message. For a minister, a director general, a governor, a chair.
+</p>
+
+<h2>When to use</h2>
+<p>
+  Once on a home page, under the hero, and on the About page with the full text. It is where the portrait belongs. Do
+  not put the portrait in the <a href="hero.html">hero</a>; the hero is about the service, not the person.
+</p>
+
+<h2>When not to use</h2>
+<p>For quotations inside an article, which are ordinary paragraphs or <a href="inset-text.html">inset text</a>.</p>
+
+<docs-example>
+  <section class="ag-statement ag-mb-0" aria-labelledby="statement-example">
+    <figure class="ag-figure ag-statement__media">
+      <img
+        class="ag-figure__image"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23c7d6e3'/%3E%3Ccircle cx='0.5' cy='0.38' r='0.17' fill='%23ffbf47'/%3E%3Cpath d='M0.18 1 C0.18 0.68 0.32 0.62 0.5 0.62 C0.68 0.62 0.82 0.68 0.82 1 Z' fill='%231f4e79'/%3E%3C/svg%3E"
+        alt=""
+        width="320"
+        height="320"
+        loading="lazy"
+      />
+    </figure>
+    <div class="ag-statement__body">
+      <h2 class="ag-statement__title" id="statement-example">A message from the Director General</h2>
+      <p>
+        Every household should be able to count on clean water and know who to call when it stops. This year we are
+        publishing our inspection results, district by district, so that you can hold us to that.
+      </p>
+      <p class="ag-statement__by"><strong>Dr Amina Bello</strong>Director General, National Water Agency</p>
+      <p><a href="#statement-example">Read the full message</a></p>
+    </div>
+  </section>
+</docs-example>
+<p class="docs-fine">A placeholder drawing stands in for the portrait. The markup is the same.</p>
+
+<h2>How it works</h2>
+<ul>
+  <li>
+    The title names the role, not the person: "A message from the Minister". The name and role go under the text in
+    <code>ag-statement__by</code>, so screen reader users hear who is speaking after what was said, the way a signed
+    letter reads.
+  </li>
+  <li>
+    The portrait is decorative because the name is written beside it: <code>alt=""</code>. Square, 320px is enough,
+    under 40 KB.
+  </li>
+  <li>Keep the text to three sentences. The full message is a page of its own, linked at the end.</li>
+  <li>On phones the portrait stacks above the text.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The section is labelled by its title, so it is a landmark people can jump to.</li>
+  <li>The name is in <code>strong</code> on its own line; the role follows in muted text that still meets AA.</li>
+</ul>

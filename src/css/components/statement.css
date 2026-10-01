@@ -1,0 +1,54 @@
+/* Statement. A message from the head of an organisation: their portrait beside
+   a short text, their name and role, and a link to the full message. */
+.ag-statement {
+  display: grid;
+  gap: var(--ag-space-5);
+  margin-bottom: var(--ag-space-6);
+  padding: var(--ag-space-5);
+  border-inline-start: 4px solid var(--ag-color-primary);
+  background: var(--ag-color-paper-alt);
+}
+
+/* 48em = breakpoint.md */
+@media (min-width: 48em) {
+  .ag-statement {
+    grid-template-columns: 10rem 1fr;
+    align-items: start;
+  }
+}
+
+.ag-statement__media {
+  margin: 0;
+  max-width: 10rem;
+}
+
+.ag-statement__media .ag-figure__image {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--ag-size-radius);
+}
+
+.ag-statement__title {
+  margin: 0 0 var(--ag-space-3);
+  font-size: var(--ag-font-size-lg);
+}
+
+.ag-statement__body > p {
+  max-width: var(--ag-size-measure);
+}
+
+.ag-statement__body > :last-child {
+  margin-bottom: 0;
+}
+
+.ag-statement__by {
+  margin: var(--ag-space-4) 0 0;
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-statement__by strong {
+  display: block;
+  font-size: var(--ag-font-size-sm);
+  color: var(--ag-color-ink);
+}
