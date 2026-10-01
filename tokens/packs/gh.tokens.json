@@ -37,12 +37,25 @@
         "document": "Ghana Card",
         "hint": "On the front of your Ghana Card, like GHA-123456789-0",
         "length": 15,
+        "pattern": "GHA-[0-9]{9}-[0-9]",
         "authority": "the National Identification Authority"
       },
       "regions": {
         "label": "Region",
         "choose": "Choose a region",
-        "items": ["Greater Accra", "Ashanti", "Northern", "Western", "Central", "Volta"]
+        "items": ["Greater Accra", "Ashanti", "Northern", "Western", "Central", "Volta"],
+        "sub": {
+          "label": "District",
+          "choose": "Choose a district",
+          "items": {
+            "Greater Accra": ["Accra Metropolitan", "Tema Metropolitan", "Ga East", "Ledzokuku"],
+            "Ashanti": ["Kumasi Metropolitan", "Obuasi Municipal", "Ejisu"],
+            "Northern": ["Tamale Metropolitan", "Savelugu", "Yendi"],
+            "Western": ["Sekondi-Takoradi", "Tarkwa-Nsuaem", "Ahanta West"],
+            "Central": ["Cape Coast Metropolitan", "Mfantseman", "Komenda-Edina-Eguafo-Abirem"],
+            "Volta": ["Ho Municipal", "Keta", "Hohoe"]
+          }
+        }
       },
       "phone": {
         "code": "+233",

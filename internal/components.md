@@ -48,8 +48,8 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Error summary           | `.ag-error-summary`                        | 0.1     | shipped | JS focuses it on load                                                        |
 | Date input              | `.ag-date-input`                           | 0.1     | shipped | Three fields, no picker                                                      |
 | Phone number            | `.ag-phone`                                | 0.2     | shipped | Dialling code from the pack, national number, `autocomplete="tel-national"`  |
-| National ID             | `.ag-id-input`                             | 0.2     | planned | Per-pack hint text and width (NIN 11 digits, Kenya ID 8, Ghana card 15)      |
-| Region selector         | `.ag-region`                               | 0.2     | planned | State/county/region then LGA/sub-county, data from the pack                  |
+| National ID             | `.ag-id-input`                             | 0.2     | shipped | Label, hint, maxlength, pattern and inputmode from the pack                  |
+| Region selector         | `[data-ag-region-for]` + optgroups         | 0.2     | shipped | No-script state is grouped options; script narrows the second select         |
 | Currency display        | `.ag-money`                                | 0.2     | planned | Tabular figures, symbol from the pack                                        |
 | Character count         | `.ag-char-count`                           | 0.2     | planned | Needs JS; no-JS state shows the limit in the hint                            |
 | File upload             | `.ag-file`                                 | 0.3     | planned | Native input restyled                                                        |

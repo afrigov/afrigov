@@ -26,6 +26,7 @@ const COMPONENTS = [
   "error-summary",
   "date-input",
   "phone",
+  "id-input",
   "alert",
   "accordion",
   "table",

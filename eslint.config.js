@@ -15,6 +15,8 @@ export default [
         URL: "readonly",
         localStorage: "readonly",
         Option: "readonly",
+        Event: "readonly",
+        __AFRIGOV_VERSION__: "readonly",
       },
     },
   },

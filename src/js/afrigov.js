@@ -42,6 +42,31 @@ function toggles(scope) {
   else wide.addListener(onChange);
 }
 
+/**
+ * Region selector. A first-level select with data-ag-region-for="<id of the
+ * second select>". The second select groups its options in <optgroup>s whose
+ * label is the first-level name. Without script all groups show; with it,
+ * only the chosen region's group is offered.
+ */
+function regions(scope) {
+  scope.querySelectorAll("[data-ag-region-for]").forEach((first) => {
+    const second = document.getElementById(first.getAttribute("data-ag-region-for") || "");
+    if (!second) return;
+    const update = () => {
+      const chosen = first.value;
+      second.querySelectorAll("optgroup").forEach((group) => {
+        const show = !chosen || group.label === chosen;
+        group.hidden = !show;
+        group.disabled = !show;
+      });
+      const picked = second.options[second.selectedIndex];
+      if (picked && picked.parentElement.tagName === "OPTGROUP" && picked.parentElement.disabled) second.value = "";
+    };
+    first.addEventListener("change", update);
+    update();
+  });
+}
+
 function focusErrorSummary(scope) {
   const summary = scope.querySelector(".ag-error-summary");
   if (summary && !summary.hasAttribute("data-ag-no-autofocus")) {
@@ -54,6 +79,7 @@ function focusErrorSummary(scope) {
 export function init(scope = document) {
   document.documentElement.classList.add("ag-js");
   toggles(scope);
+  regions(scope);
   focusErrorSummary(scope);
 }
 
@@ -66,4 +92,5 @@ export function autoInit() {
   }
 }
 
-export const version = "0.1.0";
+export { regions };
+export const version = __AFRIGOV_VERSION__;

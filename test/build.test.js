@@ -32,6 +32,7 @@ describe("dist/core.css", () => {
       ".ag-error-summary",
       ".ag-date-input",
       ".ag-phone",
+      ".ag-id-input",
       ".ag-alert",
       ".ag-accordion",
       ".ag-table",
@@ -77,10 +78,10 @@ describe("country packs in dist", () => {
 });
 
 describe("JavaScript", () => {
-  it("ships ESM and a script-tag build under 2 KB", () => {
+  it("ships ESM and a script-tag build under 3 KB", () => {
     expect(read("afrigov.js")).toContain("export {");
     const iife = read("afrigov.iife.js");
     expect(iife).toContain("AfriGov");
-    expect(statSync(dist("afrigov.iife.js")).size).toBeLessThan(2048);
+    expect(statSync(dist("afrigov.iife.js")).size).toBeLessThan(3072);
   });
 });

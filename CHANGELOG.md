@@ -10,6 +10,8 @@ All notable changes to this project are documented here. The format follows
 
 - Pack JSON Schema at `tokens/packs/pack.schema.json`, published in the package and enforced in the tests. Every pack now references it with `$schema` for editor validation.
 - Phone number component (`.ag-phone`): dialling-code select and national number field. Packs carry a `phone` block (code, example, hint, length).
+- National ID input (`.ag-id-input`): label, hint, maxlength, pattern and keyboard from the pack's `id` block, which gains `pattern`.
+- Region selector: a first select with `data-ag-region-for` and a second grouped by `optgroup`; `afrigov.js` narrows the second to the chosen region. Packs gain `regions.sub` with sample second-level divisions.
 
 ### Changed
 

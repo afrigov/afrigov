@@ -7,6 +7,7 @@ import { ROOT } from "./tokens.mjs";
 const entry = join(ROOT, "src", "js", "afrigov.js");
 const pkg = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8"));
 const banner = { js: `/*! afrigov v${pkg.version} | MIT | https://github.com/omoyolab/afrigov */` };
+const define = { __AFRIGOV_VERSION__: JSON.stringify(pkg.version) };
 
 await build({
   entryPoints: [entry],
@@ -15,6 +16,7 @@ await build({
   target: "es2019",
   outfile: join(ROOT, "dist", "afrigov.js"),
   banner,
+  define,
 });
 await build({
   entryPoints: [entry],
@@ -25,6 +27,7 @@ await build({
   minify: true,
   outfile: join(ROOT, "dist", "afrigov.iife.js"),
   banner,
+  define,
   footer: { js: "AfriGov.init();" },
 });
 

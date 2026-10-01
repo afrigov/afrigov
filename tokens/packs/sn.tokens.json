@@ -48,7 +48,19 @@
       "regions": {
         "label": "Région",
         "choose": "Choisissez une région",
-        "items": ["Dakar", "Thiès", "Saint-Louis", "Ziguinchor", "Kaolack", "Diourbel"]
+        "items": ["Dakar", "Thiès", "Saint-Louis", "Ziguinchor", "Kaolack", "Diourbel"],
+        "sub": {
+          "label": "Département",
+          "choose": "Choisissez un département",
+          "items": {
+            "Dakar": ["Dakar", "Pikine", "Guédiawaye", "Rufisque"],
+            "Thiès": ["Thiès", "Mbour", "Tivaouane"],
+            "Saint-Louis": ["Saint-Louis", "Dagana", "Podor"],
+            "Ziguinchor": ["Ziguinchor", "Bignona", "Oussouye"],
+            "Kaolack": ["Kaolack", "Nioro du Rip", "Guinguinéo"],
+            "Diourbel": ["Diourbel", "Bambey", "Mbacké"]
+          }
+        }
       },
       "phone": {
         "code": "+221",

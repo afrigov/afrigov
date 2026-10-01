@@ -40,6 +40,8 @@
     "currency-hint": cur.hint,
     "region-label": reg.label,
     "region-choose": reg.choose,
+    "subregion-label": reg.sub && reg.sub.label,
+    "subregion-choose": reg.sub && reg.sub.choose,
     "phone-hint": meta.phone && meta.phone.hint,
     "phone-example": meta.phone && meta.phone.example,
     timezone: ex.timezone,
@@ -65,6 +67,31 @@
     reg.items.forEach(function (name) {
       sel.add(new Option(name));
     });
+  });
+  // National ID inputs: width, pattern and keyboard from the pack.
+  document.querySelectorAll("[data-docs-id-input]").forEach(function (input) {
+    if (id.pattern) input.setAttribute("pattern", id.pattern);
+    else input.removeAttribute("pattern");
+    if (id.length) input.setAttribute("maxlength", String(id.length));
+    input.setAttribute("inputmode", id.pattern && /^\[0-9\]/.test(id.pattern) ? "numeric" : "text");
+  });
+  // Sub-region select: optgroups per region from the pack, then let the script filter.
+  document.querySelectorAll("[data-docs-subregions]").forEach(function (sel) {
+    if (!reg.sub || !reg.sub.items) return;
+    while (sel.options.length > 1) sel.remove(1);
+    sel.querySelectorAll("optgroup").forEach(function (g) {
+      g.remove();
+    });
+    Object.keys(reg.sub.items).forEach(function (region) {
+      var group = document.createElement("optgroup");
+      group.label = region;
+      reg.sub.items[region].forEach(function (name) {
+        group.appendChild(new Option(name));
+      });
+      sel.appendChild(group);
+    });
+    var first = document.querySelector('[data-ag-region-for="' + sel.id + '"]');
+    if (first) first.dispatchEvent(new Event("change"));
   });
   // Dialling-code select: every pack's code, with the current pack's selected.
   document.querySelectorAll("[data-docs-phone-codes]").forEach(function (sel) {

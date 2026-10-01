@@ -1,0 +1,67 @@
+<!-- { "title": "National ID number", "section": "components", "description": "A text input for the national identity number, with label, hint, width, pattern and keyboard from the country pack.", "order": 136 } -->
+<h1>National ID number</h1>
+<p class="ag-lead">
+  Every country has one, and every country writes it differently. The pack says what it is called, where to find it, how
+  long it is and what it looks like. The input follows.
+</p>
+
+<h2>When to use</h2>
+<p>
+  When a service needs to match a person to a government record. Ask for it once, as late in the journey as possible.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  As a login or a password. An ID number is not a secret. And never ask for it "for the records" when the service does
+  not use it.
+</p>
+
+<docs-example>
+  <div class="ag-field ag-mb-0">
+    <label class="ag-label" for="nid" data-docs-string="id-name">National ID number</label>
+    <span class="ag-hint" id="nid-hint" data-docs-string="id-hint">As printed on your national ID</span>
+    <input
+      class="ag-input ag-id-input"
+      id="nid"
+      name="national-id"
+      type="text"
+      autocomplete="off"
+      spellcheck="false"
+      aria-describedby="nid-hint"
+      data-docs-id-input
+    />
+  </div>
+</docs-example>
+<p class="docs-fine">
+  Preview a country at the top. Nigeria's NIN is 11 digits and opens the number keypad; Ghana's card number is letters
+  and digits with hyphens and keeps the full keyboard.
+</p>
+
+<h2>How it works</h2>
+<ul>
+  <li>
+    Label from <code>id.name</code>, hint from <code>id.hint</code>. Say where on the document the number is printed.
+  </li>
+  <li>
+    <code>maxlength</code> from <code>id.length</code> and <code>pattern</code> from <code>id.pattern</code>, so the
+    browser can check the shape before the server does.
+  </li>
+  <li><code>inputmode="numeric"</code> when the pattern is all digits, so phones show the number keypad.</li>
+  <li>
+    <code>autocomplete="off"</code> and <code>spellcheck="false"</code>: browsers should not guess or correct an
+    identifier.
+  </li>
+  <li>Accept spaces and hyphens people type from habit. Strip them on the server.</li>
+</ul>
+
+<h2>Errors</h2>
+<p>
+  Say the shape, not the rule: "Enter your NIN. It is 11 digits, on your NIN slip." Link to it from the
+  <a href="error-summary.html">error summary</a>.
+</p>
+
+<h2>Pack fields</h2>
+<p>
+  <code>id.name</code>, <code>id.hint</code>, <code>id.length</code>, <code>id.pattern</code>, <code>id.document</code>,
+  <code>id.authority</code>.
+</p>

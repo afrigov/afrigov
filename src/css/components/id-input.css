@@ -1,0 +1,7 @@
+/* National ID number. A text input tuned for identifiers: tabular figures,
+   a little tracking, and a width that comes from the pack's length. */
+.ag-id-input {
+  max-width: 22rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}

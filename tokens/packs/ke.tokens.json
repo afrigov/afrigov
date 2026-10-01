@@ -36,12 +36,25 @@
         "document": "National ID card",
         "hint": "8 digits, on the front of your ID card",
         "length": 8,
+        "pattern": "[0-9]{8}",
         "authority": "the National Registration Bureau"
       },
       "regions": {
         "label": "County",
         "choose": "Choose a county",
-        "items": ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Kiambu", "Uasin Gishu"]
+        "items": ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Kiambu", "Uasin Gishu"],
+        "sub": {
+          "label": "Sub-county",
+          "choose": "Choose a sub-county",
+          "items": {
+            "Nairobi": ["Westlands", "Kasarani", "Embakasi East", "Langata"],
+            "Mombasa": ["Mvita", "Nyali", "Likoni"],
+            "Kisumu": ["Kisumu Central", "Kisumu East", "Kisumu West"],
+            "Nakuru": ["Nakuru Town East", "Nakuru Town West", "Naivasha"],
+            "Kiambu": ["Thika Town", "Ruiru", "Kiambu"],
+            "Uasin Gishu": ["Ainabkoi", "Kesses", "Soy"]
+          }
+        }
       },
       "phone": {
         "code": "+254",

@@ -41,12 +41,25 @@
         "document": "NIN slip",
         "hint": "11 digits, on your NIN slip",
         "length": 11,
+        "pattern": "[0-9]{11}",
         "authority": "NIMC"
       },
       "regions": {
         "label": "State",
         "choose": "Choose a state",
-        "items": ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Lagos", "Kano"]
+        "items": ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Lagos", "Kano"],
+        "sub": {
+          "label": "Local government area",
+          "choose": "Choose a local government area",
+          "items": {
+            "Abia": ["Aba North", "Aba South", "Umuahia North"],
+            "Adamawa": ["Yola North", "Yola South", "Mubi North"],
+            "Akwa Ibom": ["Uyo", "Eket", "Ikot Ekpene"],
+            "Anambra": ["Awka South", "Onitsha North", "Nnewi North"],
+            "Lagos": ["Ikeja", "Surulere", "Eti-Osa", "Alimosho", "Ikorodu"],
+            "Kano": ["Nassarawa", "Dala", "Fagge", "Tarauni"]
+          }
+        }
       },
       "phone": {
         "code": "+234",

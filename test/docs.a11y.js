@@ -83,3 +83,17 @@ test("the country choice is remembered across pages", async ({ page: p }) => {
   await p.waitForSelector(".ag-js");
   await expect(p.locator("html")).toHaveAttribute("data-ag-pack", "ke");
 });
+
+test("region selector narrows the sub-region list to the chosen region", async ({ page: p }) => {
+  await p.goto(`${pathToFileURL(join(DOCS, "components", "region.html")).href}?pack=ng`);
+  await p.waitForSelector(".ag-js");
+  const first = p.locator("#rg-region");
+  const second = p.locator("#rg-sub");
+  await expect(second.locator("optgroup")).toHaveCount(6);
+  await first.selectOption("Lagos");
+  const visible = await second.locator("optgroup:not([hidden])").evaluateAll((gs) => gs.map((g) => g.label));
+  expect(visible).toEqual(["Lagos"]);
+  await second.selectOption("Ikeja");
+  await first.selectOption("Kano");
+  await expect(second).toHaveValue("");
+});

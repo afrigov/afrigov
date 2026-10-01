@@ -1,0 +1,90 @@
+<!-- { "title": "Region selector", "section": "components", "description": "Two selects, region then sub-region, with names and divisions from the country pack. The second list narrows to the chosen region.", "order": 137 } -->
+<h1>Region selector</h1>
+<p class="ag-lead">
+  Region, then sub-region. State and local government area in Nigeria, county and sub-county in Kenya, region and
+  district in Ghana. The names and the divisions come from the pack.
+</p>
+
+<h2>When to use</h2>
+<p>For an address, a place of birth, or where a service is delivered. Anywhere the answer is an administrative area.</p>
+
+<h2>When not to use</h2>
+<p>For a free-text address line. Use a <a href="text-input.html">text input</a> for streets and landmarks.</p>
+
+<docs-example>
+  <div class="ag-field">
+    <label class="ag-label" for="rg-region" data-docs-string="region-label">Region</label>
+    <select class="ag-select" id="rg-region" name="region" data-docs-regions data-ag-region-for="rg-sub">
+      <option value="" data-docs-string="region-choose">Choose a region</option>
+      <option>Central</option>
+      <option>Coastal</option>
+      <option>Eastern</option>
+      <option>Northern</option>
+      <option>Southern</option>
+      <option>Western</option>
+    </select>
+  </div>
+  <div class="ag-field ag-mb-0">
+    <label class="ag-label" for="rg-sub" data-docs-string="subregion-label">District</label>
+    <select class="ag-select" id="rg-sub" name="district" data-docs-subregions>
+      <option value="" data-docs-string="subregion-choose">Choose a district</option>
+      <optgroup label="Central">
+        <option>Central North</option>
+        <option>Central South</option>
+      </optgroup>
+      <optgroup label="Coastal">
+        <option>Port</option>
+        <option>Bay</option>
+      </optgroup>
+      <optgroup label="Eastern">
+        <option>East Hills</option>
+        <option>East Plains</option>
+      </optgroup>
+      <optgroup label="Northern">
+        <option>North Ridge</option>
+        <option>North Valley</option>
+      </optgroup>
+      <optgroup label="Southern">
+        <option>South Coast</option>
+        <option>South Plateau</option>
+      </optgroup>
+      <optgroup label="Western">
+        <option>West Lakes</option>
+        <option>West Forest</option>
+      </optgroup>
+    </select>
+  </div>
+</docs-example>
+<p class="docs-fine">
+  Pick a region and the second list narrows. Turn JavaScript off and it shows every division, grouped.
+</p>
+
+<h2>How it works</h2>
+<ul>
+  <li>The first select carries <code>data-ag-region-for</code> with the id of the second.</li>
+  <li>
+    The second select groups its options in <code>optgroup</code>s whose label is the region name. That is the no-script
+    state, and it is complete and accessible on its own.
+  </li>
+  <li>
+    With <code>afrigov.js</code>, choosing a region hides and disables the other groups. Changing region clears a
+    sub-region that no longer applies.
+  </li>
+  <li>
+    The packs carry a handful of divisions per region as examples. A real service supplies its own full list from its
+    data.
+  </li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Two labelled selects, so screen readers announce each on its own. No custom widget.</li>
+  <li>Hidden groups are also disabled, so keyboard users cannot land on an option that does not apply.</li>
+  <li>Keep the order stable. Sort regions alphabetically unless the country has a conventional order.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p>
+  <code>regions.label</code>, <code>regions.choose</code>, <code>regions.items</code>, <code>regions.sub.label</code>,
+  <code>regions.sub.choose</code>, <code>regions.sub.items</code>.
+</p>
