@@ -1,0 +1,52 @@
+<!-- { "title": "Accessibility check", "section": "scoreboard", "description": "A monthly automated accessibility check of public government websites in the countries afrigov has packs for, with the fix for each site's biggest problem." } -->
+<h1>Accessibility check</h1>
+<p class="ag-lead">
+  Once a month, the main public services of each country with a pack are checked with
+  <a href="https://github.com/omoyolab/afrigov-audit">afrigov-audit</a>. Each site's biggest problem is listed with the
+  component that fixes it. The point is the fix.
+</p>
+
+<div class="ag-inset">
+  <p>
+    Automated checks find about a third of real accessibility problems, so a good result here is a floor, not a pass. A
+    poor result is a list of things to do, each with instructions. Sites are grouped by country and listed
+    alphabetically, not ranked.
+  </p>
+</div>
+
+{{scoreboard}}
+
+<h2 id="method">How the check works</h2>
+<ul>
+  <li>
+    Each site's home page is loaded once in a real browser at phone width (375px) and desktop width (1280px), as an
+    anonymous visitor, with a user agent that names the tool. Nothing is bypassed; a site that blocks automated browsers
+    is listed as not checked.
+  </li>
+  <li>
+    <a href="https://github.com/dequelabs/axe-core">axe-core</a> runs with the WCAG 2.0, 2.1 and 2.2 AA rule sets, plus
+    five checks for problems common on government sites: language declared, zoom allowed, skip link, page title, tap
+    targets at phone width.
+  </li>
+  <li>
+    The score starts at 100 and loses points per failing rule, weighted by severity and capped per rule so one repeated
+    mistake does not hide the rest. The formula and weights are in the
+    <a href="https://github.com/omoyolab/afrigov-audit#how-the-score-is-calculated">afrigov-audit README</a>.
+  </li>
+  <li>
+    Grades: <strong>A</strong> accessible (90 and above), <strong>B</strong> nearly (75), <strong>C</strong> partly
+    (60), <strong>D</strong> mostly not (40), <strong>F</strong> not yet (below 40).
+  </li>
+  <li>Anyone can reproduce a row: <code>npx afrigov-audit &lt;url&gt;</code>.</li>
+</ul>
+
+<h2 id="recheck">Fixed something, or think a result is wrong?</h2>
+<p>
+  <a href="https://github.com/omoyolab/afrigov/issues/new?template=recheck.yml">Request a re-check</a>. A site that
+  improves is re-run and the page updated outside the monthly cycle. If a result is wrong, say what the page actually
+  does and it will be corrected or the check changed. Sites to add or remove go the same way.
+</p>
+<p class="docs-fine">
+  afrigov is an open-source project and is not affiliated with any government. The sites listed are public services
+  chosen because people depend on them, not for any other reason.
+</p>

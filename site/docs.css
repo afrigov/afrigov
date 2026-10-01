@@ -514,3 +514,32 @@
   font-size: var(--ag-font-size-xs);
   color: var(--ag-color-ink-muted);
 }
+
+/* Accessibility check page. */
+.docs-scoreboard th[scope="row"] {
+  min-width: 12rem;
+}
+
+.docs-scoreboard td {
+  font-size: var(--ag-font-size-xs);
+  vertical-align: top;
+}
+
+.docs-grade-word {
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.docs-trend {
+  display: block;
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-normal);
+  color: var(--ag-color-ink-muted);
+}
+
+.docs-trend--up {
+  color: var(--ag-color-success);
+}
+
+.docs-trend--down {
+  color: var(--ag-color-error);
+}

@@ -1,0 +1,29 @@
+name: "Accessibility check: re-check or correction"
+description: Ask for a site on the accessibility check page to be re-run, corrected, added or removed
+labels: ["scoreboard"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Site address
+      placeholder: "https://example.gov.ng/"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What do you need
+      options:
+        - Re-check, we have fixed problems
+        - A result is wrong
+        - Add this site
+        - Remove this site
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For a correction, say what the page actually does and which row is wrong. For a re-check, say what changed. If you represent the site, say so; it is not required.
+    validations:
+      required: true

@@ -6,3 +6,6 @@ test-results/
 playwright-report/
 .DS_Store
 *.log
+
+# Audit results stay local until the first publication. Remove this line to publish; see internal/scoreboard-notice.md.
+scoreboard/results/

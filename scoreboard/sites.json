@@ -1,7 +1,12 @@
 {
   "$description": "Government sites audited for the scoreboard: five per country with a pack. National portal, identity authority, immigration or passports, tax authority, health ministry. Public, high-traffic services people depend on. Corrections and additions by pull request.",
   "sites": [
-    { "country": "ng", "name": "Nigeria government portal", "role": "portal", "url": "https://nigeria.gov.ng/" },
+    {
+      "country": "ng",
+      "name": "Nigeria government portal",
+      "role": "portal",
+      "url": "https://nigeria.gov.ng/"
+    },
     {
       "country": "ng",
       "name": "National Identity Management Commission",
@@ -14,27 +19,84 @@
       "role": "immigration",
       "url": "https://immigration.gov.ng/"
     },
-    { "country": "ng", "name": "Federal Inland Revenue Service", "role": "tax", "url": "https://www.firs.gov.ng/" },
-    { "country": "ng", "name": "Federal Ministry of Health", "role": "health", "url": "https://www.health.gov.ng/" },
-
-    { "country": "ke", "name": "Kenya government portal", "role": "portal", "url": "https://www.kenya.go.ke/" },
-    { "country": "ke", "name": "eCitizen", "role": "identity", "url": "https://www.ecitizen.go.ke/" },
+    {
+      "country": "ng",
+      "name": "Federal Inland Revenue Service",
+      "role": "tax",
+      "url": "https://www.firs.gov.ng/"
+    },
+    {
+      "country": "ng",
+      "name": "Federal Ministry of Health",
+      "role": "health",
+      "url": "https://www.health.gov.ng/"
+    },
+    {
+      "country": "ke",
+      "name": "MyGov Kenya",
+      "role": "portal",
+      "url": "https://www.mygov.go.ke/"
+    },
+    {
+      "country": "ke",
+      "name": "eCitizen",
+      "role": "identity",
+      "url": "https://www.ecitizen.go.ke/"
+    },
     {
       "country": "ke",
       "name": "Directorate of Immigration Services",
       "role": "immigration",
       "url": "https://immigration.go.ke/"
     },
-    { "country": "ke", "name": "Kenya Revenue Authority", "role": "tax", "url": "https://www.kra.go.ke/" },
-    { "country": "ke", "name": "Ministry of Health", "role": "health", "url": "https://www.health.go.ke/" },
-
-    { "country": "gh", "name": "Ghana government portal", "role": "portal", "url": "https://www.ghana.gov.gh/" },
-    { "country": "gh", "name": "National Identification Authority", "role": "identity", "url": "https://nia.gov.gh/" },
-    { "country": "gh", "name": "Ghana Immigration Service", "role": "immigration", "url": "https://gis.gov.gh/" },
-    { "country": "gh", "name": "Ghana Revenue Authority", "role": "tax", "url": "https://gra.gov.gh/" },
-    { "country": "gh", "name": "Ministry of Health", "role": "health", "url": "https://www.moh.gov.gh/" },
-
-    { "country": "sn", "name": "Portail du Gouvernement", "role": "portal", "url": "https://www.sec.gouv.sn/" },
+    {
+      "country": "ke",
+      "name": "Kenya Revenue Authority",
+      "role": "tax",
+      "url": "https://www.kra.go.ke/"
+    },
+    {
+      "country": "ke",
+      "name": "Ministry of Health",
+      "role": "health",
+      "url": "https://www.health.go.ke/"
+    },
+    {
+      "country": "gh",
+      "name": "Ghana government portal",
+      "role": "portal",
+      "url": "https://www.ghana.gov.gh/"
+    },
+    {
+      "country": "gh",
+      "name": "National Identification Authority",
+      "role": "identity",
+      "url": "https://nia.gov.gh/"
+    },
+    {
+      "country": "gh",
+      "name": "Ghana Immigration Service",
+      "role": "immigration",
+      "url": "https://gis.gov.gh/"
+    },
+    {
+      "country": "gh",
+      "name": "Ghana Revenue Authority",
+      "role": "tax",
+      "url": "https://gra.gov.gh/"
+    },
+    {
+      "country": "gh",
+      "name": "Ministry of Health",
+      "role": "health",
+      "url": "https://www.moh.gov.gh/"
+    },
+    {
+      "country": "sn",
+      "name": "Portail du Gouvernement",
+      "role": "portal",
+      "url": "https://www.sec.gouv.sn/"
+    },
     {
       "country": "sn",
       "name": "Ministère de l'Intérieur",
@@ -43,9 +105,9 @@
     },
     {
       "country": "sn",
-      "name": "Direction de la Police des Étrangers",
-      "role": "immigration",
-      "url": "https://www.police.gouv.sn/"
+      "name": "Sénégal Services",
+      "role": "services",
+      "url": "https://www.senegalservices.sn/"
     },
     {
       "country": "sn",
@@ -53,23 +115,71 @@
       "role": "tax",
       "url": "https://www.dgid.sn/"
     },
-    { "country": "sn", "name": "Ministère de la Santé", "role": "health", "url": "https://www.sante.gouv.sn/" },
-
-    { "country": "rw", "name": "Rwanda government portal", "role": "portal", "url": "https://www.gov.rw/" },
+    {
+      "country": "sn",
+      "name": "Ministère de la Santé",
+      "role": "health",
+      "url": "https://www.sante.gouv.sn/"
+    },
+    {
+      "country": "rw",
+      "name": "Rwanda government portal",
+      "role": "portal",
+      "url": "https://www.gov.rw/"
+    },
     {
       "country": "rw",
       "name": "National Identification Agency",
       "role": "identity",
       "url": "https://www.nida.gov.rw/"
     },
-    { "country": "rw", "name": "Irembo", "role": "immigration", "url": "https://irembo.gov.rw/" },
-    { "country": "rw", "name": "Rwanda Revenue Authority", "role": "tax", "url": "https://www.rra.gov.rw/" },
-    { "country": "rw", "name": "Ministry of Health", "role": "health", "url": "https://www.moh.gov.rw/" },
-
-    { "country": "za", "name": "South Africa government portal", "role": "portal", "url": "https://www.gov.za/" },
-    { "country": "za", "name": "Department of Home Affairs", "role": "identity", "url": "https://www.dha.gov.za/" },
-    { "country": "za", "name": "eServices", "role": "immigration", "url": "https://www.services.gov.za/" },
-    { "country": "za", "name": "South African Revenue Service", "role": "tax", "url": "https://www.sars.gov.za/" },
-    { "country": "za", "name": "National Department of Health", "role": "health", "url": "https://www.health.gov.za/" }
+    {
+      "country": "rw",
+      "name": "Irembo",
+      "role": "immigration",
+      "url": "https://irembo.gov.rw/"
+    },
+    {
+      "country": "rw",
+      "name": "Rwanda Revenue Authority",
+      "role": "tax",
+      "url": "https://www.rra.gov.rw/"
+    },
+    {
+      "country": "rw",
+      "name": "Ministry of Health",
+      "role": "health",
+      "url": "https://www.moh.gov.rw/"
+    },
+    {
+      "country": "za",
+      "name": "South Africa government portal",
+      "role": "portal",
+      "url": "https://www.gov.za/"
+    },
+    {
+      "country": "za",
+      "name": "Department of Home Affairs",
+      "role": "identity",
+      "url": "https://www.dha.gov.za/"
+    },
+    {
+      "country": "za",
+      "name": "eServices",
+      "role": "immigration",
+      "url": "https://www.services.gov.za/"
+    },
+    {
+      "country": "za",
+      "name": "South African Revenue Service",
+      "role": "tax",
+      "url": "https://www.sars.gov.za/"
+    },
+    {
+      "country": "za",
+      "name": "National Department of Health",
+      "role": "health",
+      "url": "https://www.health.gov.za/"
+    }
   ]
 }

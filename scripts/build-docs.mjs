@@ -3,7 +3,7 @@
 // The generator wraps it in site/layout.html, builds the top navigation and the
 // section sidebar, expands <docs-example> blocks into a preview plus escaped
 // code, and generates the pack and token pages from the token build.
-import { cpSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, join, relative } from "node:path";
 import { ROOT, cssVarName, loadCore, toCssValue } from "./tokens.mjs";
@@ -19,6 +19,7 @@ export const SECTIONS = [
   { id: "components", title: "Components", href: "components/index.html" },
   { id: "patterns", title: "Patterns", href: "patterns/index.html" },
   { id: "packs", title: "Country packs", href: "packs/index.html" },
+  { id: "scoreboard", title: "Accessibility check", href: "scoreboard.html" },
   { id: "community", title: "Community", href: "community/index.html" },
 ];
 
@@ -189,8 +190,100 @@ function tokensTable() {
     .join("");
 }
 
+const GRADE_WORDS = { A: "accessible", B: "nearly", C: "partly", D: "mostly not", F: "not yet" };
+
+/** The scoreboard block from scoreboard/results/*.json. Grouped by country, alphabetical, fix first. */
+function scoreboardBlock(root) {
+  const dir = join(ROOT, "scoreboard", "results");
+  const files = existsSync(dir)
+    ? readdirSync(dir)
+        .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+        .sort()
+    : [];
+  if (!files.length) return `<p>No results yet. The first check runs when the monthly workflow is first triggered.</p>`;
+  const latest = JSON.parse(readFileSync(join(dir, files[files.length - 1]), "utf8"));
+  const previous = files.length > 1 ? JSON.parse(readFileSync(join(dir, files[files.length - 2]), "utf8")) : null;
+  const prevByUrl = new Map((previous?.rows ?? []).map((r) => [r.url, r]));
+  const packs = Object.fromEntries(
+    readdirSync(join(BUILD, "packs"))
+      .filter((f) => /^[a-z]{2}\.json$/.test(f))
+      .map((f) => {
+        const p = JSON.parse(readFileSync(join(BUILD, "packs", f), "utf8"));
+        return [p.code, p];
+      }),
+  );
+  const ok = latest.rows.filter((r) => r.status === "ok");
+  const avg = ok.length ? (ok.reduce((a, r) => a + r.score, 0) / ok.length).toFixed(0) : "n/a";
+  const countries = [...new Set(latest.rows.map((r) => r.country))].sort((a, b) =>
+    (packs[a]?.country ?? a).localeCompare(packs[b]?.country ?? b),
+  );
+  const grade = (g) => g;
+  const trend = (r) => {
+    const prev = prevByUrl.get(r.url);
+    if (!prev || prev.status !== "ok" || r.status !== "ok") return "";
+    const d = Math.round(r.score - prev.score);
+    if (d > 2) return ` <span class="docs-trend docs-trend--up">up ${d} since last month</span>`;
+    if (d < -2) return ` <span class="docs-trend docs-trend--down">down ${-d} since last month</span>`;
+    return ` <span class="docs-trend">no change</span>`;
+  };
+  const sections = countries.map((code) => {
+    const rows = latest.rows
+      .filter((r) => r.country === code)
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((r) => {
+        if (r.status !== "ok") {
+          const why = /403/.test(r.error ?? "")
+            ? "blocks automated browsers"
+            : /CERT/.test(r.error ?? "")
+              ? "invalid TLS certificate"
+              : /NAME_NOT_RESOLVED/.test(r.error ?? "")
+                ? "address did not resolve"
+                : /HTTP 5/.test(r.error ?? "")
+                  ? "server error"
+                  : /Timeout/.test(r.error ?? "")
+                    ? "did not load within 45 seconds"
+                    : "could not be loaded";
+          return `<tr><th scope="row"><a href="${r.url}">${r.name}</a></th><td colspan="3"><span class="ag-badge ag-badge--neutral">Not checked</span> ${why}</td></tr>`;
+        }
+        const g = grade(r.grade);
+        const badge =
+          g === "A"
+            ? "ag-badge--success"
+            : g === "B" || g === "C"
+              ? "ag-badge--info"
+              : g === "D"
+                ? "ag-badge--warning"
+                : "ag-badge--error";
+        const fix = r.top?.fix
+          ? `<a href="${root}${r.top.fix.url.replace("https://omoyolab.github.io/afrigov/", "")}">${r.top.fix.component}</a>: ${r.top.fix.advice}`
+          : r.top
+            ? `<a href="${r.top.id.startsWith("ag-") ? root + "get-started.html" : `https://dequeuniversity.com/rules/axe/4.10/${r.top.id}`}">See the rule</a>`
+            : "Nothing to fix from automated checks";
+        const problem = r.top ? `${r.top.help}${r.top.nodes > 1 ? ` (${r.top.nodes} elements)` : ""}` : "none found";
+        return `<tr><th scope="row"><a href="${r.url}">${r.name}</a>${trend(r)}</th><td><span class="ag-badge ${badge}">${g}</span> <span class="docs-grade-word">${GRADE_WORDS[g]}</span><br><span class="docs-fine">${r.score} / 100, ${r.problems} problem${r.problems === 1 ? "" : "s"}</span></td><td>${problem}</td><td>${fix}</td></tr>`;
+      })
+      .join("");
+    const flag = packs[code]
+      ? `<span class="ag-flag" aria-hidden="true" style="--ag-flag-direction: ${packs[code].flagDirection ?? "row"}; ${packs[code].flag.map((c, i) => `--ag-flag-${i + 1}: ${c}`).join("; ")}; --ag-flag-image: ${packs[code].flagSvg ? `url(${root}dist/flags/${packs[code].flagSvg})` : "none"}"><span></span><span></span><span></span></span> `
+      : "";
+    return `<h2 id="${code}">${flag}${packs[code]?.country ?? code}</h2>
+<div class="ag-table-wrap" role="region" aria-label="${packs[code]?.country ?? code} sites" tabindex="0"><table class="ag-table docs-scoreboard"><thead><tr><th scope="col">Site</th><th scope="col">Grade</th><th scope="col">Biggest problem</th><th scope="col">Fix first</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  });
+  return `<p class="docs-fine">Last checked ${latest.date}. ${ok.length} of ${latest.rows.length} sites loaded. Average score ${avg} out of 100. <a href="https://github.com/omoyolab/afrigov/tree/main/scoreboard/results">Raw results</a>.</p>
+${sections.join("\n")}`;
+}
+
+function hasScoreboardResults() {
+  const dir = join(ROOT, "scoreboard", "results");
+  return existsSync(dir) && readdirSync(dir).some((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f));
+}
+
 export function buildDocs() {
   const layout = readFileSync(join(SITE, "layout.html"), "utf8");
+  // The accessibility check page exists only once results are committed.
+  const showScoreboard = hasScoreboardResults();
+  const sections = SECTIONS.filter((s) => showScoreboard || s.id !== "scoreboard");
+  if (!showScoreboard) rmSync(join(DOCS, "scoreboard.html"), { force: true });
   // Cache-busting: a short hash of everything the layout loads, so a deploy
   // never pairs new HTML with a stale cached script or stylesheet.
   const hash = createHash("sha1");
@@ -208,12 +301,12 @@ export function buildDocs() {
   }
   const assetVersion = hash.digest("hex").slice(0, 8);
   const packs = packPages();
-  const pages = [...readPages(), ...packs.pages];
+  const pages = [...readPages(), ...packs.pages].filter((p) => showScoreboard || p.section !== "scoreboard");
 
   for (const page of pages) {
     const depth = page.path.split("/").length - 1;
     const root = depth ? "../".repeat(depth) : "./";
-    const section = SECTIONS.find((s) => s.id === page.section);
+    const section = sections.find((s) => s.id === page.section);
     const siblings = pages
       .filter((p) => p.section === page.section)
       .sort((a, b) => (a.order ?? 50) - (b.order ?? 50) || a.title.localeCompare(b.title));
@@ -226,12 +319,21 @@ export function buildDocs() {
             )
             .join("")}</ul></nav>`
         : "";
-    const topnav = SECTIONS.map(
-      (s) =>
-        `<li><a class="ag-nav__link" href="${root}${s.href}"${s.id === page.section ? ' aria-current="true"' : ""}>${s.title}</a></li>`,
-    ).join("");
+    const topnav = sections
+      .map(
+        (s) =>
+          `<li><a class="ag-nav__link" href="${root}${s.href}"${s.id === page.section ? ' aria-current="true"' : ""}>${s.title}</a></li>`,
+      )
+      .join("");
 
     let body = expandExamples(page.body)
+      .replace(/\{\{scoreboard\}\}/g, () => scoreboardBlock(root))
+      .replace(
+        /\{\{scoreboardCard\}\}/g,
+        showScoreboard
+          ? `<a class="docs-card docs-card--link" href="${root}scoreboard.html"><h2>Accessibility check</h2><p>A monthly automated check of public government sites, with the fix for each one's biggest problem.</p></a>`
+          : "",
+      )
       .replace(/\{\{packsTable\}\}/g, packs.table)
       .replace(/\{\{packCards\}\}/g, packs.cards)
       .replace(/\{\{packCount\}\}/g, String(packs.count))

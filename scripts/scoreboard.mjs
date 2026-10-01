@@ -1,5 +1,5 @@
 // Audits every site in scoreboard/sites.json with afrigov-audit and writes
-// build/scoreboard/<date>.json plus a Markdown summary to stdout.
+// scoreboard/results/<date>.json plus a Markdown summary to stdout.
 // Sequential and polite: one page per site, one real browser, a user agent
 // that names the tool. A site that cannot be loaded is recorded, not retried.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -9,7 +9,7 @@ import { ROOT } from "./tokens.mjs";
 
 const { sites } = JSON.parse(readFileSync(join(ROOT, "scoreboard", "sites.json"), "utf8"));
 const date = new Date().toISOString().slice(0, 10);
-const outDir = join(ROOT, "build", "scoreboard");
+const outDir = join(ROOT, "scoreboard", "results");
 mkdirSync(outDir, { recursive: true });
 
 const rows = [];
