@@ -372,6 +372,7 @@ export function buildDocs() {
       (function () {
         var packs = ${JSON.stringify(packs.codes)};
         var pack = new URL(location.href).searchParams.get("pack");
+        if (pack === "core") { try { localStorage.removeItem("afrigov-pack"); } catch (e) { /* private mode */ } }
         if (!pack) { try { pack = localStorage.getItem("afrigov-pack"); } catch (e) { pack = null; } }
         var link = document.getElementById("pack-css");
         if (packs.indexOf(pack) === -1) { pack = "core"; link.parentNode.removeChild(link); }

@@ -121,3 +121,14 @@ test("a right-to-left pack mirrors the examples", async ({ page: p }) => {
     .evaluate((el) => [getComputedStyle(el).borderRightWidth, getComputedStyle(el).borderLeftWidth]);
   expect(borders).toEqual(["4px", "0px"]);
 });
+
+test("reset forgets the remembered country for new tabs", async ({ page: p }) => {
+  await p.goto(urlFor("index.html", "ke"));
+  await p.waitForSelector(".ag-js");
+  await p.goto(urlFor("index.html", "core"));
+  await p.waitForSelector(".ag-js");
+  await p.goto(pathToFileURL(join(DOCS, "components", "button.html")).href);
+  await p.waitForSelector(".ag-js");
+  await expect(p.locator("html")).not.toHaveAttribute("data-ag-pack", /.+/);
+  await expect(p.locator("[data-docs-current]")).toHaveText("neutral core");
+});

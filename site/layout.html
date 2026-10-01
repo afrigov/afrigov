@@ -15,6 +15,14 @@
         var packs = {{packList}};
         var root = "{{root}}";
         var pack = new URL(location.href).searchParams.get("pack");
+        if (pack === "core") {
+          // Reset: forget the remembered country so new tabs start neutral too.
+          try {
+            localStorage.removeItem("afrigov-pack");
+          } catch (e) {
+            /* private mode */
+          }
+        }
         if (!pack) {
           try {
             pack = localStorage.getItem("afrigov-pack");
