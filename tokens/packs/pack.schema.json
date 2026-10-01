@@ -239,6 +239,11 @@
                   "pattern": "^[A-Z]{2,4}$"
                 }
               }
+            },
+            "flagSvg": {
+              "type": "string",
+              "pattern": "^[a-z]{2}\\.svg$",
+              "description": "An accurate SVG of the flag in tokens/packs/flags/, 3:2, for flags that are not plain bands. The stripes in flag remain the fallback."
             }
           }
         }

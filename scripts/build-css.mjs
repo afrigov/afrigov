@@ -1,7 +1,7 @@
 // Assembles src/css into dist/core.css (readable) and dist/core.min.css, wrapping
 // each part in its cascade layer. Copies packs to dist/<cc>.css. Enforces the
 // size budget: core.min.css must gzip to 20 KB or less.
-import { copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { gzipSync } from "node:zlib";
 import { transform } from "esbuild";
@@ -71,7 +71,10 @@ if (gz > BUDGET_BYTES) {
   process.exit(1);
 }
 
-for (const f of readdirSync(join(BUILD, "packs"))) {
+if (existsSync(join(BUILD, "packs", "flags"))) {
+  cpSync(join(BUILD, "packs", "flags"), join(DIST, "flags"), { recursive: true });
+}
+for (const f of readdirSync(join(BUILD, "packs")).filter((f) => f !== "flags")) {
   const src = join(BUILD, "packs", f);
   if (f.endsWith(".css")) {
     const css = read(src);

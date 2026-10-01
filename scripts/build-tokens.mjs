@@ -1,6 +1,6 @@
 // tokens/*.json -> build/tokens.css and build/packs/<cc>.css
 // Fails the build if any colour pair in CONTRAST_PAIRS misses its ratio.
-import { mkdirSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { contrast } from "./color.mjs";
 import {
@@ -47,6 +47,17 @@ for (const pack of packs) {
   pack.meta.flag?.forEach((v, i) => lines.push(`  ${cssVarName(`flag.${i + 1}`)}: ${v};`));
   lines.push(`  ${cssVarName("flag.count")}: ${pack.meta.flag?.length ?? 0};`);
   lines.push(`  ${cssVarName("flag.direction")}: ${pack.meta.flagDirection ?? "row"};`);
+  if (pack.meta.flagSvg) {
+    const src = join(ROOT, "tokens", "packs", "flags", pack.meta.flagSvg);
+    if (!existsSync(src)) {
+      console.error(`pack ${pack.code}: flagSvg ${pack.meta.flagSvg} not found in tokens/packs/flags/`);
+      process.exit(1);
+    }
+    mkdirSync(join(BUILD, "packs", "flags"), { recursive: true });
+    copyFileSync(src, join(BUILD, "packs", "flags", pack.meta.flagSvg));
+    // Relative to the pack stylesheet, so it resolves on the CDN and locally.
+    lines.push(`  ${cssVarName("flag.image")}: url("flags/${pack.meta.flagSvg}");`);
+  }
 
   const notes = pack.notes.length ? pack.notes.map((n) => ` * ${n}`).join("\n") + "\n" : "";
   const css =

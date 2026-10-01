@@ -12,6 +12,7 @@ All notable changes to this project are documented here. The format follows
 - Phone number component (`.ag-phone`): dialling-code select and national number field. Packs carry a `phone` block (code, example, hint, length).
 - National ID input (`.ag-id-input`): label, hint, maxlength, pattern and keyboard from the pack's `id` block, which gains `pattern`.
 - Region selector: a first select with `data-ag-region-for` and a second grouped by `optgroup`; `afrigov.js` narrows the second to the chosen region. Packs gain `regions.sub` with sample second-level divisions.
+- SVG flags: a pack can set `flagSvg` to an accurate 3:2 SVG in `tokens/packs/flags/`; the build publishes it as `dist/flags/<code>.svg` and the flag component paints it over the stripes. Ghana ships one, with its star.
 - Currency display (`.ag-money`), character count (`data-ag-char-count`, script-enhanced with a polite live region), service card (`.ag-cards`, `.ag-card`), details (`.ag-details`), language switcher (`.ag-lang`).
 
 ### Changed

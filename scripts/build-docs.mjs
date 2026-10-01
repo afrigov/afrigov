@@ -75,7 +75,7 @@ function packPages() {
     `<li><div class="docs-swatch" style="--_docs-swatch: ${hex}"></div><code>${name}</code><code>${hex}</code></li>`;
 
   const pages = packs.map((p) => {
-    const flagStyle = `--ag-flag-direction: ${p.flagDirection ?? "row"}; ${p.flag.map((c, i) => `--ag-flag-${i + 1}: ${c}`).join("; ")}`;
+    const flagStyle = `--ag-flag-direction: ${p.flagDirection ?? "row"}; ${p.flag.map((c, i) => `--ag-flag-${i + 1}: ${c}`).join("; ")}${p.flagSvg ? `; --ag-flag-image: url(../dist/flags/${p.flagSvg})` : ""}`;
     const flag = `<span class="ag-flag ag-flag--lg" aria-hidden="true" style="${flagStyle}"><span></span><span></span><span></span></span>`;
     const langs = Object.entries(p.strings ?? {}).map(([code, s]) => {
       const rows = ["banner", "banner-how", "banner-domain", "banner-secure"]
@@ -148,10 +148,12 @@ ${langs.join("")}
     )
     .join("");
   const codes = packs.map((p) => p.code);
-  const flagOf = (p) =>
+  const flagOf = (p, root = "../") =>
     `<span class="ag-flag" aria-hidden="true" style="--ag-flag-direction: ${p.flagDirection ?? "row"}; ${p.flag
       .map((c, i) => `--ag-flag-${i + 1}: ${c}`)
-      .join("; ")}"><span></span><span></span><span></span></span>`;
+      .join(
+        "; ",
+      )}${p.flagSvg ? `; --ag-flag-image: url(${root}dist/flags/${p.flagSvg})` : ""}"><span></span><span></span><span></span></span>`;
   const cards =
     `<li class="docs-pack-card"><span class="docs-pack__neutral docs-pack-card__flag" aria-hidden="true"></span><h3 class="docs-pack-card__title">Neutral core</h3><p>No country. The blue nobody uses.</p><a class="ag-button ag-button--secondary" href="?pack=core">Preview</a></li>` +
     packs

@@ -61,13 +61,23 @@
 
 /* Flag. Stripe colours and direction come from the country pack. */
 .ag-flag {
+  position: relative;
   display: inline-flex;
   flex-direction: var(--ag-flag-direction, row);
   flex-shrink: 0;
   width: 1.5rem;
   height: 1rem;
+  overflow: hidden;
   border: 1px solid var(--ag-color-border);
   vertical-align: middle;
+}
+
+/* A pack with an accurate SVG paints it over the stripes. Without one this is empty. */
+.ag-flag::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--ag-flag-image, none) center / cover no-repeat;
 }
 
 .ag-flag > * {

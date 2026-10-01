@@ -9,6 +9,7 @@
       "domain": ".gov.gh",
       "flag": ["{official.red}", "{official.gold}", "{official.green}"],
       "flagDirection": "column",
+      "flagSvg": "gh.svg",
       "strings": {
         "en": {
           "banner": "An official website of the Government of Ghana",

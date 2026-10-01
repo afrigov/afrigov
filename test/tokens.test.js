@@ -1,5 +1,16 @@
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { cssVarName, flatten, listPacks, loadCore, loadPack, resolveAliases, toCssValue } from "../scripts/tokens.mjs";
+import {
+  PACKS_DIR,
+  cssVarName,
+  flatten,
+  listPacks,
+  loadCore,
+  loadPack,
+  resolveAliases,
+  toCssValue,
+} from "../scripts/tokens.mjs";
 
 const HEX = /^#[0-9a-f]{6}$/;
 
@@ -114,5 +125,17 @@ describe("country packs", () => {
     ]) {
       expect(pack.overrides[key], key).toMatch(HEX);
     }
+  });
+});
+
+describe("flag SVGs", () => {
+  it.each(listPacks())("pack %s either has no flagSvg or the file exists and is a 3:2 SVG", (code) => {
+    const pack = loadPack(code, loadCore());
+    if (!pack.meta.flagSvg) return;
+    const file = join(PACKS_DIR, "flags", pack.meta.flagSvg);
+    expect(existsSync(file), file).toBe(true);
+    const svg = readFileSync(file, "utf8");
+    expect(svg).toMatch(/viewBox="0 0 3 2"/);
+    expect(svg).toMatch(/aria-label="Flag of /);
   });
 });

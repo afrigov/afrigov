@@ -90,3 +90,11 @@ describe("JavaScript", () => {
     expect(statSync(dist("afrigov.iife.js")).size).toBeLessThan(3072);
   });
 });
+
+describe("flag SVGs in dist", () => {
+  it("Ghana's flag is published next to its stylesheet and referenced from it", () => {
+    expect(existsSync(dist("flags/gh.svg"))).toBe(true);
+    expect(read("gh.css")).toContain('--ag-flag-image: url("flags/gh.svg")');
+    expect(read("ke.css")).not.toContain("--ag-flag-image");
+  });
+});
