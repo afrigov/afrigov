@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-10-02
+
+### Added
+
+- Service card: `ag-card__logo`, a fixed-height slot above the title for an agency's or partner's mark. The name stays the link text, so the image is decorative.
+
 ## [0.6.0] - 2026-10-02
 
 Three more gaps from the fmcide.gov.ng rebuild.

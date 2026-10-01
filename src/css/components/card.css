@@ -30,6 +30,21 @@
   box-shadow: 0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
 }
 
+/* Logo slot above the title. A fixed-height box so any shape of mark lines up across the grid. */
+.ag-card__logo {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  margin-bottom: var(--ag-space-2);
+}
+
+.ag-card__logo img {
+  max-width: 10rem;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
 .ag-card__title {
   margin: 0;
   font-size: var(--ag-font-size-lg);
