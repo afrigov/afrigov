@@ -1,16 +1,10 @@
 /* Documentation site styles. Everything on the page that is not a component. */
 
-.docs-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.docs-logo {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: var(--ag-size-radius);
-  background: var(--ag-color-primary);
-  color: var(--ag-color-on-primary);
-  font-weight: var(--ag-font-weight-bold);
-  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  color: var(--ag-color-primary);
 }
 
 /* Country indicator in the notice bar. */

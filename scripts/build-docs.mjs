@@ -365,6 +365,8 @@ export function buildDocs() {
 
   cpSync(join(SITE, "docs.css"), join(DOCS, "docs.css"));
   cpSync(join(SITE, "docs.js"), join(DOCS, "docs.js"));
+  cpSync(join(SITE, "favicon.svg"), join(DOCS, "favicon.svg"));
+  cpSync(join(SITE, "logo.svg"), join(DOCS, "logo.svg"));
   console.log(`docs: ${pages.length} pages`);
   return pages;
 }

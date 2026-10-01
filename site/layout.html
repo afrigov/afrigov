@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{root}}dist/core.min.css?v={{assetVersion}}" />
     <link rel="stylesheet" id="pack-css" />
     <link rel="stylesheet" href="{{root}}docs.css?v={{assetVersion}}" />
+    <link rel="icon" href="{{root}}favicon.svg?v={{assetVersion}}" type="image/svg+xml" />
     <script>
       // Pack choice: ?pack= in the URL wins, then the remembered choice, then the neutral core.
       (function () {
@@ -61,7 +62,10 @@
     <header class="ag-header">
       <div class="ag-container ag-header__inner">
         <a class="ag-header__brand" href="{{root}}index.html">
-          <span class="docs-mark" aria-hidden="true">ag</span>
+          <svg class="docs-logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <rect x="2" y="2" width="28" height="28" rx="7" fill="none" stroke="currentColor" stroke-width="4" />
+            <rect x="9" y="9" width="14" height="14" rx="3" fill="#ffbf47" stroke="#1b1b1b" stroke-width="2" />
+          </svg>
           <span>
             <span class="ag-header__org">afrigov</span>
             <span class="ag-header__sub">Accessible components for African public services</span>

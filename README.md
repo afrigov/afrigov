@@ -1,3 +1,5 @@
+<p><img src="site/logo.svg" alt="afrigov" width="200" height="48"></p>
+
 # afrigov
 
 **Open-source components for building accessible African public-service websites.**
