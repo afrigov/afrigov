@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.7] - 2026-10-02
+
+### Added
+
+- `ag-prose--centred` puts the text column in the middle of the page, with the lines still starting at the column's edge.
+
 ### Changed
 
 - Docs site: the header tagline is "Accessible government design system", on one line, so the header is one line shorter.

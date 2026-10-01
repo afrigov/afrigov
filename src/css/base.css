@@ -223,6 +223,12 @@ pre {
   max-width: var(--ag-size-measure);
 }
 
+/* The column sits in the middle of the page. The text inside still starts at the column's edge,
+   because centred lines of running text are hard to read. */
+.ag-prose--centred {
+  margin-inline: auto;
+}
+
 .ag-prose img {
   display: block;
 }

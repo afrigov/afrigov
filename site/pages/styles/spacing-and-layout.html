@@ -71,6 +71,27 @@
   &lt;table class="ag-table"&gt;…&lt;/table&gt;
 &lt;/main&gt;</code></pre>
 
+<h3>Left, or in the middle</h3>
+<p>
+  The text column starts at the left edge of the container, with the space to its right free for a contents list or
+  related links. That is the default because it lines the text up with the logo and the navigation.
+</p>
+<p>
+  For an article, a statement or a campaign page that should sit in the middle of the screen, add
+  <code>ag-prose--centred</code>. It moves the column to the centre. The lines inside it still start at the column's
+  edge. Do not centre the lines themselves with <code>ag-text-center</code>, except for a short heading and one line
+  under it; centred paragraphs are hard to read because every line starts in a different place.
+</p>
+<docs-example label="The column in the middle of the page">
+  <div class="ag-prose ag-prose--centred">
+    <h2 class="ag-mt-0">Why we are publishing our inspection results</h2>
+    <p class="ag-mb-0">
+      Every household should be able to count on clean water and know who to call when it stops. Publishing the results
+      district by district is how you can hold us to that.
+    </p>
+  </div>
+</docs-example>
+
 <h2>Layout helpers</h2>
 <p>Three primitives cover nearly every page. Add more only if you have tried these first.</p>
 <docs-example label="Stack: vertical rhythm between siblings">
