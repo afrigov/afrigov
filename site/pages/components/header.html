@@ -48,6 +48,47 @@
   &lt;/div&gt;
 &lt;/header&gt;</code></pre>
 
+<h2>Keep it on one row, or stack it on purpose</h2>
+<p>
+  Beside the brand there is room for about six short links. When the name is long or there are more links, the
+  navigation no longer fits and drops to a second row by accident, which makes the header taller on some screens and not
+  others. Check the header at 1024 and 1280 pixels wide. If it does not fit, do one of three things:
+</p>
+<ul>
+  <li>Cut the links to six. Move the rest to the footer or to a section page.</li>
+  <li>Shorten the line under the name, or let it wrap to two lines by giving the brand a narrower width.</li>
+  <li>
+    Use <code>ag-header--stacked</code>, which puts the navigation on its own row under the brand at every desktop
+    width.
+  </li>
+</ul>
+
+<docs-example flush label="Stacked">
+  <div class="ag-header ag-header--stacked">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#header-stacked">
+        <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>
+          <span class="ag-header__org">Ministry of Water Resources, Sanitation and Irrigation</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Stacked example">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#header-stacked" aria-current="page">Home</a></li>
+          <li><a class="ag-nav__link" href="#header-stacked">About</a></li>
+          <li><a class="ag-nav__link" href="#header-stacked">Services</a></li>
+          <li><a class="ag-nav__link" href="#header-stacked">Programmes</a></li>
+          <li><a class="ag-nav__link" href="#header-stacked">News</a></li>
+          <li><a class="ag-nav__link" href="#header-stacked">Publications</a></li>
+          <li><a class="ag-nav__link" href="#header-stacked">Tenders</a></li>
+          <li><a class="ag-nav__link" href="#header-stacked">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+
 <h2>No jump on slow connections</h2>
 <p>
   The script that collapses the menu loads last, so on a slow phone the page can paint with the menu open and then jump

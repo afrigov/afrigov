@@ -240,3 +240,17 @@
   border-color: var(--ag-color-on-primary);
   background: var(--ag-color-primary-hover);
 }
+
+/* Variant: the navigation on its own row under the brand. For more than six links, or a long
+   name with a full menu. A header that wraps by accident looks broken; this one is two rows on purpose. */
+@media (min-width: 64em) {
+  .ag-header--stacked .ag-header__brand {
+    max-width: none;
+  }
+
+  .ag-header--stacked .ag-header__nav {
+    flex-basis: 100%;
+    /* The first link's text lines up with the brand above it. */
+    margin-inline-start: calc(-1 * var(--ag-space-3));
+  }
+}

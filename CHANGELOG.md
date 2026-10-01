@@ -6,9 +6,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.6] - 2026-10-02
+
 ### Added
 
+- Header: `ag-header--stacked` puts the navigation on its own row under the brand, for more than six links or a long name. The header docs say how to check for an accidental wrap and what to do about it.
+- A test that fails the build if the header of the docs site or of any page template wraps onto a second row at 1024 or 1280 pixels.
 - Docs: a Use cases page, with the first rebuild and its live scores, the WordPress theme afrigovPress, and afrigov-audit.
+
+### Fixed
+
+- Docs site: the navigation stays on one row beside the logo. Adding Use cases had pushed it onto a second row at every desktop width.
 
 ### Changed
 

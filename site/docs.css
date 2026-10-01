@@ -550,3 +550,27 @@
 .docs-trend--down {
   color: var(--ag-color-error);
 }
+
+/* The site's own header. The documentation has more sections than a service has links, so the
+   brand is narrower, with the tagline on two lines under the name, and the links sit closer together.
+   That keeps the navigation on one row beside the logo. 64em = breakpoint.lg */
+@media (min-width: 64em) {
+  .docs-site-header .ag-header__brand {
+    max-width: 16rem;
+  }
+
+  .docs-site-header .ag-nav {
+    gap: 0;
+  }
+
+  .docs-site-header .ag-nav__link {
+    padding-inline: var(--ag-space-2);
+  }
+}
+
+/* Between the breakpoint and a wide laptop the links step down a size to stay on the row. */
+@media (min-width: 64em) and (max-width: 80em) {
+  .docs-site-header .ag-nav__link {
+    font-size: var(--ag-font-size-xs);
+  }
+}
