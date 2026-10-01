@@ -151,12 +151,15 @@ ${langs.join("")}
     `<span class="ag-flag" aria-hidden="true" style="--ag-flag-direction: ${p.flagDirection ?? "row"}; ${p.flag
       .map((c, i) => `--ag-flag-${i + 1}: ${c}`)
       .join("; ")}"><span></span><span></span><span></span></span>`;
-  const links =
-    `<li><a href="?pack=core" data-docs-pack-link="core"><span class="docs-pack__neutral" aria-hidden="true"></span>Neutral</a></li>` +
+  const cards =
+    `<li class="docs-pack-card"><span class="docs-pack__neutral docs-pack-card__flag" aria-hidden="true"></span><h3 class="docs-pack-card__title">Neutral core</h3><p>No country. The blue nobody uses.</p><a class="ag-button ag-button--secondary" href="?pack=core">Preview</a></li>` +
     packs
-      .map((p) => `<li><a href="?pack=${p.code}" data-docs-pack-link="${p.code}">${flagOf(p)}${p.country}</a></li>`)
+      .map(
+        (p) =>
+          `<li class="docs-pack-card">${flagOf(p).replace('class="ag-flag"', 'class="ag-flag ag-flag--lg docs-pack-card__flag"')}<h3 class="docs-pack-card__title">${p.country}</h3><p><a href="${p.code}.html">About this pack</a></p><a class="ag-button ag-button--secondary" href="?pack=${p.code}">Preview</a></li>`,
+      )
       .join("");
-  return { pages, table, count: packs.length, codes, links };
+  return { pages, table, count: packs.length, codes, cards };
 }
 
 function tokensTable() {
@@ -211,6 +214,7 @@ export function buildDocs() {
 
     let body = expandExamples(page.body)
       .replace(/\{\{packsTable\}\}/g, packs.table)
+      .replace(/\{\{packCards\}\}/g, packs.cards)
       .replace(/\{\{packCount\}\}/g, String(packs.count))
       .replace(/\{\{tokensTable\}\}/g, tokensTable)
       .replace(/\{\{version\}\}/g, pkg.version)
@@ -226,7 +230,6 @@ export function buildDocs() {
       .replace(/\{\{description\}\}/g, page.description ?? "")
       .replace(/\{\{root\}\}/g, root)
       .replace(/\{\{packList\}\}/g, JSON.stringify(packs.codes))
-      .replace(/\{\{packLinks\}\}/g, packs.links)
       .replace(/\{\{topnav\}\}/g, topnav)
       .replace(/\{\{sidebar\}\}/g, sidebar)
       .replace(/\{\{layoutClass\}\}/g, sidebar ? "docs-layout docs-layout--sidebar" : "docs-layout")

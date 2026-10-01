@@ -13,50 +13,14 @@
   letter-spacing: -0.02em;
 }
 
-/* Country menu in the notice bar. A details element, so it works without script. */
+/* Country indicator in the notice bar. */
 .docs-pack {
-  position: relative;
-  margin-left: auto;
-}
-
-.docs-pack__summary {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--ag-space-2);
-  min-height: 2.75rem;
-  padding: 0 var(--ag-space-2);
-  border-radius: var(--ag-size-radius);
+  margin: 0 0 0 auto;
   font-size: var(--ag-font-size-xs);
-  list-style: none;
-  cursor: pointer;
-}
-
-.docs-pack__summary::-webkit-details-marker {
-  display: none;
-}
-
-.docs-pack__summary::after {
-  content: "";
-  width: 0.45em;
-  height: 0.45em;
-  margin-left: var(--ag-space-1);
-  border-right: 2px solid currentcolor;
-  border-bottom: 2px solid currentcolor;
-  transform: translateY(-25%) rotate(45deg);
-}
-
-.docs-pack[open] .docs-pack__summary::after {
-  transform: translateY(25%) rotate(225deg);
-}
-
-.docs-pack__summary:hover .docs-pack__current {
-  text-decoration: underline;
-}
-
-.docs-pack__summary:focus-visible {
-  outline: 2px solid var(--ag-color-ink);
-  outline-offset: 2px;
-  box-shadow: none;
 }
 
 .docs-pack__flag {
@@ -76,64 +40,11 @@
   font-weight: var(--ag-font-weight-bold);
 }
 
-.docs-pack__list {
-  position: absolute;
-  top: calc(100% + var(--ag-space-1));
-  right: 0;
-  z-index: 200;
-  min-width: 13rem;
-  margin: 0;
-  padding: var(--ag-space-1);
-  list-style: none;
-  background: var(--ag-color-paper);
-  border: 1px solid var(--ag-color-border-strong);
-  border-radius: var(--ag-size-radius);
-  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
-}
-
-.docs-pack__list li {
-  margin: 0;
-}
-
-.docs-pack__list a {
-  display: flex;
+.docs-pack__link {
+  display: inline-flex;
   align-items: center;
-  gap: var(--ag-space-3);
-  min-height: var(--ag-size-target);
-  padding: var(--ag-space-2) var(--ag-space-3);
-  border-radius: var(--ag-size-radius);
-  color: var(--ag-color-ink);
-  font-size: var(--ag-font-size-xs);
-  font-weight: var(--ag-font-weight-bold);
-  text-decoration: none;
-}
-
-.docs-pack__list a:visited {
-  color: var(--ag-color-ink);
-}
-
-.docs-pack__list a:hover {
-  background: var(--ag-color-paper-alt);
-  text-decoration: underline;
-}
-
-.docs-pack__list a[aria-current="true"] {
-  background: var(--ag-color-primary-tint);
-}
-
-.docs-pack__list a[aria-current="true"]::after {
-  content: "";
-  width: 0.4em;
-  height: 0.7em;
-  margin-left: auto;
-  border-right: 2px solid var(--ag-color-primary);
-  border-bottom: 2px solid var(--ag-color-primary);
-  transform: rotate(45deg);
-}
-
-.docs-pack__list .ag-flag {
-  width: 1.25rem;
-  height: 0.85rem;
+  min-height: 2.75rem;
+  padding-inline: var(--ag-space-1);
 }
 
 .docs-pack__neutral {
@@ -142,6 +53,46 @@
   height: 0.85rem;
   border: 1px solid var(--ag-color-border-strong);
   background: var(--ag-color-paper-alt);
+}
+
+/* Country preview cards on the packs page. */
+.docs-pack-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+  gap: var(--ag-space-4);
+  margin: 0 0 var(--ag-space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.docs-pack-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ag-space-2);
+  margin: 0;
+  padding: var(--ag-space-4);
+  border: 1px solid var(--ag-color-border);
+}
+
+.docs-pack-card__flag {
+  width: 3rem;
+  height: 2rem;
+  margin-bottom: var(--ag-space-2);
+}
+
+.docs-pack-card__title {
+  margin: 0;
+  font-size: var(--ag-font-size-md);
+}
+
+.docs-pack-card p {
+  margin: 0;
+  font-size: var(--ag-font-size-xs);
+}
+
+.docs-pack-card .ag-button {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* Page layout: optional section sidebar beside the content. */
@@ -172,7 +123,7 @@
 }
 
 .docs-content > p,
-.docs-content > ul,
+.docs-content > ul:not(.docs-pack-cards, .docs-swatches),
 .docs-content > ol {
   max-width: var(--ag-size-measure);
 }

@@ -3,31 +3,20 @@
 // currency, national ID and regions from the selected pack.
 (function () {
   var pack = document.documentElement.getAttribute("data-docs-pack") || "core";
-  var menu = document.getElementById("pack-menu");
-  if (menu) {
-    var current = menu.querySelector("[data-docs-current]");
-    var names = window.AFRIGOV_PACKS || {};
-    if (current && names[pack]) current.textContent = names[pack].country;
-    menu.querySelectorAll("[data-docs-pack-link]").forEach(function (a) {
-      if (a.getAttribute("data-docs-pack-link") === pack) a.setAttribute("aria-current", "true");
-    });
-    // Close when clicking elsewhere or pressing Escape.
-    document.addEventListener("click", function (e) {
-      if (menu.open && !menu.contains(e.target)) menu.open = false;
-    });
-    menu.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && menu.open) {
-        menu.open = false;
-        menu.querySelector("summary").focus();
-      }
-    });
-  }
+  var names = window.AFRIGOV_PACKS || {};
+  var current = document.querySelector("[data-docs-current]");
+  var reset = document.querySelector("[data-docs-reset]");
+  if (current && names[pack]) current.textContent = names[pack].country;
+  if (reset && names[pack]) reset.hidden = false;
 
   var meta = window.AFRIGOV_PACKS && window.AFRIGOV_PACKS[pack];
   if (!meta) return; // neutral: the static text is already country-neutral
 
   document.querySelectorAll("[data-docs-packfile]").forEach(function (el) {
     el.textContent = pack;
+  });
+  document.querySelectorAll("[data-docs-packnote]").forEach(function (el) {
+    el.textContent = "Showing the " + meta.country + " pack.";
   });
 
   var language = meta.language || "en";
