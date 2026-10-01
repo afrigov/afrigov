@@ -11,3 +11,10 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # upload-pages-artifact v5 + deploy-pages v5 cannot find each other's
+      # artifact ("No artifacts named github-pages"). v3 + v4 deploy fine.
+      - dependency-name: actions/upload-pages-artifact
+        update-types: ["version-update:semver-major"]
+      - dependency-name: actions/deploy-pages
+        update-types: ["version-update:semver-major"]
