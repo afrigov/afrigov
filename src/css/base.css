@@ -150,7 +150,6 @@ a:hover {
   text-decoration-thickness: max(3px, 0.1875em);
 }
 
-a:active,
 a:focus-visible {
   color: var(--ag-color-ink);
   background: var(--ag-color-focus);

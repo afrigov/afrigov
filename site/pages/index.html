@@ -64,29 +64,35 @@
 </div>
 
 <section class="docs-home__why" aria-labelledby="why-heading">
-  <h2 id="why-heading">Why afrigov</h2>
-  <div class="ag-grid">
-    <div>
+  <div class="docs-home__why-intro">
+    <h2 id="why-heading">Why afrigov</h2>
+    <p>
+      Most government sites on the continent fail basic accessibility checks, not for lack of care but because every
+      ministry and contractor starts from zero. This is the starting point.
+    </p>
+  </div>
+  <ol class="docs-reasons">
+    <li>
       <h3>No build step</h3>
       <p>Two link tags and you are done. Plain CSS with custom properties. No Sass, no bundler, no framework.</p>
-    </div>
-    <div>
+    </li>
+    <li>
       <h3>Country packs</h3>
       <p>
         The core has no flag colours. A pack adds them, derives text-safe variants, and carries the official banner
         strings in the country's languages.
       </p>
-    </div>
-    <div>
+    </li>
+    <li>
       <h3>Works on a 2G connection</h3>
       <p>System fonts only, 5 KB of CSS, and every component works with JavaScript turned off.</p>
-    </div>
-    <div>
+    </li>
+    <li>
       <h3>AA is enforced, not promised</h3>
       <p>
         The build fails if any colour pair misses 4.5:1. axe-core runs on every page of this site, with every pack, on
         every pull request.
       </p>
-    </div>
-  </div>
+    </li>
+  </ol>
 </section>
