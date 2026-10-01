@@ -1,0 +1,79 @@
+<!-- { "title": "Language and script", "section": "styles", "description": "Diacritics, lang attributes and right-to-left in afrigov.", "order": 40 } -->
+<h1>Language and script</h1>
+<p class="ag-lead">
+  A government site serves people in the languages they read. The system has to render them, and tell assistive
+  technology which one it is reading.
+</p>
+
+<h2>Diacritics test</h2>
+<p>
+  Every diacritic below should render in the same weight and size as the letters around it. If one looks lighter,
+  thinner or boxed, the font stack has a gap on your device. Report it.
+</p>
+<dl class="docs-lang">
+  <div>
+    <dt>Yoruba</dt>
+    <dd lang="yo">Ẹ̀tọ́ ọmọ orílẹ̀-èdè ni láti gba ìwé ìrìnnà. Ẹ kú iṣẹ́.</dd>
+  </div>
+  <div>
+    <dt>Hausa</dt>
+    <dd lang="ha">Ƙasar Najeriya ta ɗauki ɓangaren ƴan ƙasa da muhimmanci.</dd>
+  </div>
+  <div>
+    <dt>Igbo</dt>
+    <dd lang="ig">Ọ bụ ikike gị ịnweta akwụkwọ ikike ije. Ndeewo.</dd>
+  </div>
+  <div>
+    <dt>Ewe</dt>
+    <dd lang="ee">Dukɔa ƒe dɔwɔƒewo le amesiame si. Akpe.</dd>
+  </div>
+  <div>
+    <dt>Wolof</dt>
+    <dd lang="wo">Jëfandikoo ab sërwis bu réew mi mooy sa àq.</dd>
+  </div>
+  <div>
+    <dt>Swahili</dt>
+    <dd lang="sw">Huduma za serikali ni haki ya kila raia.</dd>
+  </div>
+  <div>
+    <dt>French</dt>
+    <dd lang="fr">Les services publics sont accessibles à tous les citoyens.</dd>
+  </div>
+  <div>
+    <dt>Portuguese</dt>
+    <dd lang="pt">Os serviços públicos são acessíveis a todos os cidadãos.</dd>
+  </div>
+  <div>
+    <dt>Arabic</dt>
+    <dd lang="ar" dir="rtl">الخدمات الحكومية حق لكل مواطن.</dd>
+  </div>
+</dl>
+<p class="docs-fine">Sample sentences are illustrative, not official translations. Corrections welcome.</p>
+
+<h2>Tell the browser the language</h2>
+<p>
+  Set <code>lang</code> on the <code>html</code> element, and again on any passage in another language. Screen readers
+  switch voice, browsers pick the right hyphenation and quotation marks, and search engines index correctly.
+</p>
+<pre class="docs-code" tabindex="0"><code>&lt;html lang="en"&gt;
+…
+&lt;p lang="ha"&gt;Barka da zuwa.&lt;/p&gt;</code></pre>
+<p>
+  A country pack can set a default language for its banner strings. Senegal's is French, so the examples on this site
+  switch to French when you select it, and each translated string is marked with <code>lang="fr"</code>.
+</p>
+
+<h2>Right-to-left</h2>
+<p>
+  Arabic is official in a third of the continent. Set <code>dir="rtl"</code> on <code>html</code> for an Arabic page, or
+  on a passage for inline Arabic. Full right-to-left support, with the layout mirrored, is on the roadmap for 1.0 and is
+  the reason the next pack after South Africa is Morocco.
+</p>
+
+<h2>Numbers, dates and money</h2>
+<ul>
+  <li>Write dates as day, month, year, in words where there is room: 27 March 1990.</li>
+  <li>Ask for dates in three fields. See the <a href="../patterns/date-of-birth.html">date of birth pattern</a>.</li>
+  <li>Currency symbol and position come from the pack. Nigeria writes ₦35,000; Senegal writes 35 000 F CFA.</li>
+  <li>Phone numbers are written with spaces, never dots or dashes: 0803 000 0000.</li>
+</ul>

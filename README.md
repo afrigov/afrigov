@@ -137,10 +137,10 @@ Everything from 2019 onwards: Chrome 88, Edge 88, Firefox 78, Safari 14, Samsung
 
 ```sh
 pnpm install
-pnpm build          # tokens → build/, then dist/, then docs/dist/
+pnpm build          # tokens → build/, then dist/, then the docs site in docs/
 pnpm dev            # rebuild on change and serve the docs at http://localhost:4321
 pnpm test           # unit tests: tokens, contrast, build output
-pnpm test:a11y      # Playwright + axe on the docs page (pnpm exec playwright install chromium once)
+pnpm test:a11y      # Playwright + axe on every docs page with every pack (pnpm exec playwright install chromium once)
 pnpm check          # everything CI runs
 ```
 

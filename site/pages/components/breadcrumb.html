@@ -1,0 +1,31 @@
+<!-- { "title": "Breadcrumb", "section": "components", "description": "Shows where a page sits in the site and lets people go up a level.", "order": 50 } -->
+<h1>Breadcrumb</h1>
+<p class="ag-lead">Where this page sits, and a way back up.</p>
+
+<h2>When to use</h2>
+<p>On content pages inside a hierarchy: a guide, a department page, a service's information pages.</p>
+
+<h2>When not to use</h2>
+<p>
+  Inside a form journey. People should move with Continue and Back, not jump out to a parent page and lose their place.
+</p>
+
+<docs-example>
+  <nav aria-label="Breadcrumb">
+    <ol class="ag-breadcrumb ag-mb-0">
+      <li><a href="#breadcrumb-example">Home</a></li>
+      <li><a href="#breadcrumb-example">Services</a></li>
+      <li><a href="#breadcrumb-example">Passports</a></li>
+      <li><span aria-current="page">Renew a passport</span></li>
+    </ol>
+  </nav>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>
+    An ordered list inside <code>nav aria-label="Breadcrumb"</code>, so it is a landmark and the order is announced.
+  </li>
+  <li>The current page is text, not a link, with <code>aria-current="page"</code>.</li>
+  <li>The separators are drawn with CSS, so screen readers do not read "greater than" between every item.</li>
+</ul>

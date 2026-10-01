@@ -1,0 +1,40 @@
+<!-- { "title": "Summary list", "section": "components", "description": "Label and value pairs with a change link, for check-your-answers pages.", "order": 210 } -->
+<h1>Summary list</h1>
+<p class="ag-lead">Label and value pairs, each with a change link. The check-your-answers page before submitting.</p>
+
+<docs-example>
+  <dl class="ag-summary ag-mb-0">
+    <div class="ag-summary__row">
+      <dt class="ag-summary__key">Name</dt>
+      <dd class="ag-summary__value">Amina Bello</dd>
+      <dd class="ag-summary__action">
+        <a href="#summary-example">Change<span class="ag-visually-hidden"> name</span></a>
+      </dd>
+    </div>
+    <div class="ag-summary__row">
+      <dt class="ag-summary__key">Date of birth</dt>
+      <dd class="ag-summary__value">27 March 1990</dd>
+      <dd class="ag-summary__action">
+        <a href="#summary-example">Change<span class="ag-visually-hidden"> date of birth</span></a>
+      </dd>
+    </div>
+    <div class="ag-summary__row">
+      <dt class="ag-summary__key">Contact</dt>
+      <dd class="ag-summary__value">SMS to 0803 000 0000</dd>
+      <dd class="ag-summary__action">
+        <a href="#summary-example">Change<span class="ag-visually-hidden"> contact</span></a>
+      </dd>
+    </div>
+  </dl>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>It is a description list, so screen readers read each label with its value.</li>
+  <li>
+    Every change link says what it changes, with the words visually hidden, so a list of links makes sense out of
+    context.
+  </li>
+  <li>The change link goes back to that question's page and returns here afterwards.</li>
+  <li>Without a change link, drop the third column; the grid adjusts.</li>
+</ul>

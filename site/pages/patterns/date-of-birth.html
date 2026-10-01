@@ -1,0 +1,65 @@
+<!-- { "title": "Ask for a date of birth", "section": "patterns", "description": "Three plain fields instead of a date picker. Works on every phone and every screen reader.", "order": 10 } -->
+<h1>Ask for a date of birth</h1>
+<p class="ag-lead">Three fields: day, month, year. No picker.</p>
+
+<h2>Why</h2>
+<ul>
+  <li>People know their date of birth. A calendar makes them scroll back decades.</li>
+  <li>Calendar widgets fail on low-end Android browsers and are slow with screen readers.</li>
+  <li>Three numeric fields open the number keyboard on phones and need no script.</li>
+</ul>
+<p>GOV.UK reached the same conclusion from its own research, and this follows their pattern.</p>
+
+<h2>The pattern</h2>
+<docs-example>
+  <fieldset class="ag-field ag-mb-0" aria-describedby="dob-hint">
+    <legend class="ag-legend">Date of birth</legend>
+    <span class="ag-hint" id="dob-hint">For example, 27 3 1990</span>
+    <div class="ag-date-input">
+      <div class="ag-date-input__item">
+        <label class="ag-date-input__label" for="dob-day">Day</label>
+        <input class="ag-input" id="dob-day" name="dob-day" type="text" inputmode="numeric" autocomplete="bday-day" />
+      </div>
+      <div class="ag-date-input__item">
+        <label class="ag-date-input__label" for="dob-month">Month</label>
+        <input
+          class="ag-input"
+          id="dob-month"
+          name="dob-month"
+          type="text"
+          inputmode="numeric"
+          autocomplete="bday-month"
+        />
+      </div>
+      <div class="ag-date-input__item ag-date-input__item--year">
+        <label class="ag-date-input__label" for="dob-year">Year</label>
+        <input
+          class="ag-input"
+          id="dob-year"
+          name="dob-year"
+          type="text"
+          inputmode="numeric"
+          autocomplete="bday-year"
+        />
+      </div>
+    </div>
+  </fieldset>
+</docs-example>
+
+<h2>Rules</h2>
+<ul>
+  <li>
+    Use <code>type="text"</code> with <code>inputmode="numeric"</code>, not <code>type="number"</code>, which has
+    spinner and scroll problems.
+  </li>
+  <li>Use the <code>bday-*</code> autocomplete values so browsers can fill it.</li>
+  <li>The hint shows an example in the same order as the fields.</li>
+  <li>Accept 1 or 01 for day and month. Do not make people type leading zeros.</li>
+  <li>For other dates, such as a passport expiry, change the legend and the hint and drop the autocomplete.</li>
+</ul>
+
+<h2>Errors</h2>
+<p>
+  Mark the whole fieldset with <code>ag-field--error</code>, put one message above the fields, and link to the first
+  field from the <a href="errors.html">error summary</a>. Say which part is wrong: "Date of birth must include a year".
+</p>

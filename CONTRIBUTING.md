@@ -18,9 +18,9 @@ Node 20 or newer and pnpm 10.
 | Script           | What it does                                                    |
 | ---------------- | --------------------------------------------------------------- |
 | `pnpm dev`       | Rebuild on change and serve the docs at http://localhost:4321   |
-| `pnpm build`     | tokens → `build/`, then `dist/`, then `docs/dist/`              |
+| `pnpm build`     | tokens → `build/`, then `dist/`, then the docs site in `docs/`  |
 | `pnpm test`      | Unit tests for tokens, contrast maths and build output          |
-| `pnpm test:a11y` | Playwright + axe-core against `docs/index.html` with every pack |
+| `pnpm test:a11y` | Playwright + axe-core against every docs page with every pack   |
 | `pnpm check`     | Everything CI runs, except `test:a11y` which CI runs separately |
 
 ## What we are looking for
@@ -56,7 +56,7 @@ Open an issue first for anything not on the roadmap in `internal/roadmap/`, so w
 - Every colour from a `--ag-` token. The build test rejects literal hex values outside the tokens layer.
 - A 48px minimum touch target on anything interactive.
 - Working with JavaScript disabled. If it needs a script, the no-script state must still be usable.
-- An example on `docs/index.html` with the HTML shown, so the axe tests cover it.
+- A page in `site/pages/components/` (copy an existing one) with a `<docs-example>` block, so the axe tests cover it. `docs/` is generated; never edit it.
 - A line in `internal/components.md` and `CHANGELOG.md`.
 
 ### Bugs and docs

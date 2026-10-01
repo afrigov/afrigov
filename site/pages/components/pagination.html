@@ -1,0 +1,28 @@
+<!-- { "title": "Pagination", "section": "components", "description": "Moving through a long list, one page at a time.", "order": 60 } -->
+<h1>Pagination</h1>
+<p class="ag-lead">For lists too long for one page: search results, news, a table of applications.</p>
+
+<h2>When not to use</h2>
+<p>For steps in a form. Use Continue and Back buttons. For fewer than about 25 items, show them all.</p>
+
+<docs-example>
+  <nav aria-label="Pagination">
+    <ul class="ag-pagination ag-mb-0">
+      <li><a class="ag-pagination__link" href="#pagination-example" rel="prev">Previous</a></li>
+      <li><a class="ag-pagination__link" href="#pagination-example">1</a></li>
+      <li><a class="ag-pagination__link" href="#pagination-example" aria-current="page">2</a></li>
+      <li><a class="ag-pagination__link" href="#pagination-example">3</a></li>
+      <li><span class="ag-pagination__ellipsis" aria-hidden="true">…</span></li>
+      <li><a class="ag-pagination__link" href="#pagination-example">12</a></li>
+      <li><a class="ag-pagination__link" href="#pagination-example" rel="next">Next</a></li>
+    </ul>
+  </nav>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Every link is a real URL with the page number in it, so it works without script and can be bookmarked.</li>
+  <li>The current page has <code>aria-current="page"</code> and is still a link, so its position is announced.</li>
+  <li>Previous and Next carry <code>rel</code> attributes for browsers and crawlers.</li>
+  <li>Show at most seven numbers; use the ellipsis for the rest.</li>
+</ul>

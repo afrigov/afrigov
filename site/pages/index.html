@@ -1,0 +1,92 @@
+<!-- { "title": "Home", "section": "home", "description": "Open-source components for building accessible African public-service websites. Country-neutral core, per-country packs, plain CSS, 5 KB, no build step." } -->
+<div class="docs-home">
+  <p class="docs-eyebrow">Open source · MIT · v{{version}}</p>
+  <h1 class="ag-heading-xl">Accessible by default. Built for African government services.</h1>
+  <p class="ag-lead">
+    One country-neutral core. A colour pack per country. Plain CSS that passes WCAG 2.1 AA on every commit and loads on
+    a 2G connection.
+  </p>
+  <div class="ag-button-group">
+    <a class="ag-button ag-button--start" href="get-started.html">Get started</a>
+    <a class="ag-button ag-button--secondary" href="https://github.com/omoyolab/afrigov">View on GitHub</a>
+  </div>
+
+  <div class="docs-home__install">
+    <p class="docs-home__install-label">The whole install</p>
+    <pre
+      class="docs-code"
+      tabindex="0"
+    ><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/<span data-docs-packfile>ng</span>.min.css"&gt;</code></pre>
+  </div>
+
+  <dl class="docs-stats">
+    <div>
+      <dt>CSS, gzipped</dt>
+      <dd>5 KB</dd>
+    </div>
+    <div>
+      <dt>Components</dt>
+      <dd>22</dd>
+    </div>
+    <div>
+      <dt>Country packs</dt>
+      <dd>{{packCount}}</dd>
+    </div>
+    <div>
+      <dt>Contrast</dt>
+      <dd>AA in CI</dd>
+    </div>
+  </dl>
+</div>
+
+<div class="ag-grid docs-home__cards">
+  <a class="docs-card docs-card--link" href="styles/index.html">
+    <h2>Styles</h2>
+    <p>Colour, type, spacing and language. The rules every component follows, and the tokens behind them.</p>
+  </a>
+  <a class="docs-card docs-card--link" href="components/index.html">
+    <h2>Components</h2>
+    <p>Twenty-two building blocks, each with when to use it, the HTML, and its accessibility notes.</p>
+  </a>
+  <a class="docs-card docs-card--link" href="patterns/index.html">
+    <h2>Patterns</h2>
+    <p>Answers to common service questions, like asking for a date of birth or showing errors.</p>
+  </a>
+  <a class="docs-card docs-card--link" href="packs/index.html">
+    <h2>Country packs</h2>
+    <p>National colours, flag, banner strings and country data, one JSON file per country.</p>
+  </a>
+  <a class="docs-card docs-card--link" href="community/index.html">
+    <h2>Community</h2>
+    <p>How to contribute a pack or a translation, the roadmap, and the decisions behind the system.</p>
+  </a>
+</div>
+
+<section class="docs-home__why" aria-labelledby="why-heading">
+  <h2 id="why-heading">Why afrigov</h2>
+  <div class="ag-grid">
+    <div>
+      <h3>No build step</h3>
+      <p>Two link tags and you are done. Plain CSS with custom properties. No Sass, no bundler, no framework.</p>
+    </div>
+    <div>
+      <h3>Country packs</h3>
+      <p>
+        The core has no flag colours. A pack adds them, derives text-safe variants, and carries the official banner
+        strings in the country's languages.
+      </p>
+    </div>
+    <div>
+      <h3>Works on a 2G connection</h3>
+      <p>System fonts only, 5 KB of CSS, and every component works with JavaScript turned off.</p>
+    </div>
+    <div>
+      <h3>AA is enforced, not promised</h3>
+      <p>
+        The build fails if any colour pair misses 4.5:1. axe-core runs on every page of this site, with every pack, on
+        every pull request.
+      </p>
+    </div>
+  </div>
+</section>

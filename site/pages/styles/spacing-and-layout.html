@@ -1,0 +1,109 @@
+<!-- { "title": "Spacing and layout", "section": "styles", "description": "A 4px spacing scale, 48px touch targets, one column of text and three layout helpers.", "order": 30 } -->
+<h1>Spacing and layout</h1>
+<p class="ag-lead">A 4px scale, a 72rem container, one column of text, and three small layout helpers. That is all.</p>
+
+<h2>Spacing scale</h2>
+<div class="ag-table-wrap" role="region" aria-label="Spacing scale" tabindex="0">
+  <table class="ag-table">
+    <thead>
+      <tr>
+        <th scope="col">Token</th>
+        <th scope="col">Value</th>
+        <th scope="col">Used for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>--ag-space-1</code></th>
+        <td>4px</td>
+        <td>Gaps inside a control</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-space-2</code></th>
+        <td>8px</td>
+        <td>Label to control, icon to text</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-space-3</code></th>
+        <td>12px</td>
+        <td>Padding inside controls</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-space-4</code></th>
+        <td>16px</td>
+        <td>Paragraph spacing, page gutter on phones</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-space-5</code></th>
+        <td>24px</td>
+        <td>Between form fields</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-space-6</code></th>
+        <td>32px</td>
+        <td>Between sections, page gutter on desktop</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-space-7</code></th>
+        <td>48px</td>
+        <td>Above and below a page's main content</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-space-8</code></th>
+        <td>64px</td>
+        <td>Before the footer</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Container and prose</h2>
+<p>
+  <code>ag-container</code> centres content at up to 72rem with a 16px gutter on phones and 32px on desktop.
+  <code>ag-prose</code> limits running text to 65 characters. Put headings, paragraphs and lists inside it; put tables,
+  forms and cards outside it.
+</p>
+<pre class="docs-code" tabindex="0"><code>&lt;main class="ag-main ag-container" id="main" tabindex="-1"&gt;
+  &lt;div class="ag-prose"&gt;
+    &lt;h1&gt;…&lt;/h1&gt;
+    &lt;p&gt;…&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;table class="ag-table"&gt;…&lt;/table&gt;
+&lt;/main&gt;</code></pre>
+
+<h2>Layout helpers</h2>
+<p>Three primitives cover nearly every page. Add more only if you have tried these first.</p>
+<docs-example label="Stack: vertical rhythm between siblings">
+  <div class="ag-stack">
+    <div class="ag-inset ag-mb-0"><p>First</p></div>
+    <div class="ag-inset ag-mb-0"><p>Second</p></div>
+    <div class="ag-inset ag-mb-0"><p>Third</p></div>
+  </div>
+</docs-example>
+<docs-example label="Cluster: items in a row that wrap">
+  <div class="ag-cluster">
+    <span class="ag-badge">One</span>
+    <span class="ag-badge">Two</span>
+    <span class="ag-badge">Three</span>
+    <span class="ag-badge">Four</span>
+  </div>
+</docs-example>
+<docs-example label="Grid: equal cards that reflow">
+  <div class="ag-grid">
+    <div class="ag-inset ag-mb-0"><p>Card</p></div>
+    <div class="ag-inset ag-mb-0"><p>Card</p></div>
+    <div class="ag-inset ag-mb-0"><p>Card</p></div>
+  </div>
+</docs-example>
+
+<h2>Touch targets</h2>
+<p>
+  Every link, button, control and disclosure is at least 48px tall. Links inside running text are exempt, as WCAG
+  allows. The documentation site is tested for this at 375px wide on every pull request.
+</p>
+
+<h2>Breakpoints</h2>
+<p>
+  Three, in <code>em</code> so they respect the reader's font size: <code>sm</code> 40em (640px), <code>md</code> 48em
+  (768px), <code>lg</code> 64em (1024px). Design for the phone first; the breakpoints only add columns.
+</p>

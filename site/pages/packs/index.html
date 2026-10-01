@@ -1,0 +1,56 @@
+<!-- { "title": "Country packs", "navTitle": "Overview", "section": "packs", "description": "One JSON file per country: national colours, flag, banner strings and country data.", "order": 0 } -->
+<h1>Country packs</h1>
+<p class="ag-lead">
+  A pack is one JSON file. It declares the official national colours and which of them is the primary. The build derives
+  everything else, checks every colour pair, and writes a stylesheet.
+</p>
+
+<div class="ag-table-wrap" role="region" aria-label="Country packs" tabindex="0">
+  <table class="ag-table">
+    <caption>
+      Packs in this release
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">File</th>
+        <th scope="col">Official primary</th>
+        <th scope="col">Usable primary</th>
+        <th scope="col">Banner languages</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{packsTable}}
+    </tbody>
+  </table>
+</div>
+
+<h2>What a pack carries</h2>
+<ul>
+  <li><strong>Official colours</strong>, exact, with their source. Used for the flag and decoration.</li>
+  <li><strong>A primary</strong>, derived to pass WCAG AA as text if the official value does not.</li>
+  <li><strong>Flag stripes</strong> and their direction.</li>
+  <li><strong>Banner strings</strong> in each official language, with a default language.</li>
+  <li>
+    <strong>Country data</strong> the examples and the 0.2 inputs read: currency, national ID, regions, time zone.
+  </li>
+</ul>
+
+<h2>Use a pack</h2>
+<pre
+  class="docs-code"
+  tabindex="0"
+><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/<span data-docs-packfile>ng</span>.min.css"&gt;</code></pre>
+<p>
+  To serve more than one country from one page, scope a pack to part of it with <code>data-ag-pack="ke"</code> on any
+  element.
+</p>
+
+<h2>Add your country</h2>
+<p>
+  Copy <code>tokens/packs/ke.tokens.json</code>, change the values, run <code>pnpm test</code>, open a pull request. The
+  contrast tests run for you. Step by step instructions are in
+  <a href="https://github.com/omoyolab/afrigov/blob/main/CONTRIBUTING.md#adding-a-country-pack">Contributing</a>. Packs
+  wanted: Rwanda, South Africa, Morocco, Uganda, Tanzania, Ethiopia, Côte d'Ivoire, Mozambique.
+</p>

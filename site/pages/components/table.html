@@ -1,0 +1,62 @@
+<!-- { "title": "Table", "section": "components", "description": "Rows and columns of data, with a caption and header scopes, scrolling sideways on small screens.", "order": 190 } -->
+<h1>Table</h1>
+<p class="ag-lead">For data that is genuinely tabular. Always a caption, always header scopes.</p>
+
+<h2>When not to use</h2>
+<p>For layout, ever. For a list of label and value pairs, use the <a href="summary-list.html">summary list</a>.</p>
+
+<docs-example>
+  <div class="ag-table-wrap ag-mb-0" role="region" aria-label="Passport fees" tabindex="0">
+    <table class="ag-table ag-table--striped">
+      <caption>
+        Passport fees
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Validity</th>
+          <th scope="col" class="ag-table__numeric">Fee</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Standard, 32 pages</th>
+          <td>5 years</td>
+          <td class="ag-table__numeric" data-docs-money="35000">35,000</td>
+          <td><span class="ag-badge ag-badge--success">Available</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Standard, 64 pages</th>
+          <td>10 years</td>
+          <td class="ag-table__numeric" data-docs-money="70000">70,000</td>
+          <td><span class="ag-badge ag-badge--success">Available</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Official</th>
+          <td>5 years</td>
+          <td class="ag-table__numeric" data-docs-money="0">0</td>
+          <td><span class="ag-badge ag-badge--warning">By request</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The caption is the table's name. Screen readers list tables by caption.</li>
+  <li>
+    Column headers get <code>scope="col"</code> and row headers <code>scope="row"</code>, so a cell is read with its
+    headers.
+  </li>
+  <li>
+    The wrapper scrolls sideways on narrow screens. It has <code>tabindex="0"</code> and a label so keyboard users can
+    scroll it.
+  </li>
+  <li>Numbers are right-aligned with <code>ag-table__numeric</code> and use tabular figures so columns line up.</li>
+  <li>Stripes (<code>ag-table--striped</code>) help with wide tables. Skip them for three columns or fewer.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>currency.symbol</code>, <code>currency.position</code>, <code>currency.locale</code> for the money column.</p>

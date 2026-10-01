@@ -1,0 +1,30 @@
+<!-- { "title": "Skip link", "section": "components", "description": "A link to the main content that appears when a keyboard user tabs to it.", "order": 10 } -->
+<h1>Skip link</h1>
+<p class="ag-lead">The first focusable element on every page. Invisible until a keyboard reaches it.</p>
+
+<h2>When to use</h2>
+<p>
+  Always. Every page with a header and navigation needs one, so keyboard and screen reader users can jump past them.
+</p>
+
+<docs-example>
+  <a class="ag-skip-link" href="#main-example" style="position: static">Skip to main content</a>
+  <p class="docs-fine ag-mb-0">
+    Shown here in its focused position. Normally it is off-screen until focused. Press Tab from the top of this page to
+    see the real one.
+  </p>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>Put it before everything else in <code>body</code>.</li>
+  <li>
+    Point it at <code>main</code>, which has <code>id="main"</code> and <code>tabindex="-1"</code> so it can receive
+    focus.
+  </li>
+  <li>The link text is "Skip to main content". Do not get creative.</li>
+</ul>
+<pre class="docs-code" tabindex="0"><code>&lt;body&gt;
+  &lt;a class="ag-skip-link" href="#main"&gt;Skip to main content&lt;/a&gt;
+  …
+  &lt;main class="ag-main" id="main" tabindex="-1"&gt;</code></pre>

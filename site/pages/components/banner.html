@@ -1,0 +1,40 @@
+<!-- { "title": "Official website banner", "navTitle": "Official banner", "section": "components", "description": "The flag and official-site notice that sits above the header on every government page.", "order": 20 } -->
+<h1>Official website banner</h1>
+<p class="ag-lead">Tells people they are on a government site and how to tell. Goes above the header on every page.</p>
+
+<h2>When to use</h2>
+<p>On every page of a government service. It is the first thing a phishing site cannot copy convincingly.</p>
+
+<h2>When not to use</h2>
+<p>On a site that is not a government site. This documentation uses a different notice for that reason.</p>
+
+<docs-example flush>
+  <section class="ag-banner" aria-label="Official website notice">
+    <div class="ag-container ag-banner__inner">
+      <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+      <p class="ag-banner__text" data-docs-string="banner">An official website of the Government</p>
+      <details class="ag-banner__details">
+        <summary data-docs-string="banner-how">How you know this is official</summary>
+        <p data-docs-string="banner-domain">Official websites use a government domain</p>
+        <p data-docs-string="banner-secure">Secure government websites use HTTPS</p>
+      </details>
+    </div>
+  </section>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>The text and the expandable explanation come from the country pack's strings, in the pack's default language.</li>
+  <li>
+    The flag's stripes and direction come from the pack. The three inner spans are the stripes; add more for flags with
+    more bands.
+  </li>
+  <li>The expandable part is a native <code>details</code> element and needs no script.</li>
+  <li>Keep the <code>aria-label</code> on the section so it is announced as a landmark.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p>
+  <code>strings.*.banner</code>, <code>banner-how</code>, <code>banner-domain</code>, <code>banner-secure</code>,
+  <code>flag</code>, <code>flagDirection</code>.
+</p>

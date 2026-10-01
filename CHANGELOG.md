@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Documentation is now a multi-page site generated from `site/`: Get started, Styles, Components (a page per component), Patterns, Country packs (a page per pack, generated from the pack JSON), Community. The country choice is remembered across pages. axe runs on every page with every pack.
+
+## [0.1.2] - 2026-10-01
+
 ### Added
 
 - Senegal country pack (`sn.css`), the first francophone pack. Packs can now set a default `language` for their strings and a `currency.position` of `suffix` with a number `locale`; the docs examples honour both. Green is derived for AA like Nigeria's.
@@ -30,6 +36,7 @@ First release.
 - Tests: 90 unit tests for tokens, contrast maths and build output; Playwright with axe-core on the docs page with every pack; 48px touch-target check; 20 KB gzip budget for the core.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
-[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/omoyolab/afrigov/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/omoyolab/afrigov/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/omoyolab/afrigov/releases/tag/v0.1.0

@@ -1,0 +1,34 @@
+<!-- { "title": "Date input", "section": "components", "description": "Three plain fields for day, month and year. No date picker.", "order": 140 } -->
+<h1>Date input</h1>
+<p class="ag-lead">
+  Day, month, year. Three fields, no picker. The full guidance is in the
+  <a href="../patterns/date-of-birth.html">date of birth pattern</a>.
+</p>
+
+<docs-example>
+  <fieldset class="ag-field ag-mb-0" aria-describedby="di-hint">
+    <legend class="ag-legend">When does your passport expire?</legend>
+    <span class="ag-hint" id="di-hint">For example, 15 8 2031</span>
+    <div class="ag-date-input">
+      <div class="ag-date-input__item">
+        <label class="ag-date-input__label" for="di-day">Day</label>
+        <input class="ag-input" id="di-day" name="expiry-day" type="text" inputmode="numeric" />
+      </div>
+      <div class="ag-date-input__item">
+        <label class="ag-date-input__label" for="di-month">Month</label>
+        <input class="ag-input" id="di-month" name="expiry-month" type="text" inputmode="numeric" />
+      </div>
+      <div class="ag-date-input__item ag-date-input__item--year">
+        <label class="ag-date-input__label" for="di-year">Year</label>
+        <input class="ag-input" id="di-year" name="expiry-year" type="text" inputmode="numeric" />
+      </div>
+    </div>
+  </fieldset>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The question is the <code>legend</code>; each field has its own visible label.</li>
+  <li>The hint gives an example in the same order as the fields.</li>
+  <li>If only month and year matter, such as a card expiry, remove the day field.</li>
+</ul>

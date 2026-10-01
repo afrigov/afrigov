@@ -1,0 +1,86 @@
+<!-- { "title": "Community", "section": "community", "description": "How to contribute to afrigov, the roadmap, and the decisions behind it." } -->
+<h1>Community</h1>
+<p class="ag-lead">
+  afrigov is built in the open. The most useful contributions right now are country packs and banner translations, and
+  both are one JSON file.
+</p>
+
+<h2>Contribute</h2>
+<ul class="docs-link-list">
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/blob/main/CONTRIBUTING.md">Contributing guide</a> — setup, what we are
+    looking for, the pull request checklist.
+  </li>
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+      >Good first issues</a
+    >
+    — packs and translations that need a native speaker.
+  </li>
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/issues/new/choose">Report a bug</a> — accessibility problems are the
+    highest priority.
+  </li>
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/discussions">Discussions</a> — questions, ideas, and showing what you
+    built.
+  </li>
+</ul>
+
+<h2>Translations</h2>
+<p>
+  We only ship strings a native speaker can vouch for. A missing language is better than a wrong one. Each pack lists
+  the languages it still needs, and every one has an open issue with the exact strings to translate.
+</p>
+
+<h2>Roadmap</h2>
+<ul>
+  <li>
+    <strong>0.2</strong> — the African patterns: phone number, national ID, region selector, currency, character count,
+    service card, language switcher. Rwanda and South Africa packs. SVG flags. A published pack schema.
+  </li>
+  <li>
+    <strong>0.3</strong> — <code>afrigov audit</code>, run axe against any site from the command line, and a monthly
+    scoreboard.
+  </li>
+  <li><strong>0.4</strong> — Figma library generated from the tokens.</li>
+  <li>
+    <strong>1.0</strong> — stable class names, tokens and pack schema. Needs right-to-left with an Arabic pack, full
+    page templates, a manual screen-reader pass on every component, and one real service built on it.
+  </li>
+</ul>
+<p>
+  The detailed plan per version and the component registry live in
+  <a href="https://github.com/omoyolab/afrigov/tree/main/internal"><code>internal/</code></a> in the repository.
+</p>
+
+<h2>Decisions</h2>
+<p>The choices that are expensive to reverse, and why they were made:</p>
+<ul>
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/blob/main/internal/decisions/001-plain-css-no-sass.md"
+      >Plain CSS with custom properties, no Sass, no framework</a
+    >
+  </li>
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/blob/main/internal/decisions/002-official-vs-usable-colours.md"
+      >Official colours are decorative; usable colours are derived</a
+    >
+  </li>
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/blob/main/internal/decisions/003-no-date-picker.md"
+      >No date picker, no modal, no toast, no carousel</a
+    >
+  </li>
+  <li>
+    <a href="https://github.com/omoyolab/afrigov/blob/main/internal/decisions/004-name-and-scope.md"
+      >Named afrigov, published unscoped, not a government project</a
+    >
+  </li>
+</ul>
+
+<h2>Code of conduct</h2>
+<p>
+  This project follows the
+  <a href="https://github.com/omoyolab/afrigov/blob/main/CODE_OF_CONDUCT.md">Contributor Covenant</a>. Be kind.
+</p>

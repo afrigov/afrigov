@@ -1,0 +1,48 @@
+<!-- { "title": "Checkboxes", "section": "components", "description": "Any number of choices from a list, or a single confirmation.", "order": 120 } -->
+<h1>Checkboxes</h1>
+<p class="ag-lead">Any number of choices. Or one box to confirm something.</p>
+
+<docs-example>
+  <fieldset class="ag-field ag-mb-0">
+    <legend class="ag-legend">Which documents do you have?</legend>
+    <span class="ag-hint" id="cb-docs-hint">Select all that apply</span>
+    <div class="ag-choices" aria-describedby="cb-docs-hint">
+      <label class="ag-checkbox">
+        <input type="checkbox" name="docs" value="id" checked />
+        <span class="ag-checkbox__label" data-docs-string="id-document">National ID card</span>
+      </label>
+      <label class="ag-checkbox">
+        <input type="checkbox" name="docs" value="passport" />
+        <span class="ag-checkbox__label">International passport</span>
+      </label>
+      <label class="ag-checkbox">
+        <input type="checkbox" name="docs" value="birth" />
+        <span class="ag-checkbox__label">Birth certificate</span>
+      </label>
+    </div>
+  </fieldset>
+</docs-example>
+
+<h2>A single confirmation</h2>
+<docs-example>
+  <div class="ag-field ag-mb-0">
+    <label class="ag-checkbox">
+      <input type="checkbox" name="confirm" value="yes" />
+      <span class="ag-checkbox__label">I confirm that the information I have given is correct</span>
+    </label>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>
+    Group related checkboxes in a <code>fieldset</code> with the question as the <code>legend</code>. Say "Select all
+    that apply" in the hint.
+  </li>
+  <li>A single confirmation needs no fieldset; the label is the question.</li>
+  <li>Never pre-tick a consent box. It is both bad practice and, in many countries, unlawful.</li>
+  <li>The tick is drawn in white, which passes on every pack's primary because the build guarantees it.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>id.document</code> for the name of the national ID document.</p>

@@ -1,0 +1,45 @@
+<!-- { "title": "Button", "section": "components", "description": "Primary, secondary, warning and start buttons. One primary action per page.", "order": 70 } -->
+<h1>Button</h1>
+<p class="ag-lead">One primary action per page. Everything else is secondary or a link.</p>
+
+<h2>When to use</h2>
+<p>
+  To submit a form or begin a service. Use a <code>button</code> element for actions and an <code>a</code> element
+  styled as a button only for navigation, like the start button.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  For navigation between content pages. Use a link. People expect links to go somewhere and buttons to do something.
+</p>
+
+<docs-example>
+  <div class="ag-button-group ag-mb-0">
+    <button class="ag-button" type="button">Continue</button>
+    <button class="ag-button ag-button--secondary" type="button">Save and come back later</button>
+    <a class="ag-button ag-button--start" href="#button-example">Start now</a>
+    <button class="ag-button ag-button--warning" type="button">Delete application</button>
+    <button class="ag-button" type="button" disabled>Disabled</button>
+  </div>
+</docs-example>
+
+<h2>Variants</h2>
+<ul>
+  <li><strong>Primary</strong>, the default. The main action. Once per page.</li>
+  <li><strong>Secondary</strong> for the other action: save for later, cancel, back.</li>
+  <li><strong>Start</strong> for the first page of a service. It is a link, and it is bigger.</li>
+  <li><strong>Warning</strong> for destructive actions only. Always confirm on the next page.</li>
+  <li><strong>Block</strong> (<code>ag-button--block</code>) makes a button full width, useful on phones.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Buttons are 48px tall and have a visible border, so they survive forced-colours mode.</li>
+  <li>Label with a verb: "Continue", "Submit application", "Delete". Never "Click here" or "OK".</li>
+  <li>
+    Avoid disabled buttons. They cannot receive focus and people cannot tell why. Let them submit and show an error
+    instead.
+  </li>
+  <li>The focus state is yellow with ink text, the same as links, so people learn one signal.</li>
+  <li>Set <code>type="button"</code> on any button that is not a submit, or it will submit the form.</li>
+</ul>

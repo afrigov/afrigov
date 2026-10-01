@@ -1,0 +1,45 @@
+<!-- { "title": "Accordion", "section": "components", "description": "Sections that open and close, built on the native details element with no script.", "order": 180 } -->
+<h1>Accordion</h1>
+<p class="ag-lead">
+  Built on <code>details</code>. Keyboard and screen reader support come from the browser, so there is no script.
+</p>
+
+<h2>When to use</h2>
+<p>For a set of related sections people will only need some of: frequently asked questions, eligibility by category.</p>
+
+<h2>When not to use</h2>
+<p>
+  To hide content people need. If most people need to read it, show it. For one section, use a single
+  <code>details</code> without the accordion wrapper.
+</p>
+
+<docs-example>
+  <div class="ag-accordion ag-mb-0">
+    <details class="ag-accordion__item">
+      <summary class="ag-accordion__summary">Who can apply for a passport?</summary>
+      <div class="ag-accordion__body">
+        <p>Any citizen. Children under 16 must apply with a parent or guardian present.</p>
+      </div>
+    </details>
+    <details class="ag-accordion__item">
+      <summary class="ag-accordion__summary">How long does it take?</summary>
+      <div class="ag-accordion__body">
+        <p>Standard processing takes 6 weeks. Express processing takes 2 weeks and costs more.</p>
+      </div>
+    </details>
+    <details class="ag-accordion__item">
+      <summary class="ag-accordion__summary">What does it cost?</summary>
+      <div class="ag-accordion__body">
+        <p>Fees depend on validity and number of pages. You pay online after your application is accepted.</p>
+      </div>
+    </details>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The summary is a native disclosure button: Enter and Space toggle it, and its state is announced.</li>
+  <li>Search in page finds text inside closed sections in modern browsers.</li>
+  <li>Do not nest accordions.</li>
+  <li>Summaries are questions or short headings, not full sentences.</li>
+</ul>

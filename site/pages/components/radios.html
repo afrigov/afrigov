@@ -1,0 +1,50 @@
+<!-- { "title": "Radios", "section": "components", "description": "One choice from a short list, with every option visible.", "order": 110 } -->
+<h1>Radios</h1>
+<p class="ag-lead">One choice from a short list. Every option is visible, so people can compare them.</p>
+
+<h2>When to use</h2>
+<p>For up to about seven mutually exclusive options. Yes or no questions. Which document you have.</p>
+
+<docs-example>
+  <fieldset class="ag-field ag-mb-0">
+    <legend class="ag-legend">How should we contact you?</legend>
+    <div class="ag-choices">
+      <label class="ag-radio">
+        <input type="radio" name="contact" value="sms" checked />
+        <span class="ag-radio__label">SMS <span class="ag-radio__hint">Works on any phone</span></span>
+      </label>
+      <label class="ag-radio">
+        <input type="radio" name="contact" value="email" />
+        <span class="ag-radio__label">Email</span>
+      </label>
+      <label class="ag-radio">
+        <input type="radio" name="contact" value="post" />
+        <span class="ag-radio__label">Post</span>
+      </label>
+    </div>
+  </fieldset>
+</docs-example>
+
+<h2>Inline, for two short options</h2>
+<docs-example>
+  <fieldset class="ag-field ag-mb-0">
+    <legend class="ag-legend">Do you have a passport?</legend>
+    <div class="ag-choices ag-choices--inline">
+      <label class="ag-radio"
+        ><input type="radio" name="passport" value="yes" /><span class="ag-radio__label">Yes</span></label
+      >
+      <label class="ag-radio"
+        ><input type="radio" name="passport" value="no" /><span class="ag-radio__label">No</span></label
+      >
+    </div>
+  </fieldset>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The question is the <code>legend</code> of a <code>fieldset</code>, so it is read with every option.</li>
+  <li>The native input is restyled, never hidden, so it stays focusable and visible in forced-colours mode.</li>
+  <li>The whole label is the target, 48px tall, so a thumb can hit it.</li>
+  <li>Do not preselect an option unless there is a genuine default. People submit without reading.</li>
+  <li>Hints inside an option use <code>ag-radio__hint</code> and are part of the label.</li>
+</ul>

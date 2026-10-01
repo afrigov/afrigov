@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" href="{{root}}dist/core.min.css" />
+    <link rel="stylesheet" id="pack-css" />
+    <link rel="stylesheet" href="{{root}}docs.css" />
+    <script>
+      // Pack choice: ?pack= in the URL wins, then the remembered choice, then the neutral core.
+      (function () {
+        var packs = {{packList}};
+        var root = "{{root}}";
+        var pack = new URL(location.href).searchParams.get("pack");
+        if (!pack) {
+          try {
+            pack = localStorage.getItem("afrigov-pack");
+          } catch (e) {
+            pack = null;
+          }
+        }
+        var link = document.getElementById("pack-css");
+        if (packs.indexOf(pack) !== -1) {
+          try {
+            localStorage.setItem("afrigov-pack", pack);
+          } catch (e) {
+            /* private mode */
+          }
+        }
+        if (packs.indexOf(pack) === -1) {
+          pack = "core";
+          link.parentNode.removeChild(link);
+        } else {
+          link.href = root + "dist/" + pack + ".min.css";
+          document.documentElement.setAttribute("data-ag-pack", pack);
+        }
+        document.documentElement.setAttribute("data-docs-pack", pack);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="ag-skip-link" href="#main">Skip to main content</a>
+
+    <div class="ag-banner">
+      <div class="ag-container ag-banner__inner">
+        <p class="ag-banner__text">
+          afrigov is an open-source project. It is not a government website and is not affiliated with any government.
+        </p>
+        <form class="docs-pack" method="get" action="" aria-label="Country pack">
+          <span class="ag-flag docs-pack__flag" aria-hidden="true"><span></span><span></span><span></span></span>
+          <label class="docs-pack__label" for="pack-select">Country</label>
+          <select class="ag-select docs-pack__select" id="pack-select" name="pack">
+            {{packOptions}}
+          </select>
+          <button class="ag-button ag-button--secondary docs-pack__apply" type="submit">Apply</button>
+        </form>
+      </div>
+    </div>
+
+    <header class="ag-header">
+      <div class="ag-container ag-header__inner">
+        <a class="ag-header__brand" href="{{root}}index.html">
+          <span class="docs-mark" aria-hidden="true">ag</span>
+          <span>
+            <span class="ag-header__org">afrigov</span>
+            <span class="ag-header__sub">Accessible components for African public services</span>
+          </span>
+        </a>
+        <button class="ag-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-ag-toggle>
+          Menu
+        </button>
+        <nav class="ag-header__nav" id="site-nav" aria-label="Main">
+          <ul class="ag-nav">
+            {{topnav}}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="ag-main" id="main" tabindex="-1">
+      <div class="ag-container {{layoutClass}}">
+        {{sidebar}}
+        <article class="docs-content">{{content}}</article>
+      </div>
+    </main>
+
+    <footer class="ag-footer">
+      <div class="ag-container">
+        <div class="ag-footer__columns">
+          <div>
+            <h2 class="ag-footer__heading">afrigov</h2>
+            <ul class="ag-footer__list">
+              <li><a href="{{root}}get-started.html">Get started</a></li>
+              <li><a href="{{root}}components/index.html">Components</a></li>
+              <li><a href="{{root}}packs/index.html">Country packs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="ag-footer__heading">Project</h2>
+            <ul class="ag-footer__list">
+              <li><a href="https://github.com/omoyolab/afrigov">GitHub</a></li>
+              <li><a href="https://www.npmjs.com/package/afrigov">npm</a></li>
+              <li><a href="https://github.com/omoyolab/afrigov/blob/main/CHANGELOG.md">Changelog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="ag-footer__heading">Standards</h2>
+            <ul class="ag-footer__list">
+              <li><a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1</a></li>
+              <li><a href="https://tr.designtokens.org/format/">Design Tokens format</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ag-footer__bar">
+          <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+          <p>v{{version}}. MIT licensed. Built in the open. Not affiliated with any government.</p>
+          <ul class="ag-footer__legal">
+            <li><a href="https://github.com/omoyolab/afrigov/blob/main/LICENSE">Licence</a></li>
+            <li><a href="https://github.com/omoyolab/afrigov/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{root}}dist/afrigov.iife.js"></script>
+    <script src="{{root}}dist/packs.js"></script>
+    <script src="{{root}}docs.js"></script>
+  </body>
+</html>

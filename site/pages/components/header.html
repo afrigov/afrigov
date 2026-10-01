@@ -1,0 +1,83 @@
+<!-- { "title": "Header and navigation", "navTitle": "Header", "section": "components", "description": "The organisation name and primary navigation. Collapses on small screens only when JavaScript is present.", "order": 30 } -->
+<h1>Header and navigation</h1>
+<p class="ag-lead">
+  The organisation, the government it belongs to, and the primary navigation. Without JavaScript the navigation is
+  always visible. With <code>afrigov.js</code> it collapses behind a Menu button below 1024px.
+</p>
+
+<docs-example flush>
+  <div class="ag-header">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#header-example">
+        <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>
+          <span class="ag-header__org">Ministry of Health</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Example">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#header-example" aria-current="page">Services</a></li>
+          <li><a class="ag-nav__link" href="#header-example">Hospitals</a></li>
+          <li><a class="ag-nav__link" href="#header-example">News</a></li>
+          <li><a class="ag-nav__link" href="#header-example">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+
+<h2>With the menu button</h2>
+<p>Add the toggle and give the nav an id. The script hides the nav on small screens and wires the button.</p>
+<pre class="docs-code" tabindex="0"><code>&lt;header class="ag-header"&gt;
+  &lt;div class="ag-container ag-header__inner"&gt;
+    &lt;a class="ag-header__brand" href="/"&gt;
+      &lt;img class="ag-header__logo" src="crest.svg" alt=""&gt;
+      &lt;span&gt;
+        &lt;span class="ag-header__org"&gt;Ministry of Health&lt;/span&gt;
+        &lt;span class="ag-header__sub"&gt;<span data-docs-string="government">The Government</span>&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;button class="ag-header__toggle" type="button" aria-expanded="false" aria-controls="nav" data-ag-toggle&gt;Menu&lt;/button&gt;
+    &lt;nav class="ag-header__nav" id="nav" aria-label="Main"&gt;
+      &lt;ul class="ag-nav"&gt;
+        &lt;li&gt;&lt;a class="ag-nav__link" href="/services" aria-current="page"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="ag-nav__link" href="/news"&gt;News&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+
+<h2>Variant: primary-coloured header</h2>
+<docs-example flush>
+  <div class="ag-header ag-header--primary">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#header-example">
+        <span>
+          <span class="ag-header__org">Ministry of Health</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Example, primary">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#header-example" aria-current="page">Services</a></li>
+          <li><a class="ag-nav__link" href="#header-example">Hospitals</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Mark the current page with <code>aria-current="page"</code>. It is shown with a bar and announced.</li>
+  <li>
+    Give the <code>nav</code> an <code>aria-label</code>. If there are two navs on the page, give them different ones.
+  </li>
+  <li>Logos are decorative when the organisation name is written next to them: use <code>alt=""</code>.</li>
+  <li>The menu button sets <code>aria-expanded</code> and closes on Escape, returning focus to the button.</li>
+  <li>Keep it to six links. More than that belongs in a service page, not a header.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>government</code> for the sub line, <code>flag</code> if you use the flag as the mark.</p>

@@ -1,0 +1,21 @@
+<!-- { "title": "Textarea", "section": "components", "description": "More than one line of text.", "order": 90 } -->
+<h1>Textarea</h1>
+<p class="ag-lead">For more than one line: a description, an explanation, anything else we should know.</p>
+
+<docs-example>
+  <div class="ag-field ag-mb-0">
+    <label class="ag-label" for="ta-notes">Anything else we should know?</label>
+    <span class="ag-hint" id="ta-notes-hint"
+      >Do not include personal or financial information, like your bank details</span
+    >
+    <textarea class="ag-textarea" id="ta-notes" name="notes" rows="4" aria-describedby="ta-notes-hint"></textarea>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Set <code>rows</code> to the size of the answer you expect. Five rows is enough for most.</li>
+  <li>The textarea can be resized vertically but not horizontally, so it never breaks the layout.</li>
+  <li>If there is a length limit, say so in the hint. A live character count arrives in 0.2.</li>
+  <li>Errors work the same way as the <a href="text-input.html">text input</a>.</li>
+</ul>

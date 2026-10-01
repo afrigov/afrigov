@@ -1,0 +1,55 @@
+<!-- { "title": "Alert", "section": "components", "description": "Information, success, warning and error messages, each with a title so meaning never depends on colour.", "order": 160 } -->
+<h1>Alert</h1>
+<p class="ag-lead">
+  A message that stays on the page. Every alert has a title, so its meaning never depends on colour.
+</p>
+
+<h2>When to use</h2>
+<p>To tell people something changed or something matters: a deadline, a payment received, a session about to end.</p>
+
+<h2>When not to use</h2>
+<p>
+  For form validation, use the <a href="error-summary.html">error summary</a>. For a message that disappears on its own:
+  never. Timed messages fail WCAG and get missed on slow devices.
+</p>
+
+<docs-example>
+  <div class="ag-alert" role="status">
+    <h3 class="ag-alert__title">Applications close on 31 October</h3>
+    <p>Submit before 11:59pm <span data-docs-string="timezone">local time</span>.</p>
+  </div>
+  <div class="ag-alert ag-alert--success" role="status">
+    <h3 class="ag-alert__title">Payment received</h3>
+    <p>Your receipt number is <strong data-docs-string="ref">REF-2026-004512</strong>.</p>
+  </div>
+  <div class="ag-alert ag-alert--warning" role="status">
+    <h3 class="ag-alert__title">Your session ends in 5 minutes</h3>
+    <p>Save your progress to avoid losing it.</p>
+  </div>
+  <div class="ag-alert ag-alert--error ag-mb-0" role="alert">
+    <h3 class="ag-alert__title">We could not verify your <span data-docs-string="id-short">ID number</span></h3>
+    <p>
+      Check the number and try again, or
+      <a href="#alert-example">contact <span data-docs-string="id-authority">the registration office</span></a
+      >.
+    </p>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Use <code>role="alert"</code> only for errors people must act on now. It interrupts the screen reader.</li>
+  <li>Use <code>role="status"</code> for everything else. It is announced when the reader is free.</li>
+  <li>The title is a heading at the right level for the page, usually <code>h2</code> or <code>h3</code>.</li>
+  <li>
+    Links inside an alert use ink, not the primary colour, because the primary is not guaranteed on the tinted
+    background.
+  </li>
+  <li>Put an alert that reports the result of an action at the top of the page the person lands on.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p>
+  The examples read <code>examples.timezone</code>, <code>examples.refPrefix</code>, <code>id.short</code>,
+  <code>id.authority</code>.
+</p>

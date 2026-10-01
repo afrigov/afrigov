@@ -1,0 +1,103 @@
+<!-- { "title": "Colour", "section": "styles", "description": "How afrigov uses colour: a neutral core, a primary from the country pack, and contrast checked by the build.", "order": 10 } -->
+<h1>Colour</h1>
+<p class="ag-lead">
+  The core is ink on paper with a government blue nobody uses. A country pack supplies the real primary, and the build
+  checks every pair before it ships.
+</p>
+
+<h2>Official versus usable</h2>
+<p>
+  A pack declares the exact national colours under <code>official</code>. One of them becomes the primary. If that
+  colour fails 4.5:1 as text on paper or on the grey panel, the build darkens it in 1% steps, keeping the hue, until it
+  passes. The flag stripe always keeps the exact official value.
+</p>
+<p>
+  Nigeria's green is 4.58:1 on white, which passes, and 4.13:1 on grey, which does not, so Nigerian buttons use a green
+  a shade deeper than the flag. Senegal's is the same story. Kenya's and Ghana's pass as they are.
+</p>
+<ul class="docs-swatches">
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-primary)"></div>
+    <code>--ag-color-primary</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-primary-hover)"></div>
+    <code>--ag-color-primary-hover</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-primary-tint)"></div>
+    <code>--ag-color-primary-tint</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-accent)"></div>
+    <code>--ag-color-accent</code>
+  </li>
+</ul>
+<p class="docs-fine">Swatches show the selected country pack. Change it in the bar at the top.</p>
+
+<h2>Text and surfaces</h2>
+<ul class="docs-swatches">
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-ink)"></div>
+    <code>--ag-color-ink</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-ink-muted)"></div>
+    <code>--ag-color-ink-muted</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-paper)"></div>
+    <code>--ag-color-paper</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-paper-alt)"></div>
+    <code>--ag-color-paper-alt</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-border)"></div>
+    <code>--ag-color-border</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-border-strong)"></div>
+    <code>--ag-color-border-strong</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-focus)"></div>
+    <code>--ag-color-focus</code>
+  </li>
+</ul>
+
+<h2>Status</h2>
+<p>
+  Each status colour passes as text on paper and on its own tint. Use them only with a word or an icon, never alone.
+</p>
+<ul class="docs-swatches">
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-success)"></div>
+    <code>--ag-color-success</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-warning)"></div>
+    <code>--ag-color-warning</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-error)"></div>
+    <code>--ag-color-error</code>
+  </li>
+  <li>
+    <div class="docs-swatch" style="--_docs-swatch: var(--ag-color-info)"></div>
+    <code>--ag-color-info</code>
+  </li>
+</ul>
+
+<h2>Rules</h2>
+<ul>
+  <li>Never write a hex value in component CSS. The build test rejects literals outside the tokens layer.</li>
+  <li>
+    Links inside a tinted box use ink, not primary, because a primary is only guaranteed on paper and the grey panel.
+  </li>
+  <li>The accent colour is decorative. Do not put text on it or use it as text unless the pack says it passes.</li>
+  <li>
+    Do not add a dark mode by inverting tokens. It has not been tested and the contrast gate does not cover it yet.
+  </li>
+</ul>

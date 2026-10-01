@@ -1,0 +1,32 @@
+<!-- { "title": "Error summary", "section": "components", "description": "A box at the top of the page listing every error as a link to its field.", "order": 150 } -->
+<h1>Error summary</h1>
+<p class="ag-lead">
+  Every error on the page, in one box at the top, each a link to its field. The full flow is in the
+  <a href="../patterns/errors.html">errors pattern</a>.
+</p>
+
+<docs-example>
+  <div class="ag-error-summary ag-mb-0" role="alert" tabindex="-1" data-ag-no-autofocus aria-labelledby="es-ex-title">
+    <h2 class="ag-error-summary__title" id="es-ex-title">There is a problem</h2>
+    <ul class="ag-error-summary__list">
+      <li><a href="#es-ex-title">Enter an email address in the correct format, like name@example.com</a></li>
+      <li>
+        <a href="#es-ex-title">Enter your <span data-docs-string="id-name">National ID number</span></a>
+      </li>
+    </ul>
+  </div>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>Put it first inside <code>main</code>, before the page heading.</li>
+  <li>
+    With <code>afrigov.js</code>, focus moves to it on page load. The <code>tabindex="-1"</code> makes that possible.
+  </li>
+  <li>Each link goes to the <code>id</code> of the field's input, so activating it moves focus into the field.</li>
+  <li><code>role="alert"</code> makes screen readers announce it immediately.</li>
+  <li>The title is always "There is a problem". Do not vary it.</li>
+</ul>
+<p>
+  Add <code>data-ag-no-autofocus</code> only on documentation pages like this one, where moving focus would be wrong.
+</p>

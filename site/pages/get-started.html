@@ -1,0 +1,94 @@
+<!-- { "title": "Get started", "section": "get-started", "description": "Install afrigov from a CDN or npm and build your first page." } -->
+<h1>Get started</h1>
+<p class="ag-lead">Two link tags, then plain HTML with <code>ag-</code> classes. That is the whole system.</p>
+
+<h2>1. Add the stylesheets</h2>
+<p>The core first, then one country pack. The pack must come after the core.</p>
+<pre
+  class="docs-code"
+  tabindex="0"
+><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
+
+&lt;!-- Optional: collapsible navigation and error-summary focus. 1.5 KB. --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/afrigov.iife.js" defer&gt;&lt;/script&gt;</code></pre>
+
+<p>Or from npm:</p>
+<pre class="docs-code" tabindex="0"><code>npm install afrigov</code></pre>
+<pre class="docs-code" tabindex="0"><code>import "afrigov/core.css";
+import "afrigov/<span data-docs-packfile>ng</span>.css";
+import { init } from "afrigov"; // optional
+init();</code></pre>
+
+<h2>2. Start from the page skeleton</h2>
+<p>
+  Every page has the same shape: skip link, official banner, header, main content, footer. Copy this and replace the
+  middle.
+</p>
+<pre class="docs-code" tabindex="0"><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Renew a passport – Ministry of Interior&lt;/title&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/core.min.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.1/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;a class="ag-skip-link" href="#main"&gt;Skip to main content&lt;/a&gt;
+
+  &lt;section class="ag-banner" aria-label="Official website notice"&gt;
+    &lt;div class="ag-container ag-banner__inner"&gt;
+      &lt;span class="ag-flag" aria-hidden="true"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;p class="ag-banner__text"&gt;<span data-docs-string="banner">An official website of the Government</span>&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;header class="ag-header"&gt;
+    &lt;div class="ag-container ag-header__inner"&gt;
+      &lt;a class="ag-header__brand" href="/"&gt;
+        &lt;span&gt;
+          &lt;span class="ag-header__org"&gt;Ministry of Interior&lt;/span&gt;
+          &lt;span class="ag-header__sub"&gt;<span data-docs-string="government">The Government</span>&lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main class="ag-main ag-container" id="main" tabindex="-1"&gt;
+    &lt;div class="ag-prose"&gt;
+      &lt;h1&gt;Renew a passport&lt;/h1&gt;
+      &lt;p class="ag-lead"&gt;Takes about 10 minutes. You will need your national ID and a payment card or mobile money.&lt;/p&gt;
+      &lt;a class="ag-button ag-button--start" href="/apply"&gt;Start now&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;footer class="ag-footer"&gt;
+    &lt;div class="ag-container ag-footer__bar"&gt;
+      &lt;p&gt;© Ministry of Interior&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h2>3. Pick components</h2>
+<p>
+  Each <a href="components/index.html">component</a> page has the HTML to copy and the rules for using it. Start with
+  <a href="components/button.html">buttons</a>, <a href="components/text-input.html">text inputs</a> and the
+  <a href="components/error-summary.html">error summary</a>, which cover most of a government form.
+</p>
+
+<h2>4. Override tokens if you must</h2>
+<p>Every value is a CSS custom property prefixed <code>--ag-</code>. Set it after the pack and nothing else changes.</p>
+<pre class="docs-code" tabindex="0"><code>:root {
+  --ag-size-container: 60rem;
+  --ag-font-family-sans: "Public Sans", system-ui, sans-serif;
+}</code></pre>
+<p>See <a href="styles/tokens.html">Tokens</a> for the full list.</p>
+
+<h2>Browser support</h2>
+<p>
+  Everything from 2019 onwards: Chrome 88, Edge 88, Firefox 78, Safari 14, Samsung Internet 15 and later. Older proxy
+  browsers such as Opera Mini in extreme mode receive readable, unstyled semantic HTML, which is why every component
+  keeps its meaning without CSS.
+</p>

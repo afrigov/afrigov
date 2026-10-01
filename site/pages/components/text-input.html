@@ -1,0 +1,81 @@
+<!-- { "title": "Text input", "section": "components", "description": "A single line of text, with a visible label, an optional hint and an error state.", "order": 80 } -->
+<h1>Text input</h1>
+<p class="ag-lead">One line of text. The label is always visible, and the hint and error are tied to the control.</p>
+
+<h2>When to use</h2>
+<p>For a name, an email address, a number with a known format, a reference. Anything that fits on one line.</p>
+
+<h2>When not to use</h2>
+<p>
+  For a date (use the <a href="date-input.html">date input</a>), for one of a few choices (use
+  <a href="radios.html">radios</a>), or for more than a line of text (use a <a href="textarea.html">textarea</a>).
+</p>
+
+<docs-example>
+  <div class="ag-field">
+    <label class="ag-label" for="ti-name">Full name</label>
+    <span class="ag-hint" id="ti-name-hint">As written on your national ID</span>
+    <input class="ag-input" id="ti-name" name="name" type="text" autocomplete="name" aria-describedby="ti-name-hint" />
+  </div>
+  <div class="ag-field ag-mb-0">
+    <label class="ag-label" for="ti-nin" data-docs-string="id-name">National ID number</label>
+    <span class="ag-hint" id="ti-nin-hint" data-docs-string="id-hint">As printed on your national ID</span>
+    <input
+      class="ag-input ag-input--width-20"
+      id="ti-nin"
+      name="nin"
+      type="text"
+      inputmode="numeric"
+      autocomplete="off"
+      aria-describedby="ti-nin-hint"
+    />
+  </div>
+</docs-example>
+
+<h2>Error state</h2>
+<docs-example>
+  <div class="ag-field ag-field--error ag-mb-0">
+    <label class="ag-label" for="ti-email">Email address</label>
+    <span class="ag-hint" id="ti-email-hint">We will only use this to send your reference number</span>
+    <span class="ag-error-message" id="ti-email-error">
+      <span class="ag-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
+    </span>
+    <input
+      class="ag-input"
+      id="ti-email"
+      name="email"
+      type="email"
+      autocomplete="email"
+      aria-invalid="true"
+      aria-describedby="ti-email-hint ti-email-error"
+      value="amina@"
+    />
+  </div>
+</docs-example>
+
+<h2>Widths</h2>
+<p>
+  Size the field to the answer. <code>ag-input--width-4</code>, <code>-10</code>, <code>-20</code> and
+  <code>-30</code> set the maximum width in characters. A year gets 4, a phone number 10, an ID 20. Names get the full
+  width.
+</p>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Never use placeholder text as the label. It disappears when typing and fails contrast.</li>
+  <li>Link the hint and the error with <code>aria-describedby</code>, hint first.</li>
+  <li>
+    Set <code>aria-invalid="true"</code> on an invalid field. The border turns red and screen readers say "invalid".
+  </li>
+  <li>Use <code>autocomplete</code> for personal details so browsers can fill them.</li>
+  <li>
+    Use <code>inputmode="numeric"</code> for numbers, not <code>type="number"</code>, which strips leading zeros and
+    adds spinners.
+  </li>
+  <li>
+    Make labels large with <code>ag-label--lg</code> or <code>ag-label--xl</code> when the question is the page heading.
+  </li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>id.name</code>, <code>id.hint</code>, <code>id.length</code> for a national ID field.</p>

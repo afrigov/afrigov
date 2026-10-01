@@ -1,0 +1,62 @@
+<!-- { "title": "Typography", "section": "styles", "description": "System fonts, a 16px body and a type scale that stays readable on a small phone.", "order": 20 } -->
+<h1>Typography</h1>
+<p class="ag-lead">System fonts only, so a page loads with zero font requests. The scale is small on purpose.</p>
+
+<h2>Font stack</h2>
+<pre
+  class="docs-code"
+  tabindex="0"
+><code>system-ui, "Noto Sans", Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif</code></pre>
+<p>
+  Noto Sans is named early because it covers the Latin Extended ranges that Yoruba, Hausa, Igbo, Wolof and Fula need.
+  See <a href="language.html">Language and script</a> for the test lines.
+</p>
+
+<h2>Scale</h2>
+<div class="docs-type-scale">
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-4xl)">
+    4xl · 48px · page title on wide screens
+  </p>
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-3xl)">3xl · 40px · page title</p>
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-2xl)">2xl · 32px · section heading</p>
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-xl)">
+    xl · 24px · subsection, lead text on wide screens
+  </p>
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-lg)">lg · 20px · lead text</p>
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-md)">
+    md · 18px · body text in the large density
+  </p>
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-sm)">sm · 16px · body text</p>
+  <p class="docs-type-scale__item" style="font-size: var(--ag-font-size-xs)">
+    xs · 14px · hints, captions, table text. The smallest size allowed.
+  </p>
+</div>
+
+<h2>Headings</h2>
+<p>
+  Plain <code>h1</code> to <code>h6</code> are sized by default. Only the page title should be extra large, and only
+  when the page asks for it with <code>ag-heading-xl</code>. Use one <code>h1</code> per page.
+</p>
+<docs-example>
+  <h1 class="ag-heading-xl">Renew a passport</h1>
+  <h2>Before you start</h2>
+  <h3>What you will need</h3>
+  <p>Body text at 16px with a line height of 1.55, so diacritics never collide with the line above.</p>
+  <p class="ag-lead">Lead text introduces a page. One paragraph, no more.</p>
+  <p class="ag-caption">Captions and hints are 14px in muted ink.</p>
+</docs-example>
+
+<h2>Density</h2>
+<p>Set <code>data-ag-density</code> on <code>html</code> or any container.</p>
+<ul>
+  <li><code>large</code> raises body text to 18px for public-facing pages aimed at older or low-vision readers.</li>
+  <li><code>compact</code> tightens spacing and lowers targets to 44px for dashboards and admin screens.</li>
+</ul>
+
+<h2>Rules</h2>
+<ul>
+  <li>Body text never goes below 16px. Hints and captions never below 14px.</li>
+  <li>Running text sits in <code>ag-prose</code>, which caps the line at 65 characters.</li>
+  <li>Do not use uppercase for anything but badges. It is harder to read and worse for screen readers.</li>
+  <li>Bold is the only emphasis. Italic is poorly supported in many system fonts for African languages.</li>
+</ul>

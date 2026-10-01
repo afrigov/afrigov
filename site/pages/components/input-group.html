@@ -1,0 +1,45 @@
+<!-- { "title": "Input group", "section": "components", "description": "A text input with a fixed prefix or suffix, for money and units.", "order": 130 } -->
+<h1>Input group</h1>
+<p class="ag-lead">A text input with a fixed part before or after it: a currency symbol, a unit, a dialling code.</p>
+
+<docs-example>
+  <div class="ag-field ag-mb-0">
+    <label class="ag-label" for="ig-amount">Amount</label>
+    <span class="ag-hint" id="ig-amount-hint" data-docs-string="currency-hint">In local currency</span>
+    <div class="ag-input-group">
+      <span class="ag-input-group__affix" aria-hidden="true" data-docs-string="currency-symbol" hidden></span>
+      <input
+        class="ag-input ag-input--width-10"
+        id="ig-amount"
+        name="amount"
+        type="text"
+        inputmode="decimal"
+        aria-describedby="ig-amount-hint"
+      />
+    </div>
+  </div>
+</docs-example>
+<p class="docs-fine">Select a country at the top to see its currency symbol. Senegal puts it after the amount.</p>
+
+<docs-example label="Suffix">
+  <div class="ag-field ag-mb-0">
+    <label class="ag-label" for="ig-weight">Weight</label>
+    <div class="ag-input-group">
+      <input class="ag-input ag-input--width-4" id="ig-weight" name="weight" type="text" inputmode="decimal" />
+      <span class="ag-input-group__affix" aria-hidden="true">kg</span>
+    </div>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>
+    The affix is <code>aria-hidden</code> because the unit is already in the label or hint. Say "Amount in naira", not
+    just "Amount".
+  </li>
+  <li>Use <code>inputmode="decimal"</code> for money so the phone keyboard has a decimal point.</li>
+  <li>Do not put the symbol inside the input as a value. It breaks validation and autofill.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>currency.symbol</code>, <code>currency.position</code>, <code>currency.hint</code>.</p>

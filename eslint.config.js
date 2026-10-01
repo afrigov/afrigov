@@ -1,10 +1,10 @@
 import js from "@eslint/js";
 
 export default [
-  { ignores: ["dist/", "build/", "docs/dist/", "node_modules/", "test-results/", "playwright-report/"] },
+  { ignores: ["dist/", "build/", "docs/", "node_modules/", "test-results/", "playwright-report/"] },
   js.configs.recommended,
   {
-    files: ["src/js/**/*.js", "docs/**/*.js"],
+    files: ["src/js/**/*.js", "site/**/*.js"],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
@@ -14,6 +14,7 @@ export default [
         fetch: "readonly",
         URL: "readonly",
         localStorage: "readonly",
+        Option: "readonly",
       },
     },
   },

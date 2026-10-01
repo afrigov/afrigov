@@ -1,0 +1,40 @@
+<!-- { "title": "Select", "section": "components", "description": "One choice from a long list, using the native select element.", "order": 100 } -->
+<h1>Select</h1>
+<p class="ag-lead">A native select, restyled. One choice from a list too long for radios.</p>
+
+<h2>When to use</h2>
+<p>
+  When there are more than about seven options and people know what they are looking for: a region, a country, a year.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  For fewer than seven options, use <a href="radios.html">radios</a> so every option is visible. For very long lists
+  where people type to search, a native <code>datalist</code> is the accessible fallback until a combobox exists.
+</p>
+
+<docs-example>
+  <div class="ag-field ag-mb-0">
+    <label class="ag-label" for="sel-region" data-docs-string="region-label">Region</label>
+    <select class="ag-select" id="sel-region" name="region" data-docs-regions>
+      <option value="" data-docs-string="region-choose">Choose a region</option>
+      <option>Central</option>
+      <option>Coastal</option>
+      <option>Eastern</option>
+      <option>Northern</option>
+      <option>Southern</option>
+      <option>Western</option>
+    </select>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>It is the native element, so keyboard, screen reader and phone behaviour come from the browser.</li>
+  <li>The first option is an instruction with an empty value, so an unanswered select fails validation.</li>
+  <li>Do not use a select for navigation. Changing it should never load a page.</li>
+  <li>Sort options in a way people expect: alphabetical for places, chronological for years.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>regions.label</code>, <code>regions.choose</code>, <code>regions.items</code>.</p>
