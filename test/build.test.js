@@ -58,6 +58,15 @@ describe("dist/core.css", () => {
     for (const hex of literals) expect(allowed.has(hex.toLowerCase()), hex).toBe(true);
   });
 
+  it("uses logical properties, so it mirrors for right-to-left languages", () => {
+    const layers = css.split("@layer base")[1];
+    expect(layers).not.toMatch(/(margin|padding)-(left|right)\s*:/);
+    expect(layers).not.toMatch(/text-align:\s*(left|right)/);
+    expect(layers).not.toMatch(/^\s+(left|right)\s*:/m);
+    expect(layers).toContain("padding-inline-start");
+    expect(layers).toContain('[dir="rtl"] .ag-select');
+  });
+
   it("uses no CSS nesting, so it works in browsers from 2019", () => {
     expect(css).not.toMatch(/^\s+&/m);
   });

@@ -5,7 +5,7 @@
   min-height: var(--ag-size-target);
   position: absolute;
   top: var(--ag-space-2);
-  left: -999em;
+  inset-inline-start: -999em;
   z-index: 1000;
   padding: var(--ag-space-2) var(--ag-space-4);
   background: var(--ag-color-focus);
@@ -15,5 +15,5 @@
 }
 
 .ag-skip-link:focus {
-  left: var(--ag-space-2);
+  inset-inline-start: var(--ag-space-2);
 }

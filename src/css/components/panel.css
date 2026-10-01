@@ -30,7 +30,7 @@
 .ag-inset {
   margin-bottom: var(--ag-space-5);
   padding: var(--ag-space-3) var(--ag-space-4);
-  border-left: 8px solid var(--ag-color-border);
+  border-inline-start: 8px solid var(--ag-color-border);
   max-width: var(--ag-size-measure);
 }
 
@@ -67,7 +67,7 @@
 
 .ag-summary__action {
   margin: 0;
-  text-align: right;
+  text-align: end;
 }
 
 .ag-summary__action a {

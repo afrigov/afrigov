@@ -96,3 +96,8 @@
   gap: var(--ag-space-3);
   margin-bottom: var(--ag-space-5);
 }
+
+/* The start arrow points into the reading direction. */
+[dir="rtl"] .ag-button--start::after {
+  transform: rotate(225deg);
+}

@@ -20,6 +20,16 @@
   });
 
   var language = meta.language || "en";
+  // A right-to-left pack mirrors every example so the components are seen as they would be used.
+  document.querySelectorAll(".docs-example__preview").forEach(function (el) {
+    if (meta.direction === "rtl") {
+      el.setAttribute("dir", "rtl");
+      el.setAttribute("lang", language);
+    } else {
+      el.removeAttribute("dir");
+      el.removeAttribute("lang");
+    }
+  });
   var s = (meta.strings && (meta.strings[language] || meta.strings.en)) || {};
   var id = meta.id || {};
   var cur = meta.currency || {};

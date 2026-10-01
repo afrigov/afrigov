@@ -5,8 +5,8 @@
 }
 
 .ag-field--error {
-  padding-left: var(--ag-space-4);
-  border-left: 5px solid var(--ag-color-error);
+  padding-inline-start: var(--ag-space-4);
+  border-inline-start: 5px solid var(--ag-color-error);
 }
 
 .ag-label,
@@ -104,7 +104,7 @@
 }
 
 .ag-select {
-  padding-right: var(--ag-space-7);
+  padding-inline-end: var(--ag-space-7);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%231b1b1b' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--ag-space-3) center;
@@ -133,11 +133,11 @@
 }
 
 .ag-input-group__affix:first-child {
-  border-right: 0;
+  border-inline-end: 0;
 }
 
 .ag-input-group__affix:last-child {
-  border-left: 0;
+  border-inline-start: 0;
 }
 
 /* Checkboxes and radios. The native input is restyled, never hidden, so it
@@ -225,4 +225,9 @@
 .ag-choices__divider {
   padding-block: var(--ag-space-2);
   color: var(--ag-color-ink-muted);
+}
+
+/* The select caret sits at the end of the reading direction. */
+[dir="rtl"] .ag-select {
+  background-position: left var(--ag-space-3) center;
 }

@@ -1,0 +1,113 @@
+{
+  "$schema": "./pack.schema.json",
+  "$description": "Morocco pack. First right-to-left pack: Arabic is the default language and the examples render with dir=\"rtl\". French is the second official working language; Tamazight is wanted.",
+  "$extensions": {
+    "afrigov": {
+      "code": "ma",
+      "country": "Morocco",
+      "government": "المملكة المغربية",
+      "domain": ".gov.ma",
+      "language": "ar",
+      "direction": "rtl",
+      "flag": ["{official.red}", "{official.red}", "{official.red}"],
+      "flagDirection": "row",
+      "flagSvg": "ma.svg",
+      "strings": {
+        "ar": {
+          "banner": "موقع رسمي للمملكة المغربية",
+          "banner-how": "كيف تعرف أن هذا الموقع رسمي",
+          "banner-domain": "المواقع الرسمية تستخدم .gov.ma",
+          "banner-secure": "مواقع .gov.ma الآمنة تستخدم HTTPS",
+          "$note": "Drafted by a non-native speaker. Native review wanted."
+        },
+        "fr": {
+          "banner": "Un site officiel du Royaume du Maroc",
+          "banner-how": "Comment savoir que ce site est officiel",
+          "banner-domain": "Les sites officiels utilisent .gov.ma",
+          "banner-secure": "Les sites .gov.ma sécurisés utilisent HTTPS",
+          "$note": "Drafted by a non-native speaker. Native review wanted."
+        },
+        "en": {
+          "banner": "An official website of the Kingdom of Morocco",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .gov.ma",
+          "banner-secure": "Secure .gov.ma websites use HTTPS"
+        },
+        "zgh": {
+          "banner": null,
+          "$todo": "Tamazight (Tifinagh) translation wanted. Open a PR."
+        }
+      },
+      "currency": {
+        "code": "MAD",
+        "symbol": "د.م.",
+        "position": "suffix",
+        "locale": "fr-MA",
+        "name": "dirhams",
+        "hint": "بالدرهم المغربي"
+      },
+      "id": {
+        "name": "رقم البطاقة الوطنية للتعريف",
+        "short": "رقم البطاقة الوطنية",
+        "document": "البطاقة الوطنية للتعريف الإلكترونية",
+        "hint": "حرف أو حرفان ثم أرقام، كما هو مكتوب على البطاقة",
+        "length": 8,
+        "pattern": "[A-Za-z]{1,2}[0-9]{5,7}",
+        "authority": "المديرية العامة للأمن الوطني"
+      },
+      "regions": {
+        "label": "الجهة",
+        "choose": "اختر الجهة",
+        "items": [
+          "الرباط-سلا-القنيطرة",
+          "الدار البيضاء-سطات",
+          "فاس-مكناس",
+          "مراكش-آسفي",
+          "طنجة-تطوان-الحسيمة",
+          "سوس-ماسة"
+        ],
+        "sub": {
+          "label": "الإقليم أو العمالة",
+          "choose": "اختر الإقليم",
+          "items": {
+            "الرباط-سلا-القنيطرة": ["الرباط", "سلا", "القنيطرة", "الخميسات"],
+            "الدار البيضاء-سطات": ["الدار البيضاء", "المحمدية", "سطات", "الجديدة"],
+            "فاس-مكناس": ["فاس", "مكناس", "إفران", "تازة"],
+            "مراكش-آسفي": ["مراكش", "آسفي", "الصويرة", "الحوز"],
+            "طنجة-تطوان-الحسيمة": ["طنجة-أصيلة", "تطوان", "الحسيمة", "العرائش"],
+            "سوس-ماسة": ["أكادير إدا وتنان", "تارودانت", "تيزنيت", "إنزكان-آيت ملول"]
+          }
+        }
+      },
+      "phone": {
+        "code": "+212",
+        "example": "06 12 34 56 78",
+        "hint": "سنرسل لك رمزاً برسالة نصية. مثال: 06 12 34 56 78",
+        "length": 10
+      },
+      "examples": {
+        "timezone": "توقيت المغرب",
+        "refPrefix": "MA"
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "$description": "Flag of Morocco: a green interlaced pentagram on red. Values as commonly published (Wikipedia, Flags of the World). The star in ma.svg is drawn as a plain pentagram outline, not interlaced; accurate artwork is welcome.",
+    "red": {
+      "$value": "#c1272d"
+    },
+    "green": {
+      "$value": "#006233"
+    }
+  },
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": "{official.red}"
+    },
+    "accent": {
+      "$value": "{official.green}"
+    }
+  }
+}

@@ -17,7 +17,7 @@
 
 .ag-date-input__item .ag-input {
   max-width: 5ch;
-  text-align: left;
+  text-align: start;
 }
 
 .ag-date-input__item--year .ag-input {

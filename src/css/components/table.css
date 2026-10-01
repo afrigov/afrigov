@@ -16,14 +16,15 @@
   margin-bottom: var(--ag-space-3);
   font-weight: var(--ag-font-weight-bold);
   font-size: var(--ag-font-size-lg);
-  text-align: left;
+  text-align: start;
 }
 
 .ag-table th,
 .ag-table td {
-  padding: var(--ag-space-3) var(--ag-space-3) var(--ag-space-3) 0;
+  padding-block: var(--ag-space-3);
+  padding-inline: 0 var(--ag-space-3);
   border-bottom: 1px solid var(--ag-color-border);
-  text-align: left;
+  text-align: start;
   vertical-align: top;
 }
 
@@ -36,7 +37,7 @@
 }
 
 .ag-table__numeric {
-  text-align: right;
+  text-align: end;
   font-variant-numeric: tabular-nums;
 }
 
@@ -46,5 +47,5 @@
 
 .ag-table--striped th,
 .ag-table--striped td {
-  padding-left: var(--ag-space-3);
+  padding-inline-start: var(--ag-space-3);
 }

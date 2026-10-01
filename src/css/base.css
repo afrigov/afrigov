@@ -118,7 +118,7 @@ table {
 
 ul,
 ol {
-  padding-left: var(--ag-space-5);
+  padding-inline-start: var(--ag-space-5);
 }
 
 li {
@@ -172,8 +172,8 @@ hr {
 }
 
 blockquote {
-  padding-left: var(--ag-space-4);
-  border-left: 4px solid var(--ag-color-border);
+  padding-inline-start: var(--ag-space-4);
+  border-inline-start: 4px solid var(--ag-color-border);
   color: var(--ag-color-ink-muted);
 }
 

@@ -108,3 +108,16 @@ test("character count reports remaining characters and flags going over", async 
   await expect(message).toHaveText("You are 5 characters over the limit");
   await expect(message).toHaveClass(/ag-char-count__message--over/);
 });
+
+test("a right-to-left pack mirrors the examples", async ({ page: p }) => {
+  await p.setViewportSize({ width: 375, height: 800 });
+  await p.goto(`${pathToFileURL(join(DOCS, "components", "header.html")).href}?pack=ma`);
+  await p.waitForSelector(".ag-js");
+  const preview = p.locator(".docs-example__preview").first();
+  await expect(preview).toHaveAttribute("dir", "rtl");
+  await expect(preview).toHaveAttribute("lang", "ar");
+  const borders = await preview
+    .locator('.ag-nav__link[aria-current="page"]')
+    .evaluate((el) => [getComputedStyle(el).borderRightWidth, getComputedStyle(el).borderLeftWidth]);
+  expect(borders).toEqual(["4px", "0px"]);
+});

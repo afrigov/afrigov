@@ -34,3 +34,8 @@
 .ag-breadcrumb [aria-current] {
   color: var(--ag-color-ink-muted);
 }
+
+/* Separators point into the reading direction. */
+[dir="rtl"] .ag-breadcrumb li + li::before {
+  transform: rotate(225deg);
+}

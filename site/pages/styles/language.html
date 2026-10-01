@@ -65,9 +65,14 @@
 
 <h2>Right-to-left</h2>
 <p>
-  Arabic is official in a third of the continent. Set <code>dir="rtl"</code> on <code>html</code> for an Arabic page, or
-  on a passage for inline Arabic. Full right-to-left support, with the layout mirrored, is on the roadmap for 1.0 and is
-  the reason the next pack after South Africa is Morocco.
+  Arabic is official in a third of the continent. Every component is written with logical properties, so setting
+  <code>dir="rtl"</code> on <code>html</code> mirrors the layout: borders, indents, chevrons, the select caret and the
+  start arrow all move to the other side. Preview Morocco at the top to see every example on this site mirrored.
+</p>
+<pre class="docs-code" tabindex="0"><code>&lt;html lang="ar" dir="rtl"&gt;</code></pre>
+<p>
+  For a passage in Arabic inside a left-to-right page, set <code>dir="rtl"</code> and <code>lang</code> on that element
+  only. Numbers, phone numbers and reference codes keep their own direction automatically.
 </p>
 
 <h2>Numbers, dates and money</h2>

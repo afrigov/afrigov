@@ -27,8 +27,14 @@ export default [
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
-      // document is used inside page.evaluate() callbacks in the Playwright tests.
-      globals: { process: "readonly", console: "readonly", URL: "readonly", document: "readonly" },
+      // document and getComputedStyle are used inside page.evaluate() callbacks in the Playwright tests.
+      globals: {
+        process: "readonly",
+        console: "readonly",
+        URL: "readonly",
+        document: "readonly",
+        getComputedStyle: "readonly",
+      },
     },
   },
 ];

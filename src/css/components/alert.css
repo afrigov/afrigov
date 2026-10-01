@@ -7,7 +7,7 @@
   margin-bottom: var(--ag-space-5);
   padding: var(--ag-space-4);
   border: 3px solid var(--_ag-alert-color);
-  border-left-width: 8px;
+  border-inline-start-width: 8px;
   background: var(--_ag-alert-tint);
 }
 

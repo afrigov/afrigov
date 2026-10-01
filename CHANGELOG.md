@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- Right-to-left support. Every component uses logical properties, with explicit mirroring for the chevrons, the start arrow and the select caret, so `dir="rtl"` on `html` flips the layout. A build test keeps physical layout properties out of the core.
+- Morocco pack (`ma.css`): the first right-to-left pack. Arabic default strings with French and English, dirhams as a suffix currency, the CNIE number, regions and provinces, and a pentagram flag. Packs can declare `direction`, and the docs render a right-to-left pack's examples mirrored.
+
 ## [0.3.0] - 2026-10-02
 
 The audit release. The command-line checker lives in its own package, [afrigov-audit](https://github.com/omoyolab/afrigov-audit); this repository gains the scoreboard that uses it.

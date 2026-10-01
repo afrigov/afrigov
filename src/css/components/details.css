@@ -39,10 +39,20 @@
 .ag-details__body {
   margin-top: var(--ag-space-2);
   padding: var(--ag-space-3) var(--ag-space-4);
-  border-left: 5px solid var(--ag-color-border);
+  border-inline-start: 5px solid var(--ag-color-border);
   max-width: var(--ag-size-measure);
 }
 
 .ag-details__body > :last-child {
   margin-bottom: 0;
+}
+
+/* The disclosure triangle points into the reading direction. */
+[dir="rtl"] .ag-details__summary::before {
+  border-left: 0;
+  border-right: 0.5em solid currentcolor;
+}
+
+[dir="rtl"] .ag-details[open] > .ag-details__summary::before {
+  transform: rotate(-90deg);
 }
