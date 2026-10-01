@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{title}}</title>
     <meta name="description" content="{{description}}" />
+    <!-- Collapses the menu on phones from the first paint, so the page does not jump when the script arrives.
+         If the script never arrives, the menu is shown in full again. -->
+    <script>
+      document.documentElement.classList.add("ag-js");
+      addEventListener("load", function () {
+        if (!window.AfriGov) document.documentElement.classList.remove("ag-js");
+      });
+    </script>
     <link rel="stylesheet" href="{{root}}dist/core.min.css?v={{assetVersion}}" />
     <link rel="stylesheet" id="pack-css" />
     <link rel="stylesheet" href="{{root}}docs.css?v={{assetVersion}}" />

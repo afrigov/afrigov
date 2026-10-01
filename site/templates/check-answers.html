@@ -4,9 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Check your answers – Ministry of Interior</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/core.min.css" />
+    <meta name="description" content="Check your answers before you send your passport renewal application." />
+    <!-- Pages inside a form journey stay out of search results. The start page is the one people should find. -->
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <!-- Collapses the menu on phones from the first paint, so the page does not jump when the script arrives.
+         If the script never arrives, the menu is shown in full again. -->
+    <script>
+      document.documentElement.classList.add("ag-js");
+      addEventListener("load", function () {
+        if (!window.AfriGov) document.documentElement.classList.remove("ag-js");
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/core.min.css" />
     <!-- Replace ng with your country's pack. -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/ng.min.css" id="pack-css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/ng.min.css" id="pack-css" />
   </head>
   <body>
     <a class="ag-skip-link" href="#main">Skip to main content</a>
@@ -130,6 +142,6 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/afrigov.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/afrigov.iife.js"></script>
   </body>
 </html>

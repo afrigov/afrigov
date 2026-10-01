@@ -30,6 +30,19 @@
   box-shadow: 0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
 }
 
+/* Where the browser can tell, show the ring for the keyboard only, not for a click or a tap. */
+@supports selector(:has(a)) {
+  .ag-card:focus-within {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .ag-card:has(.ag-card__link:focus-visible) {
+    outline: var(--ag-size-focus-ring) solid var(--ag-color-focus);
+    box-shadow: 0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
+  }
+}
+
 /* Logo slot above the title. A fixed-height box so any shape of mark lines up across the grid. */
 .ag-card__logo {
   display: flex;

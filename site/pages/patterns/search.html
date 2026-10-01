@@ -1,0 +1,179 @@
+<!-- { "title": "Search and answer engines", "section": "patterns", "description": "What goes in the head of every page, the structured data that describes a government organisation and its services, and how to write so search engines and AI assistants quote you correctly.", "order": 40 } -->
+<h1>Search and answer engines</h1>
+<p class="ag-lead">
+  People find government services through a search box or by asking an assistant. Both read the same things: the head of
+  the page, its structure, and a little structured data. This is what to put there.
+</p>
+
+<p>
+  afrigov's components give you the structure for free: one <code>h1</code>, headings in order, real lists and tables,
+  links that say where they go, dates in <code>time</code>. The rest is content you supply per page.
+</p>
+
+<h2>The head of every page</h2>
+<pre class="docs-code" tabindex="0"><code>&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Renew a passport – Ministry of Interior&lt;/title&gt;
+  &lt;meta name="description" content="Renew an adult passport online. It takes about 10 minutes and costs ₦35,000. You need your current passport and a payment card."&gt;
+  &lt;link rel="canonical" href="https://interior.gov.ng/passports/renew"&gt;
+
+  &lt;!-- How the page looks when it is shared --&gt;
+  &lt;meta property="og:title" content="Renew a passport"&gt;
+  &lt;meta property="og:description" content="Renew an adult passport online in about 10 minutes."&gt;
+  &lt;meta property="og:type" content="website"&gt;
+  &lt;meta property="og:url" content="https://interior.gov.ng/passports/renew"&gt;
+  &lt;meta property="og:image" content="https://interior.gov.ng/images/share.png"&gt;
+&lt;/head&gt;</code></pre>
+<ul>
+  <li>
+    <strong>Title:</strong> the page, a dash, the organisation. The same words as the <code>h1</code>. Under 60
+    characters where you can.
+  </li>
+  <li>
+    <strong>Description:</strong> one or two sentences that answer "what can I do here and what do I need", under 160
+    characters. It is what shows under the link in results. Every page gets its own.
+  </li>
+  <li>
+    <strong>Canonical:</strong> the one address of this page, so copies with tracking parameters or a trailing slash do
+    not compete with it.
+  </li>
+  <li>
+    <strong>Language:</strong> <code>lang</code> on <code>html</code>, and <code>hreflang</code> links between
+    translations. The <a href="../components/language-switcher.html">language switcher</a> carries the same information
+    for people.
+  </li>
+  <li>
+    <strong>Share image:</strong> one image for the whole site is enough: the crest and the organisation's name on a
+    plain background, 1200 by 630.
+  </li>
+</ul>
+
+<h2>Structured data</h2>
+<p>
+  A small block of JSON-LD tells search engines and assistants what the page is, in terms they do not have to guess.
+  Four types cover most of a government site.
+</p>
+
+<h3>The organisation, on the home page</h3>
+<pre class="docs-code" tabindex="0"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  "name": "Ministry of Interior",
+  "url": "https://interior.gov.ng/",
+  "logo": "https://interior.gov.ng/images/crest.png",
+  "parentOrganization": { "@type": "GovernmentOrganization", "name": "Federal Government of Nigeria" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 Government Road",
+    "addressLocality": "Abuja",
+    "addressCountry": "NG"
+  },
+  "contactPoint": { "@type": "ContactPoint", "telephone": "+234-800-000-0000", "contactType": "customer service", "availableLanguage": ["en", "ha"] },
+  "sameAs": ["https://x.com/interiorng", "https://www.facebook.com/interiorng"]
+}
+&lt;/script&gt;</code></pre>
+
+<h3>A service, on its start page</h3>
+<pre class="docs-code" tabindex="0"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "name": "Renew a passport",
+  "description": "Renew an adult passport online and collect it from the office you choose.",
+  "serviceType": "Passport renewal",
+  "provider": { "@type": "GovernmentOrganization", "name": "Ministry of Interior" },
+  "areaServed": { "@type": "Country", "name": "Nigeria" },
+  "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "https://interior.gov.ng/passports/renew" },
+  "offers": { "@type": "Offer", "price": "35000", "priceCurrency": "NGN" }
+}
+&lt;/script&gt;</code></pre>
+
+<h3>Where the page sits, wherever there is a breadcrumb</h3>
+<pre class="docs-code" tabindex="0"><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://interior.gov.ng/" },
+    { "@type": "ListItem", "position": 2, "name": "Passports", "item": "https://interior.gov.ng/passports" },
+    { "@type": "ListItem", "position": 3, "name": "Renew a passport" }
+  ]
+}
+&lt;/script&gt;</code></pre>
+
+<h3>News, and questions with answers</h3>
+<p>
+  A news page uses <code>NewsArticle</code> with <code>headline</code>, <code>datePublished</code>,
+  <code>dateModified</code> and the organisation as <code>publisher</code>. A page of questions in an
+  <a href="../components/accordion.html">accordion</a> uses <code>FAQPage</code>, with each question and the full text
+  of its answer. The answers must be the ones on the page, word for word.
+</p>
+
+<h2>Writing so you are quoted correctly</h2>
+<p>
+  An assistant that answers "how do I renew my passport in Nigeria" lifts a sentence or two from a page. Make the right
+  sentence easy to lift.
+</p>
+<ul>
+  <li>
+    <strong>Answer first.</strong> Under a heading that is a question, the first sentence is the answer: "It costs
+    ₦35,000 and takes six weeks." Detail follows.
+  </li>
+  <li>
+    <strong>Headings people would type.</strong> "What you need", "How much it costs", "How long it takes". Not
+    "Overview" or "Introduction".
+  </li>
+  <li>
+    <strong>Facts as text, not pictures.</strong> Fees, deadlines and addresses in the page itself, never only in an
+    image or a PDF. A <a href="../components/table.html">table</a> with a caption for anything with rows.
+  </li>
+  <li>
+    <strong>Dates you can trust.</strong> Every date in a <code>time</code> element, and "Last updated" on any page
+    whose facts change. An answer with a date is an answer people can check.
+  </li>
+  <li>
+    <strong>One page per thing.</strong> One service, one page, one address. Two pages that both half-answer a question
+    will both be passed over.
+  </li>
+  <li>
+    <strong>Hidden text still counts.</strong> The accordion and details components keep their content in the page, so
+    it is read by search engines whether open or closed.
+  </li>
+</ul>
+
+<h2>The two files at the root</h2>
+<ul>
+  <li>
+    <code>robots.txt</code> allows everything public and names the sitemap. Do not block the stylesheet or script
+    folders; search engines render pages to read them.
+  </li>
+  <li>
+    <code>sitemap.xml</code> lists every public page with the date it last changed. Regenerate it when you publish.
+  </li>
+</ul>
+<pre class="docs-code" tabindex="0"><code>User-agent: *
+Allow: /
+
+Sitemap: https://interior.gov.ng/sitemap.xml</code></pre>
+
+<h2>When to keep a page out</h2>
+<p>
+  <code>&lt;meta name="robots" content="noindex"&gt;</code> belongs on test and staging sites, on the pages inside a
+  form journey after the start page, and on confirmation pages that carry a reference number. It does not belong on
+  anything the public should find. Check before launch: a forgotten <code>noindex</code> from staging is the commonest
+  reason a new government site cannot be found.
+</p>
+
+<h2>What you get without doing anything</h2>
+<ul>
+  <li>A fast first paint: the core stylesheet is under 8 KB compressed and there are no web fonts to wait for.</li>
+  <li>
+    No layout shift from the menu, with the two lines in the head shown on
+    <a href="../get-started.html">Get started</a>.
+  </li>
+  <li>Semantic HTML from every component, which is what crawlers and assistants read.</li>
+  <li>Pages that pass the accessibility checks search engines also score.</li>
+</ul>

@@ -48,6 +48,13 @@
   &lt;/div&gt;
 &lt;/header&gt;</code></pre>
 
+<h2>No jump on slow connections</h2>
+<p>
+  The script that collapses the menu loads last, so on a slow phone the page can paint with the menu open and then jump
+  when it closes. Three lines in the <code>head</code>, shown on <a href="../get-started.html">Get started</a>, set the
+  <code>ag-js</code> class before the first paint, and the stylesheet keeps the menu closed from the start.
+</p>
+
 <h2>An agency's header</h2>
 <p>
   An agency uses the same header. Its own name goes in <code>ag-header__org</code> and the parent in

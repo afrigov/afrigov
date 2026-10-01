@@ -159,6 +159,14 @@
   display: inline-flex;
 }
 
+/* With the ag-js class set in the head (see Get started), the menu is collapsed from the first paint,
+   so nothing jumps when the script arrives on a slow connection. The script keeps the button's state in step. */
+@media not all and (min-width: 64em) {
+  .ag-js .ag-header__toggle[aria-expanded="false"] ~ .ag-header__nav {
+    display: none;
+  }
+}
+
 /* 64em = breakpoint.lg */
 @media (min-width: 64em) {
   /* Long names ("Federal Ministry of …") wrap inside the brand instead of pushing the nav down.

@@ -6,6 +6,18 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.5] - 2026-10-02
+
+### Fixed
+
+- Header: no layout shift on phones when the script arrives late. With the `ag-js` class set in the head, the menu is collapsed from the first paint. Measured on the first rebuild: cumulative layout shift from 0.32 to 0.
+- Service card: the focus ring shows for the keyboard only, not as a flash on a click or a tap.
+
+### Added
+
+- Pattern: search and answer engines. The head of every page, structured data for organisations, services, breadcrumbs, news and questions, and how to write so search engines and assistants quote the page correctly.
+- The page templates carry a description, the head lines for the menu, a preconnect to the CDN, and structured data on the home and start pages.
+
 ## [0.8.4] - 2026-10-02
 
 ### Changed

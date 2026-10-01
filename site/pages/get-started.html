@@ -7,11 +7,22 @@
 <pre
   class="docs-code"
   tabindex="0"
-><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/core.min.css"&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
+><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/core.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
 
-&lt;!-- Optional: collapsible navigation and error-summary focus. 1.5 KB. --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/afrigov.iife.js" defer&gt;&lt;/script&gt;</code></pre>
+&lt;!-- Optional: collapsible navigation and error-summary focus. Under 3 KB. --&gt;
+&lt;script&gt;
+  document.documentElement.classList.add("ag-js");
+  addEventListener("load", function () {
+    if (!window.AfriGov) document.documentElement.classList.remove("ag-js");
+  });
+&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/afrigov.iife.js" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  The three lines before the script go in the <code>head</code>. They collapse the menu on phones from the first paint,
+  so the page does not jump when the script arrives on a slow connection, and they put the full menu back if the script
+  never arrives. Without them everything still works; the menu collapses a moment later.
+</p>
 
 <p>Or from npm:</p>
 <pre class="docs-code" tabindex="0"><code>npm install afrigov</code></pre>
@@ -31,8 +42,9 @@ init();</code></pre>
   &lt;meta charset="utf-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
   &lt;title&gt;Renew a passport – Ministry of Interior&lt;/title&gt;
-  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/core.min.css"&gt;
-  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
+  &lt;meta name="description" content="Renew an adult passport online. It takes about 10 minutes."&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/core.min.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;a class="ag-skip-link" href="#main"&gt;Skip to main content&lt;/a&gt;
@@ -91,4 +103,10 @@ init();</code></pre>
   Everything from 2019 onwards: Chrome 88, Edge 88, Firefox 78, Safari 14, Samsung Internet 15 and later. Older proxy
   browsers such as Opera Mini in extreme mode receive readable, unstyled semantic HTML, which is why every component
   keeps its meaning without CSS.
+</p>
+
+<h2>Before you launch</h2>
+<p>
+  Give every page its own title and description, and add the structured data that says who you are. See
+  <a href="patterns/search.html">Search and answer engines</a>.
 </p>
