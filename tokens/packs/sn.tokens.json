@@ -1,0 +1,67 @@
+{
+  "$description": "Senegal pack. First francophone pack: French is the default language for banner strings, and the currency symbol follows the amount. Overrides core colour tokens with the national colours.",
+  "$extensions": {
+    "afrigov": {
+      "code": "sn",
+      "country": "Senegal",
+      "government": "République du Sénégal",
+      "domain": ".gouv.sn",
+      "language": "fr",
+      "flag": ["{official.green}", "{official.yellow}", "{official.red}"],
+      "flagDirection": "row",
+      "strings": {
+        "fr": {
+          "banner": "Un site officiel de la République du Sénégal",
+          "banner-how": "Comment savoir que ce site est officiel",
+          "banner-domain": "Les sites officiels utilisent .gouv.sn",
+          "banner-secure": "Les sites .gouv.sn sécurisés utilisent HTTPS",
+          "$note": "Drafted by a non-native speaker. Native review wanted."
+        },
+        "en": {
+          "banner": "An official website of the Republic of Senegal",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .gouv.sn",
+          "banner-secure": "Secure .gouv.sn websites use HTTPS"
+        },
+        "wo": { "banner": null, "$todo": "Wolof translation wanted. Open a PR." }
+      },
+      "currency": {
+        "code": "XOF",
+        "symbol": "F CFA",
+        "position": "suffix",
+        "locale": "fr",
+        "name": "francs CFA",
+        "hint": "En francs CFA"
+      },
+      "id": {
+        "name": "Numéro d'identification nationale",
+        "short": "NIN",
+        "document": "Carte nationale d'identité CEDEAO",
+        "hint": "Au recto de votre carte d'identité CEDEAO",
+        "authority": "la Direction de l'automatisation des fichiers",
+        "$note": "Digit count and format wanted from a contributor who holds the card."
+      },
+      "regions": {
+        "label": "Région",
+        "choose": "Choisissez une région",
+        "items": ["Dakar", "Thiès", "Saint-Louis", "Ziguinchor", "Kaolack", "Diourbel"]
+      },
+      "examples": {
+        "timezone": "heure de Dakar",
+        "refPrefix": "SN"
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "$description": "Flag of Senegal: green, yellow and red vertical bands with a green star. Values as commonly published (Wikipedia, Flags of the World); no official government colour specification was found. Green fails WCAG AA on the grey panel background, so the build derives a deeper green for text.",
+    "green": { "$value": "#00853f" },
+    "yellow": { "$value": "#fdef42" },
+    "red": { "$value": "#e31b23" }
+  },
+  "color": {
+    "$type": "color",
+    "primary": { "$value": "{official.green}" },
+    "accent": { "$value": "{official.yellow}" }
+  }
+}

@@ -15,7 +15,7 @@
       // Pack switcher. Reads ?pack=xx and loads that pack before first paint.
       // With no pack, or with JavaScript off, the page shows the neutral core.
       (function () {
-        var packs = ["gh", "ke", "ng"];
+        var packs = ["gh", "ke", "ng", "sn"];
         var pack = new URL(location.href).searchParams.get("pack");
         var link = document.getElementById("pack-css");
         if (packs.indexOf(pack) === -1) {
@@ -45,6 +45,7 @@
             <option value="gh">Ghana</option>
             <option value="ke">Kenya</option>
             <option value="ng">Nigeria</option>
+            <option value="sn">Senegal</option>
           </select>
           <button class="ag-button ag-button--secondary docs-pack__apply" type="submit">Apply</button>
         </form>
@@ -108,7 +109,7 @@
             </div>
             <div>
               <dt>Country packs</dt>
-              <dd>3</dd>
+              <dd>4</dd>
             </div>
             <div>
               <dt>Contrast</dt>
@@ -205,6 +206,12 @@ init();</code></pre>
                   <td><code>#008751</code></td>
                   <td><code>#007d4b</code> derived (4.13:1 on grey was not enough)</td>
                   <td>English. Hausa, Yoruba, Igbo wanted.</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>sn.css</code> Senegal</th>
+                  <td><code>#00853f</code></td>
+                  <td><code>#00803d</code> derived (4.29:1 on grey was not enough)</td>
+                  <td>French (draft, native review wanted), English. Wolof wanted.</td>
                 </tr>
                 <tr>
                   <th scope="row"><code>gh.css</code> Ghana</th>
@@ -1082,7 +1089,8 @@ init();</code></pre>
         var file = document.querySelector("[data-docs-packfile]");
         if (file) file.textContent = pack;
 
-        var s = (meta.strings && meta.strings.en) || {};
+        var language = meta.language || "en";
+        var s = (meta.strings && (meta.strings[language] || meta.strings.en)) || {};
         var id = meta.id || {};
         var cur = meta.currency || {};
         var reg = meta.regions || {};
@@ -1110,7 +1118,14 @@ init();</code></pre>
           if (v) {
             el.textContent = v;
             el.hidden = false;
+            // Tell screen readers when the example text is not in the page language.
+            if (language !== "en") el.setAttribute("lang", language);
+            else el.removeAttribute("lang");
           }
+        });
+        document.querySelectorAll(".ag-input-group").forEach(function (group) {
+          var affix = group.querySelector("[data-docs-string='currency-symbol']");
+          if (affix && cur.position === "suffix") group.appendChild(affix);
         });
         document.querySelectorAll("[data-docs-regions]").forEach(function (sel) {
           if (!reg.items) return;
@@ -1120,8 +1135,8 @@ init();</code></pre>
           });
         });
         document.querySelectorAll("[data-docs-money]").forEach(function (td) {
-          var n = Number(td.getAttribute("data-docs-money")).toLocaleString("en");
-          td.textContent = (cur.symbol || "") + n;
+          var n = Number(td.getAttribute("data-docs-money")).toLocaleString(cur.locale || "en");
+          td.textContent = cur.position === "suffix" ? n + "\u00a0" + (cur.symbol || "") : (cur.symbol || "") + n;
         });
       })();
     </script>

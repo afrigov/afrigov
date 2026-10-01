@@ -79,13 +79,14 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 
 ## Tooling and packs
 
-| Item                  | Version | Status  | Notes                                                               |
-| --------------------- | ------- | ------- | ------------------------------------------------------------------- |
-| Nigeria pack (ng)     | 0.1     | shipped | Hausa, Yoruba, Igbo strings wanted                                  |
-| Kenya pack (ke)       | 0.1     | shipped | Swahili draft, native review wanted                                 |
-| Ghana pack (gh)       | 0.2     | shipped | Green primary, gold accent; derivation path is unit-tested          |
-| Rwanda pack (rw)      | 0.2     | planned | Kinyarwanda, French, English                                        |
-| South Africa (za)     | 0.3     | planned | Six flag colours, eleven official languages                         |
-| `afrigov audit <url>` | 0.3     | planned | axe against any URL from the CLI. See roadmap/v0.3.md               |
-| Figma tokens export   | 0.4     | planned | From `tokens/*.json`                                                |
-| React wrappers        | —       | cut     | Plain HTML classes work in every framework. Revisit only on demand. |
+| Item                  | Version | Status  | Notes                                                                           |
+| --------------------- | ------- | ------- | ------------------------------------------------------------------------------- |
+| Nigeria pack (ng)     | 0.1     | shipped | Hausa, Yoruba, Igbo strings wanted                                              |
+| Kenya pack (ke)       | 0.1     | shipped | Swahili draft, native review wanted                                             |
+| Ghana pack (gh)       | 0.2     | shipped | Green primary, gold accent; derivation path is unit-tested                      |
+| Senegal pack (sn)     | 0.2     | shipped | First francophone pack: French default language, suffix currency, derived green |
+| Rwanda pack (rw)      | 0.2     | planned | Kinyarwanda, French, English                                                    |
+| South Africa (za)     | 0.3     | planned | Six flag colours, eleven official languages                                     |
+| `afrigov audit <url>` | 0.3     | planned | axe against any URL from the CLI. See roadmap/v0.3.md                           |
+| Figma tokens export   | 0.4     | planned | From `tokens/*.json`                                                            |
+| React wrappers        | —       | cut     | Plain HTML classes work in every framework. Revisit only on demand.             |
