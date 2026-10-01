@@ -574,3 +574,11 @@
     font-size: var(--ag-font-size-xs);
   }
 }
+
+/* On phones the country preview indicator goes under the notice, so the notice keeps the full width. */
+@media (max-width: 40em) {
+  .docs-pack {
+    flex-basis: 100%;
+    margin-inline-start: 0;
+  }
+}
