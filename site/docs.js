@@ -93,6 +93,40 @@
     var first = document.querySelector('[data-ag-region-for="' + sel.id + '"]');
     if (first) first.dispatchEvent(new Event("change"));
   });
+  // Language switcher: one link per language the pack has strings for.
+  var languageNames = {
+    en: "English",
+    fr: "Français",
+    ha: "Hausa",
+    yo: "Yorùbá",
+    ig: "Igbo",
+    sw: "Kiswahili",
+    wo: "Wolof",
+    ak: "Akan",
+    ee: "Eʋegbe",
+    ar: "العربية",
+    pt: "Português",
+  };
+  document.querySelectorAll("[data-docs-languages]").forEach(function (list) {
+    var strings = meta.strings || {};
+    var codes = Object.keys(strings).filter(function (c) {
+      return strings[c] && strings[c].banner;
+    });
+    if (!codes.length) return;
+    list.innerHTML = "";
+    codes.forEach(function (c) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.className = "ag-lang__link";
+      a.href = "#lang-example";
+      a.setAttribute("hreflang", c);
+      a.setAttribute("lang", c);
+      if (c === language) a.setAttribute("aria-current", "true");
+      a.textContent = languageNames[c] || c;
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  });
   // Dialling-code select: every pack's code, with the current pack's selected.
   document.querySelectorAll("[data-docs-phone-codes]").forEach(function (sel) {
     while (sel.options.length) sel.remove(0);

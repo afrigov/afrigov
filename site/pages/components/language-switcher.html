@@ -1,0 +1,39 @@
+<!-- { "title": "Language switcher", "section": "components", "description": "Links to the same page in each official language, each written in its own language.", "order": 65 } -->
+<h1>Language switcher</h1>
+<p class="ag-lead">
+  Links to this page in each language the service offers. Each name is written in its own language, so people can find
+  theirs without reading another.
+</p>
+
+<h2>When to use</h2>
+<p>
+  On every page of a service that exists in more than one language. Put it at the top of the main content, before the
+  page heading, so it is the first thing after the header.
+</p>
+
+<docs-example>
+  <nav class="ag-lang ag-mb-0" aria-label="Language">
+    <ul class="ag-lang__list" data-docs-languages>
+      <li><a class="ag-lang__link" href="#lang-example" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a class="ag-lang__link" href="#lang-example" hreflang="fr" lang="fr">Français</a></li>
+    </ul>
+  </nav>
+</docs-example>
+<p class="docs-fine">Preview a country at the top. The list shows the languages that pack has banner strings for.</p>
+
+<h2>Rules</h2>
+<ul>
+  <li>Each link points to the same page in the other language, not to the home page.</li>
+  <li>
+    Each link has <code>hreflang</code> and <code>lang</code>, so screen readers pronounce the name correctly and search
+    engines link the versions.
+  </li>
+  <li>The current language is marked with <code>aria-current="true"</code> and is not a link.</li>
+  <li>
+    Names are endonyms: Kiswahili, not Swahili; Yorùbá, not Yoruba. Never flags: flags are countries, not languages.
+  </li>
+  <li>Keep the order stable across pages, with the country's primary official language first.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p>The keys of <code>strings</code>, and <code>language</code> for the default.</p>

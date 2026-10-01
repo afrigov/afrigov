@@ -16,6 +16,8 @@ export default [
         localStorage: "readonly",
         Option: "readonly",
         Event: "readonly",
+        setTimeout: "readonly",
+        clearTimeout: "readonly",
         __AFRIGOV_VERSION__: "readonly",
       },
     },

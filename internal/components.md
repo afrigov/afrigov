@@ -22,7 +22,7 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Footer                  | `.ag-footer`             | 0.1     | shipped |                                                                      |
 | Breadcrumb              | `.ag-breadcrumb`         | 0.1     | shipped |                                                                      |
 | Pagination              | `.ag-pagination`         | 0.1     | shipped |                                                                      |
-| Language switcher       | `.ag-lang`               | 0.2     | planned | Links with `hreflang`, current language marked                       |
+| Language switcher       | `.ag-lang`               | 0.2     | shipped | Links with hreflang and lang, current marked, endonyms               |
 | Cookie / consent banner | `.ag-consent`            | —       | cut     | Government sites should not need tracking cookies. Revisit if asked. |
 
 ## Actions
@@ -50,8 +50,8 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Phone number            | `.ag-phone`                                | 0.2     | shipped | Dialling code from the pack, national number, `autocomplete="tel-national"`  |
 | National ID             | `.ag-id-input`                             | 0.2     | shipped | Label, hint, maxlength, pattern and inputmode from the pack                  |
 | Region selector         | `[data-ag-region-for]` + optgroups         | 0.2     | shipped | No-script state is grouped options; script narrows the second select         |
-| Currency display        | `.ag-money`                                | 0.2     | planned | Tabular figures, symbol from the pack                                        |
-| Character count         | `.ag-char-count`                           | 0.2     | planned | Needs JS; no-JS state shows the limit in the hint                            |
+| Currency display        | `.ag-money`                                | 0.2     | shipped | Tabular figures, no break between symbol and number                          |
+| Character count         | `.ag-char-count`                           | 0.2     | shipped | Script updates the message; live region after a pause                        |
 | File upload             | `.ag-file`                                 | 0.3     | planned | Native input restyled                                                        |
 | Password with show/hide | `.ag-password`                             | 0.3     | planned | Needs JS                                                                     |
 | Autocomplete / combobox | —                                          | —       | cut     | Too heavy for the budget and fragile with AT. Recommend native `<datalist>`. |
@@ -68,11 +68,11 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Confirmation panel | `.ag-panel`                         | 0.1     | shipped |                                                                                               |
 | Summary list       | `.ag-summary`                       | 0.1     | shipped | Check-your-answers pages                                                                      |
 | Inset text         | `.ag-inset`                         | 0.1     | shipped |                                                                                               |
-| Details            | `.ag-details`                       | 0.2     | planned | Single disclosure, same base as accordion                                                     |
+| Details            | `.ag-details`                       | 0.2     | shipped | Single disclosure on native details                                                           |
 | Tabs               | `.ag-tabs`                          | 0.3     | planned | Needs JS; no-JS state is stacked sections                                                     |
 | Notification count | `.ag-count`                         | 0.3     | planned |                                                                                               |
 | Step indicator     | `.ag-steps`                         | 0.3     | planned | Multi-page forms                                                                              |
-| Service card       | `.ag-card`                          | 0.2     | planned | Link card for service listings on home pages                                                  |
+| Service card       | `.ag-card`                          | 0.2     | shipped | Stretched link, focus ring on the card                                                        |
 | Modal dialog       | —                                   | —       | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need. |
 | Toast              | —                                   | —       | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                 |
 | Carousel           | —                                   | —       | cut     | Never.                                                                                        |

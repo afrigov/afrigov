@@ -1,0 +1,42 @@
+/* Language switcher. A nav of links, one per official language, each in its
+   own language and script. The current one is marked, not linked. */
+.ag-lang {
+  margin-bottom: var(--ag-space-4);
+}
+
+.ag-lang__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ag-lang__list li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+
+.ag-lang__list li + li::before {
+  content: "";
+  width: 1px;
+  height: 1em;
+  margin-inline: var(--ag-space-2);
+  background: var(--ag-color-border-strong);
+}
+
+.ag-lang__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  padding-inline: var(--ag-space-1);
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-lang__link[aria-current="true"] {
+  color: var(--ag-color-ink);
+  font-weight: var(--ag-font-weight-bold);
+  text-decoration: none;
+}

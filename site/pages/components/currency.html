@@ -1,0 +1,27 @@
+<!-- { "title": "Currency display", "section": "components", "description": "How to show an amount of money: symbol, position and grouping from the country pack, tabular figures.", "order": 185 } -->
+<h1>Currency display</h1>
+<p class="ag-lead">
+  Amounts are written the way the country writes them. The symbol, whether it comes before or after, and how thousands
+  are grouped all come from the pack.
+</p>
+
+<docs-example>
+  <p>The fee is <span class="ag-money" data-docs-money="35000">35,000</span>, payable online or at any bank.</p>
+  <p class="ag-money ag-money--lg ag-mb-0" data-docs-money="70000">70,000</p>
+</docs-example>
+<p class="docs-fine">Preview a country at the top. Nigeria shows ₦35,000; Senegal shows 35 000 F CFA.</p>
+
+<h2>Rules</h2>
+<ul>
+  <li>Whole units unless the decimals matter. ₦35,000, not ₦35,000.00.</li>
+  <li>Group thousands the local way. English-style commas in Nigeria, Kenya and Ghana; a thin space in Senegal.</li>
+  <li>The symbol and the number never break across lines. The component keeps them together.</li>
+  <li>In tables, use <code>ag-table__numeric</code> as well so amounts right-align and the digits line up.</li>
+  <li>Say the currency in words once on a page if people may be abroad: "35,000 naira".</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p>
+  <code>currency.code</code>, <code>currency.symbol</code>, <code>currency.position</code>,
+  <code>currency.locale</code>, <code>currency.name</code>.
+</p>

@@ -1,0 +1,69 @@
+/* Service card. A list of services where the whole card is the link, but only
+   the title is focusable, so keyboard and screen reader users get one stop per card. */
+.ag-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: var(--ag-space-4);
+  margin: 0 0 var(--ag-space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.ag-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ag-space-2);
+  margin: 0;
+  padding: var(--ag-space-4);
+  border: 1px solid var(--ag-color-border);
+  border-top: 4px solid var(--ag-color-primary);
+  background: var(--ag-color-paper);
+}
+
+.ag-card:hover {
+  border-color: var(--ag-color-primary);
+}
+
+.ag-card:focus-within {
+  outline: var(--ag-size-focus-ring) solid var(--ag-color-focus);
+  box-shadow: 0 0 0 calc(var(--ag-size-focus-ring) * 2) var(--ag-color-ink);
+}
+
+.ag-card__title {
+  margin: 0;
+  font-size: var(--ag-font-size-lg);
+}
+
+.ag-card__link {
+  color: var(--ag-color-link);
+}
+
+/* Stretch the link over the card without making the card itself focusable. */
+.ag-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.ag-card__link:focus-visible {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  color: var(--ag-color-link);
+}
+
+.ag-card:hover .ag-card__link {
+  text-decoration-thickness: max(3px, 0.1875em);
+}
+
+.ag-card__text {
+  margin: 0;
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-card__meta {
+  margin: auto 0 0;
+  padding-top: var(--ag-space-2);
+}

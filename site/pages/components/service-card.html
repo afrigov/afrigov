@@ -1,0 +1,40 @@
+<!-- { "title": "Service card", "section": "components", "description": "A list of services where the whole card is clickable but only the title is a link.", "order": 215 } -->
+<h1>Service card</h1>
+<p class="ag-lead">
+  For a home page or a department page that lists services. The whole card is clickable; only the title is a link.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  For content that is not a destination. A card with no link is a box, and boxes are noise. Use plain headings and text.
+</p>
+
+<docs-example>
+  <ul class="ag-cards ag-mb-0">
+    <li class="ag-card">
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#card-example">Renew a passport</a></h3>
+      <p class="ag-card__text">Apply online, pay, and collect from the office you choose. Takes about 10 minutes.</p>
+      <p class="ag-card__meta"><span class="ag-badge ag-badge--success">Online</span></p>
+    </li>
+    <li class="ag-card">
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#card-example">Register a birth</a></h3>
+      <p class="ag-card__text">Within 60 days of the birth. Free at any registration centre.</p>
+      <p class="ag-card__meta"><span class="ag-badge ag-badge--neutral">In person</span></p>
+    </li>
+    <li class="ag-card">
+      <h3 class="ag-card__title">
+        <a class="ag-card__link" href="#card-example">Check your <span data-docs-string="id-short">ID number</span></a>
+      </h3>
+      <p class="ag-card__text">Confirm your details are correct and update a wrong name or date of birth.</p>
+      <p class="ag-card__meta"><span class="ag-badge ag-badge--success">Online</span></p>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The link is stretched over the card with CSS, so one Tab stop per card and the title is what gets read.</li>
+  <li>The focus ring is drawn on the card, not the title, so it is obvious which card is selected.</li>
+  <li>Keep text inside the card short and unlinked. A second link inside a stretched link is unreachable by mouse.</li>
+  <li>Three to six cards a row. More than that is a list, so use a list.</li>
+</ul>

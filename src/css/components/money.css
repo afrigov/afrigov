@@ -1,0 +1,12 @@
+/* Money. Tabular figures so columns of amounts line up, and no line break
+   between the symbol and the number. */
+.ag-money {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ag-money--lg {
+  font-size: var(--ag-font-size-2xl);
+  font-weight: var(--ag-font-weight-bold);
+  line-height: var(--ag-font-leading-tight);
+}

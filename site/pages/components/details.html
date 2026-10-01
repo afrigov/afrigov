@@ -1,0 +1,35 @@
+<!-- { "title": "Details", "section": "components", "description": "A single disclosure for help that only some people need.", "order": 182 } -->
+<h1>Details</h1>
+<p class="ag-lead">
+  A link-like summary that opens a short explanation. For help only some people need, kept out of the way of everyone
+  else.
+</p>
+
+<h2>When to use</h2>
+<p>Next to a question, for the people who are not sure what it means or where to find the answer.</p>
+
+<h2>When not to use</h2>
+<p>
+  To hide something most people need. If most people would open it, put the text on the page. For several related
+  sections, use the <a href="accordion.html">accordion</a>.
+</p>
+
+<docs-example>
+  <details class="ag-details ag-mb-0">
+    <summary class="ag-details__summary">Where to find your <span data-docs-string="id-short">ID number</span></summary>
+    <div class="ag-details__body">
+      <p>
+        It is printed on the front of your <span data-docs-string="id-document">national ID card</span>. If you have
+        lost it, <span data-docs-string="id-authority">the registration office</span> can look it up from your name and
+        date of birth.
+      </p>
+    </div>
+  </details>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Native <code>details</code>: Enter and Space toggle it, and the open state is announced.</li>
+  <li>The summary reads like a link because it behaves like one, and starts with a verb or a question.</li>
+  <li>Do not put a form control inside. Validation errors inside a closed details are easy to miss.</li>
+</ul>

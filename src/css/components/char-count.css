@@ -1,0 +1,17 @@
+/* Character count. The message under a textarea that says how many
+   characters remain. Filled by afrigov.js; without script the hint states the limit. */
+.ag-char-count__message {
+  display: block;
+  margin-top: var(--ag-space-1);
+  color: var(--ag-color-ink-muted);
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-char-count__message--over {
+  color: var(--ag-color-error);
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-char-count--over .ag-textarea {
+  border-color: var(--ag-color-error);
+}

@@ -97,3 +97,14 @@ test("region selector narrows the sub-region list to the chosen region", async (
   await first.selectOption("Kano");
   await expect(second).toHaveValue("");
 });
+
+test("character count reports remaining characters and flags going over", async ({ page: p }) => {
+  await p.goto(`${pathToFileURL(join(DOCS, "components", "character-count.html")).href}?pack=core`);
+  await p.waitForSelector(".ag-js");
+  const field = p.locator("#cc-notes");
+  const message = p.locator("#cc-notes-count");
+  await expect(message).toHaveText("You have 200 characters remaining");
+  await field.fill("x".repeat(205));
+  await expect(message).toHaveText("You are 5 characters over the limit");
+  await expect(message).toHaveClass(/ag-char-count__message--over/);
+});

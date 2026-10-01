@@ -67,6 +67,42 @@ function regions(scope) {
   });
 }
 
+/**
+ * Character count. A wrapper with data-ag-char-count holds a textarea with
+ * data-ag-max and a .ag-char-count__message. The message says how many
+ * characters remain, and is announced after typing pauses.
+ */
+function charCounts(scope) {
+  scope.querySelectorAll("[data-ag-char-count]").forEach((wrap) => {
+    const field = wrap.querySelector("[data-ag-max]");
+    const message = wrap.querySelector(".ag-char-count__message");
+    if (!field || !message) return;
+    const max = Number(field.getAttribute("data-ag-max"));
+    const live = document.createElement("span");
+    live.className = "ag-visually-hidden";
+    live.setAttribute("aria-live", "polite");
+    message.after(live);
+    let timer;
+    const update = () => {
+      const left = max - field.value.length;
+      const n = Math.abs(left);
+      const text =
+        left >= 0
+          ? `You have ${n} character${n === 1 ? "" : "s"} remaining`
+          : `You are ${n} character${n === 1 ? "" : "s"} over the limit`;
+      message.textContent = text;
+      message.classList.toggle("ag-char-count__message--over", left < 0);
+      wrap.classList.toggle("ag-char-count--over", left < 0);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        live.textContent = text;
+      }, 500);
+    };
+    field.addEventListener("input", update);
+    update();
+  });
+}
+
 function focusErrorSummary(scope) {
   const summary = scope.querySelector(".ag-error-summary");
   if (summary && !summary.hasAttribute("data-ag-no-autofocus")) {
@@ -80,6 +116,7 @@ export function init(scope = document) {
   document.documentElement.classList.add("ag-js");
   toggles(scope);
   regions(scope);
+  charCounts(scope);
   focusErrorSummary(scope);
 }
 
@@ -92,5 +129,5 @@ export function autoInit() {
   }
 }
 
-export { regions };
+export { regions, charCounts };
 export const version = __AFRIGOV_VERSION__;

@@ -1,0 +1,42 @@
+<!-- { "title": "Character count", "section": "components", "description": "A textarea that tells people how many characters they have left, and announces it to screen readers after they pause.", "order": 95 } -->
+<h1>Character count</h1>
+<p class="ag-lead">
+  A textarea with a limit. People see how much room is left, and screen readers hear it once they pause typing.
+</p>
+
+<h2>When to use</h2>
+<p>When a textarea has a hard limit that the service enforces. If there is no real limit, do not invent one.</p>
+
+<docs-example>
+  <div class="ag-field ag-mb-0" data-ag-char-count>
+    <label class="ag-label" for="cc-notes">Why are you applying?</label>
+    <span class="ag-hint" id="cc-notes-hint">You can enter up to 200 characters</span>
+    <textarea
+      class="ag-textarea"
+      id="cc-notes"
+      name="reason"
+      rows="4"
+      data-ag-max="200"
+      aria-describedby="cc-notes-hint cc-notes-count"
+    ></textarea>
+    <span class="ag-char-count__message" id="cc-notes-count"></span>
+  </div>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>
+    The wrapper carries <code>data-ag-char-count</code>, the textarea carries <code>data-ag-max</code>, and the message
+    element sits below with its own id.
+  </li>
+  <li>The hint states the limit in words, so the limit is known with JavaScript off.</li>
+  <li>
+    Do not add <code>maxlength</code>. It silently stops people typing, and pasted text is cut without warning. Let them
+    go over and show the message; validate on the server.
+  </li>
+  <li>
+    The visible message updates on every keystroke. A hidden live region repeats it only after a 500ms pause, so screen
+    readers are not interrupted on every letter.
+  </li>
+  <li>Over the limit, the message turns red and bold and the border turns red.</li>
+</ul>
