@@ -114,7 +114,7 @@ A pack is one JSON file in [`tokens/packs/`](tokens/packs). It declares the offi
 
 The build derives `primary-hover`, `on-primary`, `primary-tint`, `link` and `link-hover`, checks every pair, and writes `dist/ke.css`. To add a country, copy a pack, change the values, run `pnpm test`, open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-country-pack).
 
-Packs wanted: Rwanda, South Africa, Uganda, Tanzania, Ethiopia, Côte d'Ivoire, Egypt, Morocco. Translations wanted for the Nigerian banner in Hausa, Yoruba and Igbo.
+Packs wanted: Uganda, Tanzania, Ethiopia, Côte d'Ivoire, Egypt, Morocco. Translations wanted for the Nigerian banner in Hausa, Yoruba and Igbo.
 
 ## Theming
 
@@ -148,7 +148,7 @@ Node 20 or newer and pnpm 10.
 
 ## Roadmap
 
-- **0.2** — the African patterns: phone number, national ID, region selector, currency display, character count, service card, details and language switcher (all shipped). Rwanda and South Africa packs, SVG flags for flags that are not bands, a published pack JSON schema.
+- **0.2** — the African patterns: phone number, national ID, region selector, currency display, character count, service card, details and language switcher. Rwanda and South Africa packs, SVG flags, a published pack JSON schema. All shipped.
 - **0.3** — `afrigov audit <url>`: run axe against any government site from the command line, and a monthly scoreboard.
 - **0.4** — Figma library generated from the tokens.
 - **1.0** — stable class names, tokens and pack schema. Requires right-to-left support with an Arabic pack, full page templates, a manual screen-reader pass on every component, and at least one real service built on it. The full definition is in [`internal/roadmap/v1.0.md`](internal/roadmap/v1.0.md).

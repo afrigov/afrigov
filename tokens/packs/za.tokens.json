@@ -1,0 +1,155 @@
+{
+  "$schema": "./pack.schema.json",
+  "$description": "South Africa pack. Six flag colours, eleven official languages; English is the default for banner strings until native speakers add the others.",
+  "$extensions": {
+    "afrigov": {
+      "code": "za",
+      "country": "South Africa",
+      "government": "Republic of South Africa",
+      "domain": ".gov.za",
+      "language": "en",
+      "flag": ["{official.red}", "{official.green}", "{official.blue}"],
+      "flagDirection": "column",
+      "flagSvg": "za.svg",
+      "strings": {
+        "en": {
+          "banner": "An official website of the Government of South Africa",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .gov.za",
+          "banner-secure": "Secure .gov.za websites use HTTPS"
+        },
+        "af": {
+          "banner": "'n Amptelike webwerf van die Regering van Suid-Afrika",
+          "banner-how": "Hoe jy weet dit is amptelik",
+          "banner-domain": "Amptelike webwerwe gebruik .gov.za",
+          "banner-secure": "Veilige .gov.za-webwerwe gebruik HTTPS",
+          "$note": "Drafted by a non-native speaker. Native review wanted."
+        },
+        "zu": {
+          "banner": null,
+          "$todo": "isiZulu translation wanted. Open a PR."
+        },
+        "xh": {
+          "banner": null,
+          "$todo": "isiXhosa translation wanted. Open a PR."
+        },
+        "st": {
+          "banner": null,
+          "$todo": "Sesotho translation wanted. Open a PR."
+        },
+        "nso": {
+          "banner": null,
+          "$todo": "Sepedi translation wanted. Open a PR."
+        },
+        "tn": {
+          "banner": null,
+          "$todo": "Setswana translation wanted. Open a PR."
+        },
+        "ss": {
+          "banner": null,
+          "$todo": "siSwati translation wanted. Open a PR."
+        },
+        "ve": {
+          "banner": null,
+          "$todo": "Tshivenda translation wanted. Open a PR."
+        },
+        "ts": {
+          "banner": null,
+          "$todo": "Xitsonga translation wanted. Open a PR."
+        },
+        "nr": {
+          "banner": null,
+          "$todo": "isiNdebele translation wanted. Open a PR."
+        }
+      },
+      "currency": {
+        "code": "ZAR",
+        "symbol": "R",
+        "position": "prefix",
+        "locale": "en",
+        "name": "rand",
+        "hint": "In rand"
+      },
+      "id": {
+        "name": "South African ID number",
+        "short": "ID number",
+        "document": "smart ID card or green ID book",
+        "hint": "13 digits, on your ID card or ID book",
+        "length": 13,
+        "pattern": "[0-9]{13}",
+        "authority": "the Department of Home Affairs"
+      },
+      "regions": {
+        "label": "Province",
+        "choose": "Choose a province",
+        "items": [
+          "Eastern Cape",
+          "Free State",
+          "Gauteng",
+          "KwaZulu-Natal",
+          "Limpopo",
+          "Mpumalanga",
+          "Northern Cape",
+          "North West",
+          "Western Cape"
+        ],
+        "sub": {
+          "label": "Municipality",
+          "choose": "Choose a municipality",
+          "items": {
+            "Eastern Cape": ["Nelson Mandela Bay", "Buffalo City", "Makana"],
+            "Free State": ["Mangaung", "Matjhabeng", "Maluti-a-Phofung"],
+            "Gauteng": ["City of Johannesburg", "City of Tshwane", "Ekurhuleni", "Mogale City"],
+            "KwaZulu-Natal": ["eThekwini", "Msunduzi", "uMhlathuze"],
+            "Limpopo": ["Polokwane", "Thulamela", "Makhado"],
+            "Mpumalanga": ["Mbombela", "Emalahleni", "Govan Mbeki"],
+            "Northern Cape": ["Sol Plaatje", "Dawid Kruiper", "Nama Khoi"],
+            "North West": ["Rustenburg", "Mahikeng", "Madibeng"],
+            "Western Cape": ["City of Cape Town", "Stellenbosch", "George", "Drakenstein"]
+          }
+        }
+      },
+      "phone": {
+        "code": "+27",
+        "example": "082 123 4567",
+        "hint": "We will send a code by SMS. For example, 082 123 4567",
+        "length": 10
+      },
+      "examples": {
+        "timezone": "South African Standard Time",
+        "refPrefix": "ZA"
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "$description": "Flag of South Africa (1994). Values as published by the South African Government (gov.za flag page) and reproduced on Wikipedia: red, green, blue, gold, black, white.",
+    "red": {
+      "$value": "#de3831"
+    },
+    "green": {
+      "$value": "#007a4d"
+    },
+    "blue": {
+      "$value": "#002395"
+    },
+    "gold": {
+      "$value": "#ffb612"
+    },
+    "black": {
+      "$value": "#000000"
+    },
+    "white": {
+      "$value": "#ffffff"
+    }
+  },
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": "{official.green}"
+    },
+    "accent": {
+      "$value": "{official.gold}"
+    }
+  }
+}

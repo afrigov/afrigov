@@ -1,0 +1,107 @@
+{
+  "$schema": "./pack.schema.json",
+  "$description": "Rwanda pack. Overrides core colour tokens with the national colours and carries official-website banner strings.",
+  "$extensions": {
+    "afrigov": {
+      "code": "rw",
+      "country": "Rwanda",
+      "government": "Republic of Rwanda",
+      "domain": ".gov.rw",
+      "language": "en",
+      "flag": ["{official.blue}", "{official.yellow}", "{official.green}"],
+      "flagDirection": "column",
+      "flagSvg": "rw.svg",
+      "strings": {
+        "en": {
+          "banner": "An official website of the Government of Rwanda",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .gov.rw",
+          "banner-secure": "Secure .gov.rw websites use HTTPS"
+        },
+        "fr": {
+          "banner": "Un site officiel du Gouvernement du Rwanda",
+          "banner-how": "Comment savoir que ce site est officiel",
+          "banner-domain": "Les sites officiels utilisent .gov.rw",
+          "banner-secure": "Les sites .gov.rw sécurisés utilisent HTTPS",
+          "$note": "Drafted by a non-native speaker. Native review wanted."
+        },
+        "rw": {
+          "banner": null,
+          "$todo": "Kinyarwanda translation wanted. Open a PR."
+        },
+        "sw": {
+          "banner": null,
+          "$todo": "Swahili translation wanted. Open a PR."
+        }
+      },
+      "currency": {
+        "code": "RWF",
+        "symbol": "RWF",
+        "position": "suffix",
+        "locale": "en",
+        "name": "Rwandan francs",
+        "hint": "In Rwandan francs"
+      },
+      "id": {
+        "name": "National ID number",
+        "short": "ID number",
+        "document": "National ID card",
+        "hint": "16 digits, on the front of your ID card",
+        "length": 16,
+        "pattern": "[0-9]{16}",
+        "authority": "the National Identification Agency"
+      },
+      "regions": {
+        "label": "Province",
+        "choose": "Choose a province",
+        "items": ["Kigali City", "Northern", "Southern", "Eastern", "Western"],
+        "sub": {
+          "label": "District",
+          "choose": "Choose a district",
+          "items": {
+            "Kigali City": ["Gasabo", "Kicukiro", "Nyarugenge"],
+            "Northern": ["Musanze", "Gicumbi", "Burera", "Gakenke", "Rulindo"],
+            "Southern": ["Huye", "Muhanga", "Nyanza", "Gisagara", "Ruhango"],
+            "Eastern": ["Rwamagana", "Kayonza", "Nyagatare", "Bugesera", "Kirehe"],
+            "Western": ["Rubavu", "Karongi", "Rusizi", "Nyabihu", "Rutsiro"]
+          }
+        }
+      },
+      "phone": {
+        "code": "+250",
+        "example": "078 123 4567",
+        "hint": "We will send a code by SMS. For example, 078 123 4567",
+        "length": 10
+      },
+      "examples": {
+        "timezone": "Central Africa Time",
+        "refPrefix": "RW"
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "$description": "Flag of Rwanda (2001): sky blue, yellow, green with a golden sun. Values as commonly published (Wikipedia, Flags of the World). Blue fails WCAG AA as text, so the build derives a deeper blue for text and controls.",
+    "blue": {
+      "$value": "#00a1de"
+    },
+    "yellow": {
+      "$value": "#fad201"
+    },
+    "green": {
+      "$value": "#20603d"
+    },
+    "sun": {
+      "$value": "#e5be01"
+    }
+  },
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": "{official.blue}"
+    },
+    "accent": {
+      "$value": "{official.yellow}"
+    }
+  }
+}
