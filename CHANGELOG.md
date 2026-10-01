@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-02
+
+The right-to-left release: logical properties throughout, the first Arabic pack, and six complete page templates.
+
 ### Added
 
 - Right-to-left support. Every component uses logical properties, with explicit mirroring for the chevrons, the start arrow and the select caret, so `dir="rtl"` on `html` flips the layout. A build test keeps physical layout properties out of the core.
@@ -71,7 +75,8 @@ First release.
 - Tests: 90 unit tests for tokens, contrast maths and build output; Playwright with axe-core on the docs page with every pack; 48px touch-target check; 20 KB gzip budget for the core.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
-[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/omoyolab/afrigov/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/omoyolab/afrigov/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/omoyolab/afrigov/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/omoyolab/afrigov/compare/v0.1.1...v0.1.2
