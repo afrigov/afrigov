@@ -52,3 +52,15 @@
   font-size: var(--ag-font-size-sm);
   color: var(--ag-color-ink);
 }
+
+/* Full variant: the whole message on its own page, with a larger portrait. */
+.ag-statement--full .ag-statement__media {
+  max-width: 16rem;
+}
+
+@media (min-width: 48em) {
+  .ag-statement--full {
+    grid-template-columns: 16rem 1fr;
+    gap: var(--ag-space-6);
+  }
+}

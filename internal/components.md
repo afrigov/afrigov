@@ -81,7 +81,7 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Download link      | `.ag-download`                           | 0.5     | shipped | Format and size inside the link text                                                          |
 | Empty state        | `.ag-empty`                              | 0.5     | shipped | Heading plus what to do; not an alert                                                         |
 | Image and figure   | `.ag-figure`, `.ag-image`, `.ag-gallery` | 0.5     | shipped | Caption or alt, never both; 150 KB budget; no text over photos                                |
-| Statement          | `.ag-statement`                          | 0.6     | shipped | Head of organisation's message with portrait; name and role after the text                    |
+| Statement          | `.ag-statement` + full                   | 0.6     | shipped | Head of organisation's message with portrait; name and role after the text                    |
 | Modal dialog       | none                                     | none    | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need. |
 | Toast              | none                                     | none    | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                 |
 | Carousel           | none                                     | none    | cut     | Never.                                                                                        |

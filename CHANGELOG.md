@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.6.3] - 2026-10-02
+
+### Added
+
+- Statement: `ag-statement--full` for the whole message on its own page, with a larger portrait.
+
 ## [0.6.2] - 2026-10-02
 
 ### Changed
