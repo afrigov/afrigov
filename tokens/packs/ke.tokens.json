@@ -9,6 +9,7 @@
       "domain": ".go.ke",
       "flag": ["{official.black}", "{official.red}", "{official.green}"],
       "flagDirection": "column",
+      "flagSvg": "ke.svg",
       "strings": {
         "en": {
           "banner": "An official website of the Government of Kenya",
@@ -81,7 +82,8 @@
     },
     "white": {
       "$value": "#ffffff"
-    }
+    },
+    "$description": "Flag of Kenya: black, red and green with white fimbriations, a Maasai shield and two spears. Band colours as commonly published. The shield in ke.svg is a geometric approximation; accurate artwork is wanted (see the issue tracker)."
   },
   "color": {
     "$type": "color",

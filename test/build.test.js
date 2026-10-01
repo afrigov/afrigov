@@ -95,6 +95,14 @@ describe("flag SVGs in dist", () => {
   it("Ghana's flag is published next to its stylesheet and referenced from it", () => {
     expect(existsSync(dist("flags/gh.svg"))).toBe(true);
     expect(read("gh.css")).toContain('--ag-flag-image: url("flags/gh.svg")');
-    expect(read("ke.css")).not.toContain("--ag-flag-image");
+    expect(read("sn.css")).not.toContain("--ag-flag-image");
+  });
+
+  it("inline flags on the packs page never inherit another pack's image", () => {
+    const html = readFileSync(join(ROOT, "docs", "packs", "index.html"), "utf8");
+    const nigeria = html.match(/<li class="docs-pack-card">[^]*?Nigeria[^]*?<\/li>/)[0];
+    expect(nigeria).toContain("--ag-flag-image: none");
+    const kenya = html.match(/<li class="docs-pack-card">[^]*?Kenya[^]*?<\/li>/)[0];
+    expect(kenya).toContain("--ag-flag-image: url(../dist/flags/ke.svg)");
   });
 });

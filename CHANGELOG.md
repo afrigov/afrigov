@@ -13,7 +13,7 @@ All notable changes to this project are documented here. The format follows
 - National ID input (`.ag-id-input`): label, hint, maxlength, pattern and keyboard from the pack's `id` block, which gains `pattern`.
 - Region selector: a first select with `data-ag-region-for` and a second grouped by `optgroup`; `afrigov.js` narrows the second to the chosen region. Packs gain `regions.sub` with sample second-level divisions.
 - Rwanda pack (`rw.css`) and South Africa pack (`za.css`), both with SVG flags. Rwanda's blue is derived for AA; South Africa lists all eleven official languages with English and an Afrikaans draft filled in.
-- SVG flags: a pack can set `flagSvg` to an accurate 3:2 SVG in `tokens/packs/flags/`; the build publishes it as `dist/flags/<code>.svg` and the flag component paints it over the stripes. Ghana ships one, with its star.
+- SVG flags: a pack can set `flagSvg` to an accurate 3:2 SVG in `tokens/packs/flags/`; the build publishes it as `dist/flags/<code>.svg` and the flag component paints it over the stripes. Ghana, Kenya, Rwanda and South Africa ship one. Kenya's shield is a geometric approximation pending accurate artwork.
 - Currency display (`.ag-money`), character count (`data-ag-char-count`, script-enhanced with a polite live region), service card (`.ag-cards`, `.ag-card`), details (`.ag-details`), language switcher (`.ag-lang`).
 
 ### Changed
