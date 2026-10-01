@@ -9,6 +9,7 @@ All notable changes to this project are documented here. The format follows
 ### Added
 
 - Right-to-left support. Every component uses logical properties, with explicit mirroring for the chevrons, the start arrow and the select caret, so `dir="rtl"` on `html` flips the layout. A build test keeps physical layout properties out of the core.
+- Page templates: service home, start page, question page, check your answers, confirmation and service problem, as complete HTML files in `site/templates/`, previewable on the docs site under any pack and tested with axe as whole pages.
 - Morocco pack (`ma.css`): the first right-to-left pack. Arabic default strings with French and English, dirhams as a suffix currency, the CNIE number, regions and provinces, and a pentagram flag. Packs can declare `direction`, and the docs render a right-to-left pack's examples mirrored.
 
 ## [0.3.0] - 2026-10-02

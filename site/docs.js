@@ -21,6 +21,13 @@
 
   var language = meta.language || "en";
   // A right-to-left pack mirrors every example so the components are seen as they would be used.
+  if (!document.querySelector(".docs-example__preview") && !document.querySelector(".docs-content")) {
+    // A template page: mirror the whole document.
+    if (meta.direction === "rtl") {
+      document.documentElement.setAttribute("dir", "rtl");
+      document.documentElement.setAttribute("lang", language);
+    }
+  }
   document.querySelectorAll(".docs-example__preview").forEach(function (el) {
     if (meta.direction === "rtl") {
       el.setAttribute("dir", "rtl");

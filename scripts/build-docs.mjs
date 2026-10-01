@@ -363,6 +363,33 @@ export function buildDocs() {
     writeFileSync(out, html);
   }
 
+  // Templates: complete pages. The docs copy uses local assets and follows the
+  // previewed pack; the source in site/templates stays plain for copying.
+  const tplDir = join(SITE, "templates");
+  if (existsSync(tplDir)) {
+    mkdirSync(join(DOCS, "templates"), { recursive: true });
+    const packScript = `<script>
+      (function () {
+        var packs = ${JSON.stringify(packs.codes)};
+        var pack = new URL(location.href).searchParams.get("pack");
+        if (!pack) { try { pack = localStorage.getItem("afrigov-pack"); } catch (e) { pack = null; } }
+        var link = document.getElementById("pack-css");
+        if (packs.indexOf(pack) === -1) { pack = "core"; link.parentNode.removeChild(link); }
+        else { link.href = "../dist/" + pack + ".min.css"; document.documentElement.setAttribute("data-ag-pack", pack); }
+        document.documentElement.setAttribute("data-docs-pack", pack);
+      })();
+    </script>`;
+    for (const f of readdirSync(tplDir).filter((f) => f.endsWith(".html"))) {
+      let html = readFileSync(join(tplDir, f), "utf8")
+        .replace(/https:\/\/cdn\.jsdelivr\.net\/npm\/afrigov@[0-9.]+\/dist\//g, "../dist/")
+        .replace(/(<link[^>]*id="pack-css"[^>]*>)/, `$1\n    ${packScript}`)
+        .replace(
+          "</body>",
+          `  <script src="../dist/packs.js"></script>\n    <script src="../docs.js"></script>\n  </body>`,
+        );
+      writeFileSync(join(DOCS, "templates", f), html);
+    }
+  }
   cpSync(join(SITE, "docs.css"), join(DOCS, "docs.css"));
   cpSync(join(SITE, "docs.js"), join(DOCS, "docs.js"));
   cpSync(join(SITE, "favicon.svg"), join(DOCS, "favicon.svg"));

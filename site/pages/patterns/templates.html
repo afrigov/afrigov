@@ -1,0 +1,57 @@
+<!-- { "title": "Page templates", "section": "patterns", "description": "Six complete pages an agency can copy: service home, start page, question page, check your answers, confirmation, and service problem.", "order": 5 } -->
+<h1>Page templates</h1>
+<p class="ag-lead">
+  Complete pages, not pieces. Copy one, replace the words, keep the structure. Each is a single HTML file with the
+  stylesheets from the CDN and nothing else to install.
+</p>
+
+<p>
+  Every template is tested with axe and the touch-target check as a whole page, in every country pack. Preview a country
+  at the top of this site and the templates follow it.
+</p>
+
+<ul class="docs-link-list">
+  <li>
+    <a href="../templates/home.html">Service home</a>: the department front page. One alert, popular services as cards,
+    news, contact.
+  </li>
+  <li>
+    <a href="../templates/start.html">Start page</a>: what the service is, what you need, the start button. The page
+    search engines land on.
+  </li>
+  <li>
+    <a href="../templates/question.html">Question page</a>: one question per page, the question as the heading, a back
+    link, Continue.
+  </li>
+  <li>
+    <a href="../templates/check-answers.html">Check your answers</a>: a summary list with change links, a declaration,
+    Accept and send.
+  </li>
+  <li>
+    <a href="../templates/confirmation.html">Confirmation</a>: the reference number in a panel, what happens next, how
+    to get help.
+  </li>
+  <li>
+    <a href="../templates/service-problem.html">Service problem</a>: the page to show when the service is down. Says
+    what to do instead.
+  </li>
+</ul>
+
+<h2>How to use one</h2>
+<ol>
+  <li>
+    Open the template and view its source, or take the file from
+    <a href="https://github.com/omoyolab/afrigov/tree/main/site/templates"><code>site/templates</code></a> in the
+    repository.
+  </li>
+  <li>Change the pack link from <code>ng.min.css</code> to your country.</li>
+  <li>Replace the organisation name, the navigation and the footer links once; they are the same on every page.</li>
+  <li>Replace the content. Keep the headings in order and the <code>main</code> landmark where it is.</li>
+</ol>
+
+<h2>The journey</h2>
+<p>
+  The templates link to each other in the order a person meets them: home, start, question, check your answers,
+  confirmation. The service problem page can replace any step. A real service repeats the question page once per
+  question, and the <a href="errors.html">errors pattern</a> covers what happens when an answer is missing.
+</p>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Check your answers – Ministry of Interior</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.3/dist/core.min.css" />
+    <!-- Replace ng with your country's pack. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.3/dist/ng.min.css" id="pack-css" />
+    <style>
+      .ag-back-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: var(--ag-size-target);
+        margin-bottom: var(--ag-space-4);
+      }
+      .ag-back-link::before {
+        content: "";
+        width: 0.45em;
+        height: 0.45em;
+        margin-inline-end: var(--ag-space-2);
+        border-top: 2px solid currentcolor;
+        border-inline-start: 2px solid currentcolor;
+        transform: rotate(-45deg);
+      }
+      [dir="rtl"] .ag-back-link::before {
+        transform: rotate(135deg);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="ag-skip-link" href="#main">Skip to main content</a>
+
+    <section class="ag-banner" aria-label="Official website notice">
+      <div class="ag-container ag-banner__inner">
+        <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+        <p class="ag-banner__text" data-docs-string="banner">An official website of the Federal Republic of Nigeria</p>
+        <details class="ag-banner__details">
+          <summary data-docs-string="banner-how">How you know this is official</summary>
+          <p data-docs-string="banner-domain">Official websites use .gov.ng</p>
+          <p data-docs-string="banner-secure">Secure .gov.ng websites use HTTPS</p>
+        </details>
+      </div>
+    </section>
+
+    <header class="ag-header">
+      <div class="ag-container ag-header__inner">
+        <a class="ag-header__brand" href="home.html">
+          <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>
+            <span class="ag-header__org">Ministry of Interior</span>
+            <span class="ag-header__sub" data-docs-string="government">Federal Republic of Nigeria</span>
+          </span>
+        </a>
+        <button class="ag-header__toggle" type="button" aria-expanded="false" aria-controls="nav" data-ag-toggle>
+          Menu
+        </button>
+        <nav class="ag-header__nav" id="nav" aria-label="Main">
+          <ul class="ag-nav">
+            <li><a class="ag-nav__link" href="home.html">Home</a></li>
+            <li><a class="ag-nav__link" href="start.html" aria-current="page">Services</a></li>
+            <li><a class="ag-nav__link" href="home.html#news">News</a></li>
+            <li><a class="ag-nav__link" href="home.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="ag-main ag-container" id="main" tabindex="-1">
+      <a class="ag-back-link" href="question.html">Back</a>
+      <div class="ag-prose">
+        <h1 class="ag-heading-xl">Check your answers before sending your application</h1>
+      </div>
+      <h2>Your details</h2>
+      <dl class="ag-summary">
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key">Name</dt>
+          <dd class="ag-summary__value">Amina Bello</dd>
+          <dd class="ag-summary__action">
+            <a href="question.html">Change<span class="ag-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key">Date of birth</dt>
+          <dd class="ag-summary__value">27 March 1990</dd>
+          <dd class="ag-summary__action">
+            <a href="question.html">Change<span class="ag-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key"><span data-docs-string="id-name">National Identification Number</span></dt>
+          <dd class="ag-summary__value">1234 5678 901</dd>
+          <dd class="ag-summary__action">
+            <a href="question.html">Change<span class="ag-visually-hidden"> ID number</span></a>
+          </dd>
+        </div>
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key">Current passport</dt>
+          <dd class="ag-summary__value">Yes, A12345678</dd>
+          <dd class="ag-summary__action">
+            <a href="question.html">Change<span class="ag-visually-hidden"> current passport</span></a>
+          </dd>
+        </div>
+      </dl>
+      <form action="confirmation.html" method="get">
+        <div class="ag-prose">
+          <h2>Now send your application</h2>
+          <p>
+            By sending this application you confirm that, to the best of your knowledge, the details you are providing
+            are correct.
+          </p>
+        </div>
+        <div class="ag-field">
+          <label class="ag-checkbox"
+            ><input type="checkbox" name="declare" value="yes" /><span class="ag-checkbox__label"
+              >I confirm that the details above are correct</span
+            ></label
+          >
+        </div>
+        <button class="ag-button" type="submit">Accept and send</button>
+      </form>
+    </main>
+
+    <footer class="ag-footer">
+      <div class="ag-container">
+        <div class="ag-footer__columns">
+          <div>
+            <h2 class="ag-footer__heading">Services</h2>
+            <ul class="ag-footer__list">
+              <li><a href="start.html">Renew a passport</a></li>
+              <li><a href="home.html">All services</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="ag-footer__heading">Help</h2>
+            <ul class="ag-footer__list">
+              <li><a href="home.html#contact">Contact us</a></li>
+              <li><a href="home.html#accessibility">Accessibility statement</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ag-footer__bar">
+          <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+          <p>© Ministry of Interior</p>
+          <ul class="ag-footer__legal">
+            <li><a href="home.html#privacy">Privacy</a></li>
+            <li><a href="home.html#terms">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/afrigov@0.3/dist/afrigov.iife.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Do you have your current passport? – Ministry of Interior</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.3/dist/core.min.css" />
+    <!-- Replace ng with your country's pack. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.3/dist/ng.min.css" id="pack-css" />
+    <style>
+      /* A back link and a legend-as-heading are small enough to keep in the page. */
+      .ag-back-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: var(--ag-size-target);
+        margin-bottom: var(--ag-space-4);
+      }
+      .ag-back-link::before {
+        content: "";
+        width: 0.45em;
+        height: 0.45em;
+        margin-inline-end: var(--ag-space-2);
+        border-top: 2px solid currentcolor;
+        border-inline-start: 2px solid currentcolor;
+        transform: rotate(-45deg);
+      }
+      [dir="rtl"] .ag-back-link::before {
+        transform: rotate(135deg);
+      }
+      .ag-heading-legend {
+        margin: 0;
+        font-size: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="ag-skip-link" href="#main">Skip to main content</a>
+
+    <section class="ag-banner" aria-label="Official website notice">
+      <div class="ag-container ag-banner__inner">
+        <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+        <p class="ag-banner__text" data-docs-string="banner">An official website of the Federal Republic of Nigeria</p>
+        <details class="ag-banner__details">
+          <summary data-docs-string="banner-how">How you know this is official</summary>
+          <p data-docs-string="banner-domain">Official websites use .gov.ng</p>
+          <p data-docs-string="banner-secure">Secure .gov.ng websites use HTTPS</p>
+        </details>
+      </div>
+    </section>
+
+    <header class="ag-header">
+      <div class="ag-container ag-header__inner">
+        <a class="ag-header__brand" href="home.html">
+          <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>
+            <span class="ag-header__org">Ministry of Interior</span>
+            <span class="ag-header__sub" data-docs-string="government">Federal Republic of Nigeria</span>
+          </span>
+        </a>
+        <button class="ag-header__toggle" type="button" aria-expanded="false" aria-controls="nav" data-ag-toggle>
+          Menu
+        </button>
+        <nav class="ag-header__nav" id="nav" aria-label="Main">
+          <ul class="ag-nav">
+            <li><a class="ag-nav__link" href="home.html">Home</a></li>
+            <li><a class="ag-nav__link" href="start.html" aria-current="page">Services</a></li>
+            <li><a class="ag-nav__link" href="home.html#news">News</a></li>
+            <li><a class="ag-nav__link" href="home.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="ag-main ag-container" id="main" tabindex="-1">
+      <a class="ag-back-link" href="start.html">Back</a>
+      <form action="check-answers.html" method="get" novalidate>
+        <fieldset class="ag-field">
+          <legend class="ag-legend ag-legend--xl">
+            <h1 class="ag-heading-legend">Do you have your current passport?</h1>
+          </legend>
+          <span class="ag-hint" id="have-hint">We need its number to match your record.</span>
+          <div class="ag-choices" aria-describedby="have-hint">
+            <label class="ag-radio"
+              ><input type="radio" name="have" value="yes" /><span class="ag-radio__label">Yes</span></label
+            >
+            <label class="ag-radio"
+              ><input type="radio" name="have" value="no" /><span class="ag-radio__label"
+                >No <span class="ag-radio__hint">It is lost, stolen or damaged</span></span
+              ></label
+            >
+          </div>
+        </fieldset>
+        <button class="ag-button" type="submit">Continue</button>
+      </form>
+    </main>
+
+    <footer class="ag-footer">
+      <div class="ag-container">
+        <div class="ag-footer__columns">
+          <div>
+            <h2 class="ag-footer__heading">Services</h2>
+            <ul class="ag-footer__list">
+              <li><a href="start.html">Renew a passport</a></li>
+              <li><a href="home.html">All services</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="ag-footer__heading">Help</h2>
+            <ul class="ag-footer__list">
+              <li><a href="home.html#contact">Contact us</a></li>
+              <li><a href="home.html#accessibility">Accessibility statement</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ag-footer__bar">
+          <span class="ag-flag" aria-hidden="true"><span></span><span></span><span></span></span>
+          <p>© Ministry of Interior</p>
+          <ul class="ag-footer__legal">
+            <li><a href="home.html#privacy">Privacy</a></li>
+            <li><a href="home.html#terms">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/afrigov@0.3/dist/afrigov.iife.js"></script>
+  </body>
+</html>
