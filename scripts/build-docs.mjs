@@ -147,10 +147,16 @@ ${langs.join("")}
     )
     .join("");
   const codes = packs.map((p) => p.code);
-  const options =
-    `<option value="core">Neutral</option>` +
-    packs.map((p) => `<option value="${p.code}">${p.country}</option>`).join("");
-  return { pages, table, count: packs.length, codes, options };
+  const flagOf = (p) =>
+    `<span class="ag-flag" aria-hidden="true" style="--ag-flag-direction: ${p.flagDirection ?? "row"}; ${p.flag
+      .map((c, i) => `--ag-flag-${i + 1}: ${c}`)
+      .join("; ")}"><span></span><span></span><span></span></span>`;
+  const links =
+    `<li><a href="?pack=core" data-docs-pack-link="core"><span class="docs-pack__neutral" aria-hidden="true"></span>Neutral</a></li>` +
+    packs
+      .map((p) => `<li><a href="?pack=${p.code}" data-docs-pack-link="${p.code}">${flagOf(p)}${p.country}</a></li>`)
+      .join("");
+  return { pages, table, count: packs.length, codes, links };
 }
 
 function tokensTable() {
@@ -220,7 +226,7 @@ export function buildDocs() {
       .replace(/\{\{description\}\}/g, page.description ?? "")
       .replace(/\{\{root\}\}/g, root)
       .replace(/\{\{packList\}\}/g, JSON.stringify(packs.codes))
-      .replace(/\{\{packOptions\}\}/g, packs.options)
+      .replace(/\{\{packLinks\}\}/g, packs.links)
       .replace(/\{\{topnav\}\}/g, topnav)
       .replace(/\{\{sidebar\}\}/g, sidebar)
       .replace(/\{\{layoutClass\}\}/g, sidebar ? "docs-layout docs-layout--sidebar" : "docs-layout")

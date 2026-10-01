@@ -3,16 +3,23 @@
 // currency, national ID and regions from the selected pack.
 (function () {
   var pack = document.documentElement.getAttribute("data-docs-pack") || "core";
-  var select = document.getElementById("pack-select");
-  if (select) {
-    select.value = pack;
-    select.addEventListener("change", function () {
-      try {
-        localStorage.setItem("afrigov-pack", select.value);
-      } catch {
-        /* private mode: the query string still carries the choice */
+  var menu = document.getElementById("pack-menu");
+  if (menu) {
+    var current = menu.querySelector("[data-docs-current]");
+    var names = window.AFRIGOV_PACKS || {};
+    if (current && names[pack]) current.textContent = names[pack].country;
+    menu.querySelectorAll("[data-docs-pack-link]").forEach(function (a) {
+      if (a.getAttribute("data-docs-pack-link") === pack) a.setAttribute("aria-current", "true");
+    });
+    // Close when clicking elsewhere or pressing Escape.
+    document.addEventListener("click", function (e) {
+      if (menu.open && !menu.contains(e.target)) menu.open = false;
+    });
+    menu.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.open) {
+        menu.open = false;
+        menu.querySelector("summary").focus();
       }
-      select.form.submit();
     });
   }
 

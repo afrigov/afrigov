@@ -48,14 +48,16 @@
         <p class="ag-banner__text">
           afrigov is an open-source project. It is not a government website and is not affiliated with any government.
         </p>
-        <form class="docs-pack" method="get" action="" aria-label="Country pack">
-          <span class="ag-flag docs-pack__flag" aria-hidden="true"><span></span><span></span><span></span></span>
-          <label class="docs-pack__label" for="pack-select">Country</label>
-          <select class="ag-select docs-pack__select" id="pack-select" name="pack">
-            {{packOptions}}
-          </select>
-          <button class="ag-button ag-button--secondary docs-pack__apply" type="submit">Apply</button>
-        </form>
+        <details class="docs-pack" id="pack-menu">
+          <summary class="docs-pack__summary">
+            <span class="ag-flag docs-pack__flag" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span class="docs-pack__label">Country</span>
+            <span class="docs-pack__current" data-docs-current>Neutral</span>
+          </summary>
+          <ul class="docs-pack__list">
+            {{packLinks}}
+          </ul>
+        </details>
       </div>
     </div>
 
