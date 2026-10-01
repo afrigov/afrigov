@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Docs site: the header tagline is "Accessible government design system", on one line, so the header is one line shorter.
+
 ## [0.8.6] - 2026-10-02
 
 ### Added

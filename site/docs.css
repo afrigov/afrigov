@@ -552,11 +552,11 @@
 }
 
 /* The site's own header. The documentation has more sections than a service has links, so the
-   brand is narrower, with the tagline on two lines under the name, and the links sit closer together.
-   That keeps the navigation on one row beside the logo. 64em = breakpoint.lg */
+   tagline is short enough for one line and the links sit closer together. That keeps the
+   navigation on one row beside the logo. 64em = breakpoint.lg */
 @media (min-width: 64em) {
-  .docs-site-header .ag-header__brand {
-    max-width: 16rem;
+  .docs-site-header .ag-header__sub {
+    white-space: nowrap;
   }
 
   .docs-site-header .ag-nav {
