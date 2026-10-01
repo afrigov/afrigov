@@ -6,6 +6,21 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-02
+
+The audit release. The command-line checker lives in its own package, [afrigov-audit](https://github.com/omoyolab/afrigov-audit); this repository gains the scoreboard that uses it.
+
+### Added
+
+- Accessibility check scoreboard: `scoreboard/sites.json` lists thirty public services across the six pack countries, `scripts/scoreboard.mjs` audits them with afrigov-audit, and the docs render a page grouped by country with each site's biggest problem and the component that fixes it. The page appears once results are committed; the monthly workflow is enabled at first publication after courtesy notices to each site.
+- A re-check issue template for sites that have fixed problems or dispute a result.
+- Logo: the focus-ring mark in the header, footer, favicon and README, drawn in the pack's primary colour.
+
+### Fixed
+
+- Header: hovering the brand link underlines only the organisation name, not the mark beside it.
+- Documentation asset URLs carry a content hash, so a deploy never pairs new HTML with a cached script or stylesheet.
+
 ## [0.2.0] - 2026-10-02
 
 The African patterns release: the inputs USWDS and GOV.UK do not have, a pack schema, SVG flags, two more countries, and a proper documentation site.
@@ -50,7 +65,8 @@ First release.
 - Tests: 90 unit tests for tokens, contrast maths and build output; Playwright with axe-core on the docs page with every pack; 48px touch-target check; 20 KB gzip budget for the core.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
-[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/omoyolab/afrigov/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/omoyolab/afrigov/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/omoyolab/afrigov/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/omoyolab/afrigov/compare/v0.1.0...v0.1.1
