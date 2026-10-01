@@ -23,8 +23,8 @@ It is not a government project. It is open source, MIT licensed, and built so a 
 Two link tags. The core, then a country pack.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.2/dist/core.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.2/dist/ng.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/core.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.4/dist/ng.min.css" />
 ```
 
 ```html
