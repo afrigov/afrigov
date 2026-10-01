@@ -4,7 +4,7 @@ name: Scoreboard
 # results to scoreboard/results/ and the Docs workflow republishes the page.
 
 on:
-  # Monthly schedule is enabled at first publication; see internal/scoreboard-notice.md.
+  # Monthly schedule is enabled at first publication.
   # schedule:
   #   - cron: "0 6 1 * *"
   workflow_dispatch:

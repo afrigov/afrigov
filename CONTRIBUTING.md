@@ -50,7 +50,7 @@ Treated as the highest priority. Open a bug report with the component, the assis
 
 ### Components
 
-Open an issue first for anything not on the roadmap in `internal/roadmap/`, so we can agree on the shape before you spend a weekend on it. A component needs:
+Open an issue first for anything not on the roadmap in `project/roadmap/`, so we can agree on the shape before you spend a weekend on it. A component needs:
 
 - One CSS file in `src/css/components/`, added to the list in `scripts/build-css.mjs`.
 - Single-class selectors only, `ag-block__element--modifier`. No nesting, no IDs, no element selectors except inside a component class.
@@ -58,7 +58,7 @@ Open an issue first for anything not on the roadmap in `internal/roadmap/`, so w
 - A 48px minimum touch target on anything interactive.
 - Working with JavaScript disabled. If it needs a script, the no-script state must still be usable.
 - A page in `site/pages/components/` (copy an existing one) with a `<docs-example>` block, so the axe tests cover it. `docs/` is generated; never edit it.
-- A line in `internal/components.md` and `CHANGELOG.md`.
+- A line in `project/components.md` and `CHANGELOG.md`.
 
 ### Bugs and docs
 

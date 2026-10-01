@@ -154,9 +154,9 @@ Node 20 or newer and pnpm 10.
 - **0.3**: [afrigov-audit](https://github.com/omoyolab/afrigov-audit), run axe against any site from the command line, and a monthly scoreboard of public services in the pack countries. Shipped; the scoreboard goes public after each site has been notified.
 - **0.4**: Figma library generated from the tokens.
 - **0.4**: right-to-left support with a Morocco pack, and six page templates. Shipped.
-- **1.0**: stable class names, tokens and pack schema. Requires a manual screen-reader pass on every component, and at least one real service built on it. The full definition is in [`internal/roadmap/v1.0.md`](internal/roadmap/v1.0.md).
+- **1.0**: stable class names, tokens and pack schema. Requires a manual screen-reader pass on every component, and at least one real service built on it. The full definition is in [`project/roadmap/v1.0.md`](project/roadmap/v1.0.md).
 
-The detailed component plan per version is in [`internal/`](internal/).
+The detailed component plan per version is in [`project/`](project/).
 
 ## Acknowledgements
 
