@@ -63,7 +63,7 @@ init();
 | `afrigov.js`       | Optional. Collapsible navigation on small screens and focus on the error summary. Every component works without it.                              |
 | `tokens/`          | The source of truth, in the [W3C Design Tokens](https://tr.designtokens.org/format/) format. Published in the package for Figma and other tools. |
 
-**Components:** official-website banner, header and navigation, footer, skip link, button, breadcrumb, pagination, text input, textarea, select, radio, checkbox, input group, error summary, date input, alert, accordion, table, badge, confirmation panel, summary list, inset text.
+**Components:** official-website banner, header and navigation, footer, skip link, button, breadcrumb, pagination, text input, textarea, select, radio, checkbox, input group, phone number, error summary, date input, alert, accordion, table, badge, confirmation panel, summary list, inset text.
 
 ## How accessibility is enforced
 
@@ -148,7 +148,7 @@ Node 20 or newer and pnpm 10.
 
 ## Roadmap
 
-- **0.2** — the African patterns: phone number with country code, national ID input driven by the pack, region selectors, currency display, character count, service card, language switcher. Rwanda and South Africa packs, SVG flags for flags that are not bands, a published pack JSON schema.
+- **0.2** — the African patterns: phone number with country code (shipped), national ID input driven by the pack, region selectors, currency display, character count, service card, language switcher. Rwanda and South Africa packs, SVG flags for flags that are not bands, a published pack JSON schema.
 - **0.3** — `afrigov audit <url>`: run axe against any government site from the command line, and a monthly scoreboard.
 - **0.4** — Figma library generated from the tokens.
 - **1.0** — stable class names, tokens and pack schema. Requires right-to-left support with an Arabic pack, full page templates, a manual screen-reader pass on every component, and at least one real service built on it. The full definition is in [`internal/roadmap/v1.0.md`](internal/roadmap/v1.0.md).

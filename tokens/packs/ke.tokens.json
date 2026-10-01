@@ -1,4 +1,5 @@
 {
+  "$schema": "./pack.schema.json",
   "$description": "Kenya pack. Overrides core colour tokens with the national colours and carries official-website banner strings.",
   "$extensions": {
     "afrigov": {
@@ -41,6 +42,12 @@
         "label": "County",
         "choose": "Choose a county",
         "items": ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Kiambu", "Uasin Gishu"]
+      },
+      "phone": {
+        "code": "+254",
+        "example": "0712 345 678",
+        "hint": "We will send a code by SMS. For example, 0712 345 678",
+        "length": 10
       },
       "examples": {
         "timezone": "East Africa Time",

@@ -1,4 +1,5 @@
 {
+  "$schema": "./pack.schema.json",
   "$description": "Senegal pack. First francophone pack: French is the default language for banner strings, and the currency symbol follows the amount. Overrides core colour tokens with the national colours.",
   "$extensions": {
     "afrigov": {
@@ -23,7 +24,10 @@
           "banner-domain": "Official websites use .gouv.sn",
           "banner-secure": "Secure .gouv.sn websites use HTTPS"
         },
-        "wo": { "banner": null, "$todo": "Wolof translation wanted. Open a PR." }
+        "wo": {
+          "banner": null,
+          "$todo": "Wolof translation wanted. Open a PR."
+        }
       },
       "currency": {
         "code": "XOF",
@@ -46,6 +50,12 @@
         "choose": "Choisissez une région",
         "items": ["Dakar", "Thiès", "Saint-Louis", "Ziguinchor", "Kaolack", "Diourbel"]
       },
+      "phone": {
+        "code": "+221",
+        "example": "77 123 45 67",
+        "hint": "Nous vous enverrons un code par SMS. Par exemple, 77 123 45 67",
+        "length": 9
+      },
       "examples": {
         "timezone": "heure de Dakar",
         "refPrefix": "SN"
@@ -55,13 +65,23 @@
   "official": {
     "$type": "color",
     "$description": "Flag of Senegal: green, yellow and red vertical bands with a green star. Values as commonly published (Wikipedia, Flags of the World); no official government colour specification was found. Green fails WCAG AA on the grey panel background, so the build derives a deeper green for text.",
-    "green": { "$value": "#00853f" },
-    "yellow": { "$value": "#fdef42" },
-    "red": { "$value": "#e31b23" }
+    "green": {
+      "$value": "#00853f"
+    },
+    "yellow": {
+      "$value": "#fdef42"
+    },
+    "red": {
+      "$value": "#e31b23"
+    }
   },
   "color": {
     "$type": "color",
-    "primary": { "$value": "{official.green}" },
-    "accent": { "$value": "{official.yellow}" }
+    "primary": {
+      "$value": "{official.green}"
+    },
+    "accent": {
+      "$value": "{official.yellow}"
+    }
   }
 }

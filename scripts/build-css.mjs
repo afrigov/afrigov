@@ -25,6 +25,7 @@ const COMPONENTS = [
   "form",
   "error-summary",
   "date-input",
+  "phone",
   "alert",
   "accordion",
   "table",

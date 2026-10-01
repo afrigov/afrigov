@@ -47,7 +47,7 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Input group             | `.ag-input-group` (prefix/suffix)          | 0.1     | shipped | Currency and units                                                           |
 | Error summary           | `.ag-error-summary`                        | 0.1     | shipped | JS focuses it on load                                                        |
 | Date input              | `.ag-date-input`                           | 0.1     | shipped | Three fields, no picker                                                      |
-| Phone number            | `.ag-phone`                                | 0.2     | planned | Country code select + national number, `autocomplete="tel"`                  |
+| Phone number            | `.ag-phone`                                | 0.2     | shipped | Dialling code from the pack, national number, `autocomplete="tel-national"`  |
 | National ID             | `.ag-id-input`                             | 0.2     | planned | Per-pack hint text and width (NIN 11 digits, Kenya ID 8, Ghana card 15)      |
 | Region selector         | `.ag-region`                               | 0.2     | planned | State/county/region then LGA/sub-county, data from the pack                  |
 | Currency display        | `.ag-money`                                | 0.2     | planned | Tabular figures, symbol from the pack                                        |

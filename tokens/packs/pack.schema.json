@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoyolab.github.io/afrigov/pack.schema.json",
+  "title": "afrigov country pack",
+  "description": "One JSON file per country. Declares the official national colours, which one is the primary, the flag, banner strings per language, and the country data that inputs and examples read. Validated in the test suite; published in the npm package at tokens/packs/pack.schema.json.",
+  "type": "object",
+  "required": ["$extensions", "official", "color"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "$description": { "type": "string" },
+    "$extensions": {
+      "type": "object",
+      "required": ["afrigov"],
+      "properties": {
+        "afrigov": {
+          "type": "object",
+          "required": [
+            "code",
+            "country",
+            "government",
+            "domain",
+            "flag",
+            "strings",
+            "currency",
+            "id",
+            "regions",
+            "phone",
+            "examples"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "type": "string",
+              "pattern": "^[a-z]{2}$",
+              "description": "ISO 3166-1 alpha-2, lower case. Also the stylesheet name."
+            },
+            "country": { "type": "string", "minLength": 1 },
+            "government": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The formal name used on official sites, in the pack's default language."
+            },
+            "domain": {
+              "type": "string",
+              "pattern": "^\\.[a-z.]+$",
+              "description": "The official second-level domain, like .gov.ng or .go.ke."
+            },
+            "language": {
+              "type": "string",
+              "pattern": "^[a-z]{2,3}$",
+              "default": "en",
+              "description": "Default language for strings. Must be a key of strings."
+            },
+            "flag": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 6,
+              "items": { "$ref": "#/$defs/colorRef" },
+              "description": "Stripe colours in order, as {official.name} references."
+            },
+            "flagDirection": {
+              "enum": ["row", "column"],
+              "default": "row",
+              "description": "row for vertical bands, column for horizontal."
+            },
+            "strings": {
+              "type": "object",
+              "minProperties": 1,
+              "propertyNames": { "pattern": "^[a-z]{2,3}$" },
+              "additionalProperties": { "$ref": "#/$defs/strings" }
+            },
+            "currency": {
+              "type": "object",
+              "required": ["code", "symbol", "hint"],
+              "additionalProperties": false,
+              "properties": {
+                "code": { "type": "string", "pattern": "^[A-Z]{3}$" },
+                "symbol": { "type": "string", "minLength": 1 },
+                "position": { "enum": ["prefix", "suffix"], "default": "prefix" },
+                "locale": { "type": "string", "description": "BCP 47 tag for number formatting, like fr or en-NG." },
+                "name": { "type": "string" },
+                "hint": { "type": "string", "description": "Shown under an amount field, like \"In naira\"." }
+              }
+            },
+            "id": {
+              "type": "object",
+              "required": ["name", "short", "document", "hint"],
+              "additionalProperties": false,
+              "properties": {
+                "name": { "type": "string", "description": "Full name of the number, used as a field label." },
+                "short": { "type": "string", "description": "Short form used in sentences." },
+                "document": { "type": "string", "description": "The physical document it appears on." },
+                "hint": { "type": "string" },
+                "length": {
+                  "type": "integer",
+                  "minimum": 4,
+                  "maximum": 32,
+                  "description": "Characters, including separators."
+                },
+                "pattern": {
+                  "type": "string",
+                  "description": "A regular expression for client-side checking, without anchors."
+                },
+                "authority": {
+                  "type": "string",
+                  "description": "Who issues it, as used in a sentence: \"contact NIMC\"."
+                },
+                "$note": { "type": "string" }
+              }
+            },
+            "regions": {
+              "type": "object",
+              "required": ["label", "choose", "items"],
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "description": "What the first-level division is called: State, County, Region."
+                },
+                "choose": { "type": "string", "description": "The empty first option: \"Choose a state\"." },
+                "items": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+              }
+            },
+            "phone": {
+              "type": "object",
+              "required": ["code", "example", "hint"],
+              "additionalProperties": false,
+              "properties": {
+                "code": {
+                  "type": "string",
+                  "pattern": "^\\+[0-9]{1,4}$",
+                  "description": "International dialling code."
+                },
+                "example": { "type": "string", "description": "A national number as people write it, with spaces." },
+                "hint": { "type": "string" },
+                "length": {
+                  "type": "integer",
+                  "minimum": 6,
+                  "maximum": 15,
+                  "description": "Digits in the national number as people write it."
+                }
+              }
+            },
+            "examples": {
+              "type": "object",
+              "required": ["timezone", "refPrefix"],
+              "additionalProperties": false,
+              "properties": {
+                "timezone": { "type": "string", "description": "As said in a sentence: \"West Africa Time\"." },
+                "refPrefix": { "type": "string", "pattern": "^[A-Z]{2,4}$" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "official": {
+      "type": "object",
+      "description": "Exact national colours, named. Used for the flag and decoration only.",
+      "properties": {
+        "$type": { "const": "color" },
+        "$description": { "type": "string" }
+      },
+      "additionalProperties": { "$ref": "#/$defs/colorToken" },
+      "minProperties": 2
+    },
+    "color": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "$type": { "const": "color" },
+        "primary": { "$ref": "#/$defs/colorValueOrRef" },
+        "accent": { "$ref": "#/$defs/colorValueOrRef" }
+      },
+      "additionalProperties": { "$ref": "#/$defs/colorValueOrRef" }
+    }
+  },
+  "$defs": {
+    "hex": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+    "colorRef": { "type": "string", "pattern": "^\\{official\\.[a-z-]+\\}$" },
+    "colorToken": {
+      "type": "object",
+      "required": ["$value"],
+      "properties": { "$value": { "$ref": "#/$defs/hex" }, "$description": { "type": "string" } }
+    },
+    "colorValueOrRef": {
+      "type": "object",
+      "required": ["$value"],
+      "properties": {
+        "$value": { "anyOf": [{ "$ref": "#/$defs/hex" }, { "$ref": "#/$defs/colorRef" }] },
+        "$description": { "type": "string" }
+      }
+    },
+    "strings": {
+      "type": "object",
+      "properties": {
+        "banner": { "type": ["string", "null"] },
+        "banner-how": { "type": ["string", "null"] },
+        "banner-domain": { "type": ["string", "null"] },
+        "banner-secure": { "type": ["string", "null"] },
+        "$note": { "type": "string" },
+        "$todo": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

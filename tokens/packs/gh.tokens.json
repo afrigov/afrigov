@@ -1,4 +1,5 @@
 {
+  "$schema": "./pack.schema.json",
   "$description": "Ghana pack. Overrides core colour tokens with the national colours and carries official-website banner strings.",
   "$extensions": {
     "afrigov": {
@@ -15,8 +16,14 @@
           "banner-domain": "Official websites use .gov.gh",
           "banner-secure": "Secure .gov.gh websites use HTTPS"
         },
-        "ak": { "banner": null, "$todo": "Akan (Twi) translation wanted. Open a PR." },
-        "ee": { "banner": null, "$todo": "Ewe translation wanted. Open a PR." }
+        "ak": {
+          "banner": null,
+          "$todo": "Akan (Twi) translation wanted. Open a PR."
+        },
+        "ee": {
+          "banner": null,
+          "$todo": "Ewe translation wanted. Open a PR."
+        }
       },
       "currency": {
         "code": "GHS",
@@ -37,6 +44,12 @@
         "choose": "Choose a region",
         "items": ["Greater Accra", "Ashanti", "Northern", "Western", "Central", "Volta"]
       },
+      "phone": {
+        "code": "+233",
+        "example": "024 123 4567",
+        "hint": "We will send a code by SMS. For example, 024 123 4567",
+        "length": 10
+      },
       "examples": {
         "timezone": "Greenwich Mean Time",
         "refPrefix": "GH"
@@ -46,14 +59,26 @@
   "official": {
     "$type": "color",
     "$description": "Flag of Ghana: red, gold and green horizontal bands with a black star. Values as published by the Ghana Government Portal brand assets and widely reproduced (Wikipedia, Flags of the World). Gold fails WCAG AA as text, so it is accent only; the build would derive a deeper gold if it were ever made primary.",
-    "red": { "$value": "#ce1126" },
-    "gold": { "$value": "#fcd116" },
-    "green": { "$value": "#006b3f" },
-    "black": { "$value": "#000000" }
+    "red": {
+      "$value": "#ce1126"
+    },
+    "gold": {
+      "$value": "#fcd116"
+    },
+    "green": {
+      "$value": "#006b3f"
+    },
+    "black": {
+      "$value": "#000000"
+    }
   },
   "color": {
     "$type": "color",
-    "primary": { "$value": "{official.green}" },
-    "accent": { "$value": "{official.gold}" }
+    "primary": {
+      "$value": "{official.green}"
+    },
+    "accent": {
+      "$value": "{official.gold}"
+    }
   }
 }

@@ -40,6 +40,8 @@
     "currency-hint": cur.hint,
     "region-label": reg.label,
     "region-choose": reg.choose,
+    "phone-hint": meta.phone && meta.phone.hint,
+    "phone-example": meta.phone && meta.phone.example,
     timezone: ex.timezone,
     ref: ex.refPrefix ? ex.refPrefix + "-2026-004512" : null,
   };
@@ -62,6 +64,14 @@
     while (sel.options.length > 1) sel.remove(1);
     reg.items.forEach(function (name) {
       sel.add(new Option(name));
+    });
+  });
+  // Dialling-code select: every pack's code, with the current pack's selected.
+  document.querySelectorAll("[data-docs-phone-codes]").forEach(function (sel) {
+    while (sel.options.length) sel.remove(0);
+    Object.keys(names).forEach(function (k) {
+      var ph = names[k].phone;
+      if (ph) sel.add(new Option(ph.code + " " + names[k].country, ph.code, false, k === pack));
     });
   });
   document.querySelectorAll("[data-docs-money]").forEach(function (td) {

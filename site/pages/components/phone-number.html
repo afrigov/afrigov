@@ -1,0 +1,61 @@
+<!-- { "title": "Phone number", "section": "components", "description": "A dialling code and a national number, with the code prefilled from the country pack.", "order": 135 } -->
+<h1>Phone number</h1>
+<p class="ag-lead">
+  A dialling code and a national number. The code comes prefilled from the country pack, and people type the number the
+  way they already write it.
+</p>
+
+<h2>When to use</h2>
+<p>
+  Whenever a service will call or text someone. SMS is how most African services confirm identity and send references,
+  so this is usually the most important field on the page.
+</p>
+
+<h2>When not to use</h2>
+<p>For a landline extension or a number that is never dialled by the service. A plain text input is enough there.</p>
+
+<docs-example>
+  <fieldset class="ag-field ag-mb-0" aria-describedby="ph-hint">
+    <legend class="ag-legend">Phone number</legend>
+    <span class="ag-hint" id="ph-hint" data-docs-string="phone-hint">We will send a code by SMS to this number</span>
+    <div class="ag-phone">
+      <div class="ag-phone__item ag-phone__item--code">
+        <label class="ag-phone__label" for="ph-code">Country code</label>
+        <select class="ag-select" id="ph-code" name="phone-code" autocomplete="tel-country-code" data-docs-phone-codes>
+          <option value="+233">+233</option>
+          <option value="+254">+254</option>
+          <option value="+234">+234</option>
+          <option value="+221">+221</option>
+        </select>
+      </div>
+      <div class="ag-phone__item ag-phone__item--number">
+        <label class="ag-phone__label" for="ph-number">Number</label>
+        <input class="ag-input" id="ph-number" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" />
+      </div>
+    </div>
+  </fieldset>
+</docs-example>
+<p class="docs-fine">
+  Preview a country at the top: the code is preselected and the hint shows that country's example.
+</p>
+
+<h2>How it works</h2>
+<ul>
+  <li>The question is the <code>legend</code>. Each control has its own visible label, like the date input.</li>
+  <li>Preselect the pack's dialling code. Most people entering a number live in the country the service is for.</li>
+  <li>Accept the national format with or without the leading zero, with or without spaces. Normalise on the server.</li>
+  <li>Put an example in the hint. Each pack carries one in the local style.</li>
+  <li>
+    <code>type="tel"</code> opens the phone keypad; <code>autocomplete="tel-national"</code> lets the browser fill it.
+  </li>
+</ul>
+
+<h2>Errors</h2>
+<p>
+  Mark the fieldset with <code>ag-field--error</code>, put one message above the controls, and link to the number field
+  from the <a href="error-summary.html">error summary</a>. Say what a valid number looks like: "Enter a phone number,
+  like 0803 000 0000".
+</p>
+
+<h2>Pack fields</h2>
+<p><code>phone.code</code>, <code>phone.example</code>, <code>phone.hint</code>, <code>phone.length</code>.</p>

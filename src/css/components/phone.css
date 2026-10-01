@@ -1,0 +1,29 @@
+/* Phone number. A dialling-code select and a national number field inside one
+   fieldset. The code comes prefilled from the country pack. */
+.ag-phone {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ag-space-3);
+}
+
+.ag-phone__item {
+  display: block;
+}
+
+.ag-phone__label {
+  display: block;
+  margin-bottom: var(--ag-space-1);
+}
+
+.ag-phone__item--code .ag-select {
+  width: auto;
+  min-width: 7.5rem;
+}
+
+.ag-phone__item--number {
+  flex: 1 1 12rem;
+}
+
+.ag-phone__item--number .ag-input {
+  max-width: 20rem;
+}

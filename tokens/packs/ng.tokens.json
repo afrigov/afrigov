@@ -1,4 +1,5 @@
 {
+  "$schema": "./pack.schema.json",
   "$description": "Nigeria pack. Overrides core colour tokens with the national colours and carries official-website banner strings.",
   "$extensions": {
     "afrigov": {
@@ -46,6 +47,12 @@
         "label": "State",
         "choose": "Choose a state",
         "items": ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Lagos", "Kano"]
+      },
+      "phone": {
+        "code": "+234",
+        "example": "0803 000 0000",
+        "hint": "We will send a code by SMS. For example, 0803 000 0000",
+        "length": 11
       },
       "examples": {
         "timezone": "West Africa Time",

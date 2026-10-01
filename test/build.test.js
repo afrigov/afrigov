@@ -31,6 +31,7 @@ describe("dist/core.css", () => {
       ".ag-radio",
       ".ag-error-summary",
       ".ag-date-input",
+      ".ag-phone",
       ".ag-alert",
       ".ag-accordion",
       ".ag-table",
