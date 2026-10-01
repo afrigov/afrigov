@@ -22,8 +22,11 @@
   text-decoration: none;
 }
 
-.ag-header__brand:hover {
+/* Underline only the name on hover, never the mark beside it. */
+.ag-header__brand:hover .ag-header__org {
   text-decoration: underline;
+  text-decoration-thickness: max(3px, 0.1875em);
+  text-underline-offset: 0.15em;
 }
 
 .ag-header__brand:visited {
