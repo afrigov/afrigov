@@ -33,6 +33,24 @@ jobs:
           echo "core.min.css gzip: $(gzip -c dist/core.min.css | wc -c) bytes" >> "$GITHUB_STEP_SUMMARY"
           echo "afrigov.iife.js: $(wc -c < dist/afrigov.iife.js) bytes" >> "$GITHUB_STEP_SUMMARY"
 
+  release-pending:
+    name: Is package.json released?
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Warn when the version on main has no tag yet
+        run: |
+          PKG="v$(node -p "require('./package.json').version")"
+          if git tag --list "$PKG" | grep -q .; then
+            echo "$PKG is tagged." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning title=Release pending::package.json is at $PKG but there is no $PKG tag. Run the Release workflow when main is ready to ship."
+            echo "**Release pending:** $PKG is on main but not tagged. Actions → Release → Run workflow." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
   a11y:
     name: axe-core and touch targets
     runs-on: ubuntu-latest
