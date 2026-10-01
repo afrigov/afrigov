@@ -23,7 +23,7 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Breadcrumb              | `.ag-breadcrumb`         | 0.1     | shipped |                                                                      |
 | Pagination              | `.ag-pagination`         | 0.1     | shipped |                                                                      |
 | Language switcher       | `.ag-lang`               | 0.2     | shipped | Links with hreflang and lang, current marked, endonyms               |
-| Cookie / consent banner | `.ag-consent`            | —       | cut     | Government sites should not need tracking cookies. Revisit if asked. |
+| Cookie / consent banner | `.ag-consent`            | none    | cut     | Government sites should not need tracking cookies. Revisit if asked. |
 
 ## Actions
 
@@ -54,8 +54,8 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Character count         | `.ag-char-count`                           | 0.2     | shipped | Script updates the message; live region after a pause                        |
 | File upload             | `.ag-file`                                 | 0.3     | planned | Native input restyled                                                        |
 | Password with show/hide | `.ag-password`                             | 0.3     | planned | Needs JS                                                                     |
-| Autocomplete / combobox | —                                          | —       | cut     | Too heavy for the budget and fragile with AT. Recommend native `<datalist>`. |
-| Date picker             | —                                          | —       | cut     | Deliberate. See decisions/003-no-date-picker.md                              |
+| Autocomplete / combobox | none                                       | none    | cut     | Too heavy for the budget and fragile with AT. Recommend native `<datalist>`. |
+| Date picker             | none                                       | none    | cut     | Deliberate. See decisions/003-no-date-picker.md                              |
 
 ## Feedback and content
 
@@ -73,9 +73,9 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Notification count | `.ag-count`                         | 0.3     | planned |                                                                                               |
 | Step indicator     | `.ag-steps`                         | 0.3     | planned | Multi-page forms                                                                              |
 | Service card       | `.ag-card`                          | 0.2     | shipped | Stretched link, focus ring on the card                                                        |
-| Modal dialog       | —                                   | —       | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need. |
-| Toast              | —                                   | —       | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                 |
-| Carousel           | —                                   | —       | cut     | Never.                                                                                        |
+| Modal dialog       | none                                | none    | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need. |
+| Toast              | none                                | none    | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                 |
+| Carousel           | none                                | none    | cut     | Never.                                                                                        |
 
 ## Tooling and packs
 
@@ -89,4 +89,4 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | South Africa (za)     | 0.2     | shipped | SVG Y flag, eleven languages listed, nine wanted                                |
 | `afrigov audit <url>` | 0.3     | planned | axe against any URL from the CLI. See roadmap/v0.3.md                           |
 | Figma tokens export   | 0.4     | planned | From `tokens/*.json`                                                            |
-| React wrappers        | —       | cut     | Plain HTML classes work in every framework. Revisit only on demand.             |
+| React wrappers        | none    | cut     | Plain HTML classes work in every framework. Revisit only on demand.             |

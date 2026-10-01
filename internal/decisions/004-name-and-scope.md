@@ -1,4 +1,4 @@
-# 004 — Named afrigov, published unscoped, not a Nigerian project
+# 004: Named afrigov, published unscoped, not a Nigerian project
 
 **Date:** 2026-09-30. **Status:** accepted.
 

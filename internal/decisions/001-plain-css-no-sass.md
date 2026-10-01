@@ -1,4 +1,4 @@
-# 001 — Plain CSS with custom properties, no Sass, no framework
+# 001: Plain CSS with custom properties, no Sass, no framework
 
 **Date:** 2026-09-30. **Status:** accepted.
 

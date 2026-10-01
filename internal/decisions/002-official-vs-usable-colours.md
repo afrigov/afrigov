@@ -1,4 +1,4 @@
-# 002 — Official colours are decorative; usable colours are derived
+# 002: Official colours are decorative; usable colours are derived
 
 **Date:** 2026-09-30. **Status:** accepted.
 

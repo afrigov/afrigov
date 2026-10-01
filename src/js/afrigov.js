@@ -1,5 +1,5 @@
 /**
- * afrigov.js — optional progressive enhancement.
+ * afrigov.js: optional progressive enhancement.
  *
  * Every component works without this file. It adds:
  *  - a collapsible header navigation on small screens ([data-ag-toggle])

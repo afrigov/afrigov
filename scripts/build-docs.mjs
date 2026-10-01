@@ -118,10 +118,10 @@ ${langs.join("")}
 
 <h2>Country data</h2>
 <dl class="ag-summary">
-  <div class="ag-summary__row"><dt class="ag-summary__key">Currency</dt><dd class="ag-summary__value">${p.currency?.code ?? "—"}, <code>${p.currency?.symbol ?? ""}</code> ${p.currency?.position === "suffix" ? "after the amount" : "before the amount"}</dd></div>
-  <div class="ag-summary__row"><dt class="ag-summary__key">National ID</dt><dd class="ag-summary__value">${p.id?.name ?? "—"}${p.id?.document ? ` on the ${p.id.document}` : ""}${p.id?.length ? `, ${p.id.length} characters` : ""}${p.id?.authority ? `. Issued by ${p.id.authority}.` : ""}</dd></div>
+  <div class="ag-summary__row"><dt class="ag-summary__key">Currency</dt><dd class="ag-summary__value">${p.currency?.code ?? "not set"}, <code>${p.currency?.symbol ?? ""}</code> ${p.currency?.position === "suffix" ? "after the amount" : "before the amount"}</dd></div>
+  <div class="ag-summary__row"><dt class="ag-summary__key">National ID</dt><dd class="ag-summary__value">${p.id?.name ?? "not set"}${p.id?.document ? ` on the ${p.id.document}` : ""}${p.id?.length ? `, ${p.id.length} characters` : ""}${p.id?.authority ? `. Issued by ${p.id.authority}.` : ""}</dd></div>
   <div class="ag-summary__row"><dt class="ag-summary__key">${p.regions?.label ?? "Regions"}</dt><dd class="ag-summary__value">${(p.regions?.items ?? []).join(", ")}</dd></div>
-  <div class="ag-summary__row"><dt class="ag-summary__key">Time zone</dt><dd class="ag-summary__value">${p.examples?.timezone ?? "—"}</dd></div>
+  <div class="ag-summary__row"><dt class="ag-summary__key">Time zone</dt><dd class="ag-summary__value">${p.examples?.timezone ?? "not set"}</dd></div>
 </dl>
 
 <h2>Help wanted</h2>
@@ -243,7 +243,7 @@ export function buildDocs() {
       .replace(
         /\{\{title\}\}/g,
         page.path === "index.html"
-          ? "afrigov — open-source components for accessible African public-service websites"
+          ? "afrigov: open-source components for accessible African public-service websites"
           : `${page.title} – afrigov`,
       )
       .replace(/\{\{description\}\}/g, page.description ?? "")

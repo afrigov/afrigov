@@ -17,6 +17,9 @@ importers:
       '@playwright/test':
         specifier: ^1.58.0
         version: 1.63.0
+      afrigov-audit:
+        specifier: ^0.1.0
+        version: 0.1.0(playwright-core@1.63.0)
       ajv:
         specifier: ^8.20.0
         version: 8.20.0
@@ -484,6 +487,11 @@ packages:
   acorn@8.18.0:
     resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
     engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  afrigov-audit@0.1.0:
+    resolution: {integrity: sha512-/2/xJSZgLl8cuR9B7cvwW7IQbHsxkG7OFC2rIz9fBpBps95EHHA2RSV/LT4YkrLIWuLR+6W18yHXIipDY9E5Lg==}
+    engines: {node: '>=20'}
     hasBin: true
 
   ajv@6.15.0:
@@ -1580,6 +1588,14 @@ snapshots:
       acorn: 8.18.0
 
   acorn@8.18.0: {}
+
+  afrigov-audit@0.1.0(playwright-core@1.63.0):
+    dependencies:
+      '@axe-core/playwright': 4.13.0(playwright-core@1.63.0)
+      axe-core: 4.13.0
+      playwright: 1.63.0
+    transitivePeerDependencies:
+      - playwright-core
 
   ajv@6.15.0:
     dependencies:

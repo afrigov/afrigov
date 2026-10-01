@@ -1,4 +1,4 @@
-# 003 — No date picker, no modal, no toast, no carousel
+# 003: No date picker, no modal, no toast, no carousel
 
 **Date:** 2026-09-30. **Status:** accepted.
 
