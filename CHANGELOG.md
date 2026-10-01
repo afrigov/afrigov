@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.4] - 2026-10-02
+
+### Changed
+
+- Footer: columns are at least 10rem wide instead of 12rem, so four fit in one row on smaller laptops. The docs say how the columns wrap.
+
 ## [0.8.3] - 2026-10-02
 
 ### Fixed

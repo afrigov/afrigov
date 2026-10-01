@@ -23,7 +23,8 @@
 .ag-footer__columns {
   display: grid;
   gap: var(--ag-space-5);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  /* As many columns as fit, each at least 10rem: four across on a laptop, two on a tablet, one on a small phone. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
   margin-bottom: var(--ag-space-6);
 }
 
@@ -61,7 +62,10 @@
   border-top: 1px solid var(--ag-color-ink-muted);
 }
 
+/* The line of text wraps beside the flag instead of pushing the flag onto its own line. */
 .ag-footer__bar p {
+  flex: 1 1 12rem;
+  min-width: 0;
   margin: 0;
 }
 
