@@ -192,7 +192,7 @@ export function buildDocs() {
   // Cache-busting: a short hash of everything the layout loads, so a deploy
   // never pairs new HTML with a stale cached script or stylesheet.
   const hash = createHash("sha1");
-  for (const f of ["dist/core.min.css", "dist/afrigov.iife.js", "dist/packs.js", "site/docs.css", "site/docs.js"]) {
+  for (const f of ["dist/core.min.css", "dist/afrigov.iife.js", "docs/dist/packs.js", "site/docs.css", "site/docs.js"]) {
     hash.update(readFileSync(join(ROOT, f)));
   }
   for (const f of readdirSync(join(ROOT, "dist")).filter((f) => /^[a-z]{2}\.min\.css$/.test(f))) {
