@@ -114,7 +114,7 @@ A pack is one JSON file in [`tokens/packs/`](tokens/packs). It declares the offi
 
 The build derives `primary-hover`, `on-primary`, `primary-tint`, `link` and `link-hover`, checks every pair, and writes `dist/ke.css`. To add a country, copy a pack, change the values, run `pnpm test`, open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-country-pack).
 
-Packs wanted: Ghana, Rwanda, South Africa, Uganda, Tanzania, Ethiopia, Senegal, Côte d'Ivoire, Egypt, Morocco. Translations wanted for the Nigerian banner in Hausa, Yoruba and Igbo.
+Packs wanted: Rwanda, South Africa, Uganda, Tanzania, Ethiopia, Senegal, Côte d'Ivoire, Egypt, Morocco. Translations wanted for the Nigerian banner in Hausa, Yoruba and Igbo.
 
 ## Theming
 

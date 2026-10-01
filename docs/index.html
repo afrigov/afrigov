@@ -15,7 +15,7 @@
       // Pack switcher. Reads ?pack=xx and loads that pack before first paint.
       // With no pack, or with JavaScript off, the page shows the neutral core.
       (function () {
-        var packs = ["ng", "ke"];
+        var packs = ["gh", "ke", "ng"];
         var pack = new URL(location.href).searchParams.get("pack");
         var link = document.getElementById("pack-css");
         if (packs.indexOf(pack) === -1) {
@@ -42,8 +42,9 @@
           <label class="docs-pack__label" for="pack-select">Country</label>
           <select class="ag-select docs-pack__select" id="pack-select" name="pack">
             <option value="core">Neutral</option>
-            <option value="ng">Nigeria</option>
+            <option value="gh">Ghana</option>
             <option value="ke">Kenya</option>
+            <option value="ng">Nigeria</option>
           </select>
           <button class="ag-button ag-button--secondary docs-pack__apply" type="submit">Apply</button>
         </form>
@@ -107,7 +108,7 @@
             </div>
             <div>
               <dt>Country packs</dt>
-              <dd>2</dd>
+              <dd>3</dd>
             </div>
             <div>
               <dt>Contrast</dt>
@@ -204,6 +205,12 @@ init();</code></pre>
                   <td><code>#008751</code></td>
                   <td><code>#007d4b</code> derived (4.13:1 on grey was not enough)</td>
                   <td>English. Hausa, Yoruba, Igbo wanted.</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>gh.css</code> Ghana</th>
+                  <td><code>#006b3f</code></td>
+                  <td><code>#006b3f</code> unchanged (6.6:1). Gold is accent only.</td>
+                  <td>English. Akan, Ewe wanted.</td>
                 </tr>
                 <tr>
                   <th scope="row"><code>ke.css</code> Kenya</th>

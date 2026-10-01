@@ -1,0 +1,59 @@
+{
+  "$description": "Ghana pack. Overrides core colour tokens with the national colours and carries official-website banner strings.",
+  "$extensions": {
+    "afrigov": {
+      "code": "gh",
+      "country": "Ghana",
+      "government": "Republic of Ghana",
+      "domain": ".gov.gh",
+      "flag": ["{official.red}", "{official.gold}", "{official.green}"],
+      "flagDirection": "column",
+      "strings": {
+        "en": {
+          "banner": "An official website of the Government of Ghana",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .gov.gh",
+          "banner-secure": "Secure .gov.gh websites use HTTPS"
+        },
+        "ak": { "banner": null, "$todo": "Akan (Twi) translation wanted. Open a PR." },
+        "ee": { "banner": null, "$todo": "Ewe translation wanted. Open a PR." }
+      },
+      "currency": {
+        "code": "GHS",
+        "symbol": "GH₵",
+        "name": "cedis",
+        "hint": "In Ghana cedis"
+      },
+      "id": {
+        "name": "Ghana Card number",
+        "short": "Ghana Card number",
+        "document": "Ghana Card",
+        "hint": "On the front of your Ghana Card, like GHA-123456789-0",
+        "length": 15,
+        "authority": "the National Identification Authority"
+      },
+      "regions": {
+        "label": "Region",
+        "choose": "Choose a region",
+        "items": ["Greater Accra", "Ashanti", "Northern", "Western", "Central", "Volta"]
+      },
+      "examples": {
+        "timezone": "Greenwich Mean Time",
+        "refPrefix": "GH"
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "$description": "Flag of Ghana: red, gold and green horizontal bands with a black star. Values as published by the Ghana Government Portal brand assets and widely reproduced (Wikipedia, Flags of the World). Gold fails WCAG AA as text, so it is accent only; the build would derive a deeper gold if it were ever made primary.",
+    "red": { "$value": "#ce1126" },
+    "gold": { "$value": "#fcd116" },
+    "green": { "$value": "#006b3f" },
+    "black": { "$value": "#000000" }
+  },
+  "color": {
+    "$type": "color",
+    "primary": { "$value": "{official.green}" },
+    "accent": { "$value": "{official.gold}" }
+  }
+}

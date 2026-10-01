@@ -83,7 +83,7 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | --------------------- | ------- | ------- | ------------------------------------------------------------------- |
 | Nigeria pack (ng)     | 0.1     | shipped | Hausa, Yoruba, Igbo strings wanted                                  |
 | Kenya pack (ke)       | 0.1     | shipped | Swahili draft, native review wanted                                 |
-| Ghana pack (gh)       | 0.2     | planned | Tests the yellow-derivation path                                    |
+| Ghana pack (gh)       | 0.2     | shipped | Green primary, gold accent; derivation path is unit-tested          |
 | Rwanda pack (rw)      | 0.2     | planned | Kinyarwanda, French, English                                        |
 | South Africa (za)     | 0.3     | planned | Six flag colours, eleven official languages                         |
 | `afrigov audit <url>` | 0.3     | planned | axe against any URL from the CLI. See roadmap/v0.3.md               |
