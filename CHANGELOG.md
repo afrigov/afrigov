@@ -6,6 +6,16 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.1] - 2026-10-02
+
+### Fixed
+
+- Service card: `ag-cards--wide` for a grid of horizontal cards, so titles are not squeezed into a standard column.
+
+### Changed
+
+- Header docs: how an agency uses the header, with the parent ministry in the sub line.
+
 ## [0.8.0] - 2026-10-02
 
 Variants, so two sites built from the same components do not have to look the same.
