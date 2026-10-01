@@ -1,0 +1,70 @@
+<!-- { "title": "Versioning and deprecation", "section": "community", "description": "What a version number promises, what counts as a breaking change, and how long deprecated things live.", "order": 20 } -->
+<h1>Versioning and deprecation</h1>
+<p class="ag-lead">
+  What a version number promises, what counts as a breaking change, and how long a deprecated thing lives.
+</p>
+
+<h2>Before 1.0</h2>
+<p>
+  afrigov follows <a href="https://semver.org/">semantic versioning</a>. Until 1.0, a minor version (0.3 to 0.4) may
+  change anything, and the changelog says what. A patch version (0.4.0 to 0.4.1) never changes a class name, a token
+  name or the pack schema. Pin to a minor, like <code>afrigov@0.4</code>, and read the changelog before moving.
+</p>
+
+<h2>From 1.0</h2>
+<p>These are the public surface. Changing any of them in a way that breaks a page is a major version:</p>
+<ul>
+  <li>Class names starting <code>ag-</code>, and the HTML structure each one expects.</li>
+  <li>Custom property names starting <code>--ag-</code>.</li>
+  <li>The pack schema: every field in <code>tokens/packs/pack.schema.json</code>.</li>
+  <li>The data attributes the script reads, like <code>data-ag-toggle</code> and <code>data-ag-char-count</code>.</li>
+  <li>The exported names of <code>afrigov.js</code>.</li>
+  <li>
+    The published file names: <code>core.css</code>, <code>&lt;code&gt;.css</code>, <code>flags/&lt;code&gt;.svg</code>,
+    <code>afrigov.js</code>.
+  </li>
+</ul>
+<p>These may change in a minor version, because they do not break a page that follows the documentation:</p>
+<ul>
+  <li>New classes, tokens, pack fields, components, packs and languages.</li>
+  <li>
+    Visual refinements that keep contrast and target sizes: spacing, weights, radii, the exact shade of a derived
+    colour.
+  </li>
+  <li>The documentation site, the templates, the scoreboard, the build scripts.</li>
+</ul>
+<p>
+  Anything not listed above is internal and may change at any time: class names starting <code>_</code> or
+  <code>docs-</code>, the source layout, test files.
+</p>
+
+<h2>Deprecation</h2>
+<ol>
+  <li>
+    A deprecated class, token or field keeps working for at least two minor versions, and for at least six months,
+    whichever is longer.
+  </li>
+  <li>The changelog names it, says what replaces it, and gives the version it will be removed in.</li>
+  <li>The documentation page shows the replacement first and the deprecated form in a note.</li>
+  <li>Where the build can detect it, a pack using a deprecated field gets a warning, not an error, until removal.</li>
+</ol>
+
+<h2>Browser support</h2>
+<p>
+  Dropping a browser the system currently supports is a major version. Adding support never is. The current list is on
+  <a href="../get-started.html#browser-support">Get started</a>.
+</p>
+
+<h2>Accessibility as a contract</h2>
+<p>
+  A change that lowers contrast below AA, shrinks a target below 48px, or makes a component depend on JavaScript is
+  treated as a breaking change even if no class name moves, because it breaks the page for someone. It will not ship in
+  a minor version.
+</p>
+
+<h2>Releases</h2>
+<p>
+  Every release is a git tag, a GitHub release and an npm publish with provenance from the same commit. The changelog is
+  the record. There are no pre-releases on npm; unreleased work is on <code>main</code> and on the documentation site,
+  which deploys from <code>main</code>.
+</p>

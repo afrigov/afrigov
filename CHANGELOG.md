@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- Versioning and deprecation policy page under Community, and the manual screen-reader test log in `internal/at-testing.md`.
+
 ## [0.4.0] - 2026-10-02
 
 The right-to-left release: logical properties throughout, the first Arabic pack, and six complete page templates.

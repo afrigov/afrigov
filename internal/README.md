@@ -2,12 +2,14 @@
 
 Planning and decisions. Committed to the repo so contributors can see where the project is going, but not published to npm (see `files` in `package.json`).
 
-| File                             | What it holds                                                                   |
-| -------------------------------- | ------------------------------------------------------------------------------- |
-| [`components.md`](components.md) | The component registry: every component, which version it ships in, its status. |
-| [`roadmap/`](roadmap)            | One file per version. Scope, exit criteria, and what was cut.                   |
-| [`decisions/`](decisions)        | Short records of the choices that are expensive to reverse, and why.            |
-| [`launch.md`](launch.md)         | The checklist for the first public release.                                     |
+| File                                           | What it holds                                                                   |
+| ---------------------------------------------- | ------------------------------------------------------------------------------- |
+| [`components.md`](components.md)               | The component registry: every component, which version it ships in, its status. |
+| [`roadmap/`](roadmap)                          | One file per version. Scope, exit criteria, and what was cut.                   |
+| [`decisions/`](decisions)                      | Short records of the choices that are expensive to reverse, and why.            |
+| [`launch.md`](launch.md)                       | The checklist for the first public release.                                     |
+| [`at-testing.md`](at-testing.md)               | The manual screen-reader test log, per component and template.                  |
+| [`scoreboard-notice.md`](scoreboard-notice.md) | Courtesy notice and publication checklist for the accessibility check.          |
 
 Rules:
 
