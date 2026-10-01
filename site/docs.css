@@ -7,6 +7,19 @@
   color: var(--ag-color-primary);
 }
 
+.docs-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--ag-space-2);
+  font-size: var(--ag-font-size-md);
+}
+
+.docs-logo--footer {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--ag-color-ink-inverse);
+}
+
 /* Country indicator in the notice bar. */
 .docs-pack {
   display: inline-flex;
