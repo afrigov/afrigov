@@ -3,6 +3,8 @@
 .ag-statement {
   display: grid;
   gap: var(--ag-space-5);
+  /* The box ends where the text's measure ends: portrait column, gap, text, and the padding on both sides. */
+  max-width: calc(10rem + var(--ag-size-measure) + 3 * var(--ag-space-5));
   margin-bottom: var(--ag-space-6);
   padding: var(--ag-space-5);
   border-inline-start: 4px solid var(--ag-color-primary);
@@ -62,5 +64,6 @@
   .ag-statement--full {
     grid-template-columns: 16rem 1fr;
     gap: var(--ag-space-6);
+    max-width: calc(16rem + var(--ag-size-measure) + var(--ag-space-6) + 2 * var(--ag-space-5));
   }
 }

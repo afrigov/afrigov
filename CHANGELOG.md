@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.6.4] - 2026-10-02
+
+### Fixed
+
+- Statement: the box ends where the text's measure ends instead of stretching across the page.
+
 ## [0.6.3] - 2026-10-02
 
 ### Added
