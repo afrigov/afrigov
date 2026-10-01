@@ -148,10 +148,10 @@ Node 20 or newer and pnpm 10.
 
 ## Roadmap
 
-- **0.2** — phone number input with country code, national ID inputs with per-country hints, state and local government selectors, currency display, Ghana and Rwanda packs.
-- **0.3** — `afrigov audit <url>`: run axe against any government site from the command line.
+- **0.2** — the African patterns: phone number with country code, national ID input driven by the pack, region selectors, currency display, character count, service card, language switcher. Rwanda and South Africa packs, SVG flags for flags that are not bands, a published pack JSON schema.
+- **0.3** — `afrigov audit <url>`: run axe against any government site from the command line, and a monthly scoreboard.
 - **0.4** — Figma library generated from the tokens.
-- **1.0** — stable class names and tokens.
+- **1.0** — stable class names, tokens and pack schema. Requires right-to-left support with an Arabic pack, full page templates, a manual screen-reader pass on every component, and at least one real service built on it. The full definition is in [`internal/roadmap/v1.0.md`](internal/roadmap/v1.0.md).
 
 The detailed component plan per version is in [`internal/`](internal/).
 
