@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-02
+
+The African patterns release: the inputs USWDS and GOV.UK do not have, a pack schema, SVG flags, two more countries, and a proper documentation site.
+
 ### Added
 
 - Pack JSON Schema at `tokens/packs/pack.schema.json`, published in the package and enforced in the tests. Every pack now references it with `$schema` for editor validation.
@@ -46,7 +50,8 @@ First release.
 - Tests: 90 unit tests for tokens, contrast maths and build output; Playwright with axe-core on the docs page with every pack; 48px touch-target check; 20 KB gzip budget for the core.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
-[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/omoyolab/afrigov/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/omoyolab/afrigov/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/omoyolab/afrigov/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/omoyolab/afrigov/releases/tag/v0.1.0
