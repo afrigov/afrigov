@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-01
+
 ### Added
 
 - Ghana country pack (`gh.css`): red, gold and green flag, Ghana Card, cedis, regions. Green is the primary; gold is accent only because it fails contrast as text. (#5)
@@ -24,5 +26,6 @@ First release.
 - Tests: 90 unit tests for tokens, contrast maths and build output; Playwright with axe-core on the docs page with every pack; 48px touch-target check; 20 KB gzip budget for the core.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
-[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/omoyolab/afrigov/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/omoyolab/afrigov/releases/tag/v0.1.0
