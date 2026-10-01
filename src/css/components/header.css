@@ -70,9 +70,46 @@
   font-weight: var(--ag-font-weight-bold);
 }
 
+/* A chevron that points down when closed and up when open. */
+.ag-header__toggle::after {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-inline-end: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: translateY(-25%) rotate(45deg);
+}
+
 .ag-header__toggle[aria-expanded="true"] {
   background: var(--ag-color-ink);
   color: var(--ag-color-ink-inverse);
+}
+
+.ag-header__toggle[aria-expanded="true"]::after {
+  transform: translateY(25%) rotate(225deg);
+}
+
+/* On small screens the brand shrinks so the button sits beside it on the first row. */
+.ag-js .ag-header__brand {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* On phones a long name beside the button steps down a size, and a large crest drops to the standard size.
+   48em = breakpoint.md */
+@media (max-width: 48em) {
+  .ag-js .ag-header__org {
+    font-size: var(--ag-font-size-md);
+  }
+
+  .ag-header__logo--lg {
+    height: 2.5rem;
+  }
+}
+
+/* Collapsed menu: a hairline between items, so each reads as a row. */
+.ag-nav > li + li {
+  border-top: 1px solid var(--ag-color-border);
 }
 
 .ag-header__nav {
@@ -143,9 +180,17 @@
     display: none;
   }
 
+  .ag-js .ag-header__brand {
+    flex: 0 1 auto;
+  }
+
   .ag-nav {
     flex-direction: row;
     gap: var(--ag-space-1);
+  }
+
+  .ag-nav > li + li {
+    border-top: 0;
   }
 
   .ag-nav__link {

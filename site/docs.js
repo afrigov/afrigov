@@ -129,7 +129,8 @@
     var codes = Object.keys(strings).filter(function (c) {
       return strings[c] && strings[c].banner;
     });
-    if (!codes.length) return;
+    // A pack with one translated language has nothing to switch to; keep the page's own two-language example.
+    if (codes.length < 2) return;
     list.innerHTML = "";
     codes.forEach(function (c) {
       var li = document.createElement("li");

@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.2] - 2026-10-02
+
+### Changed
+
+- Header on small screens: the Menu button sits beside the brand on the first row instead of under it, a chevron shows whether the menu is open, and the open menu has a hairline between items.
+- Docs: the language switcher example keeps its two-language sample when the previewed pack has translated strings for only one language.
+
 ## [0.8.1] - 2026-10-02
 
 ### Fixed
