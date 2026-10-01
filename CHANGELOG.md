@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.6.2] - 2026-10-02
+
+### Changed
+
+- Header: the brand can be 28rem wide on desktop instead of 24rem, so a ministry's full name fits on two lines beside a crest instead of three.
+
 ## [0.6.1] - 2026-10-02
 
 ### Added

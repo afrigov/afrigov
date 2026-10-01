@@ -124,9 +124,10 @@
 
 /* 64em = breakpoint.lg */
 @media (min-width: 64em) {
-  /* Long names ("Federal Ministry of …") wrap inside the brand instead of pushing the nav down. */
+  /* Long names ("Federal Ministry of …") wrap inside the brand instead of pushing the nav down.
+     28rem fits a ministry's full name on two lines beside a crest. */
   .ag-header__brand {
-    max-width: 24rem;
+    max-width: 28rem;
   }
 
   .ag-header__nav {
