@@ -5,7 +5,12 @@ html {
   scroll-padding-top: var(--ag-space-5);
 }
 
+/* The footer sits at the bottom of the viewport on a short page, not halfway up it. */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--ag-font-family-sans);
   font-size: var(--ag-font-size-sm);
   line-height: var(--ag-font-leading-base);
@@ -204,6 +209,7 @@ pre {
 
 .ag-main {
   display: block;
+  flex: 1 0 auto;
   padding-block: var(--ag-space-6) var(--ag-space-8);
 }
 

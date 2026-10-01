@@ -6,6 +6,16 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.3] - 2026-10-02
+
+### Fixed
+
+- The footer sits at the bottom of the viewport on a short page instead of halfway up it. The body is a column and the main area grows to fill it.
+
+### Added
+
+- Pattern: photo gallery. Albums, an album's photos and one photo at full size, from the card, gallery and figure components. No lightbox, no carousel.
+
 ## [0.8.2] - 2026-10-02
 
 ### Changed

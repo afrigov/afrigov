@@ -1,0 +1,123 @@
+<!-- { "title": "Photo gallery", "section": "patterns", "description": "Albums, an album's photos, and one photo at full size, from the card, gallery and figure components. No lightbox, no carousel.", "order": 30 } -->
+<h1>Photo gallery</h1>
+<p class="ag-lead">
+  Three pages built from parts you already have: a page of albums, an album's photos, and one photo at full size. No
+  lightbox and no carousel, on purpose.
+</p>
+
+<h2>The three levels</h2>
+<ol>
+  <li>
+    <strong>Gallery page.</strong> One <a href="../components/service-card.html">card</a> per event, with a photo across
+    the top, the event's name as the link, and the date and number of photos as the text.
+  </li>
+  <li>
+    <strong>Album page.</strong> The event's name, date and one sentence, then the
+    <a href="../components/image.html">gallery grid</a> of captioned figures. Two columns for a few large photos, the
+    default grid for many. <a href="../components/pagination.html">Paginate</a> after twenty.
+  </li>
+  <li>
+    <strong>One photo.</strong> Each figure links to the full-size image file. The browser shows it full screen, with
+    pinch to zoom, and the back button returns to the album. That is the whole viewer.
+  </li>
+</ol>
+
+<h2>Gallery page</h2>
+<docs-example>
+  <ul class="ag-cards ag-mb-0">
+    <li class="ag-card">
+      <div class="ag-card__image">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23c7d6e3'/%3E%3C/svg%3E"
+          alt=""
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+      </div>
+      <h3 class="ag-card__title">
+        <a class="ag-card__link" href="#gallery-example">Opening of the Kano treatment works</a>
+      </h3>
+      <p class="ag-card__text">12 September 2026 · 18 photos</p>
+    </li>
+    <li class="ag-card">
+      <div class="ag-card__image">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23d9e4ec'/%3E%3C/svg%3E"
+          alt=""
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+      </div>
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#gallery-example">District inspectors' training</a></h3>
+      <p class="ag-card__text">3 August 2026 · 9 photos</p>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>Album page</h2>
+<docs-example>
+  <div class="ag-prose">
+    <h2 class="ag-mt-0">Opening of the Kano treatment works</h2>
+    <p class="ag-lead">
+      12 September 2026. The Director General opened the works with the Emir of Kano and the state governor.
+    </p>
+  </div>
+  <ul class="ag-gallery ag-gallery--2 ag-mb-0">
+    <li>
+      <figure class="ag-figure ag-figure--3-2">
+        <a href="#gallery-example" aria-labelledby="photo-1-caption"
+          ><img
+            class="ag-figure__image"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23c7d6e3'/%3E%3C/svg%3E"
+            alt=""
+            width="600"
+            height="400"
+            loading="lazy"
+        /></a>
+        <figcaption class="ag-figure__caption" id="photo-1-caption">The Director General cuts the ribbon.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="ag-figure ag-figure--3-2">
+        <a href="#gallery-example" aria-labelledby="photo-2-caption"
+          ><img
+            class="ag-figure__image"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23d9e4ec'/%3E%3C/svg%3E"
+            alt=""
+            width="600"
+            height="400"
+            loading="lazy"
+        /></a>
+        <figcaption class="ag-figure__caption" id="photo-2-caption">The first water leaves the works.</figcaption>
+      </figure>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>Rules</h2>
+<ul>
+  <li>
+    <strong>Every photo has a caption</strong> that says what is happening and who is in it. The image is
+    <code>alt=""</code> because the caption is the description. The link around the image has no text of its own, so
+    name it by the caption: <code>aria-labelledby</code> on the link pointing at the caption's <code>id</code>. Screen
+    reader users then hear the caption as the link's name, once.
+  </li>
+  <li>
+    <strong>Albums are dated</strong> and say how many photos they hold, so people know what they are opening on a slow
+    connection.
+  </li>
+  <li>
+    <strong>Sizes:</strong> cover and grid images 600px wide and under 40 KB; the full-size file 1600px wide and under
+    300 KB. Twenty photos in an album is the limit before pagination.
+  </li>
+  <li>
+    <strong>No lightbox, no carousel.</strong> A lightbox is a modal, which is cut (decision 003), and a carousel hides
+    photos behind a control nobody uses. The browser's own image view does the job on every phone.
+  </li>
+  <li>
+    The photographs are the organisation's. Say so in the footer and in the caption when they are not: "Photo: Ministry
+    press office".
+  </li>
+</ul>
