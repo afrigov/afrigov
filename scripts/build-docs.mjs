@@ -4,6 +4,7 @@
 // section sidebar, expands <docs-example> blocks into a preview plus escaped
 // code, and generates the pack and token pages from the token build.
 import { cpSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, join, relative } from "node:path";
 import { ROOT, cssVarName, loadCore, toCssValue } from "./tokens.mjs";
 
@@ -188,6 +189,16 @@ function tokensTable() {
 
 export function buildDocs() {
   const layout = readFileSync(join(SITE, "layout.html"), "utf8");
+  // Cache-busting: a short hash of everything the layout loads, so a deploy
+  // never pairs new HTML with a stale cached script or stylesheet.
+  const hash = createHash("sha1");
+  for (const f of ["dist/core.min.css", "dist/afrigov.iife.js", "dist/packs.js", "site/docs.css", "site/docs.js"]) {
+    hash.update(readFileSync(join(ROOT, f)));
+  }
+  for (const f of readdirSync(join(ROOT, "dist")).filter((f) => /^[a-z]{2}\.min\.css$/.test(f))) {
+    hash.update(readFileSync(join(ROOT, "dist", f)));
+  }
+  const assetVersion = hash.digest("hex").slice(0, 8);
   const packs = packPages();
   const pages = [...readPages(), ...packs.pages];
 
@@ -230,6 +241,7 @@ export function buildDocs() {
       .replace(/\{\{description\}\}/g, page.description ?? "")
       .replace(/\{\{root\}\}/g, root)
       .replace(/\{\{packList\}\}/g, JSON.stringify(packs.codes))
+      .replace(/\{\{assetVersion\}\}/g, assetVersion)
       .replace(/\{\{topnav\}\}/g, topnav)
       .replace(/\{\{sidebar\}\}/g, sidebar)
       .replace(/\{\{layoutClass\}\}/g, sidebar ? "docs-layout docs-layout--sidebar" : "docs-layout")

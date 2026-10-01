@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{title}}</title>
     <meta name="description" content="{{description}}" />
-    <link rel="stylesheet" href="{{root}}dist/core.min.css" />
+    <link rel="stylesheet" href="{{root}}dist/core.min.css?v={{assetVersion}}" />
     <link rel="stylesheet" id="pack-css" />
-    <link rel="stylesheet" href="{{root}}docs.css" />
+    <link rel="stylesheet" href="{{root}}docs.css?v={{assetVersion}}" />
     <script>
       // Pack choice: ?pack= in the URL wins, then the remembered choice, then the neutral core.
       (function () {
@@ -33,7 +33,7 @@
           pack = "core";
           link.parentNode.removeChild(link);
         } else {
-          link.href = root + "dist/" + pack + ".min.css";
+          link.href = root + "dist/" + pack + ".min.css?v={{assetVersion}}";
           document.documentElement.setAttribute("data-ag-pack", pack);
         }
         document.documentElement.setAttribute("data-docs-pack", pack);
@@ -123,8 +123,8 @@
       </div>
     </footer>
 
-    <script src="{{root}}dist/afrigov.iife.js"></script>
-    <script src="{{root}}dist/packs.js"></script>
-    <script src="{{root}}docs.js"></script>
+    <script src="{{root}}dist/afrigov.iife.js?v={{assetVersion}}"></script>
+    <script src="{{root}}dist/packs.js?v={{assetVersion}}"></script>
+    <script src="{{root}}docs.js?v={{assetVersion}}"></script>
   </body>
 </html>
