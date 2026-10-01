@@ -52,3 +52,16 @@
 .ag-gallery .ag-figure {
   margin: 0;
 }
+
+/* Gallery columns. The default fits as many 14rem columns as the width allows. */
+@media (min-width: 40em) {
+  .ag-gallery--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 48em) {
+  .ag-gallery--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

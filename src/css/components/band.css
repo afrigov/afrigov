@@ -1,0 +1,60 @@
+/* Band. A full-width section with a background, so a page is not one white sheet.
+   The band spans the viewport; put a container inside it for the content. */
+.ag-band {
+  margin-bottom: var(--ag-space-6);
+  padding-block: var(--ag-space-6);
+}
+
+.ag-band--tint {
+  background: var(--ag-color-paper-alt);
+}
+
+.ag-band--primary {
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+}
+
+.ag-band--dark {
+  background: var(--ag-color-paper-dark);
+  color: var(--ag-color-ink-inverse);
+}
+
+/* On a coloured band, text, headings and links take the band's colour. */
+.ag-band--primary h1,
+.ag-band--primary h2,
+.ag-band--primary h3,
+.ag-band--primary p,
+.ag-band--primary a,
+.ag-band--primary a:visited,
+.ag-band--dark h1,
+.ag-band--dark h2,
+.ag-band--dark h3,
+.ag-band--dark p,
+.ag-band--dark a,
+.ag-band--dark a:visited {
+  color: inherit;
+}
+
+.ag-band--primary .ag-button,
+.ag-band--dark .ag-button {
+  background: var(--ag-color-paper);
+  border-color: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+}
+
+.ag-band--primary .ag-button:hover,
+.ag-band--dark .ag-button:hover {
+  background: var(--ag-color-primary-tint);
+  border-color: var(--ag-color-primary-tint);
+  color: var(--ag-color-primary-hover);
+}
+
+/* A hero inside a band takes the band's spacing instead of its own. */
+.ag-band .ag-hero {
+  margin-bottom: 0;
+  padding-block: 0;
+}
+
+.ag-band > .ag-container > :last-child {
+  margin-bottom: 0;
+}

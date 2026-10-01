@@ -82,3 +82,52 @@
   margin: auto 0 0;
   padding-top: var(--ag-space-2);
 }
+
+/* Variants. */
+.ag-card--tinted {
+  background: var(--ag-color-paper-alt);
+}
+
+.ag-card--plain {
+  border-top: 1px solid var(--ag-color-border);
+}
+
+/* A photograph across the top of the card, bleeding to its edges. */
+.ag-card__image {
+  margin: calc(-1 * var(--ag-space-4)) calc(-1 * var(--ag-space-4)) 0;
+}
+
+.ag-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--ag-color-paper-alt);
+}
+
+/* Horizontal: logo or image beside the text. Wrap the text in ag-card__body. */
+.ag-card--horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--ag-space-4);
+}
+
+.ag-card--horizontal .ag-card__logo {
+  flex: 0 0 6rem;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.ag-card--horizontal .ag-card__image {
+  flex: 0 0 8rem;
+  margin: 0;
+}
+
+.ag-card__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--ag-space-2);
+  min-width: 0;
+}

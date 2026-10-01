@@ -65,3 +65,28 @@
   border-color: var(--ag-color-primary-tint);
   color: var(--ag-color-primary-hover);
 }
+
+/* Variant: centred, for campaign pages with no image. */
+.ag-hero--centred {
+  text-align: center;
+}
+
+.ag-hero--centred .ag-hero__lead {
+  margin-inline: auto;
+}
+
+.ag-hero--centred .ag-hero__actions {
+  justify-content: center;
+}
+
+/* Variant: the image on the reading side, text after it. */
+@media (min-width: 64em) {
+  .ag-hero--image-first .ag-hero__inner {
+    grid-template-columns: 2fr 3fr;
+    gap: var(--ag-space-8);
+  }
+
+  .ag-hero--image-first .ag-hero__media {
+    order: -1;
+  }
+}

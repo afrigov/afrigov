@@ -47,3 +47,8 @@
   padding-inline: var(--ag-space-2);
   color: var(--ag-color-ink-muted);
 }
+
+/* Variant: previous and next only, at either end of the row. */
+.ag-pagination--simple {
+  justify-content: space-between;
+}

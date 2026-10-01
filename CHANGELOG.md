@@ -6,6 +6,21 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-10-02
+
+Variants, so two sites built from the same components do not have to look the same.
+
+### Added
+
+- Band (`.ag-band`): a full-width section with a `tint`, `primary` or `dark` background. A hero inside a band takes its colour.
+- Hero: `centred` and `image-first`.
+- Service card: `tinted`, `plain`, `horizontal` with `ag-card__body`, and an `ag-card__image` slot for a photograph across the top.
+- Footer: `light`.
+- Statement: `primary`.
+- Pagination: `simple`, previous and next only.
+- Gallery: `2` and `4` fixed columns.
+- Confirmation panel: `neutral`, for endings that are not a success.
+
 ## [0.7.0] - 2026-10-02
 
 ### Added

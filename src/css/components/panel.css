@@ -81,3 +81,9 @@
     align-items: center;
   }
 }
+
+/* Variant: neutral panel, for an ending that is not a success: received, pending, closed. */
+.ag-panel--neutral {
+  background: var(--ag-color-paper-alt);
+  color: var(--ag-color-ink);
+}

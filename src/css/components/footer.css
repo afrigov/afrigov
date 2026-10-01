@@ -77,3 +77,19 @@
 .ag-footer__legal li {
   margin: 0;
 }
+
+/* Variant: light footer, for a site whose header is already dark. */
+.ag-footer--light {
+  background: var(--ag-color-paper-alt);
+  color: var(--ag-color-ink);
+}
+
+.ag-footer--light a,
+.ag-footer--light a:visited,
+.ag-footer--light a:hover {
+  color: var(--ag-color-ink);
+}
+
+.ag-footer--light .ag-footer__bar {
+  border-top-color: var(--ag-color-border);
+}

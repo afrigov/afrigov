@@ -67,3 +67,18 @@
     max-width: calc(16rem + var(--ag-size-measure) + var(--ag-space-6) + 2 * var(--ag-space-5));
   }
 }
+
+/* Variant: on the primary colour, for a home page block that carries weight. */
+.ag-statement--primary {
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+  border-inline-start-color: var(--ag-color-on-primary);
+}
+
+.ag-statement--primary .ag-statement__title,
+.ag-statement--primary .ag-statement__by,
+.ag-statement--primary .ag-statement__by strong,
+.ag-statement--primary a,
+.ag-statement--primary a:visited {
+  color: inherit;
+}

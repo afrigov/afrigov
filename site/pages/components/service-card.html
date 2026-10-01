@@ -91,3 +91,76 @@
   </ul>
 </docs-example>
 <p class="docs-fine">Placeholder shapes stand in for the marks. The markup is the same.</p>
+
+<h2>Variants</h2>
+<p>
+  <code>ag-card--tinted</code> puts the card on the alternate paper colour. <code>ag-card--plain</code> drops the
+  coloured top border for a quieter grid. <code>ag-card__image</code> above the title carries a photograph that bleeds
+  to the card's edges; it is decorative, <code>alt=""</code>, because the title is the link.
+</p>
+<docs-example>
+  <ul class="ag-cards ag-mb-0">
+    <li class="ag-card ag-card--tinted">
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#card-variants">Tinted card</a></h3>
+      <p class="ag-card__text">On the alternate paper colour.</p>
+    </li>
+    <li class="ag-card ag-card--plain">
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#card-variants">Plain card</a></h3>
+      <p class="ag-card__text">No coloured top border.</p>
+    </li>
+    <li class="ag-card">
+      <div class="ag-card__image">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23c7d6e3'/%3E%3C/svg%3E"
+          alt=""
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+      </div>
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#card-variants">Card with a photograph</a></h3>
+      <p class="ag-card__text">The image bleeds to the edges above the title.</p>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>Horizontal</h2>
+<p>
+  <code>ag-card--horizontal</code> puts the logo or image beside the text instead of above it. Wrap the title, text and
+  meta in <code>ag-card__body</code>. Good for a list of agencies or partners on a content page, where a grid would be
+  too much.
+</p>
+<docs-example>
+  <ul class="ag-cards ag-mb-0">
+    <li class="ag-card ag-card--horizontal">
+      <div class="ag-card__logo">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%231f4e79'/%3E%3C/svg%3E"
+          alt=""
+          width="200"
+          height="89"
+          loading="lazy"
+        />
+      </div>
+      <div class="ag-card__body">
+        <h3 class="ag-card__title"><a class="ag-card__link" href="#card-horizontal">NWA</a></h3>
+        <p class="ag-card__text">National Water Agency</p>
+      </div>
+    </li>
+    <li class="ag-card ag-card--horizontal">
+      <div class="ag-card__image">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23d9e4ec'/%3E%3C/svg%3E"
+          alt=""
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+      </div>
+      <div class="ag-card__body">
+        <h3 class="ag-card__title"><a class="ag-card__link" href="#card-horizontal">Kano treatment works</a></h3>
+        <p class="ag-card__text">Clean water for 40,000 households from March.</p>
+      </div>
+    </li>
+  </ul>
+</docs-example>
