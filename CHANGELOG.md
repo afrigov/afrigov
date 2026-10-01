@@ -6,9 +6,16 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-10-02
+
+### Fixed
+
+- Header: a long organisation name ("Federal Ministry of …") now wraps inside the brand on desktop instead of pushing the navigation onto a second row.
+
 ### Added
 
 - Versioning and deprecation policy page under Community, and the manual screen-reader test log in `internal/at-testing.md`.
+- Header docs: where a crest or logo goes, and why packs ship flags but not coats of arms.
 
 ## [0.4.0] - 2026-10-02
 
@@ -79,7 +86,8 @@ First release.
 - Tests: 90 unit tests for tokens, contrast maths and build output; Playwright with axe-core on the docs page with every pack; 48px touch-target check; 20 KB gzip budget for the core.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
-[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/omoyolab/afrigov/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/omoyolab/afrigov/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/omoyolab/afrigov/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/omoyolab/afrigov/compare/v0.1.2...v0.2.0

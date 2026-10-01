@@ -43,6 +43,7 @@
   font-size: var(--ag-font-size-lg);
   font-weight: var(--ag-font-weight-bold);
   line-height: var(--ag-font-leading-tight);
+  text-wrap: balance;
 }
 
 .ag-header__sub {
@@ -118,6 +119,11 @@
 
 /* 64em = breakpoint.lg */
 @media (min-width: 64em) {
+  /* Long names ("Federal Ministry of …") wrap inside the brand instead of pushing the nav down. */
+  .ag-header__brand {
+    max-width: 24rem;
+  }
+
   .ag-header__nav {
     flex-basis: auto;
     margin-inline-start: auto;
