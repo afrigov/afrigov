@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-02
+
+### Added
+
+- Dated list: `ag-list__item--media` with an `ag-list__media` thumbnail before the text, for news and article listings.
+
 ## [0.6.4] - 2026-10-02
 
 ### Fixed

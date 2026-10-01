@@ -77,7 +77,7 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Notification count | `.ag-count`                              | 0.3     | planned |                                                                                               |
 | Step indicator     | `.ag-steps`                              | 0.3     | planned | Multi-page forms                                                                              |
 | Service card       | `.ag-card`                               | 0.2     | shipped | Stretched link, focus ring on the card; logo slot since 0.6.1                                 |
-| Dated list         | `.ag-list`                               | 0.5     | shipped | Link, meta line with `<time>`, optional summary                                               |
+| Dated list         | `.ag-list` + media                       | 0.5     | shipped | Link, meta line with `<time>`, optional summary                                               |
 | Download link      | `.ag-download`                           | 0.5     | shipped | Format and size inside the link text                                                          |
 | Empty state        | `.ag-empty`                              | 0.5     | shipped | Heading plus what to do; not an alert                                                         |
 | Image and figure   | `.ag-figure`, `.ag-image`, `.ag-gallery` | 0.5     | shipped | Caption or alt, never both; 150 KB budget; no text over photos                                |

@@ -24,6 +24,50 @@
   </ul>
 </docs-example>
 
+<h2>With thumbnails</h2>
+<p>
+  News and articles often have a photograph each. Add <code>ag-list__item--media</code> to the item and put the image in
+  <code>ag-list__media</code> before the text, wrapped in <code>ag-list__body</code>. The image is decorative,
+  <code>alt=""</code>, because the headline is the link. Keep thumbnails to 240px wide and under 15 KB; a page of ten
+  should cost less than one hero image.
+</p>
+
+<docs-example>
+  <ul class="ag-list ag-mb-0">
+    <li class="ag-list__item ag-list__item--media">
+      <div class="ag-list__media">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23c7d6e3'/%3E%3C/svg%3E"
+          alt=""
+          width="240"
+          height="160"
+          loading="lazy"
+        />
+      </div>
+      <div class="ag-list__body">
+        <a class="ag-list__link" href="#list-example">Inspection results published for every district</a>
+        <span class="ag-list__meta"><time datetime="2026-09-18">18 September 2026</time></span>
+      </div>
+    </li>
+    <li class="ag-list__item ag-list__item--media">
+      <div class="ag-list__media">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23d9e4ec'/%3E%3C/svg%3E"
+          alt=""
+          width="240"
+          height="160"
+          loading="lazy"
+        />
+      </div>
+      <div class="ag-list__body">
+        <a class="ag-list__link" href="#list-example">New treatment works opens in the north</a>
+        <span class="ag-list__meta"><time datetime="2026-08-17">17 August 2026</time></span>
+        <p class="ag-list__text">Clean water for 40,000 households, and the first of six planned this year.</p>
+      </div>
+    </li>
+  </ul>
+</docs-example>
+
 <h2>How it works</h2>
 <ul>
   <li>Each item is the link, then the meta line. An optional one-line summary goes in <code>ag-list__text</code>.</li>

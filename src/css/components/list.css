@@ -28,3 +28,28 @@
   margin: var(--ag-space-1) 0 0;
   max-width: var(--ag-size-measure);
 }
+
+/* With a thumbnail: the item becomes a row, image first, text beside it. */
+.ag-list__item--media {
+  display: flex;
+  gap: var(--ag-space-4);
+  align-items: flex-start;
+}
+
+.ag-list__media {
+  flex: 0 0 7rem;
+  margin: 0;
+}
+
+.ag-list__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--ag-color-paper-alt);
+}
+
+.ag-list__body {
+  min-width: 0;
+}
