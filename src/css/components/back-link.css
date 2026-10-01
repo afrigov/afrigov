@@ -1,0 +1,27 @@
+/* Back link. Above the heading on every question page. */
+.ag-back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  margin-bottom: var(--ag-space-4);
+  color: var(--ag-color-ink);
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-back-link:visited {
+  color: var(--ag-color-ink);
+}
+
+.ag-back-link::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  margin-inline-end: var(--ag-space-2);
+  border-top: 2px solid currentcolor;
+  border-inline-start: 2px solid currentcolor;
+  transform: rotate(-45deg);
+}
+
+[dir="rtl"] .ag-back-link::before {
+  transform: rotate(45deg);
+}

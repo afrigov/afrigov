@@ -47,9 +47,16 @@
     </header>
 
     <main class="ag-main ag-container" id="main" tabindex="-1">
-      <div class="ag-prose">
-        <h1 class="ag-heading-xl">Ministry of Interior</h1>
-        <p class="ag-lead">Passports, identity, immigration and citizen services.</p>
+      <div class="ag-hero">
+        <div class="ag-hero__inner">
+          <div>
+            <h1 class="ag-heading-xl ag-hero__title">Ministry of Interior</h1>
+            <p class="ag-lead ag-hero__lead">Passports, identity, immigration and citizen services.</p>
+            <div class="ag-button-group ag-hero__actions">
+              <a class="ag-button ag-button--start" href="start.html">Renew a passport</a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="ag-alert" role="status">
         <h2 class="ag-alert__title">Passport offices open on public holidays this month</h2>
@@ -84,14 +91,14 @@
       </ul>
       <div class="ag-prose">
         <h2 id="news">News</h2>
-        <ul>
-          <li>
-            <a href="home.html#news">New passport office opens in Ibadan</a>
-            <span class="ag-caption">12 September 2026</span>
+        <ul class="ag-list">
+          <li class="ag-list__item">
+            <a class="ag-list__link" href="home.html#news">New passport office opens in Ibadan</a>
+            <span class="ag-list__meta"><time datetime="2026-09-12">12 September 2026</time></span>
           </li>
-          <li>
-            <a href="home.html#news">Passport fees unchanged for 2027</a>
-            <span class="ag-caption">3 September 2026</span>
+          <li class="ag-list__item">
+            <a class="ag-list__link" href="home.html#news">Passport fees unchanged for 2027</a>
+            <span class="ag-list__meta"><time datetime="2026-09-03">3 September 2026</time></span>
           </li>
         </ul>
         <h2 id="contact">Contact</h2>

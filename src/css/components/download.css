@@ -1,0 +1,21 @@
+/* Download link. The format and size are part of the link text, so they are read with it. */
+.ag-download {
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-download::before {
+  content: "";
+  display: inline-block;
+  vertical-align: -0.15em;
+  width: 0.8em;
+  height: 1em;
+  margin-inline-end: 0.4em;
+  border: 2px solid currentcolor;
+  border-radius: 2px 0.4em 2px 2px;
+  background: linear-gradient(currentcolor, currentcolor) center / 55% 2px no-repeat;
+}
+
+.ag-download__meta {
+  font-weight: var(--ag-font-weight-normal);
+  white-space: nowrap;
+}

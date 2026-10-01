@@ -1,0 +1,101 @@
+<!-- { "title": "Image and figure", "section": "components", "description": "Photographs with captions, a gallery grid, and the rules for alt text, file size and loading.", "order": 178 } -->
+<h1>Image and figure</h1>
+<p class="ag-lead">
+  A photograph with a caption, and a grid of them. The rules matter more than the markup: alt text or caption, decided
+  once; small files; never text on top of a photo.
+</p>
+
+<docs-example>
+  <figure class="ag-figure ag-figure--3-2 ag-mb-0" style="max-width: 32rem">
+    <img
+      class="ag-figure__image"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23c7d6e3'/%3E%3Ccircle cx='2.3' cy='0.5' r='0.25' fill='%23ffbf47'/%3E%3Cpath d='M0 2 L0.9 1 L1.5 1.6 L2.1 0.9 L3 1.7 V2 Z' fill='%231f4e79'/%3E%3C/svg%3E"
+      alt=""
+      width="1200"
+      height="800"
+      loading="lazy"
+    />
+    <figcaption class="ag-figure__caption">
+      The minister opens the new data centre in Abuja, September 2026. Photo: Ministry press office.
+    </figcaption>
+  </figure>
+</docs-example>
+<p class="docs-fine">A placeholder drawing stands in for a photograph here. The markup is the same.</p>
+
+<h2>Gallery</h2>
+<docs-example>
+  <ul class="ag-gallery ag-mb-0">
+    <li>
+      <figure class="ag-figure ag-figure--3-2">
+        <img
+          class="ag-figure__image"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23c7d6e3'/%3E%3C/svg%3E"
+          alt=""
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+        <figcaption class="ag-figure__caption">Opening session, day one.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="ag-figure ag-figure--3-2">
+        <img
+          class="ag-figure__image"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23d9e4ec'/%3E%3C/svg%3E"
+          alt=""
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+        <figcaption class="ag-figure__caption">Delegates from 44 member states.</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure class="ag-figure ag-figure--3-2">
+        <img
+          class="ag-figure__image"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23c7d6e3'/%3E%3C/svg%3E"
+          alt=""
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+        <figcaption class="ag-figure__caption">The closing communiqué is signed.</figcaption>
+      </figure>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>Rules</h2>
+<ul>
+  <li>
+    <strong>Caption or alt, not both.</strong> A captioned figure gets <code>alt=""</code>; the caption is the
+    description. An image without a caption needs alt text that says what it shows, in one sentence.
+  </li>
+  <li>
+    <strong>Decorative means empty.</strong> If removing the image loses nothing, <code>alt=""</code>. Never "image" or
+    "photo" as alt text.
+  </li>
+  <li>
+    <strong>Always width and height</strong> attributes, so the page does not jump while the image loads on a slow
+    connection.
+  </li>
+  <li><strong>Lazy-load everything below the fold</strong> with <code>loading="lazy"</code>. Never the hero image.</li>
+  <li>
+    <strong>Budget: 150 KB per image, 1200px wide at most</strong>, as JPEG or WebP with a <code>srcset</code> for
+    phones. A page of photographs on a 2G connection should still open in under ten seconds.
+  </li>
+  <li>
+    <strong>No text over photographs.</strong> There is no contrast you can guarantee. Put text beside the image or on a
+    solid panel.
+  </li>
+  <li><strong>No carousels.</strong> One image, or a gallery people scroll.</li>
+</ul>
+
+<h2>Aspect ratios</h2>
+<p>
+  <code>ag-figure--3-2</code> for photographs, <code>ag-figure--16-9</code> for video stills and wide shots,
+  <code>ag-figure--square</code> for portraits in a grid. The image is cropped to fit, so keep the subject near the
+  centre.
+</p>

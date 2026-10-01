@@ -1,0 +1,27 @@
+<!-- { "title": "Back link", "section": "components", "description": "A link above the heading on every question page, to the previous step.", "order": 55 } -->
+<h1>Back link</h1>
+<p class="ag-lead">Above the heading on every question page. It goes to the previous step, and only there.</p>
+
+<h2>When to use</h2>
+<p>
+  On every page of a form journey except the first. People make mistakes and want the step before, not the browser
+  history.
+</p>
+
+<h2>When not to use</h2>
+<p>On content pages, where a <a href="breadcrumb.html">breadcrumb</a> says where you are. Never both.</p>
+
+<docs-example>
+  <a class="ag-back-link" href="#back-example">Back</a>
+  <h2 class="ag-mt-0">What is your date of birth?</h2>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The text is "Back". Screen reader users hear it first on the page, after the skip link and header.</li>
+  <li>
+    It is a real link to the previous page's address, not a script that calls history back, so it works when the page
+    was reached directly.
+  </li>
+  <li>The chevron points into the reading direction and mirrors for right-to-left languages.</li>
+</ul>

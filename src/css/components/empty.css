@@ -1,0 +1,17 @@
+/* Empty state. A listing with nothing to list yet. Says so, and what to do instead. */
+.ag-empty {
+  margin-bottom: var(--ag-space-5);
+  padding: var(--ag-space-5);
+  border: 1px dashed var(--ag-color-border-strong);
+  background: var(--ag-color-paper-alt);
+  max-width: var(--ag-size-measure);
+}
+
+.ag-empty__title {
+  margin: 0 0 var(--ag-space-2);
+  font-size: var(--ag-font-size-lg);
+}
+
+.ag-empty > :last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,67 @@
+/* Hero. The top of a department or service home: title, lead, one action, and
+   optionally an image beside the text. Text never sits on top of the image. */
+.ag-hero {
+  margin-bottom: var(--ag-space-6);
+  padding-block: var(--ag-space-5);
+}
+
+.ag-hero__inner {
+  display: grid;
+  gap: var(--ag-space-5);
+  align-items: center;
+}
+
+/* 64em = breakpoint.lg */
+@media (min-width: 64em) {
+  .ag-hero--image .ag-hero__inner {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--ag-space-8);
+  }
+}
+
+.ag-hero__title {
+  margin: 0 0 var(--ag-space-4);
+}
+
+.ag-hero__lead {
+  max-width: var(--ag-size-measure);
+  margin-bottom: var(--ag-space-5);
+}
+
+.ag-hero__actions {
+  margin-bottom: 0;
+}
+
+.ag-hero__media {
+  margin: 0;
+}
+
+.ag-hero__media .ag-figure__image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--ag-size-radius);
+}
+
+/* Variant: a solid panel in the primary colour. Still no image behind the text. */
+.ag-hero--primary {
+  padding-inline: var(--ag-space-5);
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+}
+
+.ag-hero--primary .ag-hero__title,
+.ag-hero--primary .ag-hero__lead {
+  color: inherit;
+}
+
+.ag-hero--primary .ag-button {
+  background: var(--ag-color-paper);
+  border-color: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+}
+
+.ag-hero--primary .ag-button:hover {
+  background: var(--ag-color-primary-tint);
+  border-color: var(--ag-color-primary-tint);
+  color: var(--ag-color-primary-hover);
+}

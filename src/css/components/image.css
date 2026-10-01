@@ -1,0 +1,54 @@
+/* Image and figure. A captioned image, and a gallery of them. Never put text over an image. */
+.ag-figure {
+  margin: 0 0 var(--ag-space-5);
+}
+
+.ag-figure__image,
+.ag-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--ag-color-paper-alt);
+}
+
+.ag-figure--3-2 .ag-figure__image,
+.ag-image--3-2 {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.ag-figure--16-9 .ag-figure__image,
+.ag-image--16-9 {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.ag-figure--square .ag-figure__image,
+.ag-image--square {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.ag-figure__caption {
+  margin-top: var(--ag-space-2);
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+  max-width: var(--ag-size-measure);
+}
+
+.ag-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: var(--ag-space-4);
+  margin: 0 0 var(--ag-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.ag-gallery > li {
+  margin: 0;
+}
+
+.ag-gallery .ag-figure {
+  margin: 0;
+}

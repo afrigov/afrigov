@@ -6,6 +6,23 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-02
+
+Six components that the fmcide.gov.ng rebuild showed were missing. Each closes an issue filed from `afrigov-usecase-fmcide/FINDINGS.md`.
+
+### Added
+
+- Back link (`.ag-back-link`) for question pages; the page templates no longer carry it as page-local CSS (#17).
+- Dated list (`.ag-list`) for news, events, articles and documents: a link with a date line and an optional summary (#18).
+- Image and figure (`.ag-figure`, `.ag-image`, `.ag-gallery`) with the rules that matter: caption or alt text, never both; width and height always; lazy-load below the fold; 150 KB per image; no text over photographs; no carousels (#19).
+- Download link (`.ag-download`) with the format and size inside the link text (#20).
+- Empty state (`.ag-empty`) for a listing with nothing to list (#21).
+- Hero (`.ag-hero`, with `--image` and `--primary` variants): title, lead, one action, and an optional photograph beside the text. The service home template uses it.
+
+### Changed
+
+- The service home template has a hero and uses the dated list for news.
+
 ## [0.4.1] - 2026-10-02
 
 ### Fixed

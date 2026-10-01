@@ -1,0 +1,30 @@
+/* Dated list. News, events, articles: a link with a date or other meta under it. */
+.ag-list {
+  margin: 0 0 var(--ag-space-5);
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ag-color-border);
+}
+
+.ag-list__item {
+  margin: 0;
+  padding-block: var(--ag-space-3);
+  border-bottom: 1px solid var(--ag-color-border);
+}
+
+.ag-list__link {
+  display: inline-block;
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-list__meta {
+  display: block;
+  margin-top: var(--ag-space-1);
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-list__text {
+  margin: var(--ag-space-1) 0 0;
+  max-width: var(--ag-size-measure);
+}

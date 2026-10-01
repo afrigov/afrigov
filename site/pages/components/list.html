@@ -1,0 +1,41 @@
+<!-- { "title": "Dated list", "section": "components", "description": "A list of links with a date or other detail under each: news, events, articles, documents.", "order": 175 } -->
+<h1>Dated list</h1>
+<p class="ag-lead">
+  A list of links with a date or other detail under each. The shape of every news, events and articles page.
+</p>
+
+<docs-example>
+  <ul class="ag-list ag-mb-0">
+    <li class="ag-list__item">
+      <a class="ag-list__link" href="#list-example">Minister named 2026 Gates Foundation Goalkeepers Champion</a>
+      <span class="ag-list__meta"><time datetime="2026-09-18">18 September 2026</time></span>
+    </li>
+    <li class="ag-list__item">
+      <a class="ag-list__link" href="#list-example">National Digital Cloud Policy launched</a>
+      <span class="ag-list__meta"><time datetime="2026-08-17">17 August 2026</time> · Policy</span>
+      <p class="ag-list__text">
+        A single framework for how government data is stored, shared and protected in the cloud.
+      </p>
+    </li>
+    <li class="ag-list__item">
+      <a class="ag-list__link" href="#list-example">ATU Conference of Plenipotentiaries concludes in Abuja</a>
+      <span class="ag-list__meta"><time datetime="2026-07-25">25 July 2026</time></span>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>Each item is the link, then the meta line. An optional one-line summary goes in <code>ag-list__text</code>.</li>
+  <li>
+    Wrap dates in <code>time</code> with a <code>datetime</code> attribute, so tools and translations can read them.
+  </li>
+  <li>Separate several meta facts with a middle dot, not a comma, so each reads as its own fact.</li>
+  <li>Six to ten items a page, then <a href="pagination.html">pagination</a>.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The link text is the headline on its own. Do not add "Read more".</li>
+  <li>Rows are at least 48px tall, so the link is easy to tap even though it is inline.</li>
+</ul>

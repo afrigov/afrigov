@@ -1,0 +1,38 @@
+<!-- { "title": "Download link", "section": "components", "description": "A link to a file that says the format and size as part of the link text.", "order": 176 } -->
+<h1>Download link</h1>
+<p class="ag-lead">
+  A link to a file. The format and size are part of the link text, so people know what they are getting before they tap,
+  and screen readers say it with the title.
+</p>
+
+<docs-example>
+  <p class="ag-mb-0">
+    <a class="ag-download" href="#download-example"
+      >National Broadband Plan 2025 to 2030 <span class="ag-download__meta">(PDF, 2.4 MB)</span></a
+    >
+  </p>
+  <p class="ag-mb-0">
+    <a class="ag-download" href="#download-example"
+      >Radio frequency licence application, form DSS-FC-1 <span class="ag-download__meta">(PDF, 310 KB)</span></a
+    >
+  </p>
+</docs-example>
+
+<h2>Rules</h2>
+<ul>
+  <li>
+    Format in capitals, then size, in brackets at the end: <code>(PDF, 2.4 MB)</code>. Round sizes to one decimal.
+  </li>
+  <li>
+    Say the size, because many people pay per megabyte. If you do not know it, find out; "unknown" is not acceptable on
+    a government site.
+  </li>
+  <li>
+    Prefer an HTML page to a PDF. A PDF is for something people need to print or keep: a form, a signed document, a long
+    report.
+  </li>
+  <li>
+    Add <code>download</code> to the link only for files that should save rather than open, like forms to fill in.
+  </li>
+  <li>The icon is drawn in CSS and carries no meaning; the words do.</li>
+</ul>

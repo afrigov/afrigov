@@ -1,0 +1,35 @@
+<!-- { "title": "Empty state", "section": "components", "description": "What a listing shows when there is nothing to list yet.", "order": 177 } -->
+<h1>Empty state</h1>
+<p class="ag-lead">
+  What a listing shows when there is nothing to list: no events scheduled, no applications yet, no results for a search.
+</p>
+
+<h2>When to use</h2>
+<p>
+  Any page whose main content is a list that can be empty. Say that it is empty, why if you know, and what the person
+  can do.
+</p>
+
+<h2>When not to use</h2>
+<p>For errors or warnings, which are <a href="alert.html">alerts</a>. An empty list is not a problem; it is a fact.</p>
+
+<docs-example>
+  <div class="ag-empty ag-mb-0">
+    <h2 class="ag-empty__title">No events are scheduled</h2>
+    <p>New events are announced here and in the <a href="#empty-example">news</a>. Past events are listed below.</p>
+  </div>
+</docs-example>
+
+<docs-example label="With an action">
+  <div class="ag-empty ag-mb-0">
+    <h2 class="ag-empty__title">You have no applications</h2>
+    <p>When you apply for a service, it appears here with its progress.</p>
+    <a class="ag-button ag-button--secondary" href="#empty-example">Start an application</a>
+  </div>
+</docs-example>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The title is a heading, so people navigating by heading find out the list is empty.</li>
+  <li>Keep it in the place the list would be, so the page structure does not change when content arrives.</li>
+</ul>
