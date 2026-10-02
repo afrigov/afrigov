@@ -568,10 +568,12 @@
   }
 }
 
-/* Between the breakpoint and a wide laptop the links step down a size to stay on the row. */
-@media (min-width: 64em) and (max-width: 80em) {
-  .docs-site-header .ag-nav__link {
-    font-size: var(--ag-font-size-xs);
+/* Between the breakpoint and a wide laptop there is no room for the tagline beside seven links.
+   How much room depends on the visitor's system font, which is wider on Linux than on a Mac,
+   so the tagline waits for a screen where it fits with any of them. */
+@media (min-width: 64em) and (max-width: 79.99em) {
+  .docs-site-header .ag-header__sub {
+    display: none;
   }
 }
 
