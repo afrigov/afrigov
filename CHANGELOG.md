@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.8.8] - 2026-10-02
+
+### Fixed
+
+- Official banner on phones: the notice keeps at least 12rem of width, so anything else placed in the banner wraps under it instead of squeezing the notice into a narrow column. On the docs site the country preview indicator now sits under the notice.
+- A test fails the build if the notice in any banner is squeezed at phone width.
+
 ## [0.8.7] - 2026-10-02
 
 ### Added

@@ -34,3 +34,22 @@ for (const width of [1024, 1280]) {
     });
   }
 }
+
+// The notice in the banner must keep most of the row on a phone, whatever else sits in the banner.
+for (const page of pages) {
+  test(`${page}: the banner notice is not squeezed at 375px`, async ({ browser }) => {
+    const context = await browser.newContext({ viewport: { width: 375, height: 700 } });
+    const tab = await context.newPage();
+    await tab.goto("file://" + join(docs, page));
+    const widths = await tab.evaluate(() => {
+      const banner = [...document.querySelectorAll(".ag-banner")].find((b) => !b.closest(".docs-example"));
+      const text = banner.querySelector(".ag-banner__text");
+      return {
+        text: text.getBoundingClientRect().width,
+        row: banner.querySelector(".ag-banner__inner").getBoundingClientRect().width,
+      };
+    });
+    expect(widths.text / widths.row, "banner notice squeezed").toBeGreaterThan(0.7);
+    await context.close();
+  });
+}

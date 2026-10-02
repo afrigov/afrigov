@@ -19,10 +19,11 @@
 }
 
 /* On phones the notice wraps beside the flag instead of pushing it onto its own line,
-   and the disclosure goes under both. 40em = breakpoint.sm */
+   and the disclosure goes under both. The notice never gets narrower than 12rem: anything
+   else placed in the banner wraps under it instead of squeezing it. 40em = breakpoint.sm */
 @media (max-width: 40em) {
   .ag-banner__text {
-    flex: 1 1 0;
+    flex: 1 1 12rem;
     min-width: 0;
   }
 
