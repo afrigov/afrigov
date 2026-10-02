@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Docs: the Use cases page covers the rebuilds and the audit tool. The WordPress theme is not listed while its approach is being decided.
+
 ## [0.8.8] - 2026-10-02
 
 ### Fixed

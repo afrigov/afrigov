@@ -70,7 +70,6 @@ init();
 ## Around afrigov
 
 - **[Use cases](https://omoyolab.github.io/afrigov-usecases/)**: real government websites rebuilt on afrigov, with the real site's accessibility score beside the rebuild. The first is Nigeria's digital economy ministry, 29 pages, every one 100, A.
-- **[afrigovPress](https://github.com/omoyolab/afrigovpress)**: afrigov as a WordPress theme. Country, organisation and contact details are site settings; news, articles and the page head are handled by the theme.
 - **[afrigov-audit](https://github.com/omoyolab/afrigov-audit)**: an accessibility check for any web page from the command line, with a badge of the grade and score.
 
 ## How accessibility is enforced
