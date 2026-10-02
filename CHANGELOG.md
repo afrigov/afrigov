@@ -6,9 +6,30 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-10-02
+
+Everything here came from the second use case, a rebuild of Ghana's National Identification Authority website, and from looking at it beside the first: two countries, and both sites green and white.
+
+### Added
+
+- **Flag stripe.** `ag-header--striped` replaces the header's bottom border with a line in the country's flag colours, and `ag-stripe` is the same line on its own. Until now a pack changed one colour, and five of the seven packs have a green one.
+- **Accent band.** `ag-band--accent` is a band in the pack's second colour: Ghana's gold, Kenya's red. A new token, `--ag-color-on-accent`, is ink or white, whichever is easier to read on the accent. The build checks the pair in every pack.
+- `ag-card--accent`: the top edge of a card in the accent colour.
+- **Feature.** `ag-feature` describes one thing: a picture of it beside its name, a few lines and its main points. `ag-feature--reverse` puts the picture after the text.
+- **People.** `ag-people` lists the leadership of an organisation with a portrait, name and role each. `ag-people--rows` is a compact row per person.
+- **Steps.** `ag-steps` is the numbered steps of a process, with or without a title on each (#23).
+- **Key figures.** `ag-stats` shows a few headline numbers with labels, with the accent colour beside each (#24).
+- `ag-main--flush` removes the space at the top and bottom of the page, so the first band meets the header and the last meets the footer (#22).
+
 ### Changed
 
+- A secondary button on a primary, dark or accent band, or in a primary hero, is an outline in the band's text colour. It used to look the same as the main button (#25).
+- Docs: a table with two columns goes inside `ag-prose` to hold it to the reading width (#26). The hero page says not to put a primary hero under a primary header.
 - Docs: the Use cases page covers the rebuilds and the audit tool. The WordPress theme is not listed while its approach is being decided.
+
+### Fixed
+
+- The Ghana pack lists all sixteen regions. It had six (#28).
 
 ## [0.8.8] - 2026-10-02
 
@@ -252,6 +273,7 @@ First release.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
 [Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.4.1...HEAD
+[0.9.0]: https://github.com/omoyolab/afrigov/compare/v0.8.8...v0.9.0
 [0.4.1]: https://github.com/omoyolab/afrigov/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/omoyolab/afrigov/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/omoyolab/afrigov/compare/v0.2.0...v0.3.0

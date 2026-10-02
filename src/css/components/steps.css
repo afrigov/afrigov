@@ -1,0 +1,66 @@
+/* Steps. The numbered steps of a process, in order: what happens at the office,
+   how to apply, what happens next. The numbers come from the list itself. */
+.ag-steps {
+  max-width: var(--ag-size-measure);
+  margin: 0 0 var(--ag-space-6);
+  padding: 0;
+  list-style: none;
+  counter-reset: ag-step;
+}
+
+.ag-steps__item {
+  position: relative;
+  min-height: 2rem;
+  margin: 0;
+  padding-block: 0.2rem var(--ag-space-5);
+  padding-inline-start: calc(2rem + var(--ag-space-4));
+  counter-increment: ag-step;
+}
+
+/* The number, in a ring. */
+.ag-steps__item::before {
+  content: counter(ag-step);
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--ag-color-primary);
+  border-radius: 50%;
+  background: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+  font-size: var(--ag-font-size-sm);
+  font-weight: var(--ag-font-weight-bold);
+  line-height: 1;
+}
+
+/* The line that joins one step to the next. */
+.ag-steps__item::after {
+  content: "";
+  position: absolute;
+  inset-block: 2rem 0;
+  inset-inline-start: calc(1rem - 1px);
+  width: 2px;
+  background: var(--ag-color-border);
+}
+
+.ag-steps__item:last-child {
+  padding-block-end: 0;
+}
+
+.ag-steps__item:last-child::after {
+  display: none;
+}
+
+.ag-steps__title {
+  margin: 0 0 var(--ag-space-1);
+  font-size: var(--ag-font-size-md);
+  line-height: var(--ag-font-leading-base);
+}
+
+.ag-steps__item > :last-child {
+  margin-bottom: 0;
+}

@@ -4,31 +4,33 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 
 ## Core layout and text
 
-| Component              | Class                                  | Version | Status  | Notes                                        |
-| ---------------------- | -------------------------------------- | ------- | ------- | -------------------------------------------- |
-| Container              | `.ag-container`                        | 0.1     | shipped |                                              |
-| Main                   | `.ag-main`                             | 0.1     | shipped | Skip-link target, `tabindex="-1"`            |
-| Prose measure          | `.ag-prose`, `.ag-lead`, `.ag-caption` | 0.1     | shipped | 65ch max line length                         |
-| Stack / cluster / grid | `.ag-stack`, `.ag-cluster`, `.ag-grid` | 0.1     | shipped | The only layout utilities. Keep it that way. |
-| Visually hidden        | `.ag-visually-hidden`                  | 0.1     | shipped |                                              |
+| Component              | Class                                  | Version | Status  | Notes                                         |
+| ---------------------- | -------------------------------------- | ------- | ------- | --------------------------------------------- |
+| Container              | `.ag-container`                        | 0.1     | shipped |                                               |
+| Main                   | `.ag-main`                             | 0.1     | shipped | Skip-link target, `tabindex="-1"`; 0.9: flush |
+| Prose measure          | `.ag-prose`, `.ag-lead`, `.ag-caption` | 0.1     | shipped | 65ch max line length                          |
+| Stack / cluster / grid | `.ag-stack`, `.ag-cluster`, `.ag-grid` | 0.1     | shipped | The only layout utilities. Keep it that way.  |
+| Visually hidden        | `.ag-visually-hidden`                  | 0.1     | shipped |                                               |
 
 ## Page furniture
 
-| Component               | Class                            | Version | Status  | Notes                                                                                  |
-| ----------------------- | -------------------------------- | ------- | ------- | -------------------------------------------------------------------------------------- |
-| Skip link               | `.ag-skip-link`                  | 0.1     | shipped |                                                                                        |
-| Official banner         | `.ag-banner`, `.ag-flag`         | 0.1     | shipped | Flag stripes and direction from the pack                                               |
-| Header + nav            | `.ag-header`, `.ag-nav`          | 0.1     | shipped | Collapsible with JS only; always visible without                                       |
-| Footer                  | `.ag-footer`                     | 0.1     | shipped | ; 0.8 variants: light                                                                  |
-| Breadcrumb              | `.ag-breadcrumb`                 | 0.1     | shipped |                                                                                        |
-| Pagination              | `.ag-pagination`                 | 0.1     | shipped | ; 0.8 variants: simple                                                                 |
-| Language switcher       | `.ag-lang`                       | 0.2     | shipped | Links with hreflang and lang, current marked, endonyms                                 |
-| Back link               | `.ag-back-link`                  | 0.5     | shipped | Real link to the previous step; chevron mirrors in RTL                                 |
-| Social links            | `.ag-social`                     | 0.6     | shipped | Network name is the text, icon decorative; footer only                                 |
-| Footer address          | `.ag-footer__address`            | 0.6     | shipped | `address` element, italic reset in core                                                |
-| Hero                    | `.ag-hero` + image, primary      | 0.5     | shipped | Image beside the text, never behind it; one action; 0.8 variants: centred, image-first |
-| Band                    | `.ag-band` + tint, primary, dark | 0.8     | shipped | Full-width section background; hero inside takes its colour                            |
-| Cookie / consent banner | `.ag-consent`                    | none    | cut     | Government sites should not need tracking cookies. Revisit if asked.                   |
+| Component               | Class                               | Version | Status  | Notes                                                                                  |
+| ----------------------- | ----------------------------------- | ------- | ------- | -------------------------------------------------------------------------------------- |
+| Skip link               | `.ag-skip-link`                     | 0.1     | shipped |                                                                                        |
+| Official banner         | `.ag-banner`, `.ag-flag`            | 0.1     | shipped | Flag stripes and direction from the pack                                               |
+| Header + nav            | `.ag-header`, `.ag-nav`             | 0.1     | shipped | Collapsible with JS only; always visible without                                       |
+| Footer                  | `.ag-footer`                        | 0.1     | shipped | ; 0.8 variants: light                                                                  |
+| Breadcrumb              | `.ag-breadcrumb`                    | 0.1     | shipped |                                                                                        |
+| Pagination              | `.ag-pagination`                    | 0.1     | shipped | ; 0.8 variants: simple                                                                 |
+| Language switcher       | `.ag-lang`                          | 0.2     | shipped | Links with hreflang and lang, current marked, endonyms                                 |
+| Back link               | `.ag-back-link`                     | 0.5     | shipped | Real link to the previous step; chevron mirrors in RTL                                 |
+| Social links            | `.ag-social`                        | 0.6     | shipped | Network name is the text, icon decorative; footer only                                 |
+| Footer address          | `.ag-footer__address`               | 0.6     | shipped | `address` element, italic reset in core                                                |
+| Hero                    | `.ag-hero` + image, primary         | 0.5     | shipped | Image beside the text, never behind it; one action; 0.8 variants: centred, image-first |
+| Band                    | `.ag-band` + tint, primary, dark    | 0.8     | shipped | Full-width section background; hero inside takes its colour; 0.9: accent               |
+| Flag stripe             | `.ag-stripe`, `.ag-header--striped` | 0.9     | shipped | The pack's flag colours in three equal parts; decoration only                          |
+| Feature                 | `.ag-feature` + reverse             | 0.9     | shipped | A picture of one thing beside its name and main points                                 |
+| Cookie / consent banner | `.ag-consent`                       | none    | cut     | Government sites should not need tracking cookies. Revisit if asked.                   |
 
 ## Actions
 
@@ -83,6 +85,9 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Empty state        | `.ag-empty`                              | 0.5     | shipped | Heading plus what to do; not an alert                                                                         |
 | Image and figure   | `.ag-figure`, `.ag-image`, `.ag-gallery` | 0.5     | shipped | Caption or alt, never both; 150 KB budget; no text over photos                                                |
 | Statement          | `.ag-statement` + full                   | 0.6     | shipped | Head of organisation's message with portrait; name and role after the text; 0.8 variants: primary             |
+| People             | `.ag-people`, `.ag-person` + rows        | 0.9     | shipped | Portrait, name and role; empty alt on portraits                                                               |
+| Steps              | `.ag-steps`                              | 0.9     | shipped | Ordered list with CSS counters; title optional                                                                |
+| Key figures        | `.ag-stats`                              | 0.9     | shipped | Description list, label first in the markup, value first on screen; accent edge                               |
 | Modal dialog       | none                                     | none    | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need.                 |
 | Toast              | none                                     | none    | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                                 |
 | Carousel           | none                                     | none    | cut     | Never.                                                                                                        |

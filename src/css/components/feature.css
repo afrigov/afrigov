@@ -1,0 +1,64 @@
+/* Feature. One thing described: a picture of it beside its name, a few lines
+   and its main points. A card, a document, a programme, a building. */
+.ag-feature {
+  display: grid;
+  gap: var(--ag-space-5);
+  align-items: center;
+  margin-bottom: var(--ag-space-6);
+}
+
+/* 48em = breakpoint.md */
+@media (min-width: 48em) {
+  .ag-feature {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ag-space-7);
+  }
+
+  /* Variant: the picture after the text. */
+  .ag-feature--reverse .ag-feature__media {
+    order: 2;
+  }
+}
+
+.ag-feature__media {
+  margin: 0;
+}
+
+.ag-feature__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--ag-size-radius);
+}
+
+.ag-feature__title {
+  margin: 0 0 var(--ag-space-3);
+}
+
+.ag-feature__body > :last-child {
+  margin-bottom: 0;
+}
+
+/* The main points. Each is marked with a square in the pack's accent colour. */
+.ag-feature__list {
+  margin: 0 0 var(--ag-space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.ag-feature__list > li {
+  position: relative;
+  margin: 0 0 var(--ag-space-2);
+  padding-inline-start: var(--ag-space-5);
+}
+
+.ag-feature__list > li::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0.5em;
+  inset-inline-start: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  border: 1px solid currentcolor;
+  background: var(--ag-color-accent);
+}

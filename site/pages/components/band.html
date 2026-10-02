@@ -58,11 +58,39 @@
   </div>
 </docs-example>
 
+<docs-example flush label="Accent">
+  <div class="ag-band ag-band--accent ag-mb-0">
+    <div class="ag-container">
+      <h2 class="ag-mt-0">Water quality week, 12 to 18 October</h2>
+      <p class="ag-lead">Free testing at every district office. Bring a sample in a clean bottle.</p>
+      <div class="ag-button-group">
+        <a class="ag-button" href="#band-accent">Find your office</a>
+        <a class="ag-button ag-button--secondary" href="#band-accent">How to take a sample</a>
+      </div>
+    </div>
+  </div>
+</docs-example>
+<p class="docs-fine">
+  Preview a country at the top of the page. The accent is Ghana's gold, Kenya's red, Morocco's green.
+</p>
+
 <h2>How it works</h2>
 <ul>
   <li>
     The band spans the viewport, so it sits outside the page container. Put a <code>ag-container</code> inside it for
     the content.
+  </li>
+  <li>
+    On a page built from bands, add <code>ag-main--flush</code> to the <code>main</code> element. It removes the space
+    at the top and bottom of the page, so the first band meets the header and the last meets the footer.
+  </li>
+  <li>
+    The accent band is the pack's second colour. The build chooses dark or white text for it, whichever is easier to
+    read. Use it once on a page, for the thing that is happening now.
+  </li>
+  <li>
+    A <a href="button.html">secondary button</a> on a coloured band is an outline in the band's text colour, so the main
+    action is still the solid one.
   </li>
   <li>
     A <a href="hero.html">hero</a> inside a band takes the band's spacing and colour, so a tinted or dark hero is a band
@@ -84,4 +112,8 @@
     primary. Dark is the footer pair, checked the same way.
   </li>
   <li>Links on a coloured band stay underlined, so colour is never the only thing marking them.</li>
+  <li>
+    Text on the accent band uses the pack's on-accent colour, which the build checks for AA contrast against the accent
+    in every pack.
+  </li>
 </ul>

@@ -105,6 +105,11 @@
   border-top: 1px solid var(--ag-color-border);
 }
 
+/* The top edge in the pack's accent colour. */
+.ag-card--accent {
+  border-top-color: var(--ag-color-accent);
+}
+
 /* A photograph across the top of the card, bleeding to its edges. */
 .ag-card__image {
   margin: calc(-1 * var(--ag-space-4)) calc(-1 * var(--ag-space-4)) 0;

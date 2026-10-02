@@ -218,6 +218,11 @@ pre {
   box-shadow: none;
 }
 
+/* For a page built from full-width bands: the first band meets the header and the last meets the footer. */
+.ag-main--flush {
+  padding-block: 0;
+}
+
 /* Running text never exceeds a comfortable line length. */
 .ag-prose {
   max-width: var(--ag-size-measure);

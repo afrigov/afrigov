@@ -1,0 +1,65 @@
+<!-- { "title": "Steps", "section": "components", "description": "The numbered steps of a process, in order.", "order": 186 } -->
+<h1>Steps</h1>
+<p class="ag-lead">
+  The steps of a process, numbered and in order: what happens at the office, how to apply, what happens after you send a
+  form.
+</p>
+
+<h2>When to use</h2>
+<p>
+  When the order matters and each step is something that happens or something the person does. On a service page, and
+  under "What happens next" on a <a href="panel.html">confirmation page</a>.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  For a list of documents to bring, or anything else where order does not matter: that is a bulleted list. For the pages
+  of a form, ask one question per page and do not show a progress bar.
+</p>
+
+<docs-example>
+  <ol class="ag-steps ag-mb-0">
+    <li class="ag-steps__item">
+      <h3 class="ag-steps__title">Report the leak</h3>
+      <p>Tell us where it is, online or by phone. You get a reference number.</p>
+    </li>
+    <li class="ag-steps__item">
+      <h3 class="ag-steps__title">An inspector visits</h3>
+      <p>Within two working days. You do not need to be there.</p>
+    </li>
+    <li class="ag-steps__item">
+      <h3 class="ag-steps__title">The repair is scheduled</h3>
+      <p>We text you the date. Supply may be off for a few hours on the day.</p>
+    </li>
+    <li class="ag-steps__item">
+      <h3 class="ag-steps__title">We confirm it is fixed</h3>
+      <p>Reply to the text if the leak comes back within thirty days.</p>
+    </li>
+  </ol>
+</docs-example>
+
+<h2>Without titles</h2>
+<p>When each step is one sentence, leave the title out.</p>
+<docs-example>
+  <ol class="ag-steps ag-mb-0">
+    <li class="ag-steps__item">An officer checks your documents.</li>
+    <li class="ag-steps__item">Your fingerprints and photograph are taken.</li>
+    <li class="ag-steps__item">You check the printed details and sign.</li>
+    <li class="ag-steps__item">Your card is printed and handed to you.</li>
+  </ol>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>An ordered list. The numbers are counted by the browser, so adding a step never means renumbering.</li>
+  <li>The title is a heading at the level the page needs, and is optional.</li>
+  <li>The column is held to the reading width. A step can hold paragraphs, a link or an inset.</li>
+  <li>Start each step with who acts: "An officer checks", "You pay". Keep to seven steps or fewer.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>It is a real <code>ol</code>, so a screen reader says "list, 4 items" and the position of each.</li>
+  <li>The number comes from the list's own counter, so it is never read twice.</li>
+  <li>The line and the ring are decoration. The order is in the markup.</li>
+</ul>

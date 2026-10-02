@@ -1,0 +1,22 @@
+/* Flag stripe. A thin line in the country's flag colours, from the pack. It says whose
+   site this is without a word. With no pack it is one line in the primary colour. */
+.ag-stripe,
+.ag-header--striped::after {
+  display: block;
+  height: 0.375rem;
+  background: linear-gradient(
+    90deg,
+    var(--ag-flag-1, var(--ag-color-primary)) 0 33.34%,
+    var(--ag-flag-2, var(--ag-flag-1, var(--ag-color-primary))) 33.34% 66.67%,
+    var(--ag-flag-3, var(--ag-flag-1, var(--ag-color-primary))) 66.67%
+  );
+}
+
+/* On the header the stripe takes the place of the bottom border. */
+.ag-header--striped {
+  border-bottom: 0;
+}
+
+.ag-header--striped::after {
+  content: "";
+}

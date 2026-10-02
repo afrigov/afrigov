@@ -1,0 +1,55 @@
+<!-- { "title": "Key figures", "section": "components", "description": "A few headline numbers, each with a label.", "order": 187 } -->
+<h1>Key figures</h1>
+<p class="ag-lead">
+  A few headline numbers, each with a label: people registered, cards issued, districts inspected. The line beside each
+  is the pack's accent colour.
+</p>
+
+<h2>When to use</h2>
+<p>For three to six numbers that show the scale of the work, on a home page or at the top of a statistics page.</p>
+
+<h2>When not to use</h2>
+<p>
+  For more than six numbers, or numbers people need to compare across rows: that is a <a href="table.html">table</a>.
+  For an amount of money someone has to pay, use the <a href="currency.html">currency display</a>.
+</p>
+
+<docs-example>
+  <dl class="ag-stats ag-mb-0">
+    <div class="ag-stats__item">
+      <dt class="ag-stats__label">Households supplied</dt>
+      <dd class="ag-stats__value">2,418,000</dd>
+    </div>
+    <div class="ag-stats__item">
+      <dt class="ag-stats__label">Districts inspected this quarter</dt>
+      <dd class="ag-stats__value">142</dd>
+    </div>
+    <div class="ag-stats__item">
+      <dt class="ag-stats__label">Leaks repaired within two days</dt>
+      <dd class="ag-stats__value">87%</dd>
+    </div>
+  </dl>
+  <p class="ag-caption ag-mb-0">Figures as at 30 September 2026.</p>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>A description list. Each figure is a <code>div</code> holding the label, then the value.</li>
+  <li>On screen the value sits above its label. In the markup the label comes first.</li>
+  <li>The figures wrap to fit: three across on a desktop, one on a phone.</li>
+  <li>Always say when the figures were taken, in a caption under the list.</li>
+  <li>Write the number in the page. Do not count it up with an animation.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The label is read before the number, so a screen reader says "Households supplied, 2,418,000".</li>
+  <li>
+    A number that counts up from zero is read as a stream of changing digits, or as zero. A number that was never filled
+    in is read as nothing at all.
+  </li>
+  <li>The accent line is decoration and carries no meaning.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>color.accent</code>, for the line beside each figure.</p>

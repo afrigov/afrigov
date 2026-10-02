@@ -44,17 +44,44 @@
       "regions": {
         "label": "Region",
         "choose": "Choose a region",
-        "items": ["Greater Accra", "Ashanti", "Northern", "Western", "Central", "Volta"],
+        "items": [
+          "Ahafo",
+          "Ashanti",
+          "Bono",
+          "Bono East",
+          "Central",
+          "Eastern",
+          "Greater Accra",
+          "North East",
+          "Northern",
+          "Oti",
+          "Savannah",
+          "Upper East",
+          "Upper West",
+          "Volta",
+          "Western",
+          "Western North"
+        ],
         "sub": {
           "label": "District",
           "choose": "Choose a district",
           "items": {
-            "Greater Accra": ["Accra Metropolitan", "Tema Metropolitan", "Ga East", "Ledzokuku"],
+            "Ahafo": ["Asunafo North", "Tano North", "Tano South"],
             "Ashanti": ["Kumasi Metropolitan", "Obuasi Municipal", "Ejisu"],
-            "Northern": ["Tamale Metropolitan", "Savelugu", "Yendi"],
-            "Western": ["Sekondi-Takoradi", "Tarkwa-Nsuaem", "Ahanta West"],
+            "Bono": ["Sunyani Municipal", "Dormaa Central", "Wenchi"],
+            "Bono East": ["Techiman Municipal", "Kintampo North", "Nkoranza South"],
             "Central": ["Cape Coast Metropolitan", "Mfantseman", "Komenda-Edina-Eguafo-Abirem"],
-            "Volta": ["Ho Municipal", "Keta", "Hohoe"]
+            "Eastern": ["New Juaben South", "Kwahu West", "Suhum"],
+            "Greater Accra": ["Accra Metropolitan", "Tema Metropolitan", "Ga East", "Ledzokuku"],
+            "North East": ["East Mamprusi", "West Mamprusi", "Chereponi"],
+            "Northern": ["Tamale Metropolitan", "Savelugu", "Yendi"],
+            "Oti": ["Krachi East", "Nkwanta South", "Jasikan"],
+            "Savannah": ["West Gonja", "East Gonja", "Bole"],
+            "Upper East": ["Bolgatanga Municipal", "Bawku Municipal", "Kassena-Nankana Municipal"],
+            "Upper West": ["Wa Municipal", "Lawra", "Sissala East"],
+            "Volta": ["Ho Municipal", "Keta", "Hohoe"],
+            "Western": ["Sekondi-Takoradi", "Tarkwa-Nsuaem", "Ahanta West"],
+            "Western North": ["Sefwi Wiawso", "Aowin", "Bibiani-Anhwiaso-Bekwai"]
           }
         }
       },

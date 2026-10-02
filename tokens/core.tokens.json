@@ -19,7 +19,11 @@
     "primary-tint": { "$value": "#e8eef5", "$description": "Very light primary for selected rows and panels." },
     "accent": {
       "$value": "#1f4e79",
-      "$description": "Second brand colour. Packs override. Decorative use only unless it passes AA."
+      "$description": "Second brand colour. Packs override. Decorative, or a background with on-accent text."
+    },
+    "on-accent": {
+      "$value": "#ffffff",
+      "$description": "Text on accent. Ink or white, whichever reads better. Build verifies 4.5:1."
     },
     "link": { "$value": "{color.primary}" },
     "link-hover": { "$value": "{color.primary-hover}" },

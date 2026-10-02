@@ -96,7 +96,17 @@
   <li>
     Links inside a tinted box use ink, not primary, because a primary is only guaranteed on paper and the grey panel.
   </li>
-  <li>The accent colour is decorative. Do not put text on it or use it as text unless the pack says it passes.</li>
+  <li>
+    The accent colour is the country's second colour: Ghana's gold, Kenya's red. Never use it as text on the page. Use
+    it as an edge on <a href="../components/service-card.html">cards</a> and
+    <a href="../components/key-figures.html">key figures</a>, or as an
+    <a href="../components/band.html">accent band</a>, where the text is <code>--ag-color-on-accent</code> and the build
+    checks the pair in every pack.
+  </li>
+  <li>
+    The flag colours are used exactly as the country defines them, in the banner's flag and in the
+    <a href="../components/flag-stripe.html">flag stripe</a>. Nothing is ever written on them.
+  </li>
   <li>
     Do not add a dark mode by inverting tokens. It has not been tested and the contrast gate does not cover it yet.
   </li>

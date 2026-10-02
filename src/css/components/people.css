@@ -1,0 +1,55 @@
+/* People. The leadership of an organisation: a portrait, a name and a role for each person. */
+.ag-people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
+  gap: var(--ag-space-5) var(--ag-space-4);
+  margin: 0 0 var(--ag-space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.ag-person {
+  margin: 0;
+}
+
+.ag-person__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: var(--ag-space-3);
+  border-radius: var(--ag-size-radius);
+  background: var(--ag-color-paper-alt);
+}
+
+.ag-person__name {
+  margin: 0;
+  font-size: var(--ag-font-size-md);
+  line-height: var(--ag-font-leading-tight);
+}
+
+.ag-person__role {
+  margin: var(--ag-space-1) 0 0;
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+/* Variant: a row for each person, with a small portrait at the start. For long lists. */
+.ag-people--rows {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: var(--ag-space-4);
+}
+
+.ag-people--rows .ag-person {
+  display: flex;
+  align-items: center;
+  gap: var(--ag-space-3);
+}
+
+.ag-people--rows .ag-person__photo {
+  flex: none;
+  width: 4rem;
+  margin-bottom: 0;
+  border-radius: 50%;
+}

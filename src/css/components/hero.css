@@ -66,6 +66,19 @@
   color: var(--ag-color-primary-hover);
 }
 
+/* A secondary button stays secondary: an outline in the panel's text colour. */
+.ag-hero--primary .ag-button--secondary,
+.ag-hero--primary .ag-button--secondary:hover {
+  background: transparent;
+  border-color: currentcolor;
+  color: inherit;
+}
+
+.ag-hero--primary .ag-button--secondary:hover {
+  text-decoration: underline;
+  text-decoration-thickness: max(3px, 0.1875em);
+}
+
 /* Variant: centred, for campaign pages with no image. */
 .ag-hero--centred {
   text-align: center;

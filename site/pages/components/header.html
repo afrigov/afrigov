@@ -143,6 +143,30 @@
   </div>
 </docs-example>
 
+<h2>Variant: with the flag stripe</h2>
+<p>
+  <code>ag-header--striped</code> replaces the bottom border with a line in the country's flag colours. It works with
+  the primary and stacked variants. See <a href="flag-stripe.html">flag stripe</a>.
+</p>
+<docs-example flush>
+  <div class="ag-header ag-header--striped">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#header-striped">
+        <span>
+          <span class="ag-header__org">Ministry of Health</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Example, striped">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#header-striped" aria-current="page">Services</a></li>
+          <li><a class="ag-nav__link" href="#header-striped">Hospitals</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+
 <h2>Accessibility</h2>
 <ul>
   <li>Mark the current page with <code>aria-current="page"</code>. It is shown with a bar and announced.</li>

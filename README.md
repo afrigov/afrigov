@@ -23,8 +23,8 @@ It is not a government project. It is open source, MIT licensed, and built so a 
 Two link tags. The core, then a country pack.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/core.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.8/dist/ng.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.9/dist/core.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.9/dist/ng.min.css" />
 ```
 
 ```html
@@ -60,7 +60,7 @@ init();
 
 | Part               | What it does                                                                                                                                     |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `core.css`         | Reset, element defaults, 15 components, layout utilities. Country-neutral. 5 KB gzipped.                                                         |
+| `core.css`         | Reset, element defaults, 44 components, layout utilities. Country-neutral. 8 KB gzipped.                                                         |
 | `ng.css`, `ke.css` | Country packs. National colours, derived text-safe variants, flag stripe, banner strings. About 400 bytes each.                                  |
 | `afrigov.js`       | Optional. Collapsible navigation on small screens and focus on the error summary. Every component works without it.                              |
 | `tokens/`          | The source of truth, in the [W3C Design Tokens](https://tr.designtokens.org/format/) format. Published in the package for Figma and other tools. |

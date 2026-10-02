@@ -19,6 +19,12 @@
   color: var(--ag-color-ink-inverse);
 }
 
+/* The pack's second colour: Ghana's gold, Kenya's red. The build picks ink or white for the text. */
+.ag-band--accent {
+  background: var(--ag-color-accent);
+  color: var(--ag-color-on-accent);
+}
+
 /* On a coloured band, text, headings and links take the band's colour. */
 .ag-band--primary h1,
 .ag-band--primary h2,
@@ -31,7 +37,13 @@
 .ag-band--dark h3,
 .ag-band--dark p,
 .ag-band--dark a,
-.ag-band--dark a:visited {
+.ag-band--dark a:visited,
+.ag-band--accent h1,
+.ag-band--accent h2,
+.ag-band--accent h3,
+.ag-band--accent p,
+.ag-band--accent a,
+.ag-band--accent a:visited {
   color: inherit;
 }
 
@@ -47,6 +59,39 @@
   background: var(--ag-color-primary-tint);
   border-color: var(--ag-color-primary-tint);
   color: var(--ag-color-primary-hover);
+}
+
+.ag-band--accent .ag-button {
+  background: var(--ag-color-on-accent);
+  border-color: var(--ag-color-on-accent);
+  color: var(--ag-color-accent);
+}
+
+.ag-band--accent .ag-button:hover {
+  background: var(--ag-color-on-accent);
+  border-color: var(--ag-color-on-accent);
+  color: var(--ag-color-accent);
+  text-decoration: underline;
+}
+
+/* A secondary button stays secondary on a coloured band: an outline in the band's text colour,
+   so the main action is still the solid one. */
+.ag-band--primary .ag-button--secondary,
+.ag-band--dark .ag-button--secondary,
+.ag-band--accent .ag-button--secondary,
+.ag-band--primary .ag-button--secondary:hover,
+.ag-band--dark .ag-button--secondary:hover,
+.ag-band--accent .ag-button--secondary:hover {
+  background: transparent;
+  border-color: currentcolor;
+  color: inherit;
+}
+
+.ag-band--primary .ag-button--secondary:hover,
+.ag-band--dark .ag-button--secondary:hover,
+.ag-band--accent .ag-button--secondary:hover {
+  text-decoration: underline;
+  text-decoration-thickness: max(3px, 0.1875em);
 }
 
 /* A hero inside a band takes the band's spacing instead of its own. */

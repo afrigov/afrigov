@@ -70,6 +70,7 @@ export function listPacks() {
  *  - primary is darkened until it meets 4.5:1 on paper
  *  - primary-hover is a darker step of primary
  *  - on-primary is white or ink, whichever reads better
+ *  - on-accent is white or ink, whichever reads better on the accent
  *  - primary-tint is a light wash of primary
  *  - link and link-hover follow primary
  */
@@ -110,8 +111,9 @@ export function loadPack(code, core = loadCore()) {
   overrides["color.link-hover"] = flat["color.link-hover"]?.value ?? overrides["color.primary-hover"];
 
   if (flat["color.accent"]) {
-    // Accent is decorative by default, so it keeps the exact official value.
+    // Accent is a background or a decoration, never text on paper, so it keeps the exact official value.
     overrides["color.accent"] = flat["color.accent"].value;
+    overrides["color.on-accent"] = textOn(flat["color.accent"].value, ink);
   }
 
   // Any other explicit color.* override a pack sets is passed through untouched.
@@ -136,6 +138,7 @@ export const CONTRAST_PAIRS = [
   ["color.ink-inverse", "color.paper-dark", 4.5, "footer text"],
   ["color.primary", "color.paper", 4.5, "primary as text and outlines"],
   ["color.on-primary", "color.primary", 4.5, "button labels"],
+  ["color.on-accent", "color.accent", 4.5, "text on the accent band"],
   ["color.link", "color.paper", 4.5, "links"],
   ["color.link", "color.paper-alt", 4.5, "links on alt background"],
   ["color.link-visited", "color.paper", 4.5, "visited links"],

@@ -1,0 +1,88 @@
+<!-- { "title": "Flag stripe", "section": "components", "description": "A thin line in the country's flag colours, under the header or between sections.", "order": 47 } -->
+<h1>Flag stripe</h1>
+<p class="ag-lead">
+  A thin line in the country's flag colours, taken from the pack. It tells a visitor whose site this is before they read
+  a word.
+</p>
+
+<h2>When to use</h2>
+<p>
+  Under the header, in place of its bottom border. That is the one place most sites need it. It can also sit above the
+  footer or between two sections of a home page.
+</p>
+
+<h2>When not to use</h2>
+<p>More than twice on a page, or as a border around boxes and cards. One line is enough.</p>
+
+<docs-example flush label="Under the header">
+  <div class="ag-header ag-header--striped">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#stripe-example">
+        <span>
+          <span class="ag-header__org">National Water Agency</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Stripe example">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#stripe-example" aria-current="page">Services</a></li>
+          <li><a class="ag-nav__link" href="#stripe-example">News</a></li>
+          <li><a class="ag-nav__link" href="#stripe-example">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+
+<docs-example flush label="With the primary header">
+  <div class="ag-header ag-header--primary ag-header--striped">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#stripe-primary">
+        <span>
+          <span class="ag-header__org">National Water Agency</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Stripe example, primary">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#stripe-primary" aria-current="page">Services</a></li>
+          <li><a class="ag-nav__link" href="#stripe-primary">News</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+
+<docs-example label="On its own">
+  <div class="ag-stripe" aria-hidden="true"></div>
+</docs-example>
+<p class="docs-fine">Preview a country at the top of the page to see its colours.</p>
+
+<h2>How it works</h2>
+<ul>
+  <li>
+    <code>ag-header--striped</code> swaps the header's bottom border for the stripe. It works with every other header
+    variant.
+  </li>
+  <li>
+    <code>ag-stripe</code> is the same line as an element of its own. Give it <code>aria-hidden="true"</code>; it has no
+    content.
+  </li>
+  <li>
+    The colours are the pack's flag colours, in the order the pack lists them, in three equal parts. With no pack the
+    line is the primary colour.
+  </li>
+  <li>
+    The stripe is the flag's colours and is not the flag. A flag with a white band, such as Nigeria's, shows as two
+    coloured parts on a white page, which is correct.
+  </li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The stripe is decoration. It carries no information that is not also in the banner and the header text.</li>
+  <li>Nothing is ever written on it, so the flag colours do not need to pass contrast against text.</li>
+</ul>
+
+<h2>Pack fields</h2>
+<p><code>flag</code>, the list of colours. The same list paints the small flag in the banner.</p>

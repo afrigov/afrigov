@@ -1,0 +1,39 @@
+/* Key figures. A few headline numbers, each with a label: people registered,
+   cards issued, offices open. The line beside each is the pack's accent colour. */
+.ag-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
+  gap: var(--ag-space-5) var(--ag-space-4);
+  margin: 0 0 var(--ag-space-6);
+}
+
+/* The label comes first in the markup, so a screen reader says what the number is
+   before the number. On screen the number sits above its label. */
+.ag-stats__item {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  margin: 0;
+  padding-inline-start: var(--ag-space-4);
+  border-inline-start: 4px solid var(--ag-color-accent);
+}
+
+.ag-stats__value {
+  margin: 0;
+  font-size: var(--ag-font-size-2xl);
+  font-weight: var(--ag-font-weight-bold);
+  line-height: var(--ag-font-leading-tight);
+  font-variant-numeric: tabular-nums;
+}
+
+.ag-stats__label {
+  margin: var(--ag-space-1) 0 0;
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-band--primary .ag-stats__label,
+.ag-band--dark .ag-stats__label,
+.ag-band--accent .ag-stats__label {
+  color: inherit;
+}

@@ -43,6 +43,39 @@
   </div>
 </docs-example>
 
+<h2>A table with two columns</h2>
+<p>
+  A table takes the full width of the page. With two columns, such as a service and its fee, that puts the two a long
+  way apart. Put a narrow table inside <code>ag-prose</code>, which holds it to the reading width.
+</p>
+<docs-example>
+  <div class="ag-prose">
+    <div class="ag-table-wrap ag-mb-0" role="region" aria-label="Testing fees" tabindex="0">
+      <table class="ag-table">
+        <caption>
+          Testing fees
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Test</th>
+            <th scope="col" class="ag-table__numeric">Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Household tap</th>
+            <td class="ag-table__numeric">Free</td>
+          </tr>
+          <tr>
+            <th scope="row">Borehole</th>
+            <td class="ag-table__numeric" data-docs-money="2500">2,500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</docs-example>
+
 <h2>Accessibility</h2>
 <ul>
   <li>The caption is the table's name. Screen readers list tables by caption.</li>
