@@ -51,6 +51,7 @@ describe("dist/core.css", () => {
       ".ag-header--striped",
       ".ag-feature",
       ".ag-people",
+      ".ag-people--4",
       ".ag-steps",
       ".ag-stats",
       ".ag-card--accent",

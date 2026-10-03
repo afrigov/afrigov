@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.9.1] - 2026-10-03
+
+### Added
+
+- `ag-people--2`, `ag-people--3` and `ag-people--4` fix the number of columns, so a chair and a chief executive can sit in two columns above the members in four.
+
 ## [0.9.0] - 2026-10-02
 
 Everything here came from the second use case, a rebuild of Ghana's National Identification Authority website, and from looking at it beside the first: two countries, and both sites green and white.
