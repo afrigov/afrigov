@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.11.1] - 2026-10-03
+
+### Fixed
+
+- `ag-card--flag`: the flag edge sits at the very top of the card and covers the card's side borders. It sat inside the padding, with grey showing above it at each corner.
+
 ## [0.11.0] - 2026-10-03
 
 ### Added

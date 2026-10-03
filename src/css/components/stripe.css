@@ -39,8 +39,10 @@
   border-top: 0;
 }
 
+/* The stripe sits at the very top of the card, in place of the top border, and reaches 1px
+   beyond the padding on each side, over the card's own side borders, so no grey shows beside it. */
 .ag-card--flag::before {
   content: "";
   height: 4px;
-  margin: 0 calc(-1 * var(--ag-space-4)) var(--ag-space-2);
+  margin: calc(-1 * var(--ag-space-4)) calc(-1 * var(--ag-space-4) - 1px) var(--ag-space-2);
 }
