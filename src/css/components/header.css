@@ -22,13 +22,9 @@
   text-decoration: none;
 }
 
-/* Underline only the name on hover, never the mark beside it. */
-.ag-header__brand:hover .ag-header__org {
-  text-decoration: underline;
-  text-decoration-thickness: max(3px, 0.1875em);
-  text-underline-offset: 0.15em;
-}
-
+/* The name is the link home. People expect that of a site's name, so it is not underlined on
+   hover: the underline would greet every arrival on the home page, under the pointer that
+   just clicked it. Keyboard users still get the focus ring. */
 .ag-header__brand:visited {
   color: var(--ag-color-ink);
 }

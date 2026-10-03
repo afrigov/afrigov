@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.11.2] - 2026-10-03
+
+### Changed
+
+- The organisation's name in the header is no longer underlined on hover. It is the link home, which people expect, and the underline met every arrival on the home page under the pointer that had just clicked it. Keyboard focus is unchanged. Links elsewhere stay underlined.
+- Docs: the hero page shows a hero inside a primary band with an image beside the text, with two actions and a link.
+
 ## [0.11.1] - 2026-10-03
 
 ### Fixed
