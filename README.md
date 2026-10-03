@@ -67,7 +67,7 @@ init();
 
 ## Around afrigov
 
-- **[Use cases](https://omoyolab.github.io/afrigov-usecases/)**: real government websites rebuilt on afrigov, with the real site's accessibility score beside the rebuild. Nigeria's digital economy ministry and Ghana's National Identification Authority so far, 61 pages, every one scoring 100.
+- **[Use cases](https://omoyolab.github.io/afrigov-usecases/)**: real government websites rebuilt on afrigov, with the real site's accessibility score beside the rebuild. Nigeria's digital economy ministry, Ghana's National Identification Authority and Ghana's Ministry of Health so far, 103 pages, every one scoring 100.
 - **[afrigov-audit](https://github.com/omoyolab/afrigov-audit)**: an accessibility check for any web page from the command line, with a badge of the grade and score.
 
 ## How accessibility is enforced
