@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.9.2] - 2026-10-03
+
+### Fixed
+
+- `ag-people--2` puts the two people side by side in the middle of the page, with the usual gap between them. They used to sit at the start of two half-page columns, far apart.
+
 ## [0.9.1] - 2026-10-03
 
 ### Added

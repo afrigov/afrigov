@@ -38,8 +38,11 @@
 /* Variants: a fixed number of columns, for a page where the chair and the head sit above the
    members. From tablet width up; on a phone they wrap as the default does. 48em = breakpoint.md */
 @media (min-width: 48em) {
+  /* Two people are two portraits side by side in the middle of the page, with the usual gap
+     between them, instead of each sitting at the start of half the page. */
   .ag-people--2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 14rem));
+    justify-content: center;
   }
 
   .ag-people--3 {
@@ -49,11 +52,6 @@
   .ag-people--4 {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-
-/* In two columns the portrait is held to a sensible size instead of filling half the page. */
-.ag-people--2 .ag-person__photo {
-  max-width: 14rem;
 }
 
 /* Variant: a row for each person, with a small portrait at the start. For long lists. */
