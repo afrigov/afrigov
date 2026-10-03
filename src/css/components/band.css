@@ -100,6 +100,19 @@
   padding-block: 0;
 }
 
+/* A dated list on a coloured band: its meta line and its hairlines take the band's colour. */
+.ag-band--primary .ag-list__meta,
+.ag-band--dark .ag-list__meta,
+.ag-band--accent .ag-list__meta {
+  color: inherit;
+}
+
+.ag-band--primary .ag-list__item,
+.ag-band--dark .ag-list__item,
+.ag-band--accent .ag-list__item {
+  border-bottom-color: currentcolor;
+}
+
 .ag-band > .ag-container > :last-child {
   margin-bottom: 0;
 }

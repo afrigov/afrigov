@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.10.1] - 2026-10-03
+
+### Fixed
+
+- A dated list on a primary, dark or accent band: the meta line and the hairlines take the band's colour. The meta line kept its grey and failed contrast.
+
 ## [0.10.0] - 2026-10-03
 
 ### Added
