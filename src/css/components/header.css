@@ -254,3 +254,95 @@
     margin-inline-start: calc(-1 * var(--ag-space-3));
   }
 }
+
+/* Section menu. A navigation item that opens a short list of links on click, never on hover.
+   A native disclosure, so it opens and closes with no script. In the collapsed menu on a phone
+   the list expands in place; on a desktop it drops below the item as a panel. */
+.ag-nav__section {
+  position: relative;
+}
+
+.ag-nav__details {
+  margin: 0;
+}
+
+.ag-nav__summary {
+  gap: var(--ag-space-2);
+  cursor: pointer;
+  list-style: none;
+}
+
+.ag-nav__summary::-webkit-details-marker {
+  display: none;
+}
+
+/* A chevron that points down when closed and up when open. */
+.ag-nav__summary::after {
+  content: "";
+  flex: none;
+  width: 0.5em;
+  height: 0.5em;
+  border-inline-end: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: translateY(-25%) rotate(45deg);
+}
+
+.ag-nav__details[open] > .ag-nav__summary::after {
+  transform: translateY(25%) rotate(225deg);
+}
+
+.ag-nav__menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--ag-color-paper);
+}
+
+.ag-nav__menu > li {
+  margin: 0;
+}
+
+.ag-nav__menu-link {
+  display: flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-3);
+  padding-inline-start: var(--ag-space-6);
+  color: var(--ag-color-link);
+  font-size: var(--ag-font-size-sm);
+}
+
+.ag-nav__menu-link:visited {
+  color: var(--ag-color-link);
+}
+
+.ag-nav__menu-link[aria-current="page"] {
+  background: var(--ag-color-primary-tint);
+  text-decoration: none;
+}
+
+/* 64em = breakpoint.lg */
+@media (min-width: 64em) {
+  .ag-nav__menu {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    z-index: 10;
+    min-width: 16rem;
+    padding-block: var(--ag-space-2);
+    border: 1px solid var(--ag-color-border);
+    border-top: 4px solid var(--ag-color-primary);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  }
+
+  .ag-nav__menu-link {
+    padding-inline-start: var(--ag-space-4);
+    white-space: nowrap;
+  }
+}
+
+/* The menu's panel keeps the page colours whatever the header's colour, so its links stay readable. */
+.ag-header--primary .ag-nav__menu-link,
+.ag-header--primary .ag-nav__menu-link:visited {
+  color: var(--ag-color-link);
+}

@@ -143,6 +143,70 @@
   </div>
 </docs-example>
 
+<h2>Section menus</h2>
+<p>
+  A navigation item can open a short list of links. It opens on a click or a tap, never on hover, and it is a native
+  disclosure, so it works with no script: the browser handles opening, closing and the keyboard. The script adds one
+  menu open at a time, Escape to close, and closing when anything else on the page is clicked.
+</p>
+<docs-example flush>
+  <div class="ag-header">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#header-menu">
+        <span>
+          <span class="ag-header__org">National Water Agency</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Example with section menus">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#header-menu" aria-current="page">Home</a></li>
+          <li class="ag-nav__section">
+            <details class="ag-nav__details" data-ag-menu>
+              <summary class="ag-nav__link ag-nav__summary">Services</summary>
+              <ul class="ag-nav__menu">
+                <li><a class="ag-nav__menu-link" href="#header-menu">All services</a></li>
+                <li><a class="ag-nav__menu-link" href="#header-menu">Report a leak</a></li>
+                <li><a class="ag-nav__menu-link" href="#header-menu">Check your water quality</a></li>
+                <li><a class="ag-nav__menu-link" href="#header-menu">Pay a bill</a></li>
+                <li><a class="ag-nav__menu-link" href="#header-menu">Apply for a connection</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="ag-nav__section">
+            <details class="ag-nav__details" data-ag-menu>
+              <summary class="ag-nav__link ag-nav__summary">About</summary>
+              <ul class="ag-nav__menu">
+                <li><a class="ag-nav__menu-link" href="#header-menu">About the agency</a></li>
+                <li><a class="ag-nav__menu-link" href="#header-menu">Leadership</a></li>
+                <li><a class="ag-nav__menu-link" href="#header-menu">Reports</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="ag-nav__link" href="#header-menu">News</a></li>
+          <li><a class="ag-nav__link" href="#header-menu">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+<ul>
+  <li>
+    The first link in every menu is the section's own page, so every page can be reached by someone who never opens a
+    menu, and by a search engine.
+  </li>
+  <li>Up to about eight links in a menu. More than that is a section page with cards.</li>
+  <li>
+    In the collapsed menu on a phone, a section expands in place, as a row that opens. On a desktop the list drops below
+    the item as a panel.
+  </li>
+  <li>
+    Mark the current page's link with <code>aria-current="page"</code> inside the menu, and the section itself with
+    <code>aria-current="true"</code> on the summary.
+  </li>
+  <li>Links that are not in a section stay plain links. Mix the two freely.</li>
+</ul>
+
 <h2>Variant: with the flag stripe</h2>
 <p>
   <code>ag-header--striped</code> replaces the bottom border with a line in the country's flag colours. It works with
@@ -175,7 +239,11 @@
   </li>
   <li>Logos are decorative when the organisation name is written next to them: use <code>alt=""</code>.</li>
   <li>The menu button sets <code>aria-expanded</code> and closes on Escape, returning focus to the button.</li>
-  <li>Keep it to six links. More than that belongs in a service page, not a header.</li>
+  <li>Keep it to six items across. A section menu counts as one.</li>
+  <li>
+    A section menu is a <code>details</code> element. Screen readers announce it as a disclosure, say whether it is
+    open, and read the links inside it as a list.
+  </li>
 </ul>
 
 <h2>Pack fields</h2>

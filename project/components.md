@@ -14,23 +14,23 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 
 ## Page furniture
 
-| Component               | Class                               | Version | Status  | Notes                                                                                  |
-| ----------------------- | ----------------------------------- | ------- | ------- | -------------------------------------------------------------------------------------- |
-| Skip link               | `.ag-skip-link`                     | 0.1     | shipped |                                                                                        |
-| Official banner         | `.ag-banner`, `.ag-flag`            | 0.1     | shipped | Flag stripes and direction from the pack                                               |
-| Header + nav            | `.ag-header`, `.ag-nav`             | 0.1     | shipped | Collapsible with JS only; always visible without                                       |
-| Footer                  | `.ag-footer`                        | 0.1     | shipped | ; 0.8 variants: light                                                                  |
-| Breadcrumb              | `.ag-breadcrumb`                    | 0.1     | shipped |                                                                                        |
-| Pagination              | `.ag-pagination`                    | 0.1     | shipped | ; 0.8 variants: simple                                                                 |
-| Language switcher       | `.ag-lang`                          | 0.2     | shipped | Links with hreflang and lang, current marked, endonyms                                 |
-| Back link               | `.ag-back-link`                     | 0.5     | shipped | Real link to the previous step; chevron mirrors in RTL                                 |
-| Social links            | `.ag-social`                        | 0.6     | shipped | Network name is the text, icon decorative; footer only                                 |
-| Footer address          | `.ag-footer__address`               | 0.6     | shipped | `address` element, italic reset in core                                                |
-| Hero                    | `.ag-hero` + image, primary         | 0.5     | shipped | Image beside the text, never behind it; one action; 0.8 variants: centred, image-first |
-| Band                    | `.ag-band` + tint, primary, dark    | 0.8     | shipped | Full-width section background; hero inside takes its colour; 0.9: accent               |
-| Flag stripe             | `.ag-stripe`, `.ag-header--striped` | 0.9     | shipped | The pack's flag colours in three equal parts; decoration only                          |
-| Feature                 | `.ag-feature` + reverse             | 0.9     | shipped | A picture of one thing beside its name and main points                                 |
-| Cookie / consent banner | `.ag-consent`                       | none    | cut     | Government sites should not need tracking cookies. Revisit if asked.                   |
+| Component               | Class                               | Version | Status  | Notes                                                                                                                                           |
+| ----------------------- | ----------------------------------- | ------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Skip link               | `.ag-skip-link`                     | 0.1     | shipped |                                                                                                                                                 |
+| Official banner         | `.ag-banner`, `.ag-flag`            | 0.1     | shipped | Flag stripes and direction from the pack                                                                                                        |
+| Header + nav            | `.ag-header`, `.ag-nav`             | 0.1     | shipped | Collapsible with JS only; always visible without; 0.10: section menus                                                                           |
+| Footer                  | `.ag-footer`                        | 0.1     | shipped | ; 0.8 variants: light                                                                                                                           |
+| Breadcrumb              | `.ag-breadcrumb`                    | 0.1     | shipped |                                                                                                                                                 |
+| Pagination              | `.ag-pagination`                    | 0.1     | shipped | ; 0.8 variants: simple                                                                                                                          |
+| Language switcher       | `.ag-lang`                          | 0.2     | shipped | Links with hreflang and lang, current marked, endonyms                                                                                          |
+| Back link               | `.ag-back-link`                     | 0.5     | shipped | Real link to the previous step; chevron mirrors in RTL                                                                                          |
+| Social links            | `.ag-social`                        | 0.6     | shipped | Network name is the text, icon decorative; footer only                                                                                          |
+| Footer address          | `.ag-footer__address`               | 0.6     | shipped | `address` element, italic reset in core                                                                                                         |
+| Hero                    | `.ag-hero` + image, primary         | 0.5     | shipped | Image beside the text, never behind it; one action; 0.8 variants: centred, image-first; 0.10: cover, with the text in a panel over a photograph |
+| Band                    | `.ag-band` + tint, primary, dark    | 0.8     | shipped | Full-width section background; hero inside takes its colour; 0.9: accent                                                                        |
+| Flag stripe             | `.ag-stripe`, `.ag-header--striped` | 0.9     | shipped | The pack's flag colours in three equal parts; decoration only                                                                                   |
+| Feature                 | `.ag-feature` + reverse             | 0.9     | shipped | A picture of one thing beside its name and main points                                                                                          |
+| Cookie / consent banner | `.ag-consent`                       | none    | cut     | Government sites should not need tracking cookies. Revisit if asked.                                                                            |
 
 ## Actions
 

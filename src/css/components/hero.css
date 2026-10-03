@@ -1,5 +1,6 @@
 /* Hero. The top of a department or service home: title, lead, one action, and
-   optionally an image beside the text. Text never sits on top of the image. */
+   optionally an image beside the text. Text never sits directly on a photograph: the cover
+   variant puts it in a solid panel. */
 .ag-hero {
   margin-bottom: var(--ag-space-6);
   padding-block: var(--ag-space-5);
@@ -101,5 +102,107 @@
 
   .ag-hero--image-first .ag-hero__media {
     order: -1;
+  }
+}
+
+/* Variant: a photograph across the full width, with the title, lead and action in a solid panel.
+   The contrast is between the text and the panel, so it passes whatever the photograph is.
+   On a phone the photograph sits above the panel and nothing is laid over it. */
+.ag-hero--cover {
+  position: relative;
+  padding-block: 0;
+}
+
+.ag-hero__cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--ag-color-paper-alt);
+}
+
+.ag-hero--cover .ag-hero__inner {
+  display: block;
+}
+
+/* On a phone the panel is as wide as the photograph above it. 47.99em = just under breakpoint.md */
+@media (max-width: 47.99em) {
+  .ag-hero--cover .ag-hero__inner {
+    padding-inline: 0;
+  }
+}
+
+.ag-hero__panel {
+  padding: var(--ag-space-5);
+  border-inline-start: 6px solid var(--ag-color-accent);
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+}
+
+.ag-hero__panel .ag-hero__title,
+.ag-hero__panel .ag-hero__lead {
+  color: inherit;
+}
+
+.ag-hero__panel .ag-button {
+  background: var(--ag-color-paper);
+  border-color: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+}
+
+.ag-hero__panel .ag-button:hover {
+  background: var(--ag-color-primary-tint);
+  border-color: var(--ag-color-primary-tint);
+  color: var(--ag-color-primary-hover);
+}
+
+.ag-hero__panel .ag-button--secondary,
+.ag-hero__panel .ag-button--secondary:hover {
+  background: transparent;
+  border-color: currentcolor;
+  color: inherit;
+}
+
+/* Light panel: the page colour with dark text, for a quieter page. */
+.ag-hero--cover-light .ag-hero__panel {
+  background: var(--ag-color-paper);
+  color: var(--ag-color-ink);
+}
+
+.ag-hero--cover-light .ag-hero__panel .ag-button {
+  background: var(--ag-color-primary);
+  border-color: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+}
+
+.ag-hero--cover-light .ag-hero__panel .ag-button--secondary {
+  background: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+}
+
+/* 48em = breakpoint.md */
+@media (min-width: 48em) {
+  .ag-hero--cover {
+    display: grid;
+    min-height: 26rem;
+  }
+
+  .ag-hero__cover {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .ag-hero--cover .ag-hero__inner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding-block: var(--ag-space-6);
+  }
+
+  .ag-hero__panel {
+    max-width: 36rem;
   }
 }

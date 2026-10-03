@@ -3,6 +3,7 @@
  *
  * Every component works without this file. It adds:
  *  - a collapsible header navigation on small screens ([data-ag-toggle])
+ *  - section menus in the navigation: one open at a time, Escape and click-away close ([data-ag-menu])
  *  - focus on the error summary when a page loads with one
  *
  * ESM:  import { init } from "afrigov"; init();
@@ -103,6 +104,28 @@ function charCounts(scope) {
   });
 }
 
+/**
+ * Section menus in the header navigation: a details element with data-ag-menu. The browser
+ * opens and closes it. The script keeps one open at a time, closes on Escape, and closes
+ * when something else on the page is clicked.
+ */
+function menus(scope) {
+  const all = scope.querySelectorAll("details[data-ag-menu]");
+  if (!all.length) return;
+  all.forEach((menu) => {
+    menu.addEventListener("toggle", () => {
+      if (menu.open) all.forEach((m) => m !== menu && (m.open = false));
+    });
+    menu.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menu.open) {
+        menu.open = false;
+        menu.querySelector("summary").focus();
+      }
+    });
+  });
+  document.addEventListener("click", (e) => all.forEach((m) => m.open && !m.contains(e.target) && (m.open = false)));
+}
+
 function focusErrorSummary(scope) {
   const summary = scope.querySelector(".ag-error-summary");
   if (summary && !summary.hasAttribute("data-ag-no-autofocus")) {
@@ -115,6 +138,7 @@ function focusErrorSummary(scope) {
 export function init(scope = document) {
   document.documentElement.classList.add("ag-js");
   toggles(scope);
+  menus(scope);
   regions(scope);
   charCounts(scope);
   focusErrorSummary(scope);

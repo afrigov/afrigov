@@ -94,6 +94,50 @@
   </div>
 </docs-example>
 
+<h2>Variant: text in a panel over a photograph</h2>
+<p>
+  The photograph fills the width, and the title, lead and action sit in a solid panel laid over it. The contrast is
+  between the text and the panel, so it passes whatever the photograph is. On a phone the photograph sits above the
+  panel and nothing is laid over it, so no face is covered and no text is squeezed.
+</p>
+<docs-example flush>
+  <div class="ag-hero ag-hero--cover ag-mb-0">
+    <img
+      class="ag-hero__cover"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3Ccircle cx='12' cy='2.5' r='1' fill='%23ffbf47'/%3E%3Cpath d='M0 9 L0 6.5 C3 5 5 7 8 5.5 C11 4 13 6.5 16 5.5 L16 9 Z' fill='%231f4e79'/%3E%3C/svg%3E"
+      alt=""
+      width="1600"
+      height="900"
+    />
+    <div class="ag-container ag-hero__inner">
+      <div class="ag-hero__panel">
+        <h2 class="ag-heading-xl ag-hero__title">Clean water for every community</h2>
+        <p class="ag-lead ag-hero__lead">The agency that builds, inspects and regulates public water supply.</p>
+        <div class="ag-button-group ag-hero__actions">
+          <a class="ag-button ag-button--start" href="#hero-cover">Our programmes</a>
+          <a class="ag-button ag-button--secondary" href="#hero-cover">Find your district</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</docs-example>
+<p>
+  <code>ag-hero--cover-light</code> makes the panel the page colour with dark text, for a quieter page. The line at the
+  panel's edge is the pack's accent colour.
+</p>
+<ul>
+  <li>
+    The photograph is decorative: its <code>alt</code> is empty, because everything it is there to say is in the panel.
+    Give it <code>width</code> and <code>height</code>, so the page does not jump while it loads.
+  </li>
+  <li>No words inside the picture. The title is text in the panel, so it can be read, resized and translated.</li>
+  <li>
+    Choose a photograph with its subject on the right or in the middle, since the panel covers the lower left from
+    tablet width up.
+  </li>
+  <li>One photograph, compressed, under 150 KB. A 2G connection will be waiting for it.</li>
+</ul>
+
 <h2>Inside a band</h2>
 <p>
   For a tinted or dark hero, put the hero inside a <a href="band.html">band</a>. The band supplies the colour and
@@ -110,8 +154,8 @@
 <h2>Rules</h2>
 <ul>
   <li>
-    <strong>The image sits beside the text.</strong> On phones it stacks under the text. Text is never placed over a
-    photograph.
+    <strong>Text is never placed directly on a photograph.</strong> The image sits beside the text, or the text sits in
+    a solid panel over it. On phones the two always stack.
   </li>
   <li>
     <strong>The hero image is the one image you do not lazy-load</strong>, and the one you keep smallest: under 150 KB,

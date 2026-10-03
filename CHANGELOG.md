@@ -6,6 +6,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-10-03
+
+### Added
+
+- **Section menus in the header.** A navigation item can open a short list of links on click, never on hover. It is a native `details` element, so it works with no script; the script adds one menu open at a time, Escape to close, and closing on a click elsewhere. Markup: `ag-nav__section`, `ag-nav__details` with `data-ag-menu`, `ag-nav__summary`, `ag-nav__menu`, `ag-nav__menu-link`.
+- **Hero with the text in a panel over a photograph.** `ag-hero--cover` lays the title, lead and action in a solid panel over a full-width photograph, so the contrast is between the text and the panel. On a phone the photograph sits above the panel. `ag-hero--cover-light` is the same with a light panel.
+
+### Changed
+
+- The script-tag build may be up to 4 KB. It is 3.1 KB.
+
 ## [0.9.5] - 2026-10-03
 
 ### Changed
