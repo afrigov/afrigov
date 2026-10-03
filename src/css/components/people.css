@@ -35,23 +35,32 @@
   color: var(--ag-color-ink-muted);
 }
 
-/* Variants: a fixed number of columns, for a page where the chair and the head sit above the
-   members. From tablet width up; on a phone they wrap as the default does. 48em = breakpoint.md */
+/* Variants: a fixed number per row, two to six. Every person is the same size whatever the
+   number: two or three take the width they would have in four columns and sit in the middle of
+   the page; six are narrower and fill the row. From tablet width up; on a phone they wrap as
+   the default does. 48em = breakpoint.md, 64em = breakpoint.lg */
 @media (min-width: 48em) {
-  /* Two people are two portraits side by side in the middle of the page, with the usual gap
-     between them. Each is a little wider than one of four columns, so the people at the top
-     are never smaller than the members under them. */
-  .ag-people--2 {
-    grid-template-columns: repeat(2, minmax(0, 18rem));
+  .ag-people--2,
+  .ag-people--3 {
     justify-content: center;
   }
 
+  .ag-people--2 {
+    grid-template-columns: repeat(2, calc((100% - 3 * var(--ag-space-4)) / 4));
+  }
+
   .ag-people--3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, calc((100% - 3 * var(--ag-space-4)) / 4));
   }
 
   .ag-people--4 {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .ag-people--6 {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 

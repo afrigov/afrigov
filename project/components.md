@@ -66,31 +66,31 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 
 ## Feedback and content
 
-| Component          | Class                                              | Version | Status  | Notes                                                                                                         |
-| ------------------ | -------------------------------------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------- |
-| Alert              | `.ag-alert` + success/warning/error                | 0.1     | shipped | Always has a title                                                                                            |
-| Badge              | `.ag-badge` + variants                             | 0.1     | shipped |                                                                                                               |
-| Accordion          | `.ag-accordion` on `<details>`                     | 0.1     | shipped | No JS                                                                                                         |
-| Table              | `.ag-table`, `.ag-table-wrap`                      | 0.1     | shipped |                                                                                                               |
-| Confirmation panel | `.ag-panel`                                        | 0.1     | shipped | ; 0.8 variants: neutral                                                                                       |
-| Summary list       | `.ag-summary`                                      | 0.1     | shipped | Check-your-answers pages                                                                                      |
-| Inset text         | `.ag-inset`                                        | 0.1     | shipped |                                                                                                               |
-| Details            | `.ag-details`                                      | 0.2     | shipped | Single disclosure on native details                                                                           |
-| Tabs               | `.ag-tabs`                                         | 0.3     | planned | Needs JS; no-JS state is stacked sections                                                                     |
-| Notification count | `.ag-count`                                        | 0.3     | planned |                                                                                                               |
-| Step indicator     | `.ag-steps`                                        | 0.3     | planned | Multi-page forms                                                                                              |
-| Service card       | `.ag-card`                                         | 0.2     | shipped | Stretched link, focus ring on the card; logo slot since 0.6.1; 0.8 variants: tinted, plain, image, horizontal |
-| Dated list         | `.ag-list` + media                                 | 0.5     | shipped | Link, meta line with `<time>`, optional summary                                                               |
-| Download link      | `.ag-download`                                     | 0.5     | shipped | Format and size inside the link text                                                                          |
-| Empty state        | `.ag-empty`                                        | 0.5     | shipped | Heading plus what to do; not an alert                                                                         |
-| Image and figure   | `.ag-figure`, `.ag-image`, `.ag-gallery`           | 0.5     | shipped | Caption or alt, never both; 150 KB budget; no text over photos                                                |
-| Statement          | `.ag-statement` + full                             | 0.6     | shipped | Head of organisation's message with portrait; name and role after the text; 0.8 variants: primary             |
-| People             | `.ag-people`, `.ag-person` + rows, 2, 3, 4 columns | 0.9     | shipped | Portrait, name and role; empty alt on portraits                                                               |
-| Steps              | `.ag-steps`                                        | 0.9     | shipped | Ordered list with CSS counters; title optional                                                                |
-| Key figures        | `.ag-stats`                                        | 0.9     | shipped | Description list, label first in the markup, value first on screen; accent edge                               |
-| Modal dialog       | none                                               | none    | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need.                 |
-| Toast              | none                                               | none    | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                                 |
-| Carousel           | none                                               | none    | cut     | Never.                                                                                                        |
+| Component          | Class                                             | Version | Status  | Notes                                                                                                         |
+| ------------------ | ------------------------------------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------- |
+| Alert              | `.ag-alert` + success/warning/error               | 0.1     | shipped | Always has a title                                                                                            |
+| Badge              | `.ag-badge` + variants                            | 0.1     | shipped |                                                                                                               |
+| Accordion          | `.ag-accordion` on `<details>`                    | 0.1     | shipped | No JS                                                                                                         |
+| Table              | `.ag-table`, `.ag-table-wrap`                     | 0.1     | shipped |                                                                                                               |
+| Confirmation panel | `.ag-panel`                                       | 0.1     | shipped | ; 0.8 variants: neutral                                                                                       |
+| Summary list       | `.ag-summary`                                     | 0.1     | shipped | Check-your-answers pages                                                                                      |
+| Inset text         | `.ag-inset`                                       | 0.1     | shipped |                                                                                                               |
+| Details            | `.ag-details`                                     | 0.2     | shipped | Single disclosure on native details                                                                           |
+| Tabs               | `.ag-tabs`                                        | 0.3     | planned | Needs JS; no-JS state is stacked sections                                                                     |
+| Notification count | `.ag-count`                                       | 0.3     | planned |                                                                                                               |
+| Step indicator     | `.ag-steps`                                       | 0.3     | planned | Multi-page forms                                                                                              |
+| Service card       | `.ag-card`                                        | 0.2     | shipped | Stretched link, focus ring on the card; logo slot since 0.6.1; 0.8 variants: tinted, plain, image, horizontal |
+| Dated list         | `.ag-list` + media                                | 0.5     | shipped | Link, meta line with `<time>`, optional summary                                                               |
+| Download link      | `.ag-download`                                    | 0.5     | shipped | Format and size inside the link text                                                                          |
+| Empty state        | `.ag-empty`                                       | 0.5     | shipped | Heading plus what to do; not an alert                                                                         |
+| Image and figure   | `.ag-figure`, `.ag-image`, `.ag-gallery`          | 0.5     | shipped | Caption or alt, never both; 150 KB budget; no text over photos                                                |
+| Statement          | `.ag-statement` + full                            | 0.6     | shipped | Head of organisation's message with portrait; name and role after the text; 0.8 variants: primary             |
+| People             | `.ag-people`, `.ag-person` + rows, 2 to 6 per row | 0.9     | shipped | Portrait, name and role; empty alt on portraits                                                               |
+| Steps              | `.ag-steps`                                       | 0.9     | shipped | Ordered list with CSS counters; title optional                                                                |
+| Key figures        | `.ag-stats`                                       | 0.9     | shipped | Description list, label first in the markup, value first on screen; accent edge                               |
+| Modal dialog       | none                                              | none    | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need.                 |
+| Toast              | none                                              | none    | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                                 |
+| Carousel           | none                                              | none    | cut     | Never.                                                                                                        |
 
 ## Tooling and packs
 

@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.9.4] - 2026-10-03
+
+### Changed
+
+- People: `ag-people--2` and `ag-people--3` are the size a person has in four columns, in the middle of the page, so the people at the top of a page match the members under them. `ag-people--6` added.
+
 ## [0.9.3] - 2026-10-03
 
 ### Fixed
