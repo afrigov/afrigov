@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.9.5] - 2026-10-03
+
+### Changed
+
+- README brought up to date: seven packs, the full component list, both use cases, the current size, and a short note on where the project stands in place of a version history. The roadmap files and the naming decision are no longer in the repository; the changelog is the history.
+
 ## [0.9.4] - 2026-10-03
 
 ### Changed

@@ -1,9 +1,7 @@
 <p><img src="site/logo.svg" alt="afrigov" width="200" height="48"></p>
 
-# afrigov
-
 **Open-source components for building accessible African public-service websites.**
-One country-neutral core. A token pack per country. Plain CSS, 5 KB gzipped, no build step.
+One country-neutral core. A token pack per country. Plain CSS, 8 KB gzipped, no build step.
 
 [![npm](https://img.shields.io/npm/v/afrigov?color=1f4e79)](https://www.npmjs.com/package/afrigov)
 [![CI](https://github.com/omoyolab/afrigov/actions/workflows/ci.yml/badge.svg)](https://github.com/omoyolab/afrigov/actions/workflows/ci.yml)
@@ -14,7 +12,7 @@ One country-neutral core. A token pack per country. Plain CSS, 5 KB gzipped, no 
 
 ---
 
-Most government websites in Africa fail basic accessibility checks. Not because the people building them do not care, but because every ministry, agency and contractor starts from zero. afrigov is the starting point they do not have: accessible components, national colours that pass contrast, official-website banners in local languages, and a size budget that respects a 2G connection.
+Most government websites in Africa fail basic accessibility checks. The people building them care; the problem is that every ministry, agency and contractor starts from zero. afrigov is the starting point they do not have: accessible components, national colours that pass contrast, official-website banners in local languages, and a size budget that respects a 2G connection.
 
 It is not a government project. It is open source, MIT licensed, and built so a country pack is one JSON file that anyone can contribute.
 
@@ -52,24 +50,24 @@ npm install afrigov
 ```js
 import "afrigov/core.css";
 import "afrigov/ng.css";
-import { init } from "afrigov"; // optional, 1.5 KB
+import { init } from "afrigov"; // optional, 3 KB
 init();
 ```
 
 ## What is in the box
 
-| Part               | What it does                                                                                                                                     |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `core.css`         | Reset, element defaults, 44 components, layout utilities. Country-neutral. 8 KB gzipped.                                                         |
-| `ng.css`, `ke.css` | Country packs. National colours, derived text-safe variants, flag stripe, banner strings. About 400 bytes each.                                  |
-| `afrigov.js`       | Optional. Collapsible navigation on small screens and focus on the error summary. Every component works without it.                              |
-| `tokens/`          | The source of truth, in the [W3C Design Tokens](https://tr.designtokens.org/format/) format. Published in the package for Figma and other tools. |
+| Part                  | What it does                                                                                                                                                                 |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `core.css`            | Reset, element defaults, 44 components, layout utilities. Country-neutral. 8 KB gzipped.                                                                                     |
+| `ng.css` and six more | Country packs for Ghana, Kenya, Morocco, Nigeria, Rwanda, Senegal and South Africa. National colours, derived text-safe variants, the flag, banner strings. Under 1 KB each. |
+| `afrigov.js`          | Optional. Collapsible navigation on small screens and focus on the error summary. Every component works without it.                                                          |
+| `tokens/`             | The source of truth, in the [W3C Design Tokens](https://tr.designtokens.org/format/) format. Published in the package for Figma and other tools.                             |
 
-**Components:** official-website banner, header and navigation, footer, skip link, button, breadcrumb, pagination, text input, textarea, select, radio, checkbox, input group, phone number, national ID, region selector, character count, error summary, date input, alert, badge, details, accordion, table, currency display, confirmation panel, summary list, service card, inset text, language switcher.
+**Components:** skip link, official website banner, header and navigation, footer, hero, band, flag stripe, feature, breadcrumb, back link, social links, pagination, language switcher, button, text input, textarea, character count, select, radios, checkboxes, input group, phone number, national ID number, region selector, date input, error summary, alert, badge, dated list, download link, empty state, image and figure, statement, accordion, details, currency display, steps, key figures, people, table, confirmation panel, summary list, service card, inset text.
 
 ## Around afrigov
 
-- **[Use cases](https://omoyolab.github.io/afrigov-usecases/)**: real government websites rebuilt on afrigov, with the real site's accessibility score beside the rebuild. The first is Nigeria's digital economy ministry, 29 pages, every one 100, A.
+- **[Use cases](https://omoyolab.github.io/afrigov-usecases/)**: real government websites rebuilt on afrigov, with the real site's accessibility score beside the rebuild. Nigeria's digital economy ministry and Ghana's National Identification Authority so far, 61 pages, every one scoring 100.
 - **[afrigov-audit](https://github.com/omoyolab/afrigov-audit)**: an accessibility check for any web page from the command line, with a badge of the grade and score.
 
 ## How accessibility is enforced
@@ -77,7 +75,7 @@ init();
 - **Contrast is a build step.** Every foreground and background pair in [`scripts/tokens.mjs`](scripts/tokens.mjs) must meet its ratio, for the core and for every pack. If a pack's official colour is too light for text, the build derives a deeper one and says so in the generated CSS. The flag stripe always keeps the exact official colour.
 - **axe-core runs on every pull request.** The docs page renders every component and is tested with each pack against WCAG 2.1 A and AA rules.
 - **Touch targets are tested too.** Every link, button, control and summary on the docs page must be at least 48px tall at phone width.
-- **A size budget fails the build.** `core.min.css` must gzip to 20 KB or less. It is currently 5 KB.
+- **A size budget fails the build.** `core.min.css` must gzip to 20 KB or less. It is currently 8 KB.
 
 ## Design rules
 
@@ -121,7 +119,7 @@ A pack is one JSON file in [`tokens/packs/`](tokens/packs). It declares the offi
 
 The build derives `primary-hover`, `on-primary`, `primary-tint`, `link` and `link-hover`, checks every pair, and writes `dist/ke.css`. To add a country, copy a pack, change the values, run `pnpm test`, open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-country-pack).
 
-Packs wanted: Egypt, Uganda, Tanzania, Ethiopia, Côte d'Ivoire, Egypt, Morocco. Translations wanted for the Nigerian banner in Hausa, Yoruba and Igbo.
+Packs and translations wanted are listed as [open issues](https://github.com/omoyolab/afrigov/issues?q=is%3Aissue+is%3Aopen+label%3Acountry-pack%2Ctranslation).
 
 ## Theming
 
@@ -153,15 +151,9 @@ pnpm check          # everything CI runs
 
 Node 20 or newer and pnpm 10.
 
-## Roadmap
+## Where it stands
 
-- **0.2**: the African patterns: phone number, national ID, region selector, currency display, character count, service card, details and language switcher. Rwanda and South Africa packs, SVG flags, a published pack JSON schema. All shipped.
-- **0.3**: [afrigov-audit](https://github.com/omoyolab/afrigov-audit), run axe against any site from the command line, and a monthly scoreboard of public services in the pack countries. Shipped; the scoreboard goes public after each site has been notified.
-- **0.4**: Figma library generated from the tokens.
-- **0.4**: right-to-left support with a Morocco pack, and six page templates. Shipped.
-- **1.0**: stable class names, tokens and pack schema. Requires a manual screen-reader pass on every component, and at least one real service built on it. The full definition is in [`project/roadmap/v1.0.md`](project/roadmap/v1.0.md).
-
-The detailed component plan per version is in [`project/`](project/).
+Version 0.9. Everything is on the [docs site](https://omoyolab.github.io/afrigov) and in the [changelog](CHANGELOG.md). Three things stand between here and 1.0: a manual screen-reader pass on every component, the publication of the accessibility scoreboard of public services in the pack countries, and one real service built on afrigov by someone other than us. Class names, tokens and the pack schema are stable from 1.0.
 
 ## Acknowledgements
 

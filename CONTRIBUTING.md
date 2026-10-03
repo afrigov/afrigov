@@ -50,7 +50,7 @@ Treated as the highest priority. Open a bug report with the component, the assis
 
 ### Components
 
-Open an issue first for anything not on the roadmap in `project/roadmap/`, so we can agree on the shape before you spend a weekend on it. A component needs:
+Open an issue first for anything larger than a fix, so we can agree on the shape before you spend a weekend on it. A component needs:
 
 - One CSS file in `src/css/components/`, added to the list in `scripts/build-css.mjs`.
 - Single-class selectors only, `ag-block__element--modifier`. No nesting, no IDs, no element selectors except inside a component class.
