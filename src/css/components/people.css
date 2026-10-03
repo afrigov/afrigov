@@ -39,9 +39,10 @@
    members. From tablet width up; on a phone they wrap as the default does. 48em = breakpoint.md */
 @media (min-width: 48em) {
   /* Two people are two portraits side by side in the middle of the page, with the usual gap
-     between them, instead of each sitting at the start of half the page. */
+     between them. Each is a little wider than one of four columns, so the people at the top
+     are never smaller than the members under them. */
   .ag-people--2 {
-    grid-template-columns: repeat(2, minmax(0, 14rem));
+    grid-template-columns: repeat(2, minmax(0, 18rem));
     justify-content: center;
   }
 

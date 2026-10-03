@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.9.3] - 2026-10-03
+
+### Fixed
+
+- In `ag-people--2` each person is 18rem wide, a little wider than one of four columns, so the people at the top of a page are never smaller than the members under them.
+
 ## [0.9.2] - 2026-10-03
 
 ### Fixed
