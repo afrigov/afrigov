@@ -44,6 +44,7 @@ const COMPONENTS = [
   "people",
   "steps",
   "stats",
+  "events",
   "statement",
   "social",
   "alert",

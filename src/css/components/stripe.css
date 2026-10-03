@@ -1,7 +1,9 @@
 /* Flag stripe. A thin line in the country's flag colours, from the pack. It says whose
    site this is without a word. With no pack it is one line in the primary colour. */
 .ag-stripe,
-.ag-header--striped::after {
+.ag-header--striped::after,
+.ag-footer--striped::before,
+.ag-card--flag::before {
   display: block;
   height: 0.375rem;
   background: linear-gradient(
@@ -19,4 +21,26 @@
 
 .ag-header--striped::after {
   content: "";
+}
+
+/* On the footer the stripe takes the place of the top border. */
+.ag-footer--striped {
+  padding-block-start: 0;
+  border-top: 0;
+}
+
+.ag-footer--striped::before {
+  content: "";
+  margin-block-end: var(--ag-space-6);
+}
+
+/* A card whose top edge is the whole flag. For the few cards on a page that should carry it. */
+.ag-card--flag {
+  border-top: 0;
+}
+
+.ag-card--flag::before {
+  content: "";
+  height: 4px;
+  margin: 0 calc(-1 * var(--ag-space-4)) var(--ag-space-2);
 }

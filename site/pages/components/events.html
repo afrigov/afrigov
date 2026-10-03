@@ -1,0 +1,118 @@
+<!-- { "title": "Events", "section": "components", "description": "What is coming up: a date block, the title, where and when, and a line about it.", "order": 189 } -->
+<h1>Events</h1>
+<p class="ag-lead">
+  What is coming up: a date block with the day and month, the title, where and when it is, and a line about it. For a
+  home page or an events page.
+</p>
+
+<h2>When to use</h2>
+<p>
+  For events with a date: a launch, a summit, a hearing, a clinic day. Three to six on a home page, all of them on an
+  events page, soonest first.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  For news, which has a date in the past and no place: that is the <a href="list.html">dated list</a>. For an event with
+  no date yet, use the "to be confirmed" block below, and say so in the text as well.
+</p>
+
+<docs-example>
+  <ul class="ag-events ag-mb-0">
+    <li class="ag-event">
+      <time class="ag-event__date" datetime="2026-10-12"
+        ><span class="ag-event__day">12</span><span class="ag-event__month">Oct</span></time
+      >
+      <div class="ag-event__body">
+        <h3 class="ag-event__title"><a href="#events-example">Water quality week</a></h3>
+        <p class="ag-event__meta">12 to 18 October, every district office</p>
+        <p class="ag-event__text">Free testing of household water. Bring a sample in a clean bottle.</p>
+      </div>
+    </li>
+    <li class="ag-event">
+      <time class="ag-event__date" datetime="2026-11-04T10:00"
+        ><span class="ag-event__day">4</span><span class="ag-event__month">Nov</span></time
+      >
+      <div class="ag-event__body">
+        <h3 class="ag-event__title"><a href="#events-example">Public hearing on the new tariff</a></h3>
+        <p class="ag-event__meta">10am to 1pm, Kumasi City Hall</p>
+        <p class="ag-event__text">Hear the proposal and give your view. No need to register.</p>
+      </div>
+    </li>
+    <li class="ag-event">
+      <span class="ag-event__date ag-event__date--tbc"
+        >TBC<span class="ag-visually-hidden">, date to be confirmed</span></span
+      >
+      <div class="ag-event__body">
+        <h3 class="ag-event__title"><a href="#events-example">Opening of the Kano treatment works</a></h3>
+        <p class="ag-event__meta">Date to be confirmed, Kano</p>
+      </div>
+    </li>
+    <li class="ag-event ag-event--past">
+      <time class="ag-event__date" datetime="2026-09-20"
+        ><span class="ag-event__day">20</span><span class="ag-event__month">Sep</span></time
+      >
+      <div class="ag-event__body">
+        <h3 class="ag-event__title"><a href="#events-example">Annual sector review</a></h3>
+        <p class="ag-event__meta">Past event, Accra</p>
+      </div>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>On a coloured band</h2>
+<docs-example flush>
+  <div class="ag-band ag-band--primary ag-mb-0">
+    <div class="ag-container">
+      <h2 class="ag-mt-0">Coming up</h2>
+      <ul class="ag-events ag-mb-0">
+        <li class="ag-event">
+          <time class="ag-event__date" datetime="2026-10-12"
+            ><span class="ag-event__day">12</span><span class="ag-event__month">Oct</span></time
+          >
+          <div class="ag-event__body">
+            <h3 class="ag-event__title"><a href="#events-band">Water quality week</a></h3>
+            <p class="ag-event__meta">12 to 18 October, every district office</p>
+          </div>
+        </li>
+        <li class="ag-event">
+          <time class="ag-event__date" datetime="2026-11-04"
+            ><span class="ag-event__day">4</span><span class="ag-event__month">Nov</span></time
+          >
+          <div class="ag-event__body">
+            <h3 class="ag-event__title"><a href="#events-band">Public hearing on the new tariff</a></h3>
+            <p class="ag-event__meta">10am to 1pm, Kumasi City Hall</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>
+    A list, so a screen reader says how many events there are. The date block is a <code>time</code> element with a
+    machine-readable <code>datetime</code>, so calendars and search engines understand it.
+  </li>
+  <li>
+    The block shows the first day of the event. The meta line gives the full span, the time and the place: "12 to 18
+    October, every district office".
+  </li>
+  <li>
+    <code>ag-event__date--tbc</code> is for an event with no date yet. It is a span, since there is no date to mark up,
+    and it carries a hidden "date to be confirmed" for screen readers.
+  </li>
+  <li><code>ag-event--past</code> quietens the block for an event that has happened.</li>
+  <li>
+    The title links to the event's own page. See the <a href="../patterns/templates.html">event page template</a>.
+  </li>
+  <li>Soonest first. Keep the description to one line; the event's page has the rest.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The day and month are read together as "12 Oct". The full date and span are in the meta line, in words.</li>
+  <li>The date block is the primary colour with the pack's on-primary text, checked for contrast in every pack.</li>
+  <li>Nothing depends on the block's colour: a past event also says "past event" in its meta line.</li>
+</ul>

@@ -2,6 +2,7 @@
 .ag-footer {
   margin-top: var(--ag-space-8);
   padding-block: var(--ag-space-6) var(--ag-space-5);
+  /* The striped variant draws its own top edge inside the box, so the padding above it is 0. */
   background: var(--ag-color-paper-dark);
   color: var(--ag-color-ink-inverse);
   border-top: 8px solid var(--ag-color-primary);

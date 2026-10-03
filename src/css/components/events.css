@@ -1,0 +1,117 @@
+/* Events. A list of what is coming up: a date block, the title, where and when, a line about it.
+   The date is a real time element, so it is read as a date and can be understood by machines. */
+.ag-events {
+  margin: 0 0 var(--ag-space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.ag-event {
+  display: flex;
+  gap: var(--ag-space-4);
+  margin: 0;
+  padding-block: var(--ag-space-4);
+  border-bottom: 1px solid var(--ag-color-border);
+}
+
+.ag-events > .ag-event:first-child {
+  border-top: 1px solid var(--ag-color-border);
+}
+
+/* The date block: day over month, in the primary colour. */
+.ag-event__date {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--ag-size-radius);
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+  text-align: center;
+  line-height: 1;
+}
+
+.ag-event__day {
+  font-size: var(--ag-font-size-2xl);
+  font-weight: var(--ag-font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+.ag-event__month {
+  margin-top: var(--ag-space-1);
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* A date not yet fixed, or an event that has passed: a quiet block. */
+.ag-event__date--tbc,
+.ag-event--past .ag-event__date {
+  background: var(--ag-color-paper-alt);
+  color: var(--ag-color-ink);
+}
+
+.ag-event__date--tbc {
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-event__body {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ag-event__title {
+  margin: 0;
+  font-size: var(--ag-font-size-md);
+  line-height: var(--ag-font-leading-base);
+}
+
+.ag-event__meta {
+  margin: var(--ag-space-1) 0 0;
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-event__text {
+  max-width: var(--ag-size-measure);
+  margin: var(--ag-space-2) 0 0;
+  font-size: var(--ag-font-size-sm);
+}
+
+/* A larger date block for the top of an event's own page. */
+.ag-event__date--lg {
+  width: 6rem;
+  height: 6rem;
+}
+
+.ag-event__date--lg .ag-event__day {
+  font-size: var(--ag-font-size-3xl);
+}
+
+/* On a coloured band the text takes the band's colour and the block inverts, so it still stands out. */
+.ag-band--primary .ag-event__meta,
+.ag-band--dark .ag-event__meta,
+.ag-band--accent .ag-event__meta {
+  color: inherit;
+}
+
+.ag-band--primary .ag-event,
+.ag-band--dark .ag-event,
+.ag-band--accent .ag-event,
+.ag-band--primary .ag-events > .ag-event:first-child,
+.ag-band--dark .ag-events > .ag-event:first-child,
+.ag-band--accent .ag-events > .ag-event:first-child {
+  border-color: currentcolor;
+}
+
+.ag-band--primary .ag-event__date,
+.ag-band--dark .ag-event__date,
+.ag-band--accent .ag-event__date {
+  background: var(--ag-color-paper);
+  color: var(--ag-color-primary);
+}

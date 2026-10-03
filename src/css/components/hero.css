@@ -205,4 +205,13 @@
   .ag-hero__panel {
     max-width: 36rem;
   }
+
+  /* Variants: where the panel sits over the photograph. */
+  .ag-hero--cover-end .ag-hero__inner {
+    justify-content: flex-end;
+  }
+
+  .ag-hero--cover-top .ag-hero__inner {
+    align-items: flex-start;
+  }
 }

@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Do you have your current passport? – Ministry of Interior</title>
-    <meta name="description" content="A question in the passport renewal service." />
-    <!-- Pages inside a form journey stay out of search results. The start page is the one people should find. -->
-    <meta name="robots" content="noindex" />
+    <title>Passport open day, Kano – Ministry of Interior</title>
+    <meta
+      name="description"
+      content="Renew or apply for a passport in one visit at the Kano passport office, Saturday 14 November 2026."
+    />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <!-- Collapses the menu on phones from the first paint, so the page does not jump when the script arrives.
          If the script never arrives, the menu is shown in full again. -->
@@ -50,8 +51,8 @@
         <nav class="ag-header__nav" id="nav" aria-label="Main">
           <ul class="ag-nav">
             <li><a class="ag-nav__link" href="home.html">Home</a></li>
-            <li><a class="ag-nav__link" href="start.html" aria-current="page">Services</a></li>
-            <li><a class="ag-nav__link" href="home.html#news">News</a></li>
+            <li><a class="ag-nav__link" href="start.html">Services</a></li>
+            <li><a class="ag-nav__link" href="home.html#news" aria-current="page">News</a></li>
             <li><a class="ag-nav__link" href="home.html#contact">Contact</a></li>
           </ul>
         </nav>
@@ -59,26 +60,73 @@
     </header>
 
     <main class="ag-main ag-container" id="main" tabindex="-1">
-      <a class="ag-back-link" href="start.html">Back</a>
-      <form action="check-answers.html" method="get" novalidate>
-        <fieldset class="ag-field">
-          <legend class="ag-legend ag-legend--xl">
-            <h1 class="ag-heading-legend">Do you have your current passport?</h1>
-          </legend>
-          <span class="ag-hint" id="have-hint">We need its number to match your record.</span>
-          <div class="ag-choices" aria-describedby="have-hint">
-            <label class="ag-radio"
-              ><input type="radio" name="have" value="yes" /><span class="ag-radio__label">Yes</span></label
-            >
-            <label class="ag-radio"
-              ><input type="radio" name="have" value="no" /><span class="ag-radio__label"
-                >No <span class="ag-radio__hint">It is lost, stolen or damaged</span></span
-              ></label
-            >
-          </div>
-        </fieldset>
-        <button class="ag-button" type="submit">Continue</button>
-      </form>
+      <nav aria-label="Breadcrumb">
+        <ol class="ag-breadcrumb">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="home.html#news">Events</a></li>
+          <li><span aria-current="page">Passport open day, Kano</span></li>
+        </ol>
+      </nav>
+      <div class="ag-event">
+        <time class="ag-event__date ag-event__date--lg" datetime="2026-11-14T08:00"
+          ><span class="ag-event__day">14</span><span class="ag-event__month">Nov</span></time
+        >
+        <div class="ag-event__body">
+          <p class="ag-caption">Event</p>
+          <h1 class="ag-heading-xl">Passport open day, Kano</h1>
+          <p class="ag-lead">Renew or apply for a passport in one visit. Walk in, no appointment needed.</p>
+        </div>
+      </div>
+      <dl class="ag-summary">
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key">When</dt>
+          <dd class="ag-summary__value">Saturday 14 November 2026, 8am to 4pm</dd>
+        </div>
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key">Where</dt>
+          <dd class="ag-summary__value">
+            Kano passport office, 12 Zoo Road, Kano. <a href="home.html#contact">Map and directions</a>
+          </dd>
+        </div>
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key">Who it is for</dt>
+          <dd class="ag-summary__value">Anyone renewing a passport, or applying for the first time</dd>
+        </div>
+        <div class="ag-summary__row">
+          <dt class="ag-summary__key">Cost</dt>
+          <dd class="ag-summary__value">The usual passport fee. The open day itself is free</dd>
+        </div>
+      </dl>
+      <div class="ag-prose">
+        <h2>What happens on the day</h2>
+        <p>
+          Officers from the passport office and the registration office are in one hall. You can confirm your details,
+          have your photograph taken and pay, all in one visit. Most people are done within an hour.
+        </p>
+        <h2>What to bring</h2>
+        <ul>
+          <li>Your current passport, if you have one</li>
+          <li>Your national ID card</li>
+          <li>A way to pay: card, bank transfer or mobile money</li>
+        </ul>
+        <div class="ag-inset">
+          <p>
+            Come before 2pm to be sure of being seen. The hall is on the ground floor, with level access and seating.
+          </p>
+        </div>
+        <h2>Add it to your calendar</h2>
+        <p>
+          <a class="ag-download" href="#event-calendar"
+            >Passport open day, Kano <span class="ag-download__meta">(calendar file, 1 KB)</span></a
+          >
+        </p>
+        <h2>Questions</h2>
+        <p>
+          Email <a href="mailto:kano@passport.example">kano@passport.example</a> or call 0700 000 0000, Monday to
+          Friday.
+        </p>
+        <p><a href="home.html#news">All events</a></p>
+      </div>
     </main>
 
     <footer class="ag-footer">

@@ -6,6 +6,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-03
+
+### Added
+
+- **Events.** `ag-events` lists what is coming up: a date block with the day and month as a `time` element, the title, where and when, and a line about it. `ag-event__date--tbc` for a date not yet fixed, `ag-event--past` for one that has passed, `ag-event__date--lg` for the top of an event's page. Works on coloured bands.
+- **Event page template**, `templates/event.html`: the date block, when and where as a summary list, what happens, what to bring, a calendar file, who to ask.
+- `ag-card--flag` draws a card's top edge in the country's flag colours, and `ag-footer--striped` does the same for the footer's top edge, matching the striped header.
+- `ag-hero--cover-end` puts the cover hero's panel on the right, and `ag-hero--cover-top` at the top. The docs show a list inside the panel.
+
 ## [0.10.1] - 2026-10-03
 
 ### Fixed
