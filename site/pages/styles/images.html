@@ -107,7 +107,31 @@
   </li>
 </ul>
 
-<h2>How to make them</h2>
+<h2>Make them with afrigov-images</h2>
+<p>
+  <a href="https://github.com/omoyolab/afrigov-images">afrigov-images</a> does all of this page in one command. Point it
+  at a folder of photos and say what kind they are:
+</p>
+<pre class="docs-code" tabindex="0"><code>npx afrigov-images ./event-photos --out ./site/images --kind card</code></pre>
+<p>For each photo it:</p>
+<ul>
+  <li>makes the widths for that kind, from the table above, and never enlarges a small photo</li>
+  <li>saves them as WebP, and lowers the quality, within limits, until the largest copy is under the weight limit</li>
+  <li>turns the photo the right way up and removes the camera data, including where it was taken</li>
+  <li>
+    prints the <code>img</code> element to paste, with <code>srcset</code>, <code>sizes</code>, <code>width</code>,
+    <code>height</code> and lazy loading
+  </li>
+</ul>
+<pre class="docs-code" tabindex="0"><code>cardiovascular-care.png  3.1 MB, 2384 × 1054
+  3 copies as WebP: 15 KB, 37 KB, 66 KB  within the limit</code></pre>
+<p>
+  The kinds are <code>hero</code>, <code>wide</code>, <code>card</code>, <code>portrait</code>, <code>thumb</code>,
+  <code>flyer</code> and <code>logo</code>. You write the <code>alt</code> text yourself: only a person knows what the
+  picture is there to say. It needs Node 20 or newer.
+</p>
+
+<h2>Other ways to make them</h2>
 <ul>
   <li>
     <strong>WordPress</strong> already makes resized copies of every upload and writes <code>srcset</code> for them, if
@@ -115,19 +139,19 @@
     full-size original in the hero or the slider.
   </li>
   <li>
-    <strong>A site built from files</strong>: resize and convert before publishing, with a tool such as Squoosh in the
-    browser, or <code>cwebp</code> on the command line.
+    <strong>A site built from files</strong>: run afrigov-images before publishing, or use Squoosh in the browser for a
+    single image.
   </li>
   <li>
     <strong>Remove the camera data.</strong> A photograph straight from a phone carries where and when it was taken.
-    Converting to WebP with the tools above removes it.
+    afrigov-images removes it by default, as do the tools above when they convert to WebP.
   </li>
 </ul>
 
 <h2>Check a page</h2>
 <p>
   <a href="https://github.com/omoyolab/afrigov-audit">afrigov-audit</a> reports a page's weight on a phone and names
-  every image heavier than it needs to be, with the size the screen needs:
+  every image heavier than it needs to be, with the size the screen needs. afrigov-images is the fix.
 </p>
 <pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.gh/ --phone</code></pre>
 

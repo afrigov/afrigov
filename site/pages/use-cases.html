@@ -1,6 +1,6 @@
-<!-- { "title": "Use cases", "section": "use-cases", "description": "Real government websites rebuilt on afrigov with their accessibility scores, and the audit tool that checks them." } -->
+<!-- { "title": "Use cases", "section": "use-cases", "description": "Real government websites rebuilt on afrigov with their accessibility scores, the audit tool that checks them, and the tool that makes images light." } -->
 <h1>Use cases</h1>
-<p class="ag-lead">What afrigov looks like on a real government website, and the tool that checks it.</p>
+<p class="ag-lead">What afrigov looks like on a real government website, and the two tools that go with it.</p>
 
 <h2>Rebuilds of real websites</h2>
 <p>
@@ -93,6 +93,15 @@
 <pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.ng/
 npx afrigov-audit https://example.gov.ng/ --badge badges/home.svg</code></pre>
 <p>With <code>--badge</code> it writes the grade and score as a badge for a README or a status page.</p>
+
+<h2>Light images</h2>
+<p>
+  <a href="https://github.com/omoyolab/afrigov-images">afrigov-images</a> makes a folder of photos light enough for a
+  government page: each one at the sizes phones and desktops need, as WebP, with the camera's location data removed,
+  checked against afrigov's weight limits, and with the HTML printed to paste. See
+  <a href="styles/images.html">Images</a>.
+</p>
+<pre class="docs-code" tabindex="0"><code>npx afrigov-images ./event-photos --out ./site/images</code></pre>
 
 <h2>Add yours</h2>
 <p>
