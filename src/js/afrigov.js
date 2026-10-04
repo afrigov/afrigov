@@ -115,7 +115,11 @@ function menus(scope) {
   if (!all.length) return;
   all.forEach((menu) => {
     menu.addEventListener("toggle", () => {
-      if (menu.open) all.forEach((m) => m !== menu && (m.open = false));
+      if (!menu.open) return;
+      all.forEach((m) => m !== menu && (m.open = false));
+      // The header search opens straight into its box, ready to type.
+      const box = menu.querySelector('input[type="search"]');
+      if (box) box.focus();
     });
     menu.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && menu.open) {

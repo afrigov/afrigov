@@ -1,0 +1,99 @@
+<!-- { "title": "Site search results", "section": "patterns", "description": "The page that answers a search: the box with the words in it, how many results, each result with where it sits on the site, and what to do when nothing matches.", "order": 41 } -->
+<h1>Site search results</h1>
+<p class="ag-lead">
+  The page a <a href="../components/search.html">search box</a> sends people to: what they searched, how many results,
+  the results, and help when there are none.
+</p>
+
+<h2>Results</h2>
+<docs-example>
+  <form class="ag-search ag-search--lg" role="search" action="#results" method="get">
+    <label class="ag-search__label ag-visually-hidden" for="results-q">Search this site</label>
+    <div class="ag-search__row">
+      <input class="ag-search__input" type="search" id="results-q" name="q" value="water quality" />
+      <button class="ag-search__button" type="submit">
+        <span class="ag-search__icon" aria-hidden="true"></span>Search
+      </button>
+    </div>
+  </form>
+  <p class="ag-results__count" role="status">3 results for <strong>water quality</strong></p>
+  <ol class="ag-results">
+    <li class="ag-result">
+      <h2 class="ag-result__title"><a href="#results">Check the water quality in your district</a></h2>
+      <p class="ag-result__where">Services › Water quality</p>
+      <p class="ag-result__text">
+        Every public supply is tested each quarter. Find your district to see the latest <mark>water quality</mark>
+        results and the date of the next test.
+      </p>
+    </li>
+    <li class="ag-result">
+      <h2 class="ag-result__title"><a href="#results">Water quality certificate</a></h2>
+      <p class="ag-result__where">Services › Water quality › Certificates</p>
+      <p class="ag-result__text">
+        A supply that passes inspection is given a certificate, valid for twelve months and displayed at the works.
+      </p>
+    </li>
+    <li class="ag-result">
+      <h2 class="ag-result__title"><a href="#results">Annual report on drinking water, 2025</a></h2>
+      <p class="ag-result__where">Publications · PDF, 2.1 MB</p>
+      <p class="ag-result__text">
+        How the agency's supplies performed against the national <mark>water quality</mark> standard, district by
+        district.
+      </p>
+    </li>
+  </ol>
+  <nav aria-label="Results pages">
+    <ul class="ag-pagination ag-mb-0">
+      <li><a class="ag-pagination__link" href="#results" aria-current="page">1</a></li>
+      <li><a class="ag-pagination__link" href="#results">2</a></li>
+      <li><a class="ag-pagination__link" href="#results" rel="next">Next</a></li>
+    </ul>
+  </nav>
+</docs-example>
+
+<h2>No results</h2>
+<docs-example>
+  <form class="ag-search ag-search--lg" role="search" action="#no-results" method="get">
+    <label class="ag-search__label ag-visually-hidden" for="no-results-q">Search this site</label>
+    <div class="ag-search__row">
+      <input class="ag-search__input" type="search" id="no-results-q" name="q" value="borehole lisence" />
+      <button class="ag-search__button" type="submit">
+        <span class="ag-search__icon" aria-hidden="true"></span>Search
+      </button>
+    </div>
+  </form>
+  <p class="ag-results__count" role="status">No results for <strong>borehole lisence</strong></p>
+  <div class="ag-empty ag-mb-0">
+    <h2 class="ag-empty__title">Try another way</h2>
+    <ul>
+      <li>Check the spelling, or use fewer words: <a href="#no-results">borehole licence</a>.</li>
+      <li>Start from the <a href="#no-results">list of services</a>.</li>
+      <li><a href="#no-results">Ask us</a>, and we will point you to the right page.</li>
+    </ul>
+  </div>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>
+    <strong>Say what was searched and how many results.</strong> The count line has <code>role="status"</code>, so a
+    screen reader announces it when the results change without the page reloading.
+  </li>
+  <li>
+    <strong>One heading per result</strong>, linking to the page. The headings let a screen reader user move from result
+    to result.
+  </li>
+  <li>
+    <strong>Where it sits</strong> on the site, under the title, so two results with similar titles can be told apart.
+    For a document, its type and size.
+  </li>
+  <li>
+    <strong>The searched words</strong> are bold on a pale tint with <code>mark</code>, which screen readers can
+    announce. Never colour alone.
+  </li>
+  <li><strong>Ten results a page</strong>, then <a href="../components/pagination.html">pagination</a>.</li>
+  <li>
+    <strong>No results is a page that helps</strong>, using the <a href="../components/empty.html">empty state</a>: a
+    spelling suggestion where the search engine gives one, a way in through the services, and a person to ask.
+  </li>
+</ul>

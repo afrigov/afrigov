@@ -1,0 +1,135 @@
+<!-- { "title": "Search", "section": "components", "description": "A search box for the site: on its own, large at the top of a results page, or behind a button in the header. A plain form, so it works with no script.", "order": 34 } -->
+<h1>Search</h1>
+<p class="ag-lead">
+  A search box that sends the words to the site's results page. It is a plain form, so it works with no script and on
+  any phone.
+</p>
+
+<h2>When to use</h2>
+<p>
+  On any site with more than a few dozen pages. People who know what they want type it rather than guess which menu
+  holds it. Put it in the header so it is on every page, and at the top of the results page.
+</p>
+<p>
+  This is the box on your own site. For how pages show up in Google and in AI assistants, see
+  <a href="../patterns/search.html">Search and answer engines</a>. For the results page, see
+  <a href="../patterns/site-search.html">Site search results</a>.
+</p>
+
+<h2>On its own</h2>
+<docs-example>
+  <form class="ag-search ag-mb-0" role="search" action="#search-example" method="get">
+    <label class="ag-search__label" for="search-example-q">Search this site</label>
+    <div class="ag-search__row">
+      <input class="ag-search__input" type="search" id="search-example-q" name="q" />
+      <button class="ag-search__button" type="submit">
+        <span class="ag-search__icon" aria-hidden="true"></span>Search
+      </button>
+    </div>
+  </form>
+</docs-example>
+
+<h2>Large, at the top of a results page</h2>
+<p>On the results page the search is the page, so the box spans the column and the words already searched are in it.</p>
+<docs-example>
+  <form class="ag-search ag-search--lg ag-mb-0" role="search" action="#search-large" method="get">
+    <label class="ag-search__label ag-visually-hidden" for="search-large-q">Search this site</label>
+    <div class="ag-search__row">
+      <input class="ag-search__input" type="search" id="search-large-q" name="q" value="renew passport" />
+      <button class="ag-search__button" type="submit">
+        <span class="ag-search__icon" aria-hidden="true"></span>Search
+      </button>
+    </div>
+  </form>
+</docs-example>
+
+<h2>In the header</h2>
+<p>
+  A square button with a magnifier, after the navigation. It opens the box under the header, across the page. It is a
+  <code>details</code> element, so it opens and closes with no script. With <code>afrigov.js</code> the cursor goes
+  straight into the box, Escape closes it, and opening it closes any open section menu. Because the button is square, it
+  adds little width, and the header stays on one row.
+</p>
+<docs-example flush>
+  <div class="ag-header">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#search-header">
+        <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>
+          <span class="ag-header__org">National Water Agency</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <details class="ag-header__search" data-ag-menu>
+        <summary class="ag-header__search-toggle">
+          <span class="ag-search__icon" aria-hidden="true"></span><span class="ag-visually-hidden">Search</span>
+        </summary>
+        <div class="ag-header__search-panel">
+          <div class="ag-container">
+            <form class="ag-search" role="search" action="#search-header" method="get">
+              <label class="ag-search__label" for="search-header-q">Search this site</label>
+              <div class="ag-search__row">
+                <input class="ag-search__input" type="search" id="search-header-q" name="q" />
+                <button class="ag-search__button" type="submit">
+                  <span class="ag-search__icon" aria-hidden="true"></span>Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </details>
+      <nav class="ag-header__nav" aria-label="Search example">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#search-header">Services</a></li>
+          <li><a class="ag-nav__link" href="#search-header">Water quality</a></li>
+          <li><a class="ag-nav__link" href="#search-header">News</a></li>
+          <li><a class="ag-nav__link" href="#search-header">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+<p>
+  The search goes before the menu button in the markup, so on a phone it sits beside Menu. From desktop width it moves
+  after the navigation.
+</p>
+
+<h2>Where the results come from</h2>
+<p>The box only sends the words. Something on the site turns them into results.</p>
+<ul>
+  <li>
+    <strong>WordPress</strong> searches its own posts and pages. Send the form to the home page with the words in
+    <code>s</code>: <code>action="/"</code> and <code>name="s"</code>.
+  </li>
+  <li>
+    <strong>A static site</strong>, built as plain files, can use <a href="https://pagefind.app/">Pagefind</a>. It
+    builds a small search index when the site is built, and the results page asks it in the browser. There is no server
+    to run, and a search costs a few kilobytes. Send the form to the results page with the words in <code>q</code>.
+  </li>
+  <li>
+    <strong>Another system</strong>, such as a document library, keeps the same box and points <code>action</code> at
+    its own results page.
+  </li>
+</ul>
+<p>
+  Avoid sending people off the site to a general search engine. It shows adverts, tracks them, and leaves your design
+  and your language behind.
+</p>
+
+<h2>Rules</h2>
+<ul>
+  <li>
+    <strong>A label, always.</strong> "Search this site", or the name of what is searched: "Search publications". Hide
+    it with <code>ag-visually-hidden</code> only where the page already says what the box is for.
+  </li>
+  <li><strong>The button says Search.</strong> The magnifier is beside the word, never instead of it.</li>
+  <li>
+    <code>role="search"</code> on the form, so screen readers can jump to it, and <code>type="search"</code> on the
+    input, so phones show a search key.
+  </li>
+  <li><strong>GET, not POST.</strong> The words go in the address, so a results page can be bookmarked and shared.</li>
+  <li>
+    In the header, the toggle's text is <code>Search</code>, hidden on screen but read aloud, and the panel's form has
+    its own visible label.
+  </li>
+</ul>

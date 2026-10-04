@@ -47,6 +47,7 @@ const COMPONENTS = [
   "events",
   "video",
   "filters",
+  "search",
   "statement",
   "social",
   "alert",

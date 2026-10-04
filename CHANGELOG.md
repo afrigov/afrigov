@@ -6,6 +6,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-10-04
+
+### Added
+
+- **Search.** `ag-search` is a labelled search box and Search button on one line, as a plain GET form, so it works with no script. `ag-search--lg` is the large box for the top of a results page. In the header, `ag-header__search` is a square button with a magnifier that opens the box under the header; it is a details element, so it needs no script, and with `afrigov.js` the cursor goes straight into the box and Escape closes it. The button is square, so the header stays on one row.
+- **Site search results pattern**: the box with the words in it, a count with `role="status"`, results with `ag-result__title`, `__where` and `__text`, the searched words in `mark`, pagination, and a no-results page that helps.
+- The Search component page says where results come from: WordPress's own search, Pagefind for a static site, or another system's results page.
+
 ## [0.13.2] - 2026-10-04
 
 ### Fixed

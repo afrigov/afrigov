@@ -1,0 +1,215 @@
+/* Search. A plain form, so it works with no JavaScript: it sends the words to a results page.
+   The box and button sit on one line and share an edge, the way people expect a search box. */
+.ag-search {
+  margin: 0 0 var(--ag-space-5);
+}
+
+.ag-search__label {
+  display: block;
+  margin-bottom: var(--ag-space-2);
+  font-weight: var(--ag-font-weight-bold);
+}
+
+.ag-search__row {
+  display: flex;
+  max-width: 36rem;
+}
+
+.ag-search__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-3);
+  border: var(--ag-size-control-border) solid var(--ag-color-ink);
+  border-inline-end: 0;
+  border-radius: 0;
+  background: var(--ag-color-paper);
+  color: var(--ag-color-ink);
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* The browser's own clear button differs everywhere and is too small to tap. */
+.ag-search__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.ag-search__button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--ag-space-2);
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-4);
+  border: var(--ag-size-control-border) solid var(--ag-color-primary);
+  border-radius: 0;
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+  font: inherit;
+  font-weight: var(--ag-font-weight-bold);
+  cursor: pointer;
+}
+
+.ag-search__button:hover {
+  background: var(--ag-color-primary-hover);
+  border-color: var(--ag-color-primary-hover);
+}
+
+/* A magnifier drawn in CSS: a ring and a handle, in the text colour. */
+.ag-search__icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 0.75em;
+  height: 0.75em;
+  border: 2px solid currentcolor;
+  border-radius: 50%;
+  transform: translate(-0.1em, -0.1em);
+}
+
+.ag-search__icon::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline-start: 100%;
+  width: 2px;
+  height: 0.4em;
+  background: currentcolor;
+  transform: translate(-50%, -15%) rotate(-45deg);
+  transform-origin: top;
+}
+
+/* Variant: large, for the top of a results page, where the search is the page. */
+.ag-search--lg .ag-search__row {
+  max-width: none;
+}
+
+.ag-search--lg .ag-search__input,
+.ag-search--lg .ag-search__button {
+  min-height: 3.25rem;
+  font-size: var(--ag-font-size-md);
+}
+
+/* ---------------------------------------------------------------- in the header */
+
+/* A button with a magnifier that opens the search box under the header. It is a details element,
+   so it opens and closes with no script. The button is square, so the header stays on one row. */
+.ag-header {
+  position: relative;
+}
+
+.ag-header__search {
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+}
+
+.ag-header__search-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ag-size-target);
+  height: var(--ag-size-target);
+  border: var(--ag-size-control-border) solid var(--ag-color-ink);
+  border-radius: var(--ag-size-radius);
+  color: var(--ag-color-ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.ag-header__search-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.ag-header__search[open] > .ag-header__search-toggle {
+  background: var(--ag-color-ink);
+  color: var(--ag-color-ink-inverse);
+}
+
+/* The open box spans the width of the page, under the header's bottom line. */
+.ag-header__search-panel {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 100%;
+  z-index: 10;
+  margin-top: 4px;
+  padding-block: var(--ag-space-4);
+  border-bottom: 1px solid var(--ag-color-border);
+  background: var(--ag-color-paper-alt);
+}
+
+.ag-header__search-panel .ag-search {
+  margin: 0;
+}
+
+.ag-header--primary .ag-header__search-toggle {
+  border-color: currentcolor;
+  color: var(--ag-color-on-primary);
+}
+
+.ag-header--primary .ag-header__search[open] > .ag-header__search-toggle {
+  background: var(--ag-color-on-primary);
+  color: var(--ag-color-primary);
+}
+
+/* With no script there is no Menu button, so the name makes room for the search button itself.
+   63.99em = just under breakpoint.lg */
+@media (max-width: 63.99em) {
+  .ag-header__inner:has(> .ag-header__search) > .ag-header__brand {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+/* On phones the button sits beside Menu. From desktop width it goes after the navigation.
+   64em = breakpoint.lg */
+@media (min-width: 64em) {
+  .ag-header__search {
+    order: 3;
+  }
+}
+
+/* ---------------------------------------------------------------- results */
+
+/* The line that says what was searched and how many results there are. */
+.ag-results__count {
+  margin: 0 0 var(--ag-space-5);
+  color: var(--ag-color-ink-muted);
+}
+
+.ag-results {
+  margin: 0 0 var(--ag-space-6);
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ag-color-border);
+}
+
+.ag-result {
+  margin: 0;
+  padding-block: var(--ag-space-4);
+  border-bottom: 1px solid var(--ag-color-border);
+}
+
+.ag-result__title {
+  margin: 0 0 var(--ag-space-1);
+  font-size: var(--ag-font-size-md);
+}
+
+/* Where the page sits on the site: "Services › Passports". It says which result is which when two titles match. */
+.ag-result__where {
+  margin: 0 0 var(--ag-space-2);
+  color: var(--ag-color-ink-muted);
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-result__text {
+  margin: 0;
+  max-width: var(--ag-size-measure);
+}
+
+/* The searched words, bold on a pale tint. Never colour alone. */
+.ag-result mark {
+  padding-inline: 0.1em;
+  background: var(--ag-color-warning-tint);
+  color: inherit;
+  font-weight: var(--ag-font-weight-bold);
+}
