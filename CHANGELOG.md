@@ -6,6 +6,18 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-10-03
+
+### Added
+
+- **Video.** `ag-video` shows a still with a play button, the title and the length. The player loads only when someone presses it; without the script the poster is a link to the video. Embeds use `youtube-nocookie.com`. A transcript goes under the player in a details element.
+- **Video cards.** `ag-card--video` puts a play mark on a card's picture and the length in its corner, with `ag-card__duration`.
+- **Filters.** `ag-filters` is a row of links that narrow a list by topic, each a real link that works with no script.
+- **Video library pattern**, and a **video page template**: the player, the transcript, what it covers and more videos.
+- **A flyer on the event page.** `ag-event-detail` puts the details beside an `ag-flyer`, which links to the full-size image. The guidance: everything on a flyer is also written on the page.
+- The hero page shows a video beside the text.
+- Decision 004: no autoplaying or background video, and video loads only when pressed.
+
 ## [0.11.3] - 2026-10-03
 
 ### Changed

@@ -1,7 +1,7 @@
 <p><img src="site/logo.svg" alt="afrigov" width="200" height="48"></p>
 
 **Open-source components for building accessible African public-service websites.**
-One country-neutral core. A token pack per country. Plain CSS, 8 KB gzipped, no build step.
+One country-neutral core. A token pack per country. Plain CSS, 9 KB gzipped, no build step.
 
 [![npm](https://img.shields.io/npm/v/afrigov?color=1f4e79)](https://www.npmjs.com/package/afrigov)
 [![CI](https://github.com/omoyolab/afrigov/actions/workflows/ci.yml/badge.svg)](https://github.com/omoyolab/afrigov/actions/workflows/ci.yml)
@@ -21,8 +21,8 @@ It is not a government project. It is open source, MIT licensed, and built so a 
 Two link tags. The core, then a country pack.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.11/dist/core.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.11/dist/ng.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.12/dist/core.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.12/dist/ng.min.css" />
 ```
 
 ```html
@@ -58,7 +58,7 @@ init();
 
 | Part                  | What it does                                                                                                                                                                 |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `core.css`            | Reset, element defaults, 44 components, layout utilities. Country-neutral. 8 KB gzipped.                                                                                     |
+| `core.css`            | Reset, element defaults, 46 components, layout utilities. Country-neutral. 9 KB gzipped.                                                                                     |
 | `ng.css` and six more | Country packs for Ghana, Kenya, Morocco, Nigeria, Rwanda, Senegal and South Africa. National colours, derived text-safe variants, the flag, banner strings. Under 1 KB each. |
 | `afrigov.js`          | Optional. Collapsible navigation on small screens and focus on the error summary. Every component works without it.                                                          |
 | `tokens/`             | The source of truth, in the [W3C Design Tokens](https://tr.designtokens.org/format/) format. Published in the package for Figma and other tools.                             |
@@ -75,7 +75,7 @@ init();
 - **Contrast is a build step.** Every foreground and background pair in [`scripts/tokens.mjs`](scripts/tokens.mjs) must meet its ratio, for the core and for every pack. If a pack's official colour is too light for text, the build derives a deeper one and says so in the generated CSS. The flag stripe always keeps the exact official colour.
 - **axe-core runs on every pull request.** The docs page renders every component and is tested with each pack against WCAG 2.1 A and AA rules.
 - **Touch targets are tested too.** Every link, button, control and summary on the docs page must be at least 48px tall at phone width.
-- **A size budget fails the build.** `core.min.css` must gzip to 20 KB or less. It is currently 8 KB.
+- **A size budget fails the build.** `core.min.css` must gzip to 20 KB or less. It is currently 9 KB.
 
 ## Design rules
 

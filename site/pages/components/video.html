@@ -1,0 +1,128 @@
+<!-- { "title": "Video", "section": "components", "description": "A still image with a play button; the player loads only when someone presses it.", "order": 179 } -->
+<h1>Video</h1>
+<p class="ag-lead">
+  A still image with a play button, the title and the length. The video player loads only when someone presses it, so
+  nobody spends data on a video they did not choose to watch.
+</p>
+
+<h2>When to use</h2>
+<p>
+  For explainers, project updates and recorded events: a page for one video, a library of videos, or a video beside the
+  text in a hero.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  As a background, or set to play by itself. afrigov has no autoplaying video, for reasons of data, speed, motion and
+  contrast. See
+  <a href="https://github.com/omoyolab/afrigov/blob/main/project/decisions/004-no-autoplay-video.md">decision 004</a>.
+  And never as the only place information lives: what the video says is also in its transcript.
+</p>
+
+<docs-example>
+  <figure class="ag-video ag-mb-0">
+    <a
+      class="ag-video__poster"
+      href="https://www.youtube.com/watch?v=VIDEO_ID"
+      data-ag-video="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+      data-ag-video-title="How to report a leak"
+    >
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3Crect x='9' y='2' width='5' height='5' fill='%231f4e79'/%3E%3Cpath d='M0 9 L0 6.5 C3 5 5 7 8 5.5 C11 4 13 6.5 16 5.5 L16 9 Z' fill='%23869fb5'/%3E%3C/svg%3E"
+        alt=""
+        width="1280"
+        height="720"
+        loading="lazy"
+      />
+      <span class="ag-video__play" aria-hidden="true"></span>
+      <span class="ag-video__label"
+        >Play video: How to report a leak<span class="ag-video__length">2 min 30 s</span></span
+      >
+    </a>
+    <figcaption class="ag-video__caption">Published 2 October 2026. Captions in English and Hausa.</figcaption>
+  </figure>
+  <details class="ag-details ag-mb-0">
+    <summary class="ag-details__summary">Read the transcript</summary>
+    <div class="ag-details__body">
+      <p>
+        If you see water running where it should not, report it. Go to the agency's website and choose Report a leak.
+      </p>
+      <p>Say where it is, and add a photograph if you can. You get a reference number by text message.</p>
+    </div>
+  </details>
+</docs-example>
+<p class="docs-fine">The video in the example is a placeholder. Replace VIDEO_ID with your video's ID.</p>
+
+<h2>Video cards</h2>
+<p>
+  For a library or a row of related videos, <code>ag-card--video</code> puts a play mark on the card's picture and the
+  length in its corner. The card links to the video's own page.
+</p>
+<docs-example>
+  <ul class="ag-cards ag-mb-0">
+    <li class="ag-card ag-card--video">
+      <div class="ag-card__image">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3Crect x='9' y='2' width='5' height='5' fill='%231f4e79'/%3E%3Cpath d='M0 9 L0 6.5 C3 5 5 7 8 5.5 C11 4 13 6.5 16 5.5 L16 9 Z' fill='%23869fb5'/%3E%3C/svg%3E"
+          alt=""
+          width="640"
+          height="360"
+          loading="lazy"
+        />
+        <span class="ag-card__duration"><span class="ag-visually-hidden">Length </span>2:30</span>
+      </div>
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#video-cards">How to report a leak</a></h3>
+      <p class="ag-card__text">Explainer · 2 October 2026</p>
+    </li>
+    <li class="ag-card ag-card--video">
+      <div class="ag-card__image">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3Crect x='9' y='2' width='5' height='5' fill='%231f4e79'/%3E%3Cpath d='M0 9 L0 6.5 C3 5 5 7 8 5.5 C11 4 13 6.5 16 5.5 L16 9 Z' fill='%23869fb5'/%3E%3C/svg%3E"
+          alt=""
+          width="640"
+          height="360"
+          loading="lazy"
+        />
+        <span class="ag-card__duration"><span class="ag-visually-hidden">Length </span>4:05</span>
+      </div>
+      <h3 class="ag-card__title"><a class="ag-card__link" href="#video-cards">Inside the Kano treatment works</a></h3>
+      <p class="ag-card__text">Project · 18 September 2026</p>
+    </li>
+  </ul>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>
+    The poster is a link to the video on its host, such as YouTube. With the script, pressing it swaps in the player at
+    the same size and starts it. Without the script, the link opens the video on its host.
+  </li>
+  <li>
+    <code>data-ag-video</code> is the embed address. Use <code>youtube-nocookie.com</code> for YouTube, so no tracking
+    cookie is set until someone presses play. <code>data-ag-video-title</code> names the player for screen readers.
+  </li>
+  <li>
+    The label says what pressing does, the title and the length. People decide whether to spend the data before they
+    press.
+  </li>
+  <li>
+    The poster is 16 by 9. Use a frame from the video, compressed, under 100 KB. Its <code>alt</code> is empty, since
+    the label names the video.
+  </li>
+  <li>
+    In a hero, put the video where the image goes: <code>ag-video</code> in place of the figure in
+    <code>ag-hero--image</code>. See <a href="hero.html">hero</a>.
+  </li>
+  <li>For a page of videos, see the <a href="../patterns/video-library.html">video library pattern</a>.</li>
+</ul>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Every video has captions, made by a person or checked by one. Automatic captions alone are not enough.</li>
+  <li>Every video has a transcript on the page, in a <a href="details.html">details</a> under the player.</li>
+  <li>
+    If the picture shows something the words do not say, the video needs audio description, or the transcript describes
+    it.
+  </li>
+  <li>Nothing plays until someone presses play. When the player appears, focus moves to it.</li>
+</ul>

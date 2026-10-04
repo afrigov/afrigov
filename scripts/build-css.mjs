@@ -45,6 +45,8 @@ const COMPONENTS = [
   "steps",
   "stats",
   "events",
+  "video",
+  "filters",
   "statement",
   "social",
   "alert",

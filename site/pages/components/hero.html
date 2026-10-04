@@ -94,6 +94,44 @@
   </div>
 </docs-example>
 
+<h2>With a video beside the text</h2>
+<p>
+  Put a <a href="video.html">video</a> where the image goes. It shows a still with a play button and loads only when
+  pressed. Never a video that plays by itself behind the text; see the video page for why.
+</p>
+<docs-example flush>
+  <div class="ag-hero ag-hero--image ag-mb-0">
+    <div class="ag-container ag-hero__inner">
+      <div>
+        <h2 class="ag-heading-xl ag-hero__title">Clean water for every community</h2>
+        <p class="ag-lead ag-hero__lead">What the agency does, in two minutes.</p>
+        <div class="ag-button-group ag-hero__actions">
+          <a class="ag-button ag-button--start" href="#hero-video">Our programmes</a>
+        </div>
+      </div>
+      <figure class="ag-video ag-hero__media">
+        <a
+          class="ag-video__poster"
+          href="https://www.youtube.com/watch?v=VIDEO_ID"
+          data-ag-video="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+          data-ag-video-title="What the agency does"
+        >
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3Crect x='9' y='2' width='5' height='5' fill='%231f4e79'/%3E%3Cpath d='M0 9 L0 6.5 C3 5 5 7 8 5.5 C11 4 13 6.5 16 5.5 L16 9 Z' fill='%23869fb5'/%3E%3C/svg%3E"
+            alt=""
+            width="1280"
+            height="720"
+          />
+          <span class="ag-video__play" aria-hidden="true"></span>
+          <span class="ag-video__label"
+            >Play video: What the agency does<span class="ag-video__length">2 min</span></span
+          >
+        </a>
+      </figure>
+    </div>
+  </div>
+</docs-example>
+
 <h2>Variant: text in a panel over a photograph</h2>
 <p>
   The photograph fills the width, and the title, lead and action sit in a solid panel laid over it. The contrast is

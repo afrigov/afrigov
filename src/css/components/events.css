@@ -115,3 +115,44 @@
   background: var(--ag-color-paper);
   color: var(--ag-color-primary);
 }
+
+/* An event's page: the details beside the flyer. The flyer is extra; everything on it is also
+   written on the page. 48em = breakpoint.md */
+.ag-event-detail {
+  display: grid;
+  gap: var(--ag-space-5);
+  margin-bottom: var(--ag-space-6);
+}
+
+@media (min-width: 48em) {
+  .ag-event-detail {
+    grid-template-columns: minmax(0, 1fr) 16rem;
+    align-items: start;
+  }
+}
+
+.ag-event-detail > .ag-summary {
+  margin-bottom: 0;
+}
+
+.ag-flyer {
+  margin: 0;
+}
+
+.ag-flyer a {
+  display: block;
+}
+
+.ag-flyer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--ag-color-border);
+  border-radius: var(--ag-size-radius);
+}
+
+.ag-flyer__caption {
+  margin-top: var(--ag-space-2);
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}

@@ -1,0 +1,36 @@
+/* Filters. A row of links that narrow a list by topic: All, Projects, Explainers. Each is a real
+   link to a filtered page, so it works with no script and can be bookmarked. */
+.ag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ag-space-2);
+  margin: 0 0 var(--ag-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.ag-filters__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  padding: var(--ag-space-2) var(--ag-space-4);
+  border: 2px solid var(--ag-color-primary);
+  border-radius: 999px;
+  color: var(--ag-color-primary);
+  font-weight: var(--ag-font-weight-bold);
+  text-decoration: none;
+}
+
+.ag-filters__link:visited {
+  color: var(--ag-color-primary);
+}
+
+.ag-filters__link:hover {
+  text-decoration: underline;
+}
+
+.ag-filters__link[aria-current="page"],
+.ag-filters__link[aria-current="true"] {
+  background: var(--ag-color-primary);
+  color: var(--ag-color-on-primary);
+}

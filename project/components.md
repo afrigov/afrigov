@@ -88,7 +88,9 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | People             | `.ag-people`, `.ag-person` + rows, 2 to 6 per row | 0.9     | shipped | Portrait, name and role; empty alt on portraits                                                               |
 | Steps              | `.ag-steps`                                       | 0.9     | shipped | Ordered list with CSS counters; title optional                                                                |
 | Key figures        | `.ag-stats`                                       | 0.9     | shipped | Description list, label first in the markup, value first on screen; accent edge                               |
-| Events             | `.ag-events`, `.ag-event` + tbc, past, lg         | 0.11    | shipped | Date block is a `time` element; event page template                                                           |
+| Events             | `.ag-events`, `.ag-event` + tbc, past, lg         | 0.11    | shipped | Date block is a `time` element; event page template with `ag-flyer` (0.12)                                    |
+| Video              | `.ag-video`, `.ag-card--video`                    | 0.12    | shipped | Poster link, player loads on press; transcript; decision 004                                                  |
+| Filters            | `.ag-filters`                                     | 0.12    | shipped | Topic links with `aria-current`; video library pattern                                                        |
 | Modal dialog       | none                                              | none    | cut     | Poor on low-end phones and with AT. Use a page. Revisit only with `<dialog>` and a real need.                 |
 | Toast              | none                                              | none    | cut     | Timed messages fail WCAG 2.2.1. Use an alert.                                                                 |
 | Carousel           | none                                              | none    | cut     | Never.                                                                                                        |

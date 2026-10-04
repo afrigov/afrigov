@@ -4,6 +4,7 @@
  * Every component works without this file. It adds:
  *  - a collapsible header navigation on small screens ([data-ag-toggle])
  *  - section menus in the navigation: one open at a time, Escape and click-away close ([data-ag-menu])
+ *  - video that loads only when pressed ([data-ag-video])
  *  - focus on the error summary when a page loads with one
  *
  * ESM:  import { init } from "afrigov"; init();
@@ -126,6 +127,27 @@ function menus(scope) {
   document.addEventListener("click", (e) => all.forEach((m) => m.open && !m.contains(e.target) && (m.open = false)));
 }
 
+/**
+ * Video: a link with data-ag-video="<embed URL>" becomes the player when pressed, so nothing
+ * from the video host loads before someone chooses to watch. Without the script it is a link.
+ */
+function videos(scope) {
+  scope.querySelectorAll("a[data-ag-video]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const src = link.getAttribute("data-ag-video");
+      const frame = document.createElement("iframe");
+      frame.className = "ag-video__frame";
+      frame.src = src + (src.includes("?") ? "&" : "?") + "autoplay=1";
+      frame.title = link.getAttribute("data-ag-video-title") || link.textContent.trim();
+      frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      frame.allowFullscreen = true;
+      link.replaceWith(frame);
+      frame.focus();
+    });
+  });
+}
+
 function focusErrorSummary(scope) {
   const summary = scope.querySelector(".ag-error-summary");
   if (summary && !summary.hasAttribute("data-ag-no-autofocus")) {
@@ -139,6 +161,7 @@ export function init(scope = document) {
   document.documentElement.classList.add("ag-js");
   toggles(scope);
   menus(scope);
+  videos(scope);
   regions(scope);
   charCounts(scope);
   focusErrorSummary(scope);

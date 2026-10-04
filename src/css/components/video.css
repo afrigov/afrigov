@@ -1,0 +1,138 @@
+/* Video. A still image with a play button, the title and the length. The player loads only when
+   someone presses it; without the script the button is a link to the video. See decision 004. */
+.ag-video {
+  margin: 0 0 var(--ag-space-5);
+}
+
+.ag-video__poster,
+.ag-video__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--ag-size-radius);
+  background: var(--ag-color-paper-dark);
+}
+
+.ag-video__poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ag-video__frame {
+  border: 0;
+}
+
+/* The play button: a circle in the primary colour with a triangle, in the middle of the picture. */
+.ag-video__play {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: -2.25rem 0 0 -2.25rem;
+  border: 3px solid var(--ag-color-paper);
+  border-radius: 50%;
+  background: var(--ag-color-primary);
+}
+
+.ag-video__play::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 54%;
+  border-block: 0.75rem solid transparent;
+  border-inline-start: 1.2rem solid var(--ag-color-on-primary);
+  transform: translate(-50%, -50%);
+}
+
+[dir="rtl"] .ag-video__play::after {
+  transform: translate(50%, -50%) scaleX(-1);
+}
+
+/* The label along the bottom of the picture: what pressing does, the title and the length. */
+.ag-video__label {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding: var(--ag-space-3) var(--ag-space-4);
+  background: var(--ag-color-paper-dark);
+  color: var(--ag-color-ink-inverse);
+  font-weight: var(--ag-font-weight-bold);
+  line-height: var(--ag-font-leading-tight);
+  text-decoration: underline;
+}
+
+.ag-video__length {
+  margin-inline-start: var(--ag-space-2);
+  font-weight: var(--ag-font-weight-normal);
+}
+
+.ag-video__poster:hover .ag-video__play {
+  background: var(--ag-color-primary-hover);
+}
+
+.ag-video__poster:hover .ag-video__label {
+  text-decoration-thickness: max(3px, 0.1875em);
+}
+
+.ag-video__poster:focus-visible {
+  background: var(--ag-color-paper-dark);
+}
+
+.ag-video__poster:focus-visible .ag-video__label {
+  background: var(--ag-color-focus);
+  color: var(--ag-color-ink);
+  text-decoration: none;
+}
+
+.ag-video__caption {
+  margin-top: var(--ag-space-2);
+  font-size: var(--ag-font-size-xs);
+  color: var(--ag-color-ink-muted);
+}
+
+/* Video card: a card whose picture carries a play mark and the length. */
+.ag-card--video .ag-card__image {
+  position: relative;
+}
+
+.ag-card--video .ag-card__image::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin: -1.5rem 0 0 -1.5rem;
+  border: 2px solid var(--ag-color-paper);
+  border-radius: 50%;
+  background: var(--ag-color-primary);
+}
+
+.ag-card--video .ag-card__image::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 50%;
+  inset-inline-start: 53%;
+  border-block: 0.5rem solid transparent;
+  border-inline-start: 0.8rem solid var(--ag-color-on-primary);
+  transform: translate(-50%, -50%);
+}
+
+.ag-card__duration {
+  position: absolute;
+  inset-inline-end: var(--ag-space-2);
+  inset-block-end: var(--ag-space-2);
+  padding: 0.125rem var(--ag-space-2);
+  border-radius: var(--ag-size-radius);
+  background: var(--ag-color-paper-dark);
+  color: var(--ag-color-ink-inverse);
+  font-size: var(--ag-font-size-xs);
+  font-weight: var(--ag-font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
