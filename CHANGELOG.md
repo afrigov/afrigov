@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.13.1] - 2026-10-04
+
+### Fixed
+
+- **Links in a primary hero and in a cover panel** kept the page's link colour, so a green link on a green hero could not be seen. They now take the hero's text colour, underlined, as on a coloured band. Plain paragraphs and list items in the panel do too.
+- **A visited button on a coloured band** took the band's text colour, the same as its own background. Buttons are now left out of the band's link rule and keep their colours.
+
 ## [0.13.0] - 2026-10-03
 
 ### Added

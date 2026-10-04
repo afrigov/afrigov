@@ -62,7 +62,10 @@
 }
 
 .ag-hero--primary .ag-hero__title,
-.ag-hero--primary .ag-hero__lead {
+.ag-hero--primary .ag-hero__lead,
+.ag-hero--primary p,
+.ag-hero--primary a:not(.ag-button),
+.ag-hero--primary a:not(.ag-button):visited {
   color: inherit;
 }
 
@@ -155,7 +158,11 @@
 }
 
 .ag-hero__panel .ag-hero__title,
-.ag-hero__panel .ag-hero__lead {
+.ag-hero__panel .ag-hero__lead,
+.ag-hero__panel p,
+.ag-hero__panel li,
+.ag-hero__panel a:not(.ag-button),
+.ag-hero__panel a:not(.ag-button):visited {
   color: inherit;
 }
 

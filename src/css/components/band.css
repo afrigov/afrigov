@@ -25,25 +25,26 @@
   color: var(--ag-color-on-accent);
 }
 
-/* On a coloured band, text, headings and links take the band's colour. */
+/* On a coloured band, text, headings and links take the band's colour. Buttons keep their own
+   colours, visited or not. */
 .ag-band--primary h1,
 .ag-band--primary h2,
 .ag-band--primary h3,
 .ag-band--primary p,
-.ag-band--primary a,
-.ag-band--primary a:visited,
+.ag-band--primary a:not(.ag-button),
+.ag-band--primary a:not(.ag-button):visited,
 .ag-band--dark h1,
 .ag-band--dark h2,
 .ag-band--dark h3,
 .ag-band--dark p,
-.ag-band--dark a,
-.ag-band--dark a:visited,
+.ag-band--dark a:not(.ag-button),
+.ag-band--dark a:not(.ag-button):visited,
 .ag-band--accent h1,
 .ag-band--accent h2,
 .ag-band--accent h3,
 .ag-band--accent p,
-.ag-band--accent a,
-.ag-band--accent a:visited {
+.ag-band--accent a:not(.ag-button),
+.ag-band--accent a:not(.ag-button):visited {
   color: inherit;
 }
 
