@@ -5,6 +5,7 @@
 // code, and generates the pack and token pages from the token build.
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { gzipSync } from "node:zlib";
 import { dirname, join, relative } from "node:path";
 import { ROOT, cssVarName, loadCore, toCssValue } from "./tokens.mjs";
 
@@ -12,6 +13,14 @@ const SITE = join(ROOT, "site");
 const DOCS = join(ROOT, "docs");
 const BUILD = join(ROOT, "build");
 const pkg = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8"));
+
+// Figures quoted on the docs site come from the build, so they cannot fall behind the code.
+const coreMin = join(ROOT, "dist", "core.min.css");
+const cssKB = existsSync(coreMin) ? `${Math.round(gzipSync(readFileSync(coreMin)).length / 1024)} KB` : "under 20 KB";
+const componentCount = String(
+  readdirSync(join(SITE, "pages", "components")).filter((f) => f.endsWith(".html") && f !== "index.html").length,
+);
+const fillStats = (s) => s.replace(/\{\{cssKB\}\}/g, cssKB).replace(/\{\{componentCount\}\}/g, componentCount);
 
 export const SECTIONS = [
   { id: "get-started", title: "Get started", href: "get-started.html" },
@@ -341,6 +350,7 @@ export function buildDocs() {
       .replace(/\{\{tokensTable\}\}/g, tokensTable)
       .replace(/\{\{version\}\}/g, pkg.version)
       .replace(/\{\{root\}\}/g, root);
+    body = fillStats(body);
 
     const html = layout
       .replace(
@@ -349,7 +359,7 @@ export function buildDocs() {
           ? "afrigov: open-source components for accessible African public-service websites"
           : `${page.title} – afrigov`,
       )
-      .replace(/\{\{description\}\}/g, page.description ?? "")
+      .replace(/\{\{description\}\}/g, fillStats(page.description ?? ""))
       .replace(/\{\{root\}\}/g, root)
       .replace(/\{\{packList\}\}/g, JSON.stringify(packs.codes))
       .replace(/\{\{assetVersion\}\}/g, assetVersion)
