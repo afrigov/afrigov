@@ -1,0 +1,141 @@
+<!-- { "title": "Images", "section": "styles", "description": "How heavy each kind of image may be, which format to use, and how to send each screen the size it needs.", "order": 35 } -->
+<h1>Images</h1>
+<p class="ag-lead">
+  Images are where most of a government page's weight comes from, and the reader pays for every megabyte. afrigov's CSS
+  is {{cssKB}}. One photograph sent at camera size can be three hundred times that.
+</p>
+
+<h2>How heavy each kind of image may be</h2>
+<p>Sizes are after compression, for the largest version a desktop downloads. Phones download less.</p>
+<div class="ag-prose">
+  <div class="ag-table-wrap" role="region" aria-label="Image weight limits" tabindex="0">
+    <table class="ag-table">
+      <caption class="ag-visually-hidden">
+        Image weight limits
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Width</th>
+          <th scope="col" class="ag-table__numeric">At most</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Hero or cover photograph</th>
+          <td>1600px</td>
+          <td class="ag-table__numeric">150 KB</td>
+        </tr>
+        <tr>
+          <th scope="row">Image beside text, or in a news article</th>
+          <td>800px</td>
+          <td class="ag-table__numeric">80 KB</td>
+        </tr>
+        <tr>
+          <th scope="row">Card picture, video poster</th>
+          <td>640px</td>
+          <td class="ag-table__numeric">40 KB</td>
+        </tr>
+        <tr>
+          <th scope="row">Portrait</th>
+          <td>480px</td>
+          <td class="ag-table__numeric">40 KB</td>
+        </tr>
+        <tr>
+          <th scope="row">List thumbnail</th>
+          <td>240px</td>
+          <td class="ag-table__numeric">15 KB</td>
+        </tr>
+        <tr>
+          <th scope="row">Logo or mark</th>
+          <td>112px tall</td>
+          <td class="ag-table__numeric">20 KB</td>
+        </tr>
+        <tr>
+          <th scope="row">Event flyer</th>
+          <td>800px</td>
+          <td class="ag-table__numeric">120 KB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<p>A whole page, images included, should load in under 1 MB on a phone. Under 500 KB is better.</p>
+
+<h2>Which format</h2>
+<ul>
+  <li>
+    <strong>WebP</strong> for photographs and anything with many colours. It is a third to a half the size of JPEG at
+    the same quality, and every current browser reads it.
+  </li>
+  <li>
+    <strong>SVG</strong> for logos, marks, icons and diagrams drawn with lines and shapes. It stays sharp at any size
+    and is usually a few kilobytes.
+  </li>
+  <li><strong>PNG</strong> only for screenshots and flat graphics with text that WebP would blur.</li>
+  <li>Never a photograph saved as PNG. It is often ten times the size of the same photograph as WebP.</li>
+</ul>
+
+<h2>Send each screen the size it needs</h2>
+<p>
+  Make the image at three widths and let the browser choose. A phone downloads the small one; a large screen the large
+  one. The <code>sizes</code> attribute tells the browser how wide the image is shown, so it can choose before the page
+  has laid itself out.
+</p>
+<pre class="docs-code" tabindex="0"><code>&lt;img
+  src="clinic-960.webp"
+  srcset="clinic-480.webp 480w, clinic-960.webp 960w, clinic-1600.webp 1600w"
+  sizes="(min-width: 64em) 50vw, 100vw"
+  width="1600"
+  height="900"
+  alt="A nurse checks a child's temperature at the Tamale clinic."
+  loading="lazy"
+  decoding="async"
+/&gt;</code></pre>
+<ul>
+  <li>
+    <strong><code>width</code> and <code>height</code></strong> are the file's own size. The browser keeps the space
+    from the start, so the page does not jump when the image arrives.
+  </li>
+  <li>
+    <strong><code>loading="lazy"</code></strong> on every image below the first screen, so it downloads only when
+    someone scrolls to it. Not on the hero, which should arrive first.
+  </li>
+  <li>
+    <strong>Slides and hidden images</strong> download even when nobody sees them. afrigov has no carousel for that
+    reason. If a page must show several, give the hidden ones <code>loading="lazy"</code>.
+  </li>
+</ul>
+
+<h2>How to make them</h2>
+<ul>
+  <li>
+    <strong>WordPress</strong> already makes resized copies of every upload and writes <code>srcset</code> for them, if
+    the theme uses its image functions. A plugin can convert uploads to WebP. Check that the theme does not put the
+    full-size original in the hero or the slider.
+  </li>
+  <li>
+    <strong>A site built from files</strong>: resize and convert before publishing, with a tool such as Squoosh in the
+    browser, or <code>cwebp</code> on the command line.
+  </li>
+  <li>
+    <strong>Remove the camera data.</strong> A photograph straight from a phone carries where and when it was taken.
+    Converting to WebP with the tools above removes it.
+  </li>
+</ul>
+
+<h2>Check a page</h2>
+<p>
+  <a href="https://github.com/omoyolab/afrigov-audit">afrigov-audit</a> reports a page's weight on a phone and names
+  every image heavier than it needs to be, with the size the screen needs:
+</p>
+<pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.gh/ --phone</code></pre>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>
+    An image that says something needs <code>alt</code> text that says it. A decorative image has <code>alt=""</code>.
+    See <a href="../components/image.html">image and figure</a>.
+  </li>
+  <li>No words inside pictures. Text in an image cannot be resized, translated or read aloud.</li>
+</ul>

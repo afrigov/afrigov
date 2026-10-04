@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- Docs: an Images page under Styles, with a weight limit for each kind of image, the formats to use, `srcset` and `sizes` to send each screen the size it needs, and how to check a page with afrigov-audit.
+
 ## [0.12.0] - 2026-10-03
 
 ### Added
