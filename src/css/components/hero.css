@@ -3,7 +3,15 @@
    variant puts it in a solid panel. */
 .ag-hero {
   margin-bottom: var(--ag-space-6);
-  padding-block: var(--ag-space-5);
+  padding-block: var(--ag-space-7);
+}
+
+/* 48em = breakpoint.md. Room above and below the text, so the title, lead and actions
+   do not crowd each other. */
+@media (min-width: 48em) {
+  .ag-hero {
+    padding-block: var(--ag-space-8);
+  }
 }
 
 .ag-hero__inner {
@@ -24,9 +32,12 @@
   margin: 0 0 var(--ag-space-4);
 }
 
+/* A step smaller than a lead elsewhere, so it reads as text under the title and not as a
+   second heading. */
 .ag-hero__lead {
   max-width: var(--ag-size-measure);
-  margin-bottom: var(--ag-space-5);
+  margin-bottom: var(--ag-space-6);
+  font-size: var(--ag-font-size-lg);
 }
 
 .ag-hero__actions {
@@ -216,5 +227,16 @@
 
   .ag-hero--cover-top .ag-hero__inner {
     align-items: flex-start;
+  }
+}
+
+/* Variant: tall, for a hero with more to say, such as a longer lead or a second line of
+   actions. A taller panel with the text centred in it. Phones keep the natural height.
+   Last in the file, so it also sets the height of a cover hero. */
+@media (min-width: 48em) {
+  .ag-hero--tall {
+    display: grid;
+    align-items: center;
+    min-height: 28rem;
   }
 }

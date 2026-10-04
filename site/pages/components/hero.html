@@ -50,6 +50,31 @@
   </div>
 </docs-example>
 
+<h2>Variant: tall</h2>
+<p>
+  <code>ag-hero--tall</code> gives a hero with more to say more room: a longer lead, a short list, or a line under the
+  actions. On a tablet or desktop it is at least 28rem high with the text centred in it. On a phone it keeps its natural
+  height. It works with every variant, including the panel over a photograph.
+</p>
+<docs-example flush>
+  <div class="ag-hero ag-hero--primary ag-hero--tall">
+    <div class="ag-container ag-hero__inner">
+      <div>
+        <h2 class="ag-heading-xl ag-hero__title">Your water account</h2>
+        <p class="ag-lead ag-hero__lead">
+          See your bills, report a fault and manage your connection online. To create an account you need your customer
+          number, which is on every bill.
+        </p>
+        <div class="ag-button-group ag-hero__actions">
+          <a class="ag-button ag-button--start" href="#hero-example">Create an account</a>
+          <a class="ag-button ag-button--secondary" href="#hero-example">Sign in</a>
+        </div>
+        <p class="ag-mb-0">Moving house? <a href="#hero-example">Transfer your connection</a>.</p>
+      </div>
+    </div>
+  </div>
+</docs-example>
+
 <h2>Variant: centred</h2>
 <p>For a campaign or a single-purpose landing page with no image. Title, lead and one action, centred.</p>
 <docs-example flush>
@@ -271,6 +296,11 @@
   <li>
     <strong>One action.</strong> A second link at most. A hero with four buttons is a navigation, and the header already
     has one.
+  </li>
+  <li>
+    <strong>Room around the text.</strong> Every hero has 3rem above and below its text from tablet width, and 2rem on a
+    phone. The lead is a step smaller than a lead elsewhere, so it reads as text under the title. When there is more to
+    say, use the tall variant rather than squeezing it in.
   </li>
   <li>
     <strong>The title is the page's h1</strong> on a real page. The examples here use h2 because this page already has

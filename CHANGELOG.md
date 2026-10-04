@@ -6,9 +6,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-10-03
+
 ### Added
 
+- **Tall hero.** `ag-hero--tall` is at least 28rem high from tablet width, with the text centred, for a hero with a longer lead or a line under the actions. It works with every variant. Phones keep the natural height.
 - Docs: an Images page under Styles, with a weight limit for each kind of image, the formats to use, `srcset` and `sizes` to send each screen the size it needs, and how to check a page with afrigov-audit.
+
+### Changed
+
+- **More room in every hero.** 3rem above and below the text from tablet width, 2rem on a phone, up from 1.25rem. The title, lead and actions no longer crowd each other.
+- **A smaller hero lead.** The lead in a hero is 1.25rem at every width, a step below a lead elsewhere, so it reads as text under the title.
 
 ## [0.12.0] - 2026-10-03
 
