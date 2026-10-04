@@ -126,10 +126,13 @@
   display: block;
 }
 
-/* On a phone the panel is as wide as the photograph above it. 47.99em = just under breakpoint.md */
+/* On a phone the panel rests on the bottom of the photograph, pulled in from the sides, like a
+   card on the picture. Only the bottom strip of the photograph is covered, and the text is on the
+   solid panel. 47.99em = just under breakpoint.md */
 @media (max-width: 47.99em) {
   .ag-hero--cover .ag-hero__inner {
-    padding-inline: 0;
+    position: relative;
+    margin-top: calc(-1 * var(--ag-space-6));
   }
 }
 

@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.11.3] - 2026-10-03
+
+### Changed
+
+- Cover hero on a phone: the panel rests on the bottom of the photograph, pulled in from the sides, like a card on the picture. It used to start exactly where the photograph ended, so the two looked jammed together.
+
 ## [0.11.2] - 2026-10-03
 
 ### Changed
