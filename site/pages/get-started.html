@@ -7,8 +7,8 @@
 <pre
   class="docs-code"
   tabindex="0"
-><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.13/dist/core.min.css"&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.13/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
+><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@{{version}}/dist/core.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@{{version}}/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
 
 &lt;!-- Optional: menus, video and error-summary focus. Under 2 KB compressed. --&gt;
 &lt;script&gt;
@@ -17,11 +17,24 @@
     if (!window.AfriGov) document.documentElement.classList.remove("ag-js");
   });
 &lt;/script&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/afrigov@0.13/dist/afrigov.iife.js" defer&gt;&lt;/script&gt;</code></pre>
+&lt;script src="https://cdn.jsdelivr.net/npm/afrigov@{{version}}/dist/afrigov.iife.js" defer&gt;&lt;/script&gt;</code></pre>
 <p>
   The three lines before the script go in the <code>head</code>. They collapse the menu on phones from the first paint,
   so the page does not jump when the script arrives on a slow connection, and they put the full menu back if the script
   never arrives. Without them everything still works; the menu collapses a moment later.
+</p>
+
+<h3>Use the exact version</h3>
+<p>
+  The links name an exact version, <code>afrigov@{{version}}</code>. The CDN tells browsers to keep that file for good,
+  which is safe because a published version never changes. When a new version comes out, the address changes, so every
+  visitor gets it on their next visit.
+</p>
+<p>
+  A shorter address such as <code>afrigov@0.13</code> follows the newest 0.13 release, but browsers keep it for up to
+  seven days. A fix can take a week to reach someone who visited before it. Use the exact version, and to update, change
+  the number in the links after reading the
+  <a href="https://github.com/omoyolab/afrigov/blob/main/CHANGELOG.md">changelog</a>.
 </p>
 
 <p>Or from npm:</p>
@@ -43,8 +56,8 @@ init();</code></pre>
   &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
   &lt;title&gt;Renew a passport – Ministry of Interior&lt;/title&gt;
   &lt;meta name="description" content="Renew an adult passport online. It takes about 10 minutes."&gt;
-  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.13/dist/core.min.css"&gt;
-  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@0.13/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@{{version}}/dist/core.min.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@{{version}}/dist/<span data-docs-packfile>ng</span>.min.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;a class="ag-skip-link" href="#main"&gt;Skip to main content&lt;/a&gt;

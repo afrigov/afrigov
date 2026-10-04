@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- **Install with the exact version.** The docs, the README and the page templates now link to `afrigov@<version>` in full, such as `afrigov@0.13.1`, instead of a range such as `afrigov@0.13`. Browsers keep a range for up to seven days, so a fix could take a week to reach a returning visitor; an exact version changes address with each release. The build writes the current version into the README and the templates, and a test fails if one is left behind. Get started explains why.
+
 ## [0.13.1] - 2026-10-04
 
 ### Fixed
