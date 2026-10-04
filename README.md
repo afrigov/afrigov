@@ -14,6 +14,8 @@ One country-neutral core. A token pack per country. Plain CSS, 9 KB gzipped, no 
 
 Most government websites in Africa fail basic accessibility checks. The people building them care; the problem is that every ministry, agency and contractor starts from zero. afrigov is the starting point they do not have: accessible components, national colours that pass contrast, official-website banners in local languages, and a size budget that respects a 2G connection.
 
+Light pages matter because the reader pays for them. Every megabyte comes out of someone's phone data, usually a prepaid bundle. afrigov is 9 KB of CSS. One ministry home page rebuilt on it went from 8.9 MB to 29 KB, and from 14 seconds to 3 seconds on a phone.
+
 It is not a government project. It is open source, MIT licensed, and built so a country pack is one JSON file that anyone can contribute.
 
 ## Quick start

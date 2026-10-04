@@ -50,7 +50,7 @@
   </a>
   <a class="docs-card docs-card--link" href="components/index.html">
     <h2>Components</h2>
-    <p>Twenty-three building blocks, each with when to use it, the HTML, and its accessibility notes.</p>
+    <p>{{componentCount}} building blocks, each with when to use it, the HTML, and its accessibility notes.</p>
   </a>
   <a class="docs-card docs-card--link" href="patterns/index.html">
     <h2>Patterns</h2>
@@ -63,7 +63,10 @@
   {{scoreboardCard}}
   <a class="docs-card docs-card--link" href="use-cases.html">
     <h2>Use cases</h2>
-    <p>A real ministry's website rebuilt on afrigov, and the audit tool that checks it.</p>
+    <p>
+      Three real government websites rebuilt on afrigov, with the real sites' scores beside them, and the audit tool
+      that checks them.
+    </p>
   </a>
   <a class="docs-card docs-card--link" href="community/index.html">
     <h2>Community</h2>
@@ -75,32 +78,45 @@
   <div class="docs-home__why-intro">
     <h2 id="why-heading">Why afrigov</h2>
     <p>
-      Most government sites on the continent fail basic accessibility checks, not for lack of care but because every
-      ministry and contractor starts from zero. This is the starting point.
+      Most government websites on the continent are slow, heavy and hard to use with a screen reader. The people who
+      build them care; the trouble is that every ministry and contractor starts from zero. afrigov is the starting
+      point.
     </p>
   </div>
   <ol class="docs-reasons">
     <li>
-      <h3>No build step</h3>
-      <p>Two link tags and you are done. Plain CSS with custom properties. No Sass, no bundler, no framework.</p>
-    </li>
-    <li>
-      <h3>Country packs</h3>
+      <h3>Lighter pages cost people less</h3>
       <p>
-        The core has no flag colours. A pack adds them, derives text-safe variants, and carries the official banner
-        strings in the country's languages.
+        Every megabyte a page downloads is paid for by the person reading it, most often on a prepaid phone bundle.
+        afrigov is {{cssKB}} of CSS. One ministry home page we rebuilt went from 8.9 MB to 29 KB, and from 14 seconds to
+        3 seconds on a phone.
       </p>
     </li>
     <li>
-      <h3>Works on a 2G connection</h3>
-      <p>System fonts only, {{cssKB}} of CSS, and every component works with JavaScript turned off.</p>
+      <h3>Fast on slow phones and networks</h3>
+      <p>
+        System fonts only, so there are no fonts to download. Every component works with JavaScript turned off, and
+        video loads only when someone presses play. A page is readable on a 2G connection.
+      </p>
     </li>
     <li>
-      <h3>AA is enforced, not promised</h3>
+      <h3>Accessible, and checked on every change</h3>
       <p>
         The build fails if any colour pair misses 4.5:1. axe-core runs on every page of this site, with every pack, on
         every pull request.
       </p>
     </li>
+    <li>
+      <h3>Two link tags to install</h3>
+      <p>Plain CSS with custom properties. No Sass, no bundler, no framework, and nothing to build.</p>
+    </li>
+    <li>
+      <h3>A pack for each country</h3>
+      <p>
+        The core has no flag colours. A pack adds them, derives text-safe variants, and carries the official banner
+        strings in the country's languages.
+      </p>
+    </li>
   </ol>
+  <p><a href="use-cases.html">See the rebuilds and their scores</a></p>
 </section>
