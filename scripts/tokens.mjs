@@ -137,6 +137,7 @@ export const CONTRAST_PAIRS = [
   ["color.ink-muted", "color.paper-alt", 4.5, "hints on alt background"],
   ["color.ink-inverse", "color.paper-dark", 4.5, "footer text"],
   ["color.primary", "color.paper", 4.5, "primary as text and outlines"],
+  ["color.primary", "color.paper-alt", 3, "focus ring on a field on the alt background"],
   ["color.on-primary", "color.primary", 4.5, "button labels"],
   ["color.on-accent", "color.accent", 4.5, "text on the accent band"],
   ["color.link", "color.paper", 4.5, "links"],

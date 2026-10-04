@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.14.1] - 2026-10-04
+
+### Changed
+
+- **Form fields are capped at 36rem**, so a form reads as one column instead of a stack of page-wide boxes. On a phone they still fill the width. The `ag-input--width-*` modifiers set narrower caps as before.
+- **A calmer focus on text fields.** A field shows focus every time it is clicked, so it now gets a thick dark edge and a ring in the pack's primary colour instead of the yellow ring. Links and buttons keep the yellow, where keyboard users rely on it. The contrast check now also holds the primary colour to 3:1 on the alt background, where the header search box sits.
+
 ## [0.14.0] - 2026-10-04
 
 ### Added
