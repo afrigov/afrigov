@@ -44,6 +44,12 @@
   margin-bottom: 0;
 }
 
+/* A line under the actions, such as "Moving house? Transfer your connection", keeps clear
+   of the buttons. */
+.ag-hero__actions + * {
+  margin-top: var(--ag-space-6);
+}
+
 .ag-hero__media {
   margin: 0;
 }

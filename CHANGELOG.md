@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.13.2] - 2026-10-04
+
+### Fixed
+
+- **A line under a hero's buttons** sat right against them. Whatever follows `ag-hero__actions`, such as "Moving house? Transfer your connection", now has 1.5rem of space above it.
+
 ### Changed
 
 - **Install with the exact version.** The docs, the README and the page templates now link to `afrigov@<version>` in full, such as `afrigov@0.13.1`, instead of a range such as `afrigov@0.13`. Browsers keep a range for up to seven days, so a fix could take a week to reach a returning visitor; an exact version changes address with each release. The build writes the current version into the README and the templates, and a test fails if one is left behind. Get started explains why.
