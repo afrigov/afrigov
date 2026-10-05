@@ -54,6 +54,15 @@
           document.documentElement.setAttribute("data-ag-pack", pack);
         }
         document.documentElement.setAttribute("data-docs-pack", pack);
+        // Corners: ?corners= wins, then the remembered choice. Square is the default.
+        var corners = new URL(location.href).searchParams.get("corners");
+        try {
+          if (corners === "rounded" || corners === "square") localStorage.setItem("afrigov-corners", corners);
+          else corners = localStorage.getItem("afrigov-corners");
+        } catch (e) {
+          /* private mode */
+        }
+        if (corners === "rounded") document.documentElement.setAttribute("data-ag-corners", "rounded");
       })();
     </script>
   </head>
@@ -71,6 +80,9 @@
           <span class="docs-pack__current" data-docs-current>neutral core</span>
           <a class="docs-pack__link" href="{{root}}packs/index.html#preview">Change</a>
           <a class="docs-pack__link" href="?pack=core" data-docs-reset hidden>Reset</a>
+          <span class="docs-pack__label">Corners</span>
+          <a class="docs-pack__link" href="?corners=square" data-docs-corners="square">Square</a>
+          <a class="docs-pack__link" href="?corners=rounded" data-docs-corners="rounded">Rounded</a>
         </p>
       </div>
     </div>

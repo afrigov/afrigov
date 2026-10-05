@@ -9,6 +9,7 @@
   border: 3px solid var(--_ag-alert-color);
   border-inline-start-width: 8px;
   background: var(--_ag-alert-tint);
+  border-radius: var(--ag-size-radius-surface);
 }
 
 .ag-alert--success {

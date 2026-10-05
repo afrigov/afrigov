@@ -24,6 +24,8 @@ describe("dist/core.css", () => {
       ".ag-nav__menu",
       ".ag-hero--cover",
       ".ag-search",
+      ".ag-button--pill",
+      '[data-ag-corners="rounded"]',
       ".ag-header__search",
       ".ag-results",
       ".ag-footer",

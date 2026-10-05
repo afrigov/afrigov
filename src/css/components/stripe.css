@@ -45,4 +45,6 @@
   content: "";
   height: 4px;
   margin: calc(-1 * var(--ag-space-4)) calc(-1 * var(--ag-space-4) - 1px) var(--ag-space-2);
+  /* Its top edge is the card's, so it takes the card's top corners. */
+  border-radius: var(--ag-size-radius-surface) var(--ag-size-radius-surface) 0 0;
 }

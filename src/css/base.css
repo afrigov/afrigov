@@ -36,6 +36,15 @@ body {
   --ag-font-leading-base: 1.6;
 }
 
+/* Corners. Set data-ag-corners on <html>, once for the whole site, so buttons, fields and cards match.
+   Square is the default. rounded: 8px on buttons, fields and the search box, 12px on cards, panels,
+   alerts and empty states. */
+[data-ag-corners="rounded"] {
+  --ag-size-radius: 0.5rem;
+  --ag-size-radius-field: 0.5rem;
+  --ag-size-radius-surface: 0.75rem;
+}
+
 /* Focus ring: a yellow inner ring and an ink outer ring, so it is visible on any background. */
 :focus-visible {
   outline: var(--ag-size-focus-ring) solid var(--ag-color-focus);

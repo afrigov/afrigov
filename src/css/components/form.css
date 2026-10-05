@@ -56,7 +56,7 @@
   min-height: var(--ag-size-target);
   padding: var(--ag-space-2) var(--ag-space-3);
   border: var(--ag-size-control-border) solid var(--ag-color-border-strong);
-  border-radius: 0;
+  border-radius: var(--ag-size-radius-field);
   background: var(--ag-color-paper);
   color: var(--ag-color-ink);
   -webkit-appearance: none;

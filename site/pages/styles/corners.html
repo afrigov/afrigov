@@ -1,0 +1,88 @@
+<!-- { "title": "Corners", "section": "styles", "description": "Square by default, or rounded for the whole site with one setting, so buttons, fields and cards match.", "order": 32 } -->
+<h1>Corners</h1>
+<p class="ag-lead">
+  afrigov is square by default. A site that wants a softer look turns on rounded corners once, for everything, so
+  buttons, fields and cards match.
+</p>
+
+<h2>Turn on rounded corners</h2>
+<pre class="docs-code" tabindex="0"><code>&lt;html lang="en" data-ag-corners="rounded"&gt;</code></pre>
+<p>
+  Preview it on any page of these docs with <a href="?corners=rounded">Rounded</a> in the banner at the top, and go back
+  with <a href="?corners=square">Square</a>.
+</p>
+
+<docs-example label="Square, the default">
+  <form class="ag-mb-0" action="#corners" onsubmit="return false;">
+    <div class="ag-field">
+      <label class="ag-label" for="corners-square">Email address</label>
+      <input class="ag-input" id="corners-square" type="email" />
+    </div>
+    <button class="ag-button" type="submit">Continue</button>
+  </form>
+</docs-example>
+<docs-example label="Rounded">
+  <div data-ag-corners="rounded">
+    <form class="ag-mb-0" action="#corners" onsubmit="return false;">
+      <div class="ag-field">
+        <label class="ag-label" for="corners-rounded">Email address</label>
+        <input class="ag-input" id="corners-rounded" type="email" />
+      </div>
+      <button class="ag-button" type="submit">Continue</button>
+    </form>
+  </div>
+</docs-example>
+
+<h2>What changes</h2>
+<div class="ag-table-wrap" role="region" aria-label="Corner sizes" tabindex="0">
+  <table class="ag-table">
+    <caption class="ag-visually-hidden">
+      Corner sizes, square and rounded
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Token</th>
+        <th scope="col">Used by</th>
+        <th scope="col">Square</th>
+        <th scope="col">Rounded</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>--ag-size-radius</code></th>
+        <td>Buttons, pagination, the menu and search buttons, date blocks, badges</td>
+        <td>4px</td>
+        <td>8px</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-size-radius-field</code></th>
+        <td>Text fields, selects, the search box</td>
+        <td>0</td>
+        <td>8px</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>--ag-size-radius-surface</code></th>
+        <td>Cards, panels, alerts, empty states, the error summary</td>
+        <td>0</td>
+        <td>12px</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Rules</h2>
+<ul>
+  <li>
+    <strong>One choice for the whole site.</strong> Set it on <code>html</code>. Rounded buttons beside square fields
+    and cards look like two systems.
+  </li>
+  <li>
+    <strong>A pill for one action.</strong> <code>ag-button--pill</code> rounds a call to action fully, with either
+    setting. Use it for the main action on a page, not every button.
+  </li>
+  <li>
+    <strong>Your own sizes.</strong> The three tokens can be set to any value, on <code>html</code> or in your own
+    stylesheet after afrigov's.
+  </li>
+  <li>Focus rings, borders and contrast are the same either way.</li>
+</ul>

@@ -1,5 +1,5 @@
 /* Search. A plain form, so it works with no JavaScript: it sends the words to a results page.
-   The box and button sit on one line and share an edge, the way people expect a search box. */
+   The box and the button sit on one line. */
 .ag-search {
   margin: 0 0 var(--ag-space-5);
 }
@@ -10,8 +10,11 @@
   font-weight: var(--ag-font-weight-bold);
 }
 
+/* The box and the button sit side by side with a gap, each with its own edge, so the focus
+   ring goes round the box alone and does not run into the button. */
 .ag-search__row {
   display: flex;
+  gap: var(--ag-space-2);
   max-width: 36rem;
 }
 
@@ -21,8 +24,7 @@
   min-height: var(--ag-size-target);
   padding: var(--ag-space-2) var(--ag-space-3);
   border: var(--ag-size-control-border) solid var(--ag-color-ink);
-  border-inline-end: 0;
-  border-radius: 0;
+  border-radius: var(--ag-size-radius-field);
   background: var(--ag-color-paper);
   color: var(--ag-color-ink);
   font: inherit;
@@ -43,7 +45,7 @@
   min-height: var(--ag-size-target);
   padding: var(--ag-space-2) var(--ag-space-4);
   border: var(--ag-size-control-border) solid var(--ag-color-primary);
-  border-radius: 0;
+  border-radius: var(--ag-size-radius);
   background: var(--ag-color-primary);
   color: var(--ag-color-on-primary);
   font: inherit;

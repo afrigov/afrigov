@@ -101,3 +101,9 @@
 [dir="rtl"] .ag-button--start::after {
   transform: rotate(225deg);
 }
+
+/* Variant: pill, fully round ends for a call to action. Works with square or rounded corners. */
+.ag-button--pill {
+  border-radius: 999px;
+  padding-inline: var(--ag-space-6);
+}

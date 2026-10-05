@@ -94,7 +94,12 @@
     "measure": { "$value": "65ch", "$description": "Maximum line length for running text." },
     "container": { "$value": "72rem" },
     "control-border": { "$value": "2px" },
-    "radius": { "$value": "0.25rem" },
+    "radius": { "$value": "0.25rem", "$description": "Buttons and small controls." },
+    "radius-field": { "$value": "0rem", "$description": "Text fields, selects and the search box. Square by default." },
+    "radius-surface": {
+      "$value": "0rem",
+      "$description": "Cards, panels, alerts and empty states. Square by default."
+    },
     "focus-ring": { "$value": "3px" }
   },
   "breakpoint": {

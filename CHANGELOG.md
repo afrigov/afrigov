@@ -6,6 +6,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-10-04
+
+### Added
+
+- **Rounded corners, for the whole site.** `data-ag-corners="rounded"` on `html` rounds buttons, fields and the search box by 8px, and cards, panels, alerts, empty states and the error summary by 12px. Square stays the default. Two new tokens, `--ag-size-radius-field` and `--ag-size-radius-surface`, sit beside `--ag-size-radius`, so a site can also set its own sizes. Flag-edge cards round their stripe to match. A Corners page under Styles, and a Square / Rounded switch in the docs banner.
+- **Pill button.** `ag-button--pill` gives a call to action fully round ends, with either setting.
+
+### Changed
+
+- **The search box and its button have a gap**, each with its own border. Joined, the box's focus ring ran into the button and the two read as one block.
+
 ## [0.14.1] - 2026-10-04
 
 ### Changed

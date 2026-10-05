@@ -6,6 +6,7 @@
   background: var(--ag-color-primary);
   color: var(--ag-color-on-primary);
   text-align: center;
+  border-radius: var(--ag-size-radius-surface);
 }
 
 .ag-panel__title {

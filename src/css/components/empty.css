@@ -5,6 +5,7 @@
   border: 1px dashed var(--ag-color-border-strong);
   background: var(--ag-color-paper-alt);
   max-width: var(--ag-size-measure);
+  border-radius: var(--ag-size-radius-surface);
 }
 
 .ag-empty__title {

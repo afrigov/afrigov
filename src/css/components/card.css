@@ -19,6 +19,7 @@
   border: 1px solid var(--ag-color-border);
   border-top: 4px solid var(--ag-color-primary);
   background: var(--ag-color-paper);
+  border-radius: var(--ag-size-radius-surface);
 }
 
 .ag-card:hover {

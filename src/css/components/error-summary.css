@@ -4,6 +4,7 @@
   margin-bottom: var(--ag-space-6);
   padding: var(--ag-space-4);
   border: 5px solid var(--ag-color-error);
+  border-radius: var(--ag-size-radius-surface);
 }
 
 .ag-error-summary:focus {
