@@ -158,11 +158,3 @@
     td.textContent = cur.position === "suffix" ? n + " " + (cur.symbol || "") : (cur.symbol || "") + n;
   });
 })();
-
-// Corners: mark the current choice in the banner.
-(function () {
-  var current = document.documentElement.getAttribute("data-ag-corners") === "rounded" ? "rounded" : "square";
-  document.querySelectorAll("[data-docs-corners]").forEach(function (a) {
-    if (a.getAttribute("data-docs-corners") === current) a.setAttribute("aria-current", "true");
-  });
-})();

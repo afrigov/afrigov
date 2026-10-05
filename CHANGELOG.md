@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Docs: the Square / Rounded switch is out of the banner, which it made crowded. The Corners page shows both side by side.
+
 ## [0.15.0] - 2026-10-04
 
 ### Added
