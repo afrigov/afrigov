@@ -1,0 +1,169 @@
+<!-- { "title": "Images", "section": "tools", "description": "afrigov-images makes a folder of photographs light enough for a government website: the sizes each screen needs, as WebP, without location data, with the HTML to paste.", "order": 20 } -->
+<h1>Images</h1>
+<p class="ag-lead">
+  Point it at a folder of photographs. It makes each one at the sizes phones, tablets and desktops need, saves them as
+  WebP, removes the camera's location data, and prints the HTML to paste.
+</p>
+
+<pre class="docs-code" tabindex="0"><code>npx afrigov-images ./event-photos --out ./site/images</code></pre>
+<p>It needs Node 20 or newer, and runs on your own computer: the photographs are not sent anywhere.</p>
+
+<h2>Why</h2>
+<p>
+  Images are most of a government page's weight, and the reader pays for every megabyte, usually from a prepaid phone
+  bundle. A photograph straight from a camera is 3 to 8 MB. Shown on a phone, it needs about 50 KB.
+</p>
+<p>
+  Image tools for developers ask which sizes, format and quality you want. This one decides for you, using afrigov's
+  limits for each kind of image, so a web team with a folder of photographs gets the right result without learning any
+  of it.
+</p>
+
+<h2>A real example</h2>
+<p>The heaviest image on a ministry's home page:</p>
+<pre class="docs-code" tabindex="0"><code>cardiovascular-care.png  3.1 MB, 2384 × 1054
+  3 copies as WebP: 15 KB, 37 KB, 66 KB  within the limit
+
+  &lt;img
+    src="cardiovascular-care-960.webp"
+    srcset="cardiovascular-care-480.webp 480w, cardiovascular-care-960.webp 960w, cardiovascular-care-1600.webp 1600w"
+    sizes="100vw"
+    width="1600"
+    height="707"
+    alt=""
+    decoding="async"
+  /&gt;</code></pre>
+<p>A phone now downloads 15 KB where it used to download 3.1 MB.</p>
+
+<h2>Kinds of image</h2>
+<p>
+  Choose with <code>--kind</code>. Each kind has the sizes a page needs and a limit for the largest copy. The reasons
+  behind the limits are on the <a href="../styles/images.html">Images</a> page under Styles.
+</p>
+<div class="ag-table-wrap" role="region" aria-label="Kinds of image" tabindex="0">
+  <table class="ag-table">
+    <thead>
+      <tr>
+        <th scope="col">Kind</th>
+        <th scope="col">For</th>
+        <th scope="col">Sizes made</th>
+        <th scope="col" class="ag-table__numeric">At most</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hero</code></td>
+        <td>Hero or cover photograph</td>
+        <td>480, 960, 1600 wide</td>
+        <td class="ag-table__numeric">150 KB</td>
+      </tr>
+      <tr>
+        <td><code>wide</code></td>
+        <td>Beside text, or in a news article. The default</td>
+        <td>480, 800 wide</td>
+        <td class="ag-table__numeric">80 KB</td>
+      </tr>
+      <tr>
+        <td><code>card</code></td>
+        <td>Card picture or video still</td>
+        <td>320, 640 wide</td>
+        <td class="ag-table__numeric">40 KB</td>
+      </tr>
+      <tr>
+        <td><code>portrait</code></td>
+        <td>Portrait</td>
+        <td>240, 480 wide</td>
+        <td class="ag-table__numeric">40 KB</td>
+      </tr>
+      <tr>
+        <td><code>thumb</code></td>
+        <td>List thumbnail</td>
+        <td>120, 240 wide</td>
+        <td class="ag-table__numeric">15 KB</td>
+      </tr>
+      <tr>
+        <td><code>flyer</code></td>
+        <td>Event flyer</td>
+        <td>400, 800 wide</td>
+        <td class="ag-table__numeric">120 KB</td>
+      </tr>
+      <tr>
+        <td><code>logo</code></td>
+        <td>Logo or mark</td>
+        <td>56, 112 tall</td>
+        <td class="ag-table__numeric">20 KB</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>What it does to each image</h2>
+<ol>
+  <li><strong>Turns it the right way up</strong>, using the way the camera was held.</li>
+  <li><strong>Makes each size</strong>, never larger than the original.</li>
+  <li>
+    <strong>Saves it as WebP</strong>, starting at quality 75. If the largest copy is over the limit, it lowers the
+    quality in steps, down to 50. If it is still over, it says so.
+  </li>
+  <li>
+    <strong>Removes the camera data</strong>, including where the photograph was taken. A government site should not
+    publish a staff member's home by accident.
+  </li>
+  <li>
+    <strong>Prints the HTML</strong>, so each screen downloads only the size it needs and the page does not jump while
+    it loads.
+  </li>
+</ol>
+<p>
+  You write the <code>alt</code> text: what the picture shows, or nothing if it is decoration. A tool cannot know that.
+</p>
+
+<h2>Options</h2>
+<div class="ag-table-wrap" role="region" aria-label="Images options" tabindex="0">
+  <table class="ag-table">
+    <thead>
+      <tr>
+        <th scope="col">Option</th>
+        <th scope="col">What it does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>--out &lt;folder&gt;</code></td>
+        <td>Where to write the copies. Required</td>
+      </tr>
+      <tr>
+        <td><code>--kind &lt;kind&gt;</code></td>
+        <td>Which kind of image, <code>wide</code> by default</td>
+      </tr>
+      <tr>
+        <td><code>--quality &lt;n&gt;</code></td>
+        <td>The quality to start from, 1 to 100, 75 by default</td>
+      </tr>
+      <tr>
+        <td><code>--keep-metadata</code></td>
+        <td>Keep the camera and location data</td>
+      </tr>
+      <tr>
+        <td><code>--json</code></td>
+        <td>The results as JSON</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  It reads JPEG, PNG, WebP, AVIF, TIFF and GIF. iPhone photographs in HEIC format need converting first. Give it files,
+  or folders, which it reads one level deep.
+</p>
+
+<h2>Find the heavy images first</h2>
+<p>
+  <a href="audit.html">Audit</a> reports a live page's weight on a phone and names each image that is heavier than it
+  needs to be. Run Audit to find them, and this to fix them.
+</p>
+
+<p>
+  Source and the library:
+  <a href="https://github.com/afrigov/afrigov-images">afrigov-images on GitHub</a>. Package:
+  <a href="https://www.npmjs.com/package/afrigov-images">afrigov-images on npm</a>.
+</p>

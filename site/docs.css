@@ -277,6 +277,10 @@
   color: var(--ag-color-ink-muted);
 }
 
+.docs-home__install-label--next {
+  margin-top: var(--ag-space-5);
+}
+
 .docs-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

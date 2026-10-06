@@ -21,19 +21,18 @@
       <p>Components and country packs in plain CSS. Two link tags to install, with no build step.</p>
     </li>
     <li class="docs-card">
-      <h3><a href="https://github.com/afrigov/afrigov-audit">Audit</a></h3>
+      <h3><a href="tools/audit.html">Audit</a></h3>
       <p>Scores any government page for accessibility and weight, and says what to fix first.</p>
       <pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.ng/</code></pre>
     </li>
     <li class="docs-card">
-      <h3><a href="https://github.com/afrigov/afrigov-images">Images</a></h3>
+      <h3><a href="tools/images.html">Images</a></h3>
       <p>Turns a heavy photograph into light WebP files for each screen size, with the HTML to paste.</p>
       <pre class="docs-code" tabindex="0"><code>npx afrigov-images ./photos --out ./images</code></pre>
     </li>
     <li class="docs-card">
       <h3>
-        <a href="https://github.com/afrigov/afrigov-blocks">WordPress</a>
-        <span class="ag-badge ag-badge--neutral">In development</span>
+        <a href="tools/wordpress.html">WordPress</a>
       </h3>
       <p>
         A theme and a blocks plugin: build pages from afrigov's components in the WordPress editor, with no code.
@@ -52,7 +51,7 @@
   </p>
 
   <div class="docs-home__install">
-    <p class="docs-home__install-label">The whole install</p>
+    <p class="docs-home__install-label">With two link tags</p>
     <pre
       class="docs-code"
       tabindex="0"
@@ -61,6 +60,11 @@
     <p class="docs-fine" data-docs-packnote>
       Nigeria's pack is shown as the example. Preview a country and this becomes its file.
     </p>
+    <p class="docs-home__install-label docs-home__install-label--next">Or from npm</p>
+    <pre class="docs-code" tabindex="0"><code>npm install afrigov</code></pre>
+    <pre class="docs-code" tabindex="0"><code>import "afrigov/core.css";
+import "afrigov/<span data-docs-packfile>ng</span>.css";</code></pre>
+    <p class="docs-fine">The script for menus and video is optional: see <a href="get-started.html">Get started</a>.</p>
   </div>
 
   <dl class="docs-stats">

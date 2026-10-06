@@ -1,0 +1,163 @@
+<!-- { "title": "Audit", "section": "tools", "description": "afrigov-audit scores any web page for accessibility at phone and desktop widths, reports its weight on a phone, and says what to fix first.", "order": 10 } -->
+<h1>Audit</h1>
+<p class="ag-lead">
+  Scores any web page for accessibility at phone and desktop widths, says what to fix first, and reports how much the
+  page costs to load on a phone. It works on any website, built with afrigov or not.
+</p>
+
+<pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.ng/</code></pre>
+<p>The first run downloads a browser once:</p>
+<pre class="docs-code" tabindex="0"><code>npx playwright install chromium</code></pre>
+<p>It needs Node 20 or newer.</p>
+
+<h2>What you get</h2>
+<pre class="docs-code" tabindex="0"><code>Score 41.5 / 100  (D)
+9 problems found. Some people cannot use this page.
+1 critical · 4 serious · 3 moderate · 1 minor · checked at phone 375px and desktop 1280px
+
+Top 5 to fix first
+
+1. Pinch zoom is disabled in the viewport meta tag
+   critical · 1 element · phone and desktop · WCAG 1.4.4
+   Fix: Remove user-scalable=no and maximum-scale from the viewport meta.
+
+2. Form elements must have labels
+   serious · 6 elements · phone and desktop · WCAG 1.3.1, 4.1.2
+   Fix: Every control gets a visible label tied by for/id.</code></pre>
+<p>Each fix links to the afrigov page that shows how to do it right.</p>
+
+<h2>What it checks</h2>
+<ul>
+  <li>
+    <strong>The WCAG rules</strong>, with axe-core: WCAG 2.0, 2.1 and 2.2 at levels A and AA, at phone width (375px) and
+    desktop width (1280px). A problem found at both widths counts once.
+  </li>
+  <li>
+    <strong>What decides whether a page works on a cheap phone</strong>, which axe does not score: the page declares its
+    language, pinch zoom is allowed, there is a skip link, the page has a title, and links and buttons are big enough to
+    tap.
+  </li>
+  <li>
+    <strong>Page weight on a phone</strong>: what the page downloads, how much is images, and which images are heavier
+    than they need to be, with the size each one needs. Weight is reported for information and does not change the
+    score. <a href="images.html">Images</a> fixes what it finds.
+  </li>
+</ul>
+
+<h2>How the score works</h2>
+<p>
+  The page starts at 100. Each rule that fails takes points off by how serious it is, multiplied by the number of
+  elements, up to five. One broken template with 300 unlabelled links costs 15 points, not 900, so the other problems
+  stay visible.
+</p>
+<div class="ag-table-wrap" role="region" aria-label="Points per problem" tabindex="0">
+  <table class="ag-table">
+    <thead>
+      <tr>
+        <th scope="col">How serious</th>
+        <th scope="col" class="ag-table__numeric">Points off</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Critical</td>
+        <td class="ag-table__numeric">6</td>
+      </tr>
+      <tr>
+        <td>Serious</td>
+        <td class="ag-table__numeric">3</td>
+      </tr>
+      <tr>
+        <td>Moderate</td>
+        <td class="ag-table__numeric">1.5</td>
+      </tr>
+      <tr>
+        <td>Minor</td>
+        <td class="ag-table__numeric">0.5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Grades: A from 90, B from 75, C from 60, D from 40, and F below.</p>
+
+<h2>Options</h2>
+<div class="ag-table-wrap" role="region" aria-label="Audit options" tabindex="0">
+  <table class="ag-table">
+    <thead>
+      <tr>
+        <th scope="col">Option</th>
+        <th scope="col">What it does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>--all</code></td>
+        <td>Every problem, not just the top five</td>
+      </tr>
+      <tr>
+        <td><code>--phone</code>, <code>--desktop</code></td>
+        <td>Check at one width only</td>
+      </tr>
+      <tr>
+        <td><code>--fail-under &lt;n&gt;</code></td>
+        <td>Exit with an error if the score is below n, to stop a release</td>
+      </tr>
+      <tr>
+        <td><code>--badge &lt;file&gt;</code></td>
+        <td>Write a badge with the grade and score, as <code>.svg</code> or shields.io <code>.json</code></td>
+      </tr>
+      <tr>
+        <td><code>--label &lt;text&gt;</code></td>
+        <td>The text on the left of the badge</td>
+      </tr>
+      <tr>
+        <td><code>--json</code></td>
+        <td>The full result as JSON, for other tools</td>
+      </tr>
+      <tr>
+        <td><code>--timeout &lt;ms&gt;</code></td>
+        <td>How long to wait for the page, 30 seconds by default</td>
+      </tr>
+      <tr>
+        <td><code>--no-wcag22</code></td>
+        <td>Leave out the WCAG 2.2 rules</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Stop a release that makes things worse</h2>
+<p>In a CI pipeline, fail the build when a page drops below a score:</p>
+<pre class="docs-code" tabindex="0"><code>- run: npx playwright install --with-deps chromium
+- run: npx afrigov-audit https://staging.example.gov.ng/apply --fail-under 90</code></pre>
+
+<h2>Show the score</h2>
+<p>
+  <code>--badge</code> writes the grade and score as a small image for a README or a status page. Run it on a schedule
+  and the badge stays current. The <a href="../use-cases.html">use cases</a> show these badges for each rebuild and the
+  real site beside it.
+</p>
+<pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.ng/ --badge badges/home.svg</code></pre>
+
+<h2>What it does not do</h2>
+<ul>
+  <li>
+    <strong>It does not replace a person.</strong> Automated checks find about a third of real accessibility problems. A
+    pass with a screen reader, by someone who uses one every day, is still needed.
+  </li>
+  <li>
+    <strong>One page per run.</strong> Run it on the pages that matter: the home page, the start of a service, a form, a
+    confirmation.
+  </li>
+  <li><strong>No login.</strong> It sees the page as a visitor does.</li>
+  <li>
+    <strong>It never gets around a block.</strong> It loads the page once in a real browser and names itself. If a site
+    refuses it, it says so and stops.
+  </li>
+</ul>
+
+<p>
+  Source, the library and the full list of options:
+  <a href="https://github.com/afrigov/afrigov-audit">afrigov-audit on GitHub</a>. Package:
+  <a href="https://www.npmjs.com/package/afrigov-audit">afrigov-audit on npm</a>.
+</p>

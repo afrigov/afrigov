@@ -1,0 +1,64 @@
+<!-- { "title": "WordPress", "section": "tools", "description": "afrigov in WordPress: the afrigovPress theme and the afrigov blocks plugin, for building accessible government pages in the WordPress editor without code.", "order": 30 } -->
+<h1>WordPress</h1>
+<p class="ag-lead">
+  Most government websites in Africa run on WordPress. A theme and a blocks plugin bring afrigov there, so an editor
+  builds accessible pages in the WordPress editor without writing code.
+</p>
+
+<h2>The theme: afrigovPress</h2>
+<p>The parts of the site an editor should not be able to break:</p>
+<ul>
+  <li>The official banner, header, menus with section menus, search and footer.</li>
+  <li>The country pack as a setting: colours, flag and the banner's words.</li>
+  <li>News as a list of posts with dates and pictures, and articles with a lead picture.</li>
+  <li>A title, description and sharing details for every page, written from what the editor wrote.</li>
+</ul>
+<p><a href="https://github.com/afrigov/afrigovPress">afrigovPress on GitHub</a></p>
+
+<h2>The plugin: afrigov blocks</h2>
+<p>afrigov's components as WordPress blocks. Each block is a fixed shape you fill in on the page:</p>
+<ul>
+  <li>
+    <strong>Type on the page itself.</strong> The hero's title, the cards, the steps and the key figures are edited
+    where they appear, and the editor looks like the published page.
+  </li>
+  <li>
+    <strong>Add buttons for repeating parts.</strong> Service cards have Add card, steps have Add step, and so on. Only
+    the right kind of item fits inside.
+  </li>
+  <li>
+    <strong>Variants from the toolbar.</strong> Click a block and choose its layout or style, such as a hero over a
+    photo or a tinted card.
+  </li>
+  <li><strong>Pictures where they go.</strong> A block with a picture shows a Choose a picture button in its place.</li>
+  <li>
+    <strong>News and events.</strong> News is ordinary WordPress posts. Events have their own place in the admin, with a
+    date, a time and a place, and move to the past list by themselves.
+  </li>
+  <li>
+    <strong>A short block list on pages.</strong> Pages offer the afrigov blocks and the basic writing blocks, and leave
+    out the ones that break the look.
+  </li>
+</ul>
+<p>
+  The plugin works with other themes too: it brings afrigov's stylesheet with it when the theme does not.
+  <a href="https://github.com/afrigov/afrigov-blocks">afrigov blocks on GitHub</a>
+</p>
+
+<h2>Tested on a real site</h2>
+<p>
+  The Nigerian science ministry's <a href="../use-cases.html">rebuild</a> was built a second time in WordPress, with the
+  theme and the plugin. Its pages have the same components and words as the hand-built rebuild, and every page scores
+  100 with <a href="audit.html">Audit</a>. The differences are the contact form, which comes from a forms plugin, and
+  what WordPress adds, such as links between news articles.
+</p>
+
+<h2>Try it</h2>
+<p>You need Docker and Node. This starts WordPress on your computer with the theme and the plugin:</p>
+<pre class="docs-code" tabindex="0"><code>git clone https://github.com/afrigov/afrigovPress
+git clone https://github.com/afrigov/afrigov-blocks
+cd afrigov-blocks && npm install && npm run build
+cd ../afrigovPress && npm install && npm start</code></pre>
+<p>
+  Then open http://localhost:8888/wp-admin and log in as <code>admin</code> with the password <code>password</code>.
+</p>

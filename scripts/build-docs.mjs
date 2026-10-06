@@ -28,9 +28,11 @@ export const SECTIONS = [
   { id: "components", title: "Components", href: "components/index.html" },
   { id: "patterns", title: "Patterns", href: "patterns/index.html" },
   { id: "packs", title: "Country packs", href: "packs/index.html" },
+  { id: "tools", title: "Tools", href: "tools/index.html" },
   { id: "use-cases", title: "Use cases", href: "use-cases.html" },
   { id: "scoreboard", title: "Accessibility check", href: "scoreboard.html" },
-  { id: "community", title: "Community", href: "community/index.html" },
+  // Community is in the footer, not the top menu, so the menu fits beside the logo on one row.
+  { id: "community", title: "Community", href: "community/index.html", inMenu: false },
 ];
 
 const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -330,6 +332,7 @@ export function buildDocs() {
             .join("")}</ul></nav>`
         : "";
     const topnav = sections
+      .filter((s) => s.inMenu !== false)
       .map(
         (s) =>
           `<li><a class="ag-nav__link" href="${root}${s.href}"${s.id === page.section ? ' aria-current="true"' : ""}>${s.title}</a></li>`,
