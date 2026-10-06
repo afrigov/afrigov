@@ -6,8 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.15.1] - 2026-10-06
+
 ### Changed
 
+- **The project has a new home.** The docs are at [afrigov.dev](https://afrigov.dev), and the code is in the [afrigov organisation](https://github.com/afrigov) on GitHub. Old addresses redirect.
+- Docs: the home page covers the whole toolkit: the design system, Audit, Images and WordPress.
 - Docs: the Square / Rounded switch is out of the banner, which it made crowded. The Corners page shows both side by side.
 
 ## [0.15.0] - 2026-10-04
