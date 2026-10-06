@@ -83,13 +83,13 @@
     "@axe-core/playwright": "^4.10.2",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.58.0",
-    "afrigov-audit": "^0.1.1",
+    "afrigov-audit": "^0.2.0",
     "ajv": "^8.20.0",
-    "esbuild": "^0.27.0",
+    "esbuild": "^0.28.2",
     "eslint": "^10.11.0",
     "prettier": "^3.9.9",
-    "stylelint": "^16.24.0",
-    "stylelint-config-standard": "^39.0.0",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
     "vitest": "^5.0.2"
   },
   "pnpm": {
