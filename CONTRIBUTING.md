@@ -5,7 +5,7 @@ Thanks for helping. This file covers setup, the kinds of changes we are looking 
 ## Setup
 
 ```sh
-git clone https://github.com/omoyolab/afrigov
+git clone https://github.com/afrigov/afrigov
 cd afrigov
 pnpm install
 pnpm exec playwright install chromium   # once, for the accessibility tests
@@ -90,7 +90,7 @@ Releases are deliberate: pushing to `main` deploys the docs but never publishes 
    - **Tag by hand:** `git tag v1.2.3 && git push origin v1.2.3`.
 4. The release workflow runs the checks, publishes to npm with provenance, and creates the GitHub release. It skips the npm publish if that version is already there, so re-running is safe.
 
-Publishing uses npm Trusted Publishing, so there is no token to rotate. If it ever needs re-linking: package Settings → Trusted publisher → GitHub Actions, organisation `omoyolab`, repository `afrigov`, workflow `release.yml`.
+Publishing uses npm Trusted Publishing, so there is no token to rotate. If it ever needs re-linking: package Settings → Trusted publisher → GitHub Actions, organisation `afrigov`, repository `afrigov`, workflow `release.yml`.
 
 ## Code of conduct
 

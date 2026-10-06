@@ -361,7 +361,7 @@ The right-to-left release: logical properties throughout, the first Arabic pack,
 
 ## [0.3.0] - 2026-10-02
 
-The audit release. The command-line checker lives in its own package, [afrigov-audit](https://github.com/omoyolab/afrigov-audit); this repository gains the scoreboard that uses it.
+The audit release. The command-line checker lives in its own package, [afrigov-audit](https://github.com/afrigov/afrigov-audit); this repository gains the scoreboard that uses it.
 
 ### Added
 
@@ -418,12 +418,12 @@ First release.
 - Tests: 90 unit tests for tokens, contrast maths and build output; Playwright with axe-core on the docs page with every pack; 48px touch-target check; 20 KB gzip budget for the core.
 - Docs site with every component, a pack switcher, and a diacritics test for Yoruba, Hausa, Igbo, Swahili, French, Portuguese and Arabic.
 
-[Unreleased]: https://github.com/omoyolab/afrigov/compare/v0.4.1...HEAD
-[0.9.0]: https://github.com/omoyolab/afrigov/compare/v0.8.8...v0.9.0
-[0.4.1]: https://github.com/omoyolab/afrigov/compare/v0.4.0...v0.4.1
-[0.4.0]: https://github.com/omoyolab/afrigov/compare/v0.3.0...v0.4.0
-[0.3.0]: https://github.com/omoyolab/afrigov/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/omoyolab/afrigov/compare/v0.1.2...v0.2.0
-[0.1.2]: https://github.com/omoyolab/afrigov/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/omoyolab/afrigov/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/omoyolab/afrigov/releases/tag/v0.1.0
+[Unreleased]: https://github.com/afrigov/afrigov/compare/v0.4.1...HEAD
+[0.9.0]: https://github.com/afrigov/afrigov/compare/v0.8.8...v0.9.0
+[0.4.1]: https://github.com/afrigov/afrigov/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/afrigov/afrigov/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/afrigov/afrigov/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/afrigov/afrigov/compare/v0.1.2...v0.2.0
+[0.1.2]: https://github.com/afrigov/afrigov/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/afrigov/afrigov/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/afrigov/afrigov/releases/tag/v0.1.0

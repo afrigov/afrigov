@@ -106,6 +106,6 @@ Status: **shipped** (on docs page, axe-tested), **building**, **planned**, **cut
 | Senegal pack (sn)     | 0.2     | shipped | First francophone pack: French default language, suffix currency, derived green |
 | Rwanda pack (rw)      | 0.2     | shipped | Blue derived for AA; Kinyarwanda and Swahili strings wanted                     |
 | South Africa (za)     | 0.2     | shipped | SVG Y flag, eleven languages listed, nine wanted                                |
-| `afrigov-audit <url>` | 0.3     | shipped | Its own package, github.com/omoyolab/afrigov-audit                              |
+| `afrigov-audit <url>` | 0.3     | shipped | Its own package, github.com/afrigov/afrigov-audit                               |
 | Figma tokens export   | 0.4     | planned | From `tokens/*.json`                                                            |
 | React wrappers        | none    | cut     | Plain HTML classes work in every framework. Revisit only on demand.             |

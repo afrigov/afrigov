@@ -61,7 +61,7 @@ const read = (p) => readFileSync(p, "utf8");
 const layer = (name, css) => `@layer ${name} {\n${css.trim()}\n}\n`;
 
 const pkg = JSON.parse(read(join(ROOT, "package.json")));
-const header = `/*! afrigov v${pkg.version} | MIT | https://github.com/omoyolab/afrigov */\n`;
+const header = `/*! afrigov v${pkg.version} | MIT | https://github.com/afrigov/afrigov */\n`;
 
 const parts = [
   header,

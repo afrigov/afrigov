@@ -23,10 +23,10 @@
   "homepage": "https://afrigov.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/omoyolab/afrigov.git"
+    "url": "git+https://github.com/afrigov/afrigov.git"
   },
   "bugs": {
-    "url": "https://github.com/omoyolab/afrigov/issues"
+    "url": "https://github.com/afrigov/afrigov/issues"
   },
   "type": "module",
   "main": "./dist/afrigov.js",

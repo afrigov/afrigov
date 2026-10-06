@@ -110,7 +110,7 @@ function packPages() {
 <h1>${flag} ${p.country}</h1>
 <p class="ag-lead">${p.government}. Official websites use <code>${p.domain}</code>.</p>
 <pre class="docs-code" tabindex="0"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/afrigov@${pkg.version.split(".").slice(0, 2).join(".")}/dist/${p.code}.min.css"&gt;</code></pre>
-<p>Source: <a href="https://github.com/omoyolab/afrigov/blob/main/tokens/packs/${p.code}.tokens.json"><code>tokens/packs/${p.code}.tokens.json</code></a>.</p>
+<p>Source: <a href="https://github.com/afrigov/afrigov/blob/main/tokens/packs/${p.code}.tokens.json"><code>tokens/packs/${p.code}.tokens.json</code></a>.</p>
 
 <h2>Colours</h2>
 <h3>Official</h3>
@@ -136,7 +136,7 @@ ${langs.join("")}
 </dl>
 
 <h2>Help wanted</h2>
-<p>Open issues for this pack: <a href="https://github.com/omoyolab/afrigov/issues?q=is%3Aissue+is%3Aopen+${encodeURIComponent(p.country)}">search the tracker</a>. Translations need a native speaker; see <a href="${"../community/index.html"}">Community</a>.</p>
+<p>Open issues for this pack: <a href="https://github.com/afrigov/afrigov/issues?q=is%3Aissue+is%3Aopen+${encodeURIComponent(p.country)}">search the tracker</a>. Translations need a native speaker; see <a href="${"../community/index.html"}">Community</a>.</p>
 `;
     return {
       title: p.country,
@@ -279,7 +279,7 @@ function scoreboardBlock(root) {
     return `<h2 id="${code}">${flag}${packs[code]?.country ?? code}</h2>
 <div class="ag-table-wrap" role="region" aria-label="${packs[code]?.country ?? code} sites" tabindex="0"><table class="ag-table docs-scoreboard"><thead><tr><th scope="col">Site</th><th scope="col">Grade</th><th scope="col">Biggest problem</th><th scope="col">Fix first</th></tr></thead><tbody>${rows}</tbody></table></div>`;
   });
-  return `<p class="docs-fine">Last checked ${latest.date}. ${ok.length} of ${latest.rows.length} sites loaded. Average score ${avg} out of 100. <a href="https://github.com/omoyolab/afrigov/tree/main/scoreboard/results">Raw results</a>.</p>
+  return `<p class="docs-fine">Last checked ${latest.date}. ${ok.length} of ${latest.rows.length} sites loaded. Average score ${avg} out of 100. <a href="https://github.com/afrigov/afrigov/tree/main/scoreboard/results">Raw results</a>.</p>
 ${sections.join("\n")}`;
 }
 

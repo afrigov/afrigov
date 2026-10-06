@@ -5,7 +5,7 @@
 If you find a security issue in afrigov, please do not open a public issue.
 
 Use GitHub's private reporting form:
-https://github.com/omoyolab/afrigov/security/advisories/new
+https://github.com/afrigov/afrigov/security/advisories/new
 
 Or email **xanderabim@gmail.com** with "afrigov security" in the subject.
 

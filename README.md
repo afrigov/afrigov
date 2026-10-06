@@ -4,7 +4,7 @@
 One country-neutral core. A token pack per country. Plain CSS, 9 KB gzipped, no build step.
 
 [![npm](https://img.shields.io/npm/v/afrigov?color=1f4e79)](https://www.npmjs.com/package/afrigov)
-[![CI](https://github.com/omoyolab/afrigov/actions/workflows/ci.yml/badge.svg)](https://github.com/omoyolab/afrigov/actions/workflows/ci.yml)
+[![CI](https://github.com/afrigov/afrigov/actions/workflows/ci.yml/badge.svg)](https://github.com/afrigov/afrigov/actions/workflows/ci.yml)
 [![WCAG 2.1 AA, tested in CI](https://img.shields.io/badge/WCAG%202.1-AA%20tested%20in%20CI-00703c)](test/docs.a11y.js)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -70,8 +70,8 @@ init();
 ## Around afrigov
 
 - **[Use cases](https://usecases.afrigov.dev/)**: real government websites rebuilt on afrigov, with the real site's accessibility score beside the rebuild. Nigeria's digital economy ministry, Ghana's National Identification Authority and Ghana's Ministry of Health so far, 103 pages, every one scoring 100.
-- **[afrigov-audit](https://github.com/omoyolab/afrigov-audit)**: an accessibility check for any web page from the command line, with a badge of the grade and score, and the page's weight on a phone.
-- **[afrigov-images](https://github.com/omoyolab/afrigov-images)**: makes a folder of photos light enough for a government page. Sizes for each screen, WebP, location data removed, afrigov's weight limits, and the HTML to paste.
+- **[afrigov-audit](https://github.com/afrigov/afrigov-audit)**: an accessibility check for any web page from the command line, with a badge of the grade and score, and the page's weight on a phone.
+- **[afrigov-images](https://github.com/afrigov/afrigov-images)**: makes a folder of photos light enough for a government page. Sizes for each screen, WebP, location data removed, afrigov's weight limits, and the HTML to paste.
 
 ## How accessibility is enforced
 
@@ -122,7 +122,7 @@ A pack is one JSON file in [`tokens/packs/`](tokens/packs). It declares the offi
 
 The build derives `primary-hover`, `on-primary`, `primary-tint`, `link` and `link-hover`, checks every pair, and writes `dist/ke.css`. To add a country, copy a pack, change the values, run `pnpm test`, open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-country-pack).
 
-Packs and translations wanted are listed as [open issues](https://github.com/omoyolab/afrigov/issues?q=is%3Aissue+is%3Aopen+label%3Acountry-pack%2Ctranslation).
+Packs and translations wanted are listed as [open issues](https://github.com/afrigov/afrigov/issues?q=is%3Aissue+is%3Aopen+label%3Acountry-pack%2Ctranslation).
 
 ## Theming
 
