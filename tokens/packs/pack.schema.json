@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://omoyolab.github.io/afrigov/pack.schema.json",
+  "$id": "https://afrigov.dev/pack.schema.json",
   "title": "afrigov country pack",
   "description": "One JSON file per country. Declares the official national colours, which one is the primary, the flag, banner strings per language, and the country data that inputs and examples read. Validated in the test suite; published in the npm package at tokens/packs/pack.schema.json.",
   "type": "object",

@@ -8,7 +8,7 @@ One country-neutral core. A token pack per country. Plain CSS, 9 KB gzipped, no 
 [![WCAG 2.1 AA, tested in CI](https://img.shields.io/badge/WCAG%202.1-AA%20tested%20in%20CI-00703c)](test/docs.a11y.js)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**Docs and live components:** https://omoyolab.github.io/afrigov
+**Docs and live components:** https://afrigov.dev
 
 ---
 
@@ -156,7 +156,7 @@ Node 20 or newer and pnpm 10.
 
 ## Where it stands
 
-Version 0.9. Everything is on the [docs site](https://omoyolab.github.io/afrigov) and in the [changelog](CHANGELOG.md). Three things stand between here and 1.0: a manual screen-reader pass on every component, the publication of the accessibility scoreboard of public services in the pack countries, and one real service built on afrigov by someone other than us. Class names, tokens and the pack schema are stable from 1.0.
+Version 0.9. Everything is on the [docs site](https://afrigov.dev) and in the [changelog](CHANGELOG.md). Three things stand between here and 1.0: a manual screen-reader pass on every component, the publication of the accessibility scoreboard of public services in the pack countries, and one real service built on afrigov by someone other than us. Class names, tokens and the pack schema are stable from 1.0.
 
 ## Acknowledgements
 

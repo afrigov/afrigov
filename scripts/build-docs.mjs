@@ -265,7 +265,7 @@ function scoreboardBlock(root) {
                 ? "ag-badge--warning"
                 : "ag-badge--error";
         const fix = r.top?.fix
-          ? `<a href="${root}${r.top.fix.url.replace("https://omoyolab.github.io/afrigov/", "")}">${r.top.fix.component}</a>: ${r.top.fix.advice}`
+          ? `<a href="${root}${r.top.fix.url.replace(/^https:\/\/(omoyolab\.github\.io\/afrigov|afrigov\.dev)\//, "")}">${r.top.fix.component}</a>: ${r.top.fix.advice}`
           : r.top
             ? `<a href="${r.top.id.startsWith("ag-") ? root + "get-started.html" : `https://dequeuniversity.com/rules/axe/4.10/${r.top.id}`}">See the rule</a>`
             : "Nothing to fix from automated checks";
