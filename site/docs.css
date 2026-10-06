@@ -203,8 +203,55 @@
 }
 
 .docs-home {
+  margin-bottom: var(--ag-space-7);
+}
+
+/* The toolkit: one card per tool, under the opening. */
+.docs-toolkit {
+  margin-bottom: var(--ag-space-7);
+}
+
+.docs-toolkit h2,
+.docs-system h2 {
+  margin-top: 0;
+}
+
+.docs-toolkit__intro {
+  max-width: var(--ag-size-measure);
+  color: var(--ag-color-ink-muted);
+}
+
+.docs-toolkit__tools {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.docs-toolkit__tools .docs-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.docs-toolkit__tools .docs-code {
+  margin: auto 0 0;
+  font-size: var(--ag-font-size-xs);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.docs-toolkit__tools h3 .ag-badge {
+  display: table;
+  margin-top: var(--ag-space-2);
+}
+
+/* The design system's own section: its version, install and numbers. */
+.docs-system {
+  padding-top: var(--ag-space-6);
   padding-bottom: var(--ag-space-6);
   margin-bottom: var(--ag-space-6);
+  border-top: 1px solid var(--ag-color-border);
   border-bottom: 1px solid var(--ag-color-border);
 }
 

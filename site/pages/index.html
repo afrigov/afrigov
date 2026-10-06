@@ -1,15 +1,57 @@
-<!-- { "title": "Home", "section": "home", "description": "Open-source components for building accessible African public-service websites. Country-neutral core, per-country packs, plain CSS, {{cssKB}}, no build step." } -->
+<!-- { "title": "Home", "section": "home", "description": "Free, open-source tools for African government websites: a design system with country packs, an accessibility audit, an image command, and a WordPress theme and blocks. Use one, or all of them." } -->
 <div class="docs-home">
-  <p class="docs-eyebrow">Open source · MIT · v{{version}}</p>
-  <h1 class="ag-heading-xl">Accessible by default. Built for African government services.</h1>
+  <p class="docs-eyebrow">Open source · MIT</p>
+  <h1 class="ag-heading-xl">Free tools for African government websites.</h1>
   <p class="ag-lead">
-    One country-neutral core. A colour pack per country. Plain CSS that passes WCAG 2.1 AA on every commit and loads on
-    a 2G connection.
+    Build pages that are accessible and light, check any website, shrink its images, and run it on WordPress. Use one
+    tool, or all of them.
   </p>
   <div class="ag-button-group">
     <a class="ag-button ag-button--start" href="get-started.html">Get started</a>
     <a class="ag-button ag-button--secondary" href="https://github.com/omoyolab/afrigov">View on GitHub</a>
   </div>
+</div>
+
+<section class="docs-toolkit" aria-labelledby="toolkit-heading">
+  <h2 id="toolkit-heading">The toolkit</h2>
+  <p class="docs-toolkit__intro">
+    Each tool works on its own. A site does not have to be built with afrigov to use the others.
+  </p>
+  <ul class="ag-grid docs-toolkit__tools">
+    <li class="docs-card">
+      <h3><a href="get-started.html">Design system</a></h3>
+      <p>Components and country packs in plain CSS. Two link tags to install, with no build step.</p>
+    </li>
+    <li class="docs-card">
+      <h3><a href="https://github.com/omoyolab/afrigov-audit">Audit</a></h3>
+      <p>Scores any government page for accessibility and weight, and says what to fix first.</p>
+      <pre class="docs-code" tabindex="0"><code>npx afrigov-audit https://example.gov.ng/</code></pre>
+    </li>
+    <li class="docs-card">
+      <h3><a href="https://github.com/omoyolab/afrigov-images">Images</a></h3>
+      <p>Turns a heavy photograph into light WebP files for each screen size, with the HTML to paste.</p>
+      <pre class="docs-code" tabindex="0"><code>npx afrigov-images ./photos --out ./images</code></pre>
+    </li>
+    <li class="docs-card">
+      <h3>
+        <a href="https://github.com/omoyolab/afrigov-blocks">WordPress</a>
+        <span class="ag-badge ag-badge--neutral">In development</span>
+      </h3>
+      <p>
+        A theme and a blocks plugin: build pages from afrigov's components in the WordPress editor, with no code.
+        <a href="https://github.com/omoyolab/afrigovPress">The theme</a> is on GitHub.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<div class="docs-system">
+  <h2>The design system</h2>
+  <p class="docs-eyebrow">Version {{version}}</p>
+  <p>
+    One country-neutral core. A colour pack per country. Plain CSS that passes WCAG 2.1 AA on every commit and loads on
+    a 2G connection.
+  </p>
 
   <div class="docs-home__install">
     <p class="docs-home__install-label">The whole install</p>
@@ -63,10 +105,7 @@
   {{scoreboardCard}}
   <a class="docs-card docs-card--link" href="use-cases.html">
     <h2>Use cases</h2>
-    <p>
-      Three real government websites rebuilt on afrigov, with the real sites' scores beside them, and the tools that
-      check and lighten pages.
-    </p>
+    <p>Four real government websites rebuilt on afrigov, with the real sites' scores beside them.</p>
   </a>
   <a class="docs-card docs-card--link" href="community/index.html">
     <h2>Community</h2>
@@ -109,14 +148,6 @@
     <li>
       <h3>Two link tags to install</h3>
       <p>Plain CSS with custom properties. No Sass, no bundler, no framework, and nothing to build.</p>
-    </li>
-    <li>
-      <h3>Tools that keep pages light</h3>
-      <p>
-        <a href="https://github.com/omoyolab/afrigov-audit">afrigov-audit</a> checks any page and names the images that
-        are too heavy. <a href="https://github.com/omoyolab/afrigov-images">afrigov-images</a> fixes them: a 3.1 MB
-        photograph becomes 15 KB on a phone, with the HTML to paste. See <a href="styles/images.html">Images</a>.
-      </p>
     </li>
     <li>
       <h3>A pack for each country</h3>
