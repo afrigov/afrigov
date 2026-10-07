@@ -18,8 +18,8 @@ importers:
         specifier: ^1.58.0
         version: 1.63.0
       afrigov-audit:
-        specifier: ^0.2.0
-        version: 0.2.0(playwright-core@1.63.0)
+        specifier: ^0.3.1
+        version: 0.3.1(playwright-core@1.63.0)
       ajv:
         specifier: ^8.20.0
         version: 8.20.0
@@ -503,8 +503,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  afrigov-audit@0.2.0:
-    resolution: {integrity: sha512-Zmqu/57+rSOKtbofXSAW44q3Udm51D9YPrPWa6fM+/MufnRod5/x1sRlYKP71S09pxV5VrAC+t41yoy7cgz9yg==}
+  afrigov-audit@0.3.1:
+    resolution: {integrity: sha512-E59WHoMlhRKp6pgD9Z5JAZjAnYG2j+gSpa9Ql6Yvf1641igfg4vI/MxDi9qf37xEI0FcEgvvF6K0WAUphhOeBA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1610,7 +1610,7 @@ snapshots:
 
   acorn@8.18.0: {}
 
-  afrigov-audit@0.2.0(playwright-core@1.63.0):
+  afrigov-audit@0.3.1(playwright-core@1.63.0):
     dependencies:
       '@axe-core/playwright': 4.13.0(playwright-core@1.63.0)
       axe-core: 4.13.0
