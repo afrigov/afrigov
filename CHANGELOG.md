@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Docs: the homepage leads with the toolkit, a Tools section has pages for Audit, Images and WordPress, Community moves to the footer, and the header line under the logo is "Web toolkit for government".
+
 ## [0.15.1] - 2026-10-06
 
 ### Changed
