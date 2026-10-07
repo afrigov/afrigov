@@ -256,11 +256,16 @@
 }
 
 .docs-home h1 {
-  max-width: 20ch;
+  max-width: 24ch;
 }
 
 .docs-home .ag-lead {
   max-width: var(--ag-size-measure);
+}
+
+.docs-home__more {
+  max-width: var(--ag-size-measure);
+  color: var(--ag-color-ink-muted);
 }
 
 .docs-home__install {
