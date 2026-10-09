@@ -1,0 +1,49 @@
+/* Back to top. A plain link to #top at the end of a long page. No script. */
+.ag-back-to-top {
+  margin-top: var(--ag-space-6);
+}
+
+.ag-back-to-top__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ag-size-target);
+  color: var(--ag-color-ink);
+  font-size: var(--ag-font-size-xs);
+}
+
+.ag-back-to-top__link:visited {
+  color: var(--ag-color-ink);
+}
+
+.ag-back-to-top__link::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  margin-top: 0.25em;
+  margin-inline-end: var(--ag-space-2);
+  border-top: 2px solid currentcolor;
+  border-inline-start: 2px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+/* Sticky: rides the bottom of the screen while the article is in view, then
+   settles at the article's end. It sits on the page background with a hairline,
+   so text scrolls under it rather than behind a floating button. */
+.ag-back-to-top--sticky {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  padding-block: var(--ag-space-1);
+  border-top: 1px solid var(--ag-color-border);
+  background: var(--ag-color-paper);
+}
+
+/* A keyboard user tabbing down the page never has focus hidden under the bar. */
+html:has(.ag-back-to-top--sticky) {
+  scroll-padding-bottom: calc(var(--ag-size-target) + var(--ag-space-5));
+}
+
+/* The reset turns this off again for anyone who asks for reduced motion. */
+html:has(.ag-back-to-top) {
+  scroll-behavior: smooth;
+}

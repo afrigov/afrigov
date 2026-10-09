@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- **Back to top.** `ag-back-to-top` is a plain "Back to top" link for the end of a long page. Point it at `#top` with `id="top"` on `body`, so the next Tab starts again at the skip link. No script; the page scrolls smoothly unless someone asks for less motion. `ag-back-to-top--sticky` keeps it on the bottom edge of the screen while the content is in view, as a strip with a hairline rather than a floating button, and the page keeps a matching gap at the bottom so keyboard focus is never hidden under it.
+
 ### Changed
 
 - Docs: the homepage leads with the toolkit, a Tools section has pages for Audit, Images and WordPress, Community moves to the footer, and the header line under the logo is "Web toolkit for government".

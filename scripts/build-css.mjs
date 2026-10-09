@@ -33,6 +33,7 @@ const COMPONENTS = [
   "details",
   "lang",
   "back-link",
+  "back-to-top",
   "list",
   "image",
   "download",

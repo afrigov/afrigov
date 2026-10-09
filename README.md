@@ -60,12 +60,12 @@ init();
 
 | Part                  | What it does                                                                                                                                                                 |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `core.css`            | Reset, element defaults, 46 components, layout utilities. Country-neutral. 9 KB gzipped.                                                                                     |
+| `core.css`            | Reset, element defaults, 47 components, layout utilities. Country-neutral. 9 KB gzipped.                                                                                     |
 | `ng.css` and six more | Country packs for Ghana, Kenya, Morocco, Nigeria, Rwanda, Senegal and South Africa. National colours, derived text-safe variants, the flag, banner strings. Under 1 KB each. |
 | `afrigov.js`          | Optional. Collapsible navigation on small screens and focus on the error summary. Every component works without it.                                                          |
 | `tokens/`             | The source of truth, in the [W3C Design Tokens](https://tr.designtokens.org/format/) format. Published in the package for Figma and other tools.                             |
 
-**Components:** skip link, official website banner, header and navigation, footer, hero, band, flag stripe, feature, breadcrumb, back link, social links, pagination, language switcher, button, text input, textarea, character count, select, radios, checkboxes, input group, phone number, national ID number, region selector, date input, error summary, alert, badge, dated list, download link, empty state, image and figure, statement, accordion, details, currency display, steps, key figures, people, table, confirmation panel, summary list, service card, inset text.
+**Components:** skip link, official website banner, header and navigation, footer, hero, band, flag stripe, feature, breadcrumb, back link, back to top, social links, pagination, language switcher, button, text input, textarea, character count, select, radios, checkboxes, input group, phone number, national ID number, region selector, date input, error summary, alert, badge, dated list, download link, empty state, image and figure, statement, accordion, details, currency display, steps, key figures, people, table, confirmation panel, summary list, service card, inset text.
 
 ## Around afrigov
 

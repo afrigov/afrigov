@@ -1,0 +1,71 @@
+<!-- { "title": "Back to top", "section": "components", "description": "A link at the end of a long page that goes back to the top, where the menu is.", "order": 56 } -->
+<h1>Back to top</h1>
+<p class="ag-lead">
+  A plain link at the end of a long page. It takes people back to the top, where the menu and search are.
+</p>
+
+<h2>When to use</h2>
+<p>
+  On long pages: a policy, a guide with a contents list, a long news list. As a rough rule, a page that runs to three
+  screens or more on a phone.
+</p>
+
+<h2>When not to use</h2>
+<p>
+  On short pages, where the top is a swipe away, and on question pages in a form. Not on every page by habit: a link
+  nobody needs is one more thing to read past.
+</p>
+
+<docs-example>
+  <p class="ag-mt-0">…the last paragraph of a long page.</p>
+  <div class="ag-back-to-top">
+    <a class="ag-back-to-top__link" href="#top">Back to top</a>
+  </div>
+</docs-example>
+
+<h2>How it works</h2>
+<ul>
+  <li>Put <code>id="top"</code> on <code>body</code>, and point the link at <code>#top</code>.</li>
+  <li>Put it after the last of the page's content, inside <code>main</code>, not in the footer.</li>
+  <li>The text is "Back to top". The arrow is drawn in CSS and is not read out.</li>
+  <li>
+    No script. Where the browser allows, the page scrolls up smoothly; it jumps for anyone who asks for less motion.
+  </li>
+</ul>
+<pre class="docs-code" tabindex="0"><code>&lt;body id="top"&gt;
+  …
+  &lt;main class="ag-main" id="main" tabindex="-1"&gt;
+    …
+    &lt;div class="ag-back-to-top"&gt;
+      &lt;a class="ag-back-to-top__link" href="#top"&gt;Back to top&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;</code></pre>
+
+<h2>Sticky</h2>
+<p>
+  <code>ag-back-to-top--sticky</code> keeps the link on the bottom edge of the screen while you read, then settles at
+  the end of the content. Use it on very long pages, with a contents list. Put it as the last thing inside the content's
+  column, so it stays within that column and never floats over the footer.
+</p>
+<p>
+  It is a strip on the page background with a hairline, not a round button over the text. While it is there, the page
+  keeps a matching gap at the bottom, so whatever a keyboard user tabs to is never hidden under it. This page uses it.
+</p>
+<pre class="docs-code" tabindex="0"><code>&lt;div class="ag-back-to-top ag-back-to-top--sticky"&gt;
+  &lt;a class="ag-back-to-top__link" href="#top"&gt;Back to top&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>
+    The target is <code>body</code>, so after the jump the next Tab goes to the skip link, then the header. Keyboard
+    users start again from the top, as they expect.
+  </li>
+  <li>It is a link, not a button, because it goes somewhere: a place on the page.</li>
+  <li>No floating icon-only button. It would need a hidden label, cover text, and appear and vanish as you scroll.</li>
+  <li>The link is at least 44px tall, so it is easy to tap.</li>
+</ul>
+
+<div class="ag-back-to-top ag-back-to-top--sticky">
+  <a class="ag-back-to-top__link" href="#top">Back to top</a>
+</div>
