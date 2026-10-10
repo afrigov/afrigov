@@ -162,6 +162,10 @@ Version 0.9. Everything is on the [docs site](https://afrigov.dev) and in the [c
 
 The patterns here stand on the [GOV.UK Design System](https://design-system.service.gov.uk) and the [U.S. Web Design System](https://designsystem.digital.gov), both of which published their research so others could reuse it. afrigov is not affiliated with any government.
 
+## How it is made
+
+Built with AI assistance (Claude). Every change is reviewed and decided by the maintainer before it ships.
+
 ## Licence
 
 [MIT](LICENSE) © Abimbola Omoyola and contributors.
