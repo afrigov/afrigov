@@ -88,7 +88,7 @@ Prettier, ESLint and stylelint are configured, so formatting is not a review top
 Releases are deliberate: pushing to `main` deploys the docs but never publishes to npm. Unreleased work can sit on `main`. The CI run on `main` warns when `package.json` is at a version that has no tag yet.
 
 1. Update `CHANGELOG.md`: move **Unreleased** into a new version heading with today's date.
-2. Bump the version in `package.json` to match, and push to `main` as a normal commit.
+2. Bump the version in `package.json` to match. `main` requires the CI checks to pass, so this goes through a pull request like any other change.
 3. Release it, either way:
    - **One click:** Actions → Release → Run workflow, or `gh workflow run release.yml`. The workflow creates the tag from `main` and publishes.
    - **Tag by hand:** `git tag v1.2.3 && git push origin v1.2.3`.
