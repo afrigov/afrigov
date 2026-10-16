@@ -14,10 +14,9 @@
       "strings": {
         "fr": {
           "banner": "Un site officiel de la République du Sénégal",
-          "banner-how": "Comment savoir que ce site est officiel",
-          "banner-domain": "Les sites officiels utilisent .gouv.sn",
-          "banner-secure": "Les sites .gouv.sn sécurisés utilisent HTTPS",
-          "$note": "Drafted by a non-native speaker. Native review wanted."
+          "banner-how": "Comment reconnaître un site officiel ?",
+          "banner-domain": "Le domaine .gouv.sn permet d’identifier les sites de l’administration sénégalaise.",
+          "banner-secure": "Vérifiez que la connexion utilise HTTPS avant de transmettre des informations."
         },
         "en": {
           "banner": "An official website of the Republic of Senegal",
