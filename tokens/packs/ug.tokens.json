@@ -1,0 +1,94 @@
+{
+  "$schema": "./pack.schema.json",
+  "$description": "Uganda pack. The stripe fallback follows the statutory six-band flag; the white disc and crested crane are deliberately left for a separate, properly sourced SVG contribution.",
+  "$extensions": {
+    "afrigov": {
+      "code": "ug",
+      "country": "Uganda",
+      "government": "Republic of Uganda",
+      "domain": ".go.ug",
+      "flag": [
+        "{official.black}",
+        "{official.yellow}",
+        "{official.red}",
+        "{official.black}",
+        "{official.yellow}",
+        "{official.red}"
+      ],
+      "flagDirection": "column",
+      "strings": {
+        "en": {
+          "banner": "An official website of the Government of Uganda",
+          "banner-how": "How you know this is official",
+          "banner-domain": "Official websites use .go.ug",
+          "banner-secure": "Secure .go.ug websites use HTTPS"
+        }
+      },
+      "currency": {
+        "code": "UGX",
+        "symbol": "USh",
+        "name": "shillings",
+        "hint": "In Uganda shillings"
+      },
+      "id": {
+        "name": "National Identification Number",
+        "short": "NIN",
+        "document": "National ID card",
+        "hint": "14 characters beginning CF or CM, on your National ID card",
+        "length": 14,
+        "pattern": "C[FM][A-Z0-9]{12}",
+        "authority": "the National Identification and Registration Authority (NIRA)"
+      },
+      "regions": {
+        "label": "Region",
+        "choose": "Choose a region",
+        "items": ["Central", "Eastern", "Northern", "Western"],
+        "sub": {
+          "label": "District",
+          "choose": "Choose a district",
+          "items": {
+            "Central": ["Kampala", "Wakiso", "Mukono", "Masaka"],
+            "Eastern": ["Jinja", "Mbale", "Soroti", "Iganga"],
+            "Northern": ["Gulu", "Lira", "Arua", "Kitgum"],
+            "Western": ["Mbarara", "Hoima", "Kabale", "Kasese"]
+          }
+        }
+      },
+      "phone": {
+        "code": "+256",
+        "example": "0772 123 456",
+        "hint": "For example, 0772 123 456. Omit the leading 0 when using +256.",
+        "length": 10
+      },
+      "examples": {
+        "timezone": "East Africa Time",
+        "refPrefix": "UG"
+      }
+    }
+  },
+  "official": {
+    "$type": "color",
+    "$description": "The National Flag and Armorial Ensigns Act prescribes six equal horizontal bands in black, yellow, red, black, yellow and red with a central white disc and crested crane; the Office of the Vice President describes the same design. Digital colour values are screen equivalents of the Republic of Uganda Brand Book references (Pantone 109C yellow, 032C red and black), not RGB values stated in the Act. Sources: [National Flag and Armorial Ensigns Act](https://ulii.org/en/akn/ug/act/ord/1962/64/eng%402023-12-31), [Office of the Vice President: National Symbols](https://www.vicepresident.go.ug/national-symbols/), [Republic of Uganda Brand Book](https://cdnc.heyzine.com/files/uploaded/v2/0a331649839777f64d4078806fcd619429e97589.pdf).",
+    "black": {
+      "$value": "#000000"
+    },
+    "yellow": {
+      "$value": "#ffd100"
+    },
+    "red": {
+      "$value": "#ef3340"
+    },
+    "white": {
+      "$value": "#ffffff"
+    }
+  },
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": "{official.red}"
+    },
+    "accent": {
+      "$value": "{official.yellow}"
+    }
+  }
+}
