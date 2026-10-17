@@ -18,8 +18,10 @@
           "banner-secure": "Secure .gov.gh websites use HTTPS"
         },
         "ak": {
-          "banner": null,
-          "$todo": "Akan (Twi) translation wanted. Open a PR."
+          "banner": "Ghana aban no wɛbsaet a wɔagye atom.",
+          "banner-how": "Wobɛyɛ dɛn ahu sɛ eyi yɛ aban de?",
+          "banner-domain": "Aban wɛbsaet ahorow de .gov.gh na ɛdi dwuma.",
+          "banner-secure": "Wɛbsaet a ahobammɔ wɔ mu a ɛde .gov.gh no de HTTPS na ɛdi dwuma."
         },
         "ee": {
           "banner": null,
