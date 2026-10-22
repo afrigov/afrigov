@@ -1,0 +1,177 @@
+<!-- { "title": "Find one entry in a long list", "section": "patterns", "description": "Narrow a long list of offices or services by region and words, with progressive enhancement, accessible result counts and a useful empty state.", "order": 42 } -->
+<h1>Find one entry in a long list</h1>
+<p class="ag-lead">
+  When a service lists dozens or hundreds of offices, let people narrow the list by region and by words they know. Keep
+  the controls simple, show how many entries match, and explain what to do when none do.
+</p>
+
+<h2>When to use</h2>
+<p>
+  Use this pattern when a page has a long list of similar entries, such as offices, service centres, clinics or public
+  facilities. It complements <a href="../components/pagination.html">pagination</a>: filtering helps people find a
+  specific entry; pagination helps them move through the remaining list.
+</p>
+
+<h2>Example</h2>
+<p>
+  The example uses a region select and a text field above a table. Replace the sample entries and region names with the
+  service's real data. The complete list remains available if JavaScript is disabled.
+</p>
+<docs-example>
+  <form class="ag-mb-5" id="office-filters" role="search" method="get" action="#office-list">
+    <div class="ag-field">
+      <label class="ag-label" for="office-region">Region</label>
+      <select class="ag-select" id="office-region" name="region">
+        <option value="">All regions</option>
+        <option value="central">Central</option>
+        <option value="coastal">Coastal</option>
+        <option value="northern">Northern</option>
+      </select>
+    </div>
+    <div class="ag-field">
+      <label class="ag-label" for="office-query">Office name or location</label>
+      <input class="ag-input" id="office-query" name="q" type="search" />
+      <p class="ag-hint">For example, enter a town, district or office name.</p>
+    </div>
+    <button class="ag-button" type="submit">Filter offices</button>
+  </form>
+  <p class="ag-results__count" id="office-count" role="status">Showing 5 offices</p>
+  <div class="ag-table-wrap ag-mb-0" role="region" aria-label="Office directory" tabindex="0">
+    <table class="ag-table" id="office-list">
+      <caption>
+        Office directory
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Office</th>
+          <th scope="col">Region</th>
+          <th scope="col">Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="#office-list">Accra Central Office</a></th>
+          <td>Central</td>
+          <td>Accra</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="#office-list">Cape Coast Service Office</a></th>
+          <td>Coastal</td>
+          <td>Cape Coast</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="#office-list">Tamale Regional Office</a></th>
+          <td>Northern</td>
+          <td>Tamale</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="#office-list">Tema Service Office</a></th>
+          <td>Coastal</td>
+          <td>Tema</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="#office-list">Kumasi Central Office</a></th>
+          <td>Central</td>
+          <td>Kumasi</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</docs-example>
+
+<h2>How it works without JavaScript</h2>
+<p>
+  Treat the form as a normal GET form. Set its action to the service's directory route, read the region and query
+  parameters on the server, and return the matching rows with the selected values still in the controls. With no
+  filters, return the complete list. This keeps filtering bookmarkable, shareable and usable with assistive technology,
+  older devices and scripts disabled.
+</p>
+<p>
+  Do not rely on a client-side script to fetch the only copy of the list. If the data is too large to render at once,
+  provide a server-rendered filtered result and ordinary pagination.
+</p>
+
+<h2>Enhance filtering with JavaScript</h2>
+<p>
+  If the full list is already in the page, JavaScript can filter rows as people change the controls instead of
+  submitting the form. Keep the same form and server-side GET route as the fallback. Add a submit handler only after the
+  script has found the controls, results table, count and empty state; if setup fails, leave the form working normally.
+</p>
+<pre class="docs-code" tabindex="0"><code>const form = document.querySelector("#office-filters");
+const region = form?.elements.namedItem("region");
+const query = form?.elements.namedItem("q");
+const rows = [...document.querySelectorAll("#office-list tbody tr")];
+const count = document.querySelector("#office-count");
+const empty = document.querySelector("#office-empty");
+
+if (form && region && query && rows.length && count && empty) {
+  empty.hidden = true;
+  function updateResults() {
+    const selectedRegion = region.value.toLocaleLowerCase();
+    const words = query.value.trim().toLocaleLowerCase();
+    let visible = 0;
+
+    rows.forEach((row) => {
+      const matchesRegion =
+        !selectedRegion || row.cells[1].textContent.trim().toLocaleLowerCase() === selectedRegion;
+      const matchesWords = !words || row.textContent.toLocaleLowerCase().includes(words);
+      const show = matchesRegion && matchesWords;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    count.textContent = "Showing " + visible + (visible === 1 ? " office" : " offices");
+    empty.hidden = visible !== 0;
+  }
+
+  region.addEventListener("change", updateResults);
+  query.addEventListener("input", updateResults);
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    updateResults();
+  });
+  updateResults();
+}</code></pre>
+<p class="docs-fine">
+  In this snippet, use the form id <code>office-filters</code> and include the empty-state element shown below. The
+  example is illustrative: adapt the region column and selectors to your own markup.
+</p>
+
+<h2>When nothing matches</h2>
+<docs-example>
+  <div class="ag-empty ag-mb-0" id="office-empty">
+    <h2 class="ag-empty__title">No offices match those filters</h2>
+    <p>Try a different region or fewer words, or show all offices to start again.</p>
+    <a class="ag-button" href="#office-list">Show all offices</a>
+  </div>
+</docs-example>
+<p>
+  Keep the empty state where the table would be, and make the way back to the full list obvious. In a live
+  implementation, the script should reveal this state only when the visible row count is zero. A server-rendered page
+  should return the same message when the submitted filters have no matches.
+</p>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>Give each control a visible label. Do not use placeholder text as the only label.</li>
+  <li>
+    Put the result count in a persistent element with <code>role="status"</code>. Update it after filtering so screen
+    readers announce the new count without moving focus.
+  </li>
+  <li>Use real table captions and header scopes, or a semantic list if the information is not tabular.</li>
+  <li>Do not move focus when rows change. Keep keyboard focus on the control the person is using.</li>
+  <li>Keep the empty-state heading and recovery action in the normal reading order.</li>
+  <li>
+    Do not announce every keystroke with a long list of matching names; announce the count and let people navigate the
+    results.
+  </li>
+</ul>
+
+<h2>Related components</h2>
+<ul>
+  <li><a href="../components/region.html">Region selector</a>: region and sub-region controls for addresses.</li>
+  <li><a href="../components/search.html">Search</a>: the site's search form.</li>
+  <li><a href="../components/table.html">Table</a>: captions, row and column headers, and narrow-screen scrolling.</li>
+  <li><a href="../components/empty-state.html">Empty state</a>: what to show when a list has no entries.</li>
+  <li><a href="../components/pagination.html">Pagination</a>: moving through a long result set.</li>
+</ul>
