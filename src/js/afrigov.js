@@ -12,6 +12,7 @@
  */
 
 const WIDE = "(min-width: 64em)"; /* breakpoint.lg */
+const VIDEO_FILE = /\.(?:mp4|webm|ogv|ogg|m4v|mov)(?:[?#].*)?$/i;
 
 function toggles(scope) {
   const wide = window.matchMedia(WIDE);
@@ -131,23 +132,57 @@ function menus(scope) {
   document.addEventListener("click", (e) => all.forEach((m) => m.open && !m.contains(e.target) && (m.open = false)));
 }
 
+/** Return true when a URL points directly to a supported video file. */
+export function isVideoFile(src) {
+  return VIDEO_FILE.test(src.trim());
+}
+
 /**
- * Video: a link with data-ag-video="<embed URL>" becomes the player when pressed, so nothing
- * from the video host loads before someone chooses to watch. Without the script it is a link.
+ * Video: a link with data-ag-video="<embed URL or video file>" becomes a player when pressed,
+ * so nothing from the video host loads before someone chooses to watch. Without the script it is a link.
+ * Direct video files may provide a WebVTT captions file with data-ag-video-captions.
  */
 function videos(scope) {
   scope.querySelectorAll("a[data-ag-video]").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      const src = link.getAttribute("data-ag-video");
-      const frame = document.createElement("iframe");
-      frame.className = "ag-video__frame";
-      frame.src = src + (src.includes("?") ? "&" : "?") + "autoplay=1";
-      frame.title = link.getAttribute("data-ag-video-title") || link.textContent.trim();
-      frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-      frame.allowFullscreen = true;
-      link.replaceWith(frame);
-      frame.focus();
+      const src = link.dataset.agVideo;
+      const title = link.dataset.agVideoTitle || link.textContent.trim();
+      const isFile = isVideoFile(src);
+      const player = document.createElement(isFile ? "video" : "iframe");
+      player.className = "ag-video__frame";
+
+      if (isFile) {
+        player.controls = true;
+        player.preload = "none";
+        player.playsInline = true;
+        player.setAttribute("aria-label", title);
+
+        const captions = link.dataset.agVideoCaptions;
+        if (captions) {
+          const track = document.createElement("track");
+          track.kind = "captions";
+          track.src = captions;
+          track.srclang = link.dataset.agVideoCaptionsLang || "en";
+          track.label = link.dataset.agVideoCaptionsLabel || "English";
+          track.default = true;
+          player.append(track);
+        }
+
+        player.src = src;
+      } else {
+        player.src = src + (src.includes("?") ? "&" : "?") + "autoplay=1";
+        player.title = title;
+        player.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        player.allowFullscreen = true;
+      }
+
+      link.replaceWith(player);
+      player.focus();
+      if (isFile) {
+        // The poster's play action is the user's choice to load and start the file.
+        player.play().catch(() => {});
+      }
     });
   });
 }

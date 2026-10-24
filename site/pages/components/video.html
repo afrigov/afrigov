@@ -13,12 +13,13 @@
 
 <h2>When not to use</h2>
 <p>
-  As a background, or set to play by itself. afrigov has no autoplaying video, for reasons of data, speed, motion and
-  contrast. See
+  As a background, or set to play by itself. afrigov has no autoplay or background video, for reasons of data, speed,
+  motion and contrast. See
   <a href="https://github.com/afrigov/afrigov/blob/main/project/decisions/004-no-autoplay-video.md">decision 004</a>.
   And never as the only place information lives: what the video says is also in its transcript.
 </p>
 
+<h2>Embedded player</h2>
 <docs-example>
   <figure class="ag-video ag-mb-0">
     <a
@@ -51,7 +52,43 @@
     </div>
   </details>
 </docs-example>
-<p class="docs-fine">The video in the example is a placeholder. Replace VIDEO_ID with your video's ID.</p>
+
+<h2>Direct video file</h2>
+<p>
+  Set <code>data-ag-video</code> to a direct video file ending in <code>.mp4</code>, <code>.webm</code>,
+  <code>.ogv</code>, <code>.ogg</code>, <code>.m4v</code> or <code>.mov</code>. The script uses a native
+  <code>&lt;video controls&gt;</code> player instead of an iframe. The poster's play action loads and starts the file.
+</p>
+<docs-example>
+  <figure class="ag-video ag-mb-0">
+    <a
+      class="ag-video__poster"
+      href="/media/service-explainer.mp4"
+      data-ag-video="/media/service-explainer.mp4"
+      data-ag-video-title="How to apply for a service"
+      data-ag-video-captions="/media/service-explainer.en.vtt"
+      data-ag-video-captions-lang="en"
+      data-ag-video-captions-label="English"
+    >
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23c7d6e3'/%3E%3Crect x='9' y='2' width='5' height='5' fill='%231f4e79'/%3E%3Cpath d='M0 9 L0 6.5 C3 5 5 7 8 5.5 C11 4 13 6.5 16 5.5 L16 9 Z' fill='%23869fb5'/%3E%3C/svg%3E"
+        alt=""
+        width="1280"
+        height="720"
+        loading="lazy"
+      />
+      <span class="ag-video__play" aria-hidden="true"></span>
+      <span class="ag-video__label">Play video: How to apply for a service</span>
+    </a>
+    <figcaption class="ag-video__caption">Captions in English.</figcaption>
+  </figure>
+</docs-example>
+<p>
+  The captions file is optional. When supplied, use a WebVTT (<code>.vtt</code>) file. Set
+  <code>data-ag-video-captions-lang</code> to its BCP 47 language code and <code>data-ag-video-captions-label</code> to
+  the language name; these default to <code>en</code> and <code>English</code>. Keep the poster and captions file on
+  your own site when possible.
+</p>
 
 <h2>Video cards</h2>
 <p>
@@ -94,12 +131,18 @@
 <h2>How it works</h2>
 <ul>
   <li>
-    The poster is a link to the video on its host, such as YouTube. With the script, pressing it swaps in the player at
-    the same size and starts it. Without the script, the link opens the video on its host.
+    The poster is a link to the video on its host. With the script, pressing it swaps in the player at the same size.
+    Embedded players start playing on press. Direct video files use native controls and an optional captions track.
+    Without the script, the link opens the video file or host.
   </li>
   <li>
-    <code>data-ag-video</code> is the embed address. Use <code>youtube-nocookie.com</code> for YouTube, so no tracking
-    cookie is set until someone presses play. <code>data-ag-video-title</code> names the player for screen readers.
+    For embedded players, <code>data-ag-video</code> is the embed address. Use <code>youtube-nocookie.com</code> for
+    YouTube, so no tracking cookie is set until someone presses play. <code>data-ag-video-title</code> names the player
+    for screen readers.
+  </li>
+  <li>
+    For direct files, use <code>data-ag-video-captions</code> for a WebVTT captions file. Optional
+    <code>data-ag-video-captions-lang</code> and <code>data-ag-video-captions-label</code> set the track's language.
   </li>
   <li>
     The label says what pressing does, the title and the length. People decide whether to spend the data before they
@@ -124,5 +167,5 @@
     If the picture shows something the words do not say, the video needs audio description, or the transcript describes
     it.
   </li>
-  <li>Nothing plays until someone presses play. When the player appears, focus moves to it.</li>
+  <li>Nothing loads until someone chooses to watch. When the player appears, focus moves to it.</li>
 </ul>
