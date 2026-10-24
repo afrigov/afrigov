@@ -50,9 +50,14 @@
 
 <h2>Keep it on one row, or stack it on purpose</h2>
 <p>
-  Beside the brand there is room for about six short links. When the name is long or there are more links, the
-  navigation no longer fits and drops to a second row by accident, which makes the header taller on some screens and not
-  others. Check the header at 1024 and 1280 pixels wide. If it does not fit, do one of three things:
+  The desktop header is a wrapping flex layout. Between the 1000px menu breakpoint and the width where the brand and
+  every link fit, a long name plus seven links can push the navigation onto a second row without warning. This is
+  especially easy to miss at 1024px. Test with the real organisation name and all planned links at both 1024px and
+  1280px; do not assume that a layout that fits at 1280px will fit at tablet width.
+</p>
+<p>
+  The example below intentionally uses a long ministry name and seven navigation links to make the tight layout easy to
+  inspect. If the navigation wraps at your target width, choose a deliberate layout instead:
 </p>
 <ul>
   <li>Cut the links to six. Move the rest to the footer or to a section page.</li>
@@ -62,6 +67,35 @@
     width.
   </li>
 </ul>
+
+<docs-example flush label="Long brand and seven links">
+  <div class="ag-header">
+    <div class="ag-container ag-header__inner">
+      <a class="ag-header__brand" href="#header-tight">
+        <span class="ag-flag ag-flag--lg" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>
+          <span class="ag-header__org">Ministry of Water Resources, Sanitation and Irrigation</span>
+          <span class="ag-header__sub" data-docs-string="government">The Government</span>
+        </span>
+      </a>
+      <nav class="ag-header__nav" aria-label="Long navigation example">
+        <ul class="ag-nav">
+          <li><a class="ag-nav__link" href="#header-tight">Home</a></li>
+          <li><a class="ag-nav__link" href="#header-tight">About</a></li>
+          <li><a class="ag-nav__link" href="#header-tight">Services</a></li>
+          <li><a class="ag-nav__link" href="#header-tight">Programmes</a></li>
+          <li><a class="ag-nav__link" href="#header-tight">News</a></li>
+          <li><a class="ag-nav__link" href="#header-tight">Publications</a></li>
+          <li><a class="ag-nav__link" href="#header-tight">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</docs-example>
+<p class="docs-fine">
+  At 1024px, this combination may wrap under the brand. That is the default flex behaviour, not a guarantee that the
+  header fits on one row. Use the stacked variant below when two rows are the intended design.
+</p>
 
 <docs-example flush label="Stacked">
   <div class="ag-header ag-header--stacked">
