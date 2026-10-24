@@ -21,6 +21,7 @@ const COMPONENTS = [
   "footer",
   "button",
   "breadcrumb",
+  "contents",
   "pagination",
   "form",
   "error-summary",

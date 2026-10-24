@@ -31,6 +31,8 @@ describe("dist/core.css", () => {
       ".ag-footer",
       ".ag-button",
       ".ag-breadcrumb",
+      ".ag-contents",
+      ".ag-contents__list",
       ".ag-pagination",
       ".ag-field",
       ".ag-input",
@@ -148,5 +150,15 @@ describe("flag SVGs in dist", () => {
     expect(nigeria).toContain("--ag-flag-image: none");
     const kenya = html.match(/<li class="docs-pack-card">[^]*?Kenya[^]*?<\/li>/)[0];
     expect(kenya).toContain("--ag-flag-image: url(../dist/flags/ke.svg)");
+  });
+});
+
+describe("contents list documentation", () => {
+  it("uses a labelled navigation region and links to matching section IDs", () => {
+    const html = readFileSync(join(ROOT, "site", "pages", "components", "contents.html"), "utf8");
+    expect(html).toContain('<nav class="ag-contents" aria-labelledby="contents-example-title">');
+    expect(html).toContain('id="contents-example-title"');
+    expect(html).toContain('href="#contents-example-eligibility"');
+    expect(html).toContain('id="contents-example-eligibility"');
   });
 });

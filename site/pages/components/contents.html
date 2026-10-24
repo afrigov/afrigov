@@ -1,0 +1,65 @@
+<!-- { "title": "Contents list", "section": "components", "description": "A short list of in-page links for the sections of a long page.", "order": 58 } -->
+<h1>Contents list</h1>
+<p class="ag-lead">
+  A short list of links near the top of a long page. It helps people jump to the answer they need without reading every
+  section.
+</p>
+
+<h2>Example</h2>
+<docs-example>
+  <nav class="ag-contents" aria-labelledby="contents-example-title">
+    <h2 class="ag-contents__title" id="contents-example-title">On this page</h2>
+    <ol class="ag-contents__list">
+      <li><a href="#contents-example-eligibility">Who can apply?</a></li>
+      <li><a href="#contents-example-documents">Documents you need</a></li>
+      <li><a href="#contents-example-fees">Fees and processing time</a></li>
+    </ol>
+  </nav>
+  <section id="contents-example-eligibility">
+    <h2>Who can apply?</h2>
+    <p>Check the eligibility requirements before you start.</p>
+  </section>
+  <section id="contents-example-documents">
+    <h2>Documents you need</h2>
+    <p>Prepare the documents listed for this service.</p>
+  </section>
+  <section id="contents-example-fees">
+    <h2>Fees and processing time</h2>
+    <p>Review the fee and expected processing time.</p>
+  </section>
+</docs-example>
+
+<h2>How to use it</h2>
+<ul>
+  <li>
+    Place the navigation near the top of a long page, after the page introduction and before the first content section.
+  </li>
+  <li>
+    Give the navigation a short heading such as “On this page” and connect it with
+    <code>aria-labelledby</code>.
+  </li>
+  <li>
+    Use a real link for every section and make each link's <code>href</code> match a unique heading or section
+    <code>id</code>.
+  </li>
+  <li>
+    Use meaningful link text that makes sense out of context. Keep the list short and in the same order as the content.
+  </li>
+  <li>
+    The links are ordinary HTML anchors, so they work without JavaScript. No script or additional JavaScript dependency
+    is needed.
+  </li>
+</ul>
+
+<h2>When to use</h2>
+<p>
+  Use it on long questions-and-answers pages, fee pages with several tables, and service pages with multiple sections.
+  For a short page, let people read from top to bottom without adding extra navigation.
+</p>
+
+<h2>Accessibility</h2>
+<ul>
+  <li>The <code>nav</code> element creates a navigation landmark, named by its visible heading.</li>
+  <li>Use unique IDs and ensure every link points to an existing target.</li>
+  <li>Do not rely on colour alone: links remain underlined, with clear wording and visible keyboard focus.</li>
+</ul>
