@@ -4,13 +4,20 @@
 .ag-header--striped::after,
 .ag-footer--striped::before,
 .ag-card--flag::before {
+  --_ag-band: calc(100% / var(--ag-flag-count, 3));
+
   display: block;
   height: 0.375rem;
+  /* As many bands as the pack declares, up to six. Bands past the count start at or
+     beyond the right edge, so they have no width. */
   background: linear-gradient(
     90deg,
-    var(--ag-flag-1, var(--ag-color-primary)) 0 33.34%,
-    var(--ag-flag-2, var(--ag-flag-1, var(--ag-color-primary))) 33.34% 66.67%,
-    var(--ag-flag-3, var(--ag-flag-1, var(--ag-color-primary))) 66.67%
+    var(--ag-flag-1, var(--ag-color-primary)) 0 var(--_ag-band),
+    var(--ag-flag-2, var(--ag-flag-1, var(--ag-color-primary))) var(--_ag-band) calc(var(--_ag-band) * 2),
+    var(--ag-flag-3, var(--ag-flag-1, var(--ag-color-primary))) calc(var(--_ag-band) * 2) calc(var(--_ag-band) * 3),
+    var(--ag-flag-4, transparent) calc(var(--_ag-band) * 3) calc(var(--_ag-band) * 4),
+    var(--ag-flag-5, transparent) calc(var(--_ag-band) * 4) calc(var(--_ag-band) * 5),
+    var(--ag-flag-6, transparent) calc(var(--_ag-band) * 5) calc(var(--_ag-band) * 6)
   );
 }
 

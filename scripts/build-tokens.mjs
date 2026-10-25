@@ -47,6 +47,9 @@ for (const pack of packs) {
   pack.meta.flag?.forEach((v, i) => lines.push(`  ${cssVarName(`flag.${i + 1}`)}: ${v};`));
   lines.push(`  ${cssVarName("flag.count")}: ${pack.meta.flag?.length ?? 0};`);
   lines.push(`  ${cssVarName("flag.direction")}: ${pack.meta.flagDirection ?? "row"};`);
+  // The same direction as an angle, for the gradient that paints the bands:
+  // column means bands stacked down the flag, row means bands across it.
+  lines.push(`  ${cssVarName("flag.angle")}: ${pack.meta.flagDirection === "column" ? "180deg" : "90deg"};`);
   if (pack.meta.flagSvg) {
     const src = join(ROOT, "tokens", "packs", "flags", pack.meta.flagSvg);
     if (!existsSync(src)) {

@@ -74,8 +74,13 @@
   margin-bottom: var(--ag-space-2);
 }
 
-/* Flag. Stripe colours and direction come from the country pack. */
+/* Flag. Stripe colours, direction and band count come from the country pack.
+   The bands are a gradient on the box itself, divided by --ag-flag-count, so a pack
+   with six bands draws six. Any band past the count starts at or beyond the far edge
+   and so has no width. The child spans older markup carries are left painting nothing. */
 .ag-flag {
+  --_ag-band: calc(100% / var(--ag-flag-count, 3));
+
   position: relative;
   display: inline-flex;
   flex-direction: var(--ag-flag-direction, row);
@@ -84,6 +89,15 @@
   height: 1rem;
   overflow: hidden;
   border: 1px solid var(--ag-color-border);
+  background: linear-gradient(
+    var(--ag-flag-angle, 90deg),
+    var(--ag-flag-1, var(--ag-color-primary)) 0 var(--_ag-band),
+    var(--ag-flag-2, var(--ag-color-paper)) var(--_ag-band) calc(var(--_ag-band) * 2),
+    var(--ag-flag-3, var(--ag-color-primary)) calc(var(--_ag-band) * 2) calc(var(--_ag-band) * 3),
+    var(--ag-flag-4, transparent) calc(var(--_ag-band) * 3) calc(var(--_ag-band) * 4),
+    var(--ag-flag-5, transparent) calc(var(--_ag-band) * 4) calc(var(--_ag-band) * 5),
+    var(--ag-flag-6, transparent) calc(var(--_ag-band) * 5) calc(var(--_ag-band) * 6)
+  );
   vertical-align: middle;
 }
 
@@ -95,32 +109,10 @@
   background: var(--ag-flag-image, none) center / cover no-repeat;
 }
 
+/* The spans are no longer what paints the flag, so markup may carry three, six or none. */
 .ag-flag > * {
   flex: 1 1 0;
-}
-
-.ag-flag > :nth-child(1) {
-  background: var(--ag-flag-1, var(--ag-color-primary));
-}
-
-.ag-flag > :nth-child(2) {
-  background: var(--ag-flag-2, var(--ag-color-paper));
-}
-
-.ag-flag > :nth-child(3) {
-  background: var(--ag-flag-3, var(--ag-color-primary));
-}
-
-.ag-flag > :nth-child(4) {
-  background: var(--ag-flag-4, transparent);
-}
-
-.ag-flag > :nth-child(5) {
-  background: var(--ag-flag-5, transparent);
-}
-
-.ag-flag > :nth-child(6) {
-  background: var(--ag-flag-6, transparent);
+  background: none;
 }
 
 .ag-flag--lg {

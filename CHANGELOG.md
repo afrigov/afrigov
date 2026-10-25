@@ -27,6 +27,7 @@ All notable changes to this project are documented here. The format follows
 
 ### Fixed
 
+- **Flags with more than three bands.** The stripe and the flag are now a gradient divided by `--ag-flag-count`, so a pack draws as many bands as it declares: six for Uganda, five for Tanzania. The three-band packs are unchanged. Flag markup may carry three spans, six or none, because the bands no longer come from the child elements (#46).
 - **Senegal flag artwork.** Add the green five-pointed star to the centre of the yellow band with a compact, hand-drawn SVG.
 - **Kenya flag artwork.** Replace the approximate shield and spears in `ke.svg` with a compact vector based on the public-domain [Flag of Kenya (shield) artwork by Eusebius](https://commons.wikimedia.org/wiki/File:Flag_of_Kenya_(shield).svg).
 

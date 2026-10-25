@@ -1,6 +1,6 @@
 {
   "$schema": "./pack.schema.json",
-  "$description": "Uganda pack. The flag declares the six statutory bands, but the stripe and flag components render only the first three until six-band support lands (#46); the white disc and crested crane are deliberately left for a separate, properly sourced SVG contribution.",
+  "$description": "Uganda pack. The flag declares the six statutory bands and the stripe and flag components draw all six (#46); the white disc and crested crane are deliberately left for a separate, properly sourced SVG contribution.",
   "$extensions": {
     "afrigov": {
       "code": "ug",

@@ -22,6 +22,18 @@ const componentCount = String(
 );
 const fillStats = (s) => s.replace(/\{\{cssKB\}\}/g, cssKB).replace(/\{\{componentCount\}\}/g, componentCount);
 
+// The flag's custom properties for a pack, inline, because one docs page shows every pack
+// rather than loading one pack's stylesheet. The count and angle drive the band gradient,
+// so a pack with five or six bands draws them all.
+const flagVars = (p, imageRoot = "../") =>
+  [
+    `--ag-flag-direction: ${p.flagDirection ?? "row"}`,
+    `--ag-flag-angle: ${p.flagDirection === "column" ? "180deg" : "90deg"}`,
+    ...p.flag.map((c, i) => `--ag-flag-${i + 1}: ${c}`),
+    `--ag-flag-count: ${p.flag.length}`,
+    `--ag-flag-image: ${p.flagSvg ? `url(${imageRoot}dist/flags/${p.flagSvg})` : "none"}`,
+  ].join("; ");
+
 export const SECTIONS = [
   { id: "get-started", title: "Get started", href: "get-started.html" },
   { id: "styles", title: "Styles", href: "styles/index.html" },
@@ -88,7 +100,7 @@ function packPages() {
     `<li><div class="docs-swatch" style="--_docs-swatch: ${hex}"></div><code>${name}</code><code>${hex}</code></li>`;
 
   const pages = packs.map((p) => {
-    const flagStyle = `--ag-flag-direction: ${p.flagDirection ?? "row"}; ${p.flag.map((c, i) => `--ag-flag-${i + 1}: ${c}`).join("; ")}; --ag-flag-image: ${p.flagSvg ? `url(../dist/flags/${p.flagSvg})` : "none"}`;
+    const flagStyle = flagVars(p);
     const flag = `<span class="ag-flag ag-flag--lg" aria-hidden="true" style="${flagStyle}"><span></span><span></span><span></span></span>`;
     const langs = Object.entries(p.strings ?? {}).map(([code, s]) => {
       const rows = ["banner", "banner-how", "banner-domain", "banner-secure"]
@@ -161,12 +173,7 @@ ${langs.join("")}
     )
     .join("");
   const codes = packs.map((p) => p.code);
-  const flagOf = (p, root = "../") =>
-    `<span class="ag-flag" aria-hidden="true" style="--ag-flag-direction: ${p.flagDirection ?? "row"}; ${p.flag
-      .map((c, i) => `--ag-flag-${i + 1}: ${c}`)
-      .join(
-        "; ",
-      )}; --ag-flag-image: ${p.flagSvg ? `url(${root}dist/flags/${p.flagSvg})` : "none"}"><span></span><span></span><span></span></span>`;
+  const flagOf = (p, root = "../") => `<span class="ag-flag" aria-hidden="true" style="${flagVars(p, root)}"></span>`;
   const cards =
     `<li class="docs-pack-card"><span class="docs-pack__neutral docs-pack-card__flag" aria-hidden="true"></span><h3 class="docs-pack-card__title">Neutral core</h3><p>No country. The blue nobody uses.</p><a class="ag-button ag-button--secondary" href="?pack=core">Preview</a></li>` +
     packs
@@ -276,7 +283,7 @@ function scoreboardBlock(root) {
       })
       .join("");
     const flag = packs[code]
-      ? `<span class="ag-flag" aria-hidden="true" style="--ag-flag-direction: ${packs[code].flagDirection ?? "row"}; ${packs[code].flag.map((c, i) => `--ag-flag-${i + 1}: ${c}`).join("; ")}; --ag-flag-image: ${packs[code].flagSvg ? `url(${root}dist/flags/${packs[code].flagSvg})` : "none"}"><span></span><span></span><span></span></span> `
+      ? `<span class="ag-flag" aria-hidden="true" style="${flagVars(packs[code], root)}"></span> `
       : "";
     return `<h2 id="${code}">${flag}${packs[code]?.country ?? code}</h2>
 <div class="ag-table-wrap" role="region" aria-label="${packs[code]?.country ?? code} sites" tabindex="0"><table class="ag-table docs-scoreboard"><thead><tr><th scope="col">Site</th><th scope="col">Grade</th><th scope="col">Biggest problem</th><th scope="col">Fix first</th></tr></thead><tbody>${rows}</tbody></table></div>`;
