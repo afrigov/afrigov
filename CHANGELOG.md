@@ -15,6 +15,8 @@ All notable changes to this project are documented here. The format follows
 - **Contents list.** `ag-contents` is a labelled navigation region with a short heading and in-page
   links, styled with muted link colour for long pages. Works with ordinary anchors and no JavaScript.
 
+- **Tanzania NIN validation.** Validate the NIDA identifier as 20 digits, following the e-Government Authority’s [Institutional Data Dictionary](https://www.ega.go.tz/uploads/standarddocuments/sw-1640950814-Final+Institutional+Data+Dictionary+Technical+Standards+and+Guidelines-EDITED+%281%29.pdf), which specifies a maximum size of 20 and gives a 20-digit example.
+
 - **Tanzania country pack (`tz.css`).** Adds Tanzania's national flag and an original 3:2 SVG drawn from the statutory design, English official-website banner strings, a machine-assisted Kiswahili draft marked for native review, TZS currency, NIN details, +255 phone information and sample regions. Colour-name sources are cited in the pack.
 
 - **Uganda country pack (`ug.css`).** Adds the six-band flag fallback, official English banner strings, UGX currency, NIRA National Identification Number details, +256 phone information and regional examples. Colour sources are cited in the pack.

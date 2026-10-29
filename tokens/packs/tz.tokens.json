@@ -37,6 +37,7 @@
         "document": "National ID card",
         "hint": "20 digits on your National ID card",
         "length": 20,
+        "pattern": "[0-9]{20}",
         "authority": "the National Identification Authority (NIDA)"
       },
       "regions": {
