@@ -7,6 +7,11 @@ updates:
     groups:
       dev-dependencies:
         dependency-type: development
+        # Minor and patch only. A major bump folded into a grouped PR looks
+        # routine and is not: stylelint 18 arrived this way and broke CI on
+        # Node 20. Majors now come as their own pull request, where the
+        # version jump is visible.
+        update-types: ["minor", "patch"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
